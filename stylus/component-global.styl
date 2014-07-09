@@ -1,0 +1,229 @@
+*
+	margin 0
+	padding 0
+	border 0
+	outline 0
+
+
+body
+	-webkit-font-smoothing antialiased
+	background white
+
+
+body, button, input, textarea, select
+	font-family fuente1
+	color black
+	font-size 14px
+	line-height 20px
+
+a, button, input, textarea, select
+	transition .2s ease
+
+a
+	color secondary_color
+	text-decoration none
+
+a, input, button, select
+	transition tnormal
+
+button, select, input[type='submit']
+	&:hover
+		cursor pointer
+
+h1, h2, h3, h4
+	font-family fuente2
+
+h1
+	font-size 64px
+	line-height 54px
+	font-weight bold
+	@media break1
+		font-size 44px
+		line-height 34px
+
+h2
+	font-size 25px
+	line-height 25px
+	&.big
+		font-size 38px
+		line-height 38px
+h3
+	font-size 20px
+	line-height 24px
+h4
+	font-size 16px
+	line-height 20px
+
+
+.inner
+	padding 20px
+@media break1
+	.inner
+		padding 10px
+
+
+.limit
+	max-width 1250px
+	margin 0 auto
+	position relative
+
+
+.in
+	display block !important
+	animation fadeIn .5s ease both
+	&.out
+		animation fadeOut .5s ease both
+
+
+.clear
+	clear both
+.center
+	text-align center
+.left
+	text-align left
+.right
+	text-align right
+.float-right
+	float right
+.float-left
+	float left
+
+.overflow
+	overflow hidden
+.none
+	display none
+
+
+
+
+.nomobile
+	display block
+.mobile
+	display none
+@media break1
+	.nomobile
+		display none
+	.mobile
+		display block
+
+
+
+
+
+
+.content
+	font-size 15px
+	line-height 24px
+
+	h1
+		margin-bottom 20px
+		color primary_color
+	h2
+		font-size 25px
+	h3
+		font-size 22px
+	h4
+		font-size 20px
+	h2, h3, h4
+		margin-bottom 10px
+		padding-top 10px
+		color primary_color
+		font-family fuente1
+	p, ol, ul, table
+		margin-bottom 15px
+	img,
+	iframe
+		max-width 100%
+		display block
+	ol,ul
+		margin-left 30px
+		li
+			margin-bottom 5px
+	blockquote
+		padding 15px 15px 1px 35px
+		background url(../img/icons/cite.png) 15px 15px no-repeat white
+		border-left 2px solid secondary_color
+		font-size 1.2em
+		line-height 1.25em
+		font-style italic
+		margin-bottom 15px
+	.important
+		background #FFC
+		padding 15px 15px 1px
+		margin-bottom 15px
+	a
+		text-decoration none
+		color green
+		&:hover
+			text-decoration underline
+
+
+
+
+
+
+
+.button, form.controls .button
+	font-family fuente1
+	font-size 15px
+	line-height 18px
+	radius 3px
+	padding 8px 20px 5px
+	text-decoration none
+	display inline-block
+	text-transform uppercase
+	font-weight bold
+	border 2px solid #CCC
+	border-top 0
+	border-left 0
+	border-right-width 1px
+	width auto
+	margin-bottom 2px
+	background #DDD
+	color #666
+	transition tnormal
+	text-align center
+	&:hover
+		cursor pointer
+		color #FFF
+		background primary_color
+		border-color darken(primary_color,30%)
+	&.button-primary
+		color white
+		background primary_color
+		border-color darken(primary_color,30%)
+		&:hover
+			background lighten(primary_color,10%)
+	&.button-primary
+		color white
+		background secondary_color
+		border-color darken(secondary_color,30%)
+		&:hover
+			background lighten(secondary_color,10%)
+	&.button-small
+		font-size 11px
+		line-height 11px
+		padding  8px 8px 5px
+	&.button-medium
+		font-size 18px
+		line-height 18px
+		padding 10px 22px 6px
+	&.button-big
+		font-size 20px
+		line-height 20px
+		padding 12px 25px 9px
+		radius 5px
+	&.disabled
+		background #999
+		border-color #999
+		&:hover
+			background #999
+			border-color #999
+			cursor default
+
+
+
+
+
+
+

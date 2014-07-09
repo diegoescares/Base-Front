@@ -1,0 +1,96 @@
+
+
+separationcol = 20px
+
+.cols
+	overflow hidden
+	margin 0 0-(separationcol/2)
+	.col
+		float left
+		.col-inner
+			margin 0 (separationcol/2)
+
+		&.col-20
+			width 20%
+		&.col-23
+			width 23.33%
+		&.col-25
+			width 25%
+		&.col-30
+			width 30%
+		&.col-33
+			width 33.33%
+		&.col-40
+			width 40%
+		&.col-50
+			width 50%
+		&.col-66
+			width 66%
+		&.col-70
+			width 70%
+		&.col-75
+			width 75%
+		&.col-100
+			width 100%
+
+
+
+@media break4
+	.cols
+		.col
+			&.col-20
+				width 24%
+
+@media break3
+	.cols
+		.col
+
+			&.col-23
+				width 33.33%
+
+			&.col-20
+			&.col-25
+			&.col-30
+				width 50%
+
+			&.col-50
+				.col-50
+					width 50%
+
+			&.col-33
+			&.col-40
+			&.col-50
+			&.col-66
+			&.col-70
+				width 100%
+
+			&.col-30
+				&.col-to-100
+					width 100%
+
+
+@media break2
+	.cols
+		.col
+			&.col-to-100
+				width 100%
+
+@media break1
+	.cols
+		.col
+			&.col-20
+			&.col-25
+			&.col-30
+				width 100%
+
+			&.col-50
+				.col-50
+					width 100%
+
+
+
+
+
+
+
+

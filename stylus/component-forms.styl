@@ -1,0 +1,225 @@
+
+
+
+/* Formularios */
+
+w_form = 500px
+w_name = 70px
+w_value = 280px
+
+.icon-error
+	display none
+	
+form.controls
+
+	margin 0 auto
+
+
+	a
+		text-decoration none
+
+	input
+	button
+	select
+	textarea
+		width 100%
+		border 1px solid #DDD
+		padding 8px 10px
+		box-sizing border-box
+		-webkit-appearance none
+		-moz-appearance none
+		appearance none
+		vertical-align top
+		background #DDD
+		margin-bottom 1px
+		&.error
+			border-color red
+		&:hover
+		&:focus
+			border-color #999
+
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button
+		-webkit-appearance none
+		margin 0
+
+
+
+
+
+	select
+		background url(../img/select.png) right center no-repeat #DDD
+		radius 0
+		&.select-80
+			width 85px
+			margin-right -3px
+			@media all and (max-width:1339px)
+				width 82px
+		&.select-100
+			width 100px
+		&.select-150
+			width 150px
+
+	textarea
+		height 70px
+		transition height .2s ease
+		resize none
+
+
+	.checkbox,
+	.radio
+		width 17px !important
+		height 17px
+		padding 0
+		margin-right 2px
+		vertical-align -4px
+		&:checked
+			background-color primary_color
+			border-color primary_color
+			background-position center center
+
+	.radio
+		radius 15px
+	.checkbox
+		background url(../img/checked.png) center -20px no-repeat
+
+	label:hover
+		.checkbox,
+		.radio
+			background-color #CCC
+			&:checked
+				background-color primary_color
+
+
+	.number
+		position relative
+		width 100px
+		button
+			position absolute
+			right 0
+			padding 0
+			width 30px
+			height 50%
+			text-align center
+			background #CCC
+			&:hover
+				background primary_color
+		.mas
+			top 0
+			radius 0 3px 0 0
+		.menos
+			bottom 0
+			radius 0 0 3px 0
+
+
+
+
+
+
+
+
+
+
+	.control
+		display block
+		margin-bottom 5px
+		padding 5px 0
+		//text-align center
+		overflow hidden
+
+		.control-name
+		.control-value
+		.control-legend
+			display inline-block
+			vertical-align top
+			padding-bottom 5px
+			margin-left -3px
+
+		.control-name
+			width w_name
+			padding-right 20px
+			padding-top 8px
+			text-align right
+
+		.control-value
+			width w_value
+			text-align left
+			position relative
+			label
+				display block
+				padding 5px
+				margin 2px 5px 0 -5px
+				&.inline
+					display inline-block
+
+		.control-legend
+			padding-left 20px
+			color #999
+			margin-left w_name
+			width w_value
+			text-align left
+
+
+
+		&.error
+			.control-value
+				input, select, textarea
+					border-color secondary_color
+			.control-legend
+				color secondary_color
+
+	.icon-error
+		display none
+		position absolute
+		top 5px
+		left 105%
+		width 30px
+		height 30px
+		radius 30px
+		line-height 30px
+		text-align center
+		color white
+		background red
+		animation slideFadeLeft .2s ease
+		span
+			width 0
+			height 0
+			border 10px solid transparent
+			border-right-color red
+			display block
+			position absolute
+			top 5px
+			right 26px
+
+
+	.error
+		input, select, textarea
+			color red
+			border-color red
+			&:focus
+			&:hover
+				color red
+				border-color red
+		.icon-error
+			display block
+
+
+
+@media all and (max-width:810px)
+	form.controls
+		max-width none
+		.control
+			.control-name
+			.control-value
+			.control-legend
+				display block
+				margin 0
+				padding 0 0 5px
+				text-align left
+				width auto
+
+@media break1
+	form.controls
+		.control		
+			padding-top 0
+			margin-bottom 0
