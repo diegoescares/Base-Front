@@ -30,7 +30,7 @@ select {
   transition: 0.2s ease;
 }
 a {
-  color: #555;
+  color: #399;
   text-decoration: none;
 }
 a,
@@ -153,7 +153,7 @@ h4 {
 }
 .content h1 {
   margin-bottom: 20px;
-  color: #c00;
+  color: #3cc;
 }
 .content h2 {
   font-size: 25px;
@@ -169,7 +169,7 @@ h4 {
 .content h4 {
   margin-bottom: 10px;
   padding-top: 10px;
-  color: #c00;
+  color: #3cc;
   font-family: 'Open Sans', sans-serif;
 }
 .content p,
@@ -194,7 +194,7 @@ h4 {
 .content blockquote {
   padding: 15px 15px 1px 35px;
   background: url("../img/icons/cite.png") 15px 15px no-repeat #fff;
-  border-left: 2px solid #555;
+  border-left: 2px solid #399;
   font-size: 1.2em;
   line-height: 1.25em;
   font-style: italic;
@@ -213,7 +213,7 @@ h4 {
   text-decoration: underline;
 }
 .button,
-form.controls .button {
+.button.button {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   line-height: 18px;
@@ -222,7 +222,7 @@ form.controls .button {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  padding: 8px 20px 5px;
+  padding: 8px 20px;
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
@@ -243,49 +243,49 @@ form.controls .button {
   text-align: center;
 }
 .button:hover,
-form.controls .button:hover {
+.button.button:hover {
   cursor: pointer;
   color: #fff;
-  background: #c00;
-  border-color: #8f0000;
+  background: #3cc;
+  border-color: #248f8f;
 }
 .button.button-primary,
-form.controls .button.button-primary {
+.button.button.button-primary {
   color: #fff;
-  background: #c00;
-  border-color: #8f0000;
+  background: #3cc;
+  border-color: #248f8f;
 }
 .button.button-primary:hover,
-form.controls .button.button-primary:hover {
-  background: #eb0000;
+.button.button.button-primary:hover {
+  background: #47d1d1;
 }
-.button.button-primary,
-form.controls .button.button-primary {
+.button.button-secondary,
+.button.button.button-secondary {
   color: #fff;
-  background: #555;
-  border-color: #3b3b3b;
+  background: #399;
+  border-color: #246b6b;
 }
-.button.button-primary:hover,
-form.controls .button.button-primary:hover {
-  background: #666;
+.button.button-secondary:hover,
+.button.button.button-secondary:hover {
+  background: #3bb0b0;
 }
 .button.button-small,
-form.controls .button.button-small {
+.button.button.button-small {
   font-size: 11px;
   line-height: 11px;
-  padding: 8px 8px 5px;
+  padding: 8px 8px;
 }
 .button.button-medium,
-form.controls .button.button-medium {
+.button.button.button-medium {
   font-size: 18px;
   line-height: 18px;
-  padding: 10px 22px 6px;
+  padding: 10px 22px;
 }
 .button.button-big,
-form.controls .button.button-big {
+.button.button.button-big {
   font-size: 20px;
   line-height: 20px;
-  padding: 12px 25px 9px;
+  padding: 12px 25px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -293,12 +293,12 @@ form.controls .button.button-big {
   border-radius: 5px;
 }
 .button.disabled,
-form.controls .button.disabled {
+.button.button.disabled {
   background: #999;
   border-color: #999;
 }
 .button.disabled:hover,
-form.controls .button.disabled:hover {
+.button.button.disabled:hover {
   background: #999;
   border-color: #999;
   cursor: default;
@@ -1118,6 +1118,12 @@ form.controls .button.disabled:hover {
 .cols .col .col-inner {
   margin: 0 10px;
 }
+.cols.cols-halfsep {
+  margin: 0 -5px;
+}
+.cols.cols-halfsep .col-inner {
+  margin: 0 5px;
+}
 .cols .col.col-20 {
   width: 20%;
 }
@@ -1148,13 +1154,11 @@ form.controls .button.disabled:hover {
 .cols .col.col-75 {
   width: 75%;
 }
+.cols .col.col-80 {
+  width: 80%;
+}
 .cols .col.col-100 {
   width: 100%;
-}
-@media all and (max-width:1199px) {
-  .cols .col.col-20 {
-    width: 24%;
-  }
 }
 @media all and (max-width:959px) {
   .cols .col.col-23 {
@@ -1162,17 +1166,18 @@ form.controls .button.disabled:hover {
   }
   .cols .col.col-20,
   .cols .col.col-25,
-  .cols .col.col-30 {
+  .cols .col.col-30,
+  .cols .col.col-33 {
     width: 50%;
   }
   .cols .col.col-50 .col-50 {
     width: 50%;
   }
-  .cols .col.col-33,
   .cols .col.col-40,
   .cols .col.col-50,
   .cols .col.col-66,
-  .cols .col.col-70 {
+  .cols .col.col-70,
+  .cols .col.col-75 {
     width: 100%;
   }
   .cols .col.col-30.col-to-100 {
@@ -1187,7 +1192,8 @@ form.controls .button.disabled:hover {
 @media all and (max-width:479px) {
   .cols .col.col-20,
   .cols .col.col-25,
-  .cols .col.col-30 {
+  .cols .col.col-30,
+  .cols .col.col-33 {
     width: 100%;
   }
   .cols .col.col-50 .col-50 {
@@ -1197,16 +1203,23 @@ form.controls .button.disabled:hover {
 .icon-error {
   display: none;
 }
-form.controls {
+form.controls,
+form.wpcf7-form {
   margin: 0 auto;
+  max-width: 400px;
 }
-form.controls a {
+form.controls a,
+form.wpcf7-form a {
   text-decoration: none;
 }
 form.controls input,
+form.wpcf7-form input,
 form.controls button,
+form.wpcf7-form button,
 form.controls select,
-form.controls textarea {
+form.wpcf7-form select,
+form.controls textarea,
+form.wpcf7-form textarea {
   width: 100%;
   border: 1px solid #ddd;
   padding: 8px 10px;
@@ -1215,54 +1228,55 @@ form.controls textarea {
   -moz-appearance: none;
   appearance: none;
   vertical-align: top;
-  background: #ddd;
+  background: #fff;
   margin-bottom: 1px;
-}
-form.controls input.error,
-form.controls button.error,
-form.controls select.error,
-form.controls textarea.error {
-  border-color: #d00;
-}
-form.controls input:hover,
-form.controls button:hover,
-form.controls select:hover,
-form.controls textarea:hover,
-form.controls input:focus,
-form.controls button:focus,
-form.controls select:focus,
-form.controls textarea:focus {
-  border-color: #999;
-}
-form.controls input[type=number]::-webkit-inner-spin-button,
-form.controls input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-form.controls select {
-  background: url("../img/select.png") right center no-repeat #ddd;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
 }
-form.controls select.select-80 {
-  width: 85px;
-  margin-right: -3px;
+form.controls input.error,
+form.wpcf7-form input.error,
+form.controls button.error,
+form.wpcf7-form button.error,
+form.controls select.error,
+form.wpcf7-form select.error,
+form.controls textarea.error,
+form.wpcf7-form textarea.error {
+  border-color: #d00;
 }
-@media all and (max-width:1339px) {
-  form.controls select.select-80 {
-    width: 82px;
-  }
+form.controls input:hover,
+form.wpcf7-form input:hover,
+form.controls button:hover,
+form.wpcf7-form button:hover,
+form.controls select:hover,
+form.wpcf7-form select:hover,
+form.controls textarea:hover,
+form.wpcf7-form textarea:hover,
+form.controls input:focus,
+form.wpcf7-form input:focus,
+form.controls button:focus,
+form.wpcf7-form button:focus,
+form.controls select:focus,
+form.wpcf7-form select:focus,
+form.controls textarea:focus,
+form.wpcf7-form textarea:focus {
+  border-color: #999;
 }
-form.controls select.select-100 {
-  width: 100px;
+form.controls input[type=number]::-webkit-inner-spin-button,
+form.wpcf7-form input[type=number]::-webkit-inner-spin-button,
+form.controls input[type=number]::-webkit-outer-spin-button,
+form.wpcf7-form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-form.controls select.select-150 {
-  width: 150px;
+form.controls select,
+form.wpcf7-form select {
+  background: url("../img/select.png") right center no-repeat #fff;
 }
-form.controls textarea {
+form.controls textarea,
+form.wpcf7-form textarea {
   height: 70px;
   -webkit-transition: height 0.2s ease;
   -moz-transition: height 0.2s ease;
@@ -1272,42 +1286,51 @@ form.controls textarea {
   resize: none;
 }
 form.controls .checkbox,
-form.controls .radio {
+form.wpcf7-form .checkbox,
+form.controls .radio,
+form.wpcf7-form .radio {
   width: 17px !important;
   height: 17px;
   padding: 0;
   margin-right: 2px;
   vertical-align: -4px;
+  background: url("../img/checked.png") center -20px no-repeat;
 }
 form.controls .checkbox:checked,
-form.controls .radio:checked {
-  background-color: #c00;
-  border-color: #c00;
+form.wpcf7-form .checkbox:checked,
+form.controls .radio:checked,
+form.wpcf7-form .radio:checked {
+  background-color: #3cc;
+  border-color: #3cc;
   background-position: center center;
 }
-form.controls .radio {
+form.controls .radio,
+form.wpcf7-form .radio {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   border-radius: 15px;
 }
-form.controls .checkbox {
-  background: url("../img/checked.png") center -20px no-repeat;
-}
 form.controls label:hover .checkbox,
-form.controls label:hover .radio {
+form.wpcf7-form label:hover .checkbox,
+form.controls label:hover .radio,
+form.wpcf7-form label:hover .radio {
   background-color: #ccc;
 }
 form.controls label:hover .checkbox:checked,
-form.controls label:hover .radio:checked {
-  background-color: #c00;
+form.wpcf7-form label:hover .checkbox:checked,
+form.controls label:hover .radio:checked,
+form.wpcf7-form label:hover .radio:checked {
+  background-color: #3cc;
 }
-form.controls .number {
+form.controls .number,
+form.wpcf7-form .number {
   position: relative;
   width: 100px;
 }
-form.controls .number button {
+form.controls .number button,
+form.wpcf7-form .number button {
   position: absolute;
   right: 0;
   padding: 0;
@@ -1316,10 +1339,12 @@ form.controls .number button {
   text-align: center;
   background: #ccc;
 }
-form.controls .number button:hover {
-  background: #c00;
+form.controls .number button:hover,
+form.wpcf7-form .number button:hover {
+  background: #3cc;
 }
-form.controls .number .mas {
+form.controls .number .mas,
+form.wpcf7-form .number .mas {
   top: 0;
   -webkit-border-radius: 0 3px 0 0;
   -moz-border-radius: 0 3px 0 0;
@@ -1327,7 +1352,8 @@ form.controls .number .mas {
   -o-border-radius: 0 3px 0 0;
   border-radius: 0 3px 0 0;
 }
-form.controls .number .menos {
+form.controls .number .menos,
+form.wpcf7-form .number .menos {
   bottom: 0;
   -webkit-border-radius: 0 0 3px 0;
   -moz-border-radius: 0 0 3px 0;
@@ -1335,111 +1361,107 @@ form.controls .number .menos {
   -o-border-radius: 0 0 3px 0;
   border-radius: 0 0 3px 0;
 }
-form.controls .control {
+form.controls .control,
+form.wpcf7-form .control {
   display: block;
   margin-bottom: 5px;
-  padding: 5px 0;
+  padding: 2px 0;
   overflow: hidden;
 }
 form.controls .control .control-name,
+form.wpcf7-form .control .control-name,
 form.controls .control .control-value,
-form.controls .control .control-legend {
+form.wpcf7-form .control .control-value,
+form.controls .control .control-legend,
+form.wpcf7-form .control .control-legend {
   display: inline-block;
   vertical-align: top;
   padding-bottom: 5px;
   margin-left: -3px;
 }
-form.controls .control .control-name {
-  width: 70px;
+form.controls .control .control-name,
+form.wpcf7-form .control .control-name {
+  width: 100px;
   padding-right: 20px;
   padding-top: 8px;
   text-align: right;
 }
-form.controls .control .control-value {
+form.controls .control .control-name.control-name-2lines,
+form.wpcf7-form .control .control-name.control-name-2lines {
+  padding-top: 0;
+  line-height: 18px;
+}
+form.controls .control .control-value,
+form.wpcf7-form .control .control-value {
   width: 280px;
   text-align: left;
   position: relative;
 }
-form.controls .control .control-value label {
+form.controls .control .control-value label,
+form.wpcf7-form .control .control-value label {
   display: block;
   padding: 5px;
   margin: 2px 5px 0 -5px;
 }
-form.controls .control .control-value label.inline {
+form.controls .control .control-value label.inline,
+form.wpcf7-form .control .control-value label.inline {
   display: inline-block;
 }
-form.controls .control .control-legend {
-  padding-left: 20px;
-  color: #999;
-  margin-left: 70px;
-  width: 280px;
-  text-align: left;
+form.controls .control .control-error,
+form.wpcf7-form .control .control-error {
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  line-height: 0px;
+  opacity: 0;
+}
+form.controls .control .control-error.in,
+form.wpcf7-form .control .control-error.in {
+  line-height: 20px;
+  opacity: 1;
+}
+form.controls .control .control-error.in.out,
+form.wpcf7-form .control .control-error.in.out {
+  line-height: 0px;
+  opacity: 0;
 }
 form.controls .control.error .control-value input,
+form.wpcf7-form .control.error .control-value input,
 form.controls .control.error .control-value select,
-form.controls .control.error .control-value textarea {
-  border-color: #555;
+form.wpcf7-form .control.error .control-value select,
+form.controls .control.error .control-value textarea,
+form.wpcf7-form .control.error .control-value textarea {
+  border-color: #399;
 }
-form.controls .control.error .control-legend {
-  color: #555;
-}
-form.controls .icon-error {
-  display: none;
-  position: absolute;
-  top: 5px;
-  left: 105%;
-  width: 30px;
-  height: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-  border-radius: 30px;
-  line-height: 30px;
-  text-align: center;
-  color: #fff;
-  background: #d00;
-  -webkit-animation: slideFadeLeft 0.2s ease;
-  -moz-animation: slideFadeLeft 0.2s ease;
-  -ms-animation: slideFadeLeft 0.2s ease;
-  -o-animation: slideFadeLeft 0.2s ease;
-  animation: slideFadeLeft 0.2s ease;
-}
-form.controls .icon-error span {
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-right-color: #d00;
-  display: block;
-  position: absolute;
-  top: 5px;
-  right: 26px;
+form.controls .control.error .control-legend,
+form.wpcf7-form .control.error .control-legend {
+  color: #399;
 }
 form.controls .error input,
+form.wpcf7-form .error input,
 form.controls .error select,
-form.controls .error textarea {
-  color: #d00;
+form.wpcf7-form .error select,
+form.controls .error textarea,
+form.wpcf7-form .error textarea {
   border-color: #d00;
 }
-form.controls .error input:focus,
-form.controls .error select:focus,
-form.controls .error textarea:focus,
-form.controls .error input:hover,
-form.controls .error select:hover,
-form.controls .error textarea:hover {
+form.controls .error .control-error,
+form.wpcf7-form .error .control-error {
   color: #d00;
-  border-color: #d00;
 }
-form.controls .error .icon-error {
-  display: block;
-}
-@media all and (max-width:810px) {
-  form.controls {
+@media all and (max-width:719px) {
+  form.controls,
+  form.wpcf7-form {
     max-width: none;
   }
   form.controls .control .control-name,
+  form.wpcf7-form .control .control-name,
   form.controls .control .control-value,
-  form.controls .control .control-legend {
+  form.wpcf7-form .control .control-value,
+  form.controls .control .control-legend,
+  form.wpcf7-form .control .control-legend {
     display: block;
     margin: 0;
     padding: 0 0 5px;
@@ -1448,7 +1470,8 @@ form.controls .error .icon-error {
   }
 }
 @media all and (max-width:479px) {
-  form.controls .control {
+  form.controls .control,
+  form.wpcf7-form .control {
     padding-top: 0;
     margin-bottom: 0;
   }
@@ -1511,7 +1534,7 @@ form.controls .error .icon-error {
 .alert .alert-box h2 {
   padding: 0;
   margin-bottom: 10px;
-  color: #c00;
+  color: #3cc;
   text-align: center;
 }
 .alert .alert-box p {
@@ -1551,7 +1574,7 @@ form.controls .error .icon-error {
   color: #fff;
 }
 .alert .alert-box .inner .close:hover {
-  background: #eb0000;
+  background: #47d1d1;
 }
 .alert .alert-box .inner .botones {
   text-align: right;
@@ -1569,7 +1592,7 @@ form.controls .error .icon-error {
   float: left;
   height: 75px;
   width: 110px;
-  background: #c00;
+  background: #3cc;
   overflow: hidden;
 }
 .rsThumbs .rsThumbsContainer .rsThumb img {
@@ -1771,4 +1794,33 @@ form.controls .error .icon-error {
 }
 .rsNoDrag {
   cursor: auto;
+}
+.scroll {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.scroll .iScrollVerticalScrollbar {
+  width: 5px;
+  position: absolute;
+  top: 2.5%;
+  height: 95%;
+  right: 5px;
+  opacity: 0.3;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.scroll .iScrollVerticalScrollbar .iScrollIndicator {
+  background: #3cc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+.scroll:hover .iScrollVerticalScrollbar {
+  opacity: 0.5;
 }

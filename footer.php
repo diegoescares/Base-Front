@@ -9,7 +9,6 @@
 		<div class="inner">
 				
 			Footer
-			
 
 		</div>
 	</div>

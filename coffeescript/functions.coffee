@@ -10,6 +10,18 @@ _out = (element) ->
 
 
 
+openMenu = ->
+	$(".responsive-openmenu").addClass("active")
+	$(".responsive-menu").addClass("active")
+
+closeMenu = ->
+	$(".responsive-openmenu").removeClass("active")
+	$(".responsive-menu").addClass("out")
+	setTimeout ->
+		$(".responsive-menu").removeClass("active out")
+	,500
+
+
 
 popupWindow = (url, w, h) ->
 	left = ( $(window).width() / 2 )  - (w / 2)
@@ -141,129 +153,158 @@ isMobile = ->
 
 
 
+fvInputMessage = (input,message) ->
+	if message
+		input.addClass("error")
+		parent = input.closest(".control-value")
+		parent.addClass("error")
+		parent.find(".control-error").text(message).addClass("in")
+	else
+		input.removeClass("error")
+		parent = input.closest(".control-value")
+		parent.removeClass("error")	
+		parent.find(".control-error").addClass("out")
+		setTimeout ->
+			parent.find(".control-error").removeClass("in out").text("")
+		,500
+
+
+fvInput = (input,validateEmpty=false) ->
+
+	parent = input.closest(".control-value")
+
+	fvErrors = {
+		"empty": "Este campo es requerido",
+		"emptySelect": "Selecciona una opción",
+		"emptyRadio": "Selecciona una opción",
+		"emptyCheckbox": "Selecciona al menos una opción",
+		"invalidEmail": "Email inválido",
+		"invalidPass": "La contraseña debe ser mayor a 6 carácteres"
+		"invalidPassRepeat": "La contraseña no es igual a la anterior"
+		"invalidRut": "RUT inválido",
+		"terms": "Debes aceptar los términos legales",
+	}
+
+
+	if !input.hasClass("optional") && input.attr("type")!="submit" && input.attr("type")!="hidden"
+
+		error = false
+		
+		if !input.val()
+
+			# Validar si el campo se llena (opcional)
+			if validateEmpty == true
+				if input.is("select")
+					fvInputMessage(input,fvErrors.emptySelect)
+				else
+					fvInputMessage(input,fvErrors.empty)
+		else
+
+			# Validar email
+			if input.is("[type='email']")
+				if ! validarEmail( input, input.val() ) 
+					fvInputMessage(input,fvErrors.invalidEmail)
+					error = true
+
+
+			# Validar contraseña
+			if input.is("[type='password']")
+				if input.val().length < 6
+					fvInputMessage(input,fvErrors.invalidPass)
+					error = true
+
+
+			# Validar repetir contraseña
+			if input.is("[data-repeat]")
+				if input.val() != $("[name='"+input.attr("data-repeat")+"']").val()
+					fvInputMessage(input,fvErrors.invalidPassRepeat)
+					error = true
+
+
+			# Validar checkboxs/radios
+			if (input.is("[type='checkbox']") || input.is("[type='radio']"))
+				if !parent.find("input[name='"+input.attr("name")+"']:checked").length					
+					fvInputMessage(input,fvErrors.emptyCheckbox) if input.is("[type='checkbox']")
+					fvInputMessage(input,fvErrors.emptyRadio)    if input.is("[type='radio']")
+					error = true
+					parent.find(".error").removeClass("error")
+
+
+			# Validar RUT
+			if input.is(".rut")
+				input.val( $.Rut.formatear($.Rut.quitarFormato(input.val()),$.Rut.getDigito($.Rut.quitarFormato(input.val()))) )
+				if !$.Rut.validar(input.val())
+					fvInputMessage(input,fvErrors.invalidRut)
+					error = true
+
+			# Si no hay errores, se quita el mensaje de error
+			if error == false
+				fvInputMessage(input,false)
+
+
 formValidation = (forms,callback=false) ->
 
 	forms.each ->
+
 		form = $(this)
 
+		form.find(".control .control-value").append("<div class='control-error'></div>")
+
 		form.find("input,textarea,select").each ->
-			_this = $(this)
-			_this.addClass( $(this).attr("type") )
-			_this.after("<span class='icon-error icon-"+$(this).attr("type")+"'><span></span>x</span>")
-			_this.live "blur", ->
-
-				if !$(this).hasClass("optional") && $(this).attr("type") != "submit" && $(this).attr("type") != "hidden"
-
-					if !_this.val()
-						_this.addClass("error")
-						_this.parent().addClass("error")
-					else
-						_this.removeClass("error")
-						_this.parent().removeClass("error")
-
-					if _this.hasClass("email")
-						if validarEmail( _this, _this.val() ) 
-							_this.removeClass("error")
-							_this.parent().removeClass("error")
-						else
-							_this.addClass("error")
-							_this.parent().addClass("error")
-
-
-		if form.find(".rut").length
-			form.find("input.rut").each ->
-				_this = $(this)
-				_this.Rut
-					format_on: 'keyup'
-					on_success: ->
-						_this.removeClass("error")
-						_this.parent().removeClass("error")
-					on_error: ->
-						_this.addClass("error")
-						_this.parent().addClass("error")
-
-
-
-		form.find("input.number").each ->
-			$(this).removeClass("number").wrap("<div class='number'>").after("<button class='mas'>+</button><button class='menos'>-</button>")
-
-		form.find(".number button").live "click", ->
-
-			_input = $(this).parent().find("input")
-
-			_max = parseInt(_input.attr("data-max"))
-			_min = parseInt(_input.attr("data-min"))
-
-			_steps = parseInt(_input.attr("data-steps"))
-			_steps = 1 if !_steps
-
-			_val = parseInt(_input.val())
-			_val = _val + _steps if $(this).hasClass "mas"
-			_val = _val - _steps if $(this).hasClass "menos"
-			_val = _max if _val >= _max
-			_val = _min if _val <= _min
-
-			_input.val(_val)
+			input = $(this)
+			input.addClass( $(this).attr("type") )
+			input.live "blur, change", ->
+				fvInput(input)
 			
-			false
-
-		form.find(".number input").live "blur", ->
-
-			_input = $(this)
-
-			_max = parseInt(_input.attr("data-max"))
-			_min = parseInt(_input.attr("data-min"))
-
-			_val = parseInt(_input.val())
-			_val = _max if _val >= _max
-			_val = _min if _val <= _min
-
-			_input.val(_val)
-
-			true
-
-
-
 		form.submit ->
 
-			enviar = true
-			_this = $(this) 
+			send = true
+			form = $(this) 
 
-			_this.find("input, textarea, select").each ->
+			form.find("input,textarea,select").each ->
+				fvInput($(this),true)
 
-				if !$(this).hasClass("optional") && $(this).attr("type") != "submit" && $(this).attr("type") != "hidden"
+			diverror = form.find(".error").eq(0)
+			if diverror.length
+				send = false
+				top = diverror.offset().top - $("header").height() - 30
 
-					if $(this).attr("type") == "checkbox" || $(this).attr("type") == "radio"
-						if !$(this).find("input[name='"+$(this).attr("name")+"']:checked").length
-							enviar = false
-							$(this).addClass("error")
-							$(this).parent().addClass("error")
-						else
-							$(this).removeClass("error")
-							$(this).parent().removeClass("error")
-					else
-						if !$(this).val()
-							enviar = false
-							$(this).addClass("error")
-							$(this).parent().addClass("error")
-						else
-							$(this).removeClass("error")
-							$(this).parent().removeClass("error")
+				$("html,body").animate
+					scrollTop: top
 
-					if $(this).hasClass("email")
-						if validarEmail( $(this), $(this).val() ) 
-							$(this).removeClass("error")
-							$(this).parent().removeClass("error")
-						else
-							enviar = false
-							$(this).addClass("error")
-							$(this).parent().addClass("error")
+				setTimeout ->
+					diverror.find("input").eq(0).focus()
+				,500
 
-
-			if enviar == true
+			if send == true
 				if callback
 					callback()
-					enviar = false
+					send = false
 
-			#console.log enviar
-			return enviar
+			return send
+
+
+
+
+
+
+scrolls = []
+
+setScroll = (element) ->
+	id = element.attr("id")
+	if element.is(":visible")
+		if element.hasClass("iscroll-loaded")
+			scrolls[id].refresh()
+			console.log "refresh"
+		else
+			console.log id
+			scrolls[id] = new IScroll("#"+id,
+				scrollX: true
+				mouseWheel: true
+				bounce: true
+				scrollbars: "custom"
+			)
+			element.addClass("iscroll-loaded")
+
+
+

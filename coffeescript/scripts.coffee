@@ -81,6 +81,11 @@ $(document).ready ->
 	formValidation $("form.controls")
 
 
+	# Scroll
+	$.each $(".scroll"), ->
+		setScroll $(this)
+	
+
 
 
 	# Slider personalizado para el home.

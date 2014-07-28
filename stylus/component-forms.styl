@@ -3,16 +3,19 @@
 
 /* Formularios */
 
-w_form = 500px
-w_name = 70px
+w_name = 100px
+w_name_sep = 20px
 w_value = 280px
+w_form = w_name + w_name_sep + w_value
 
 .icon-error
 	display none
 	
-form.controls
+form.controls,
+form.wpcf7-form
 
 	margin 0 auto
+	max-width w_form
 
 
 	a
@@ -30,8 +33,9 @@ form.controls
 		-moz-appearance none
 		appearance none
 		vertical-align top
-		background #DDD
+		background #FFF
 		margin-bottom 1px
+		radius 0
 		&.error
 			border-color red
 		&:hover
@@ -48,17 +52,7 @@ form.controls
 
 
 	select
-		background url(../img/select.png) right center no-repeat #DDD
-		radius 0
-		&.select-80
-			width 85px
-			margin-right -3px
-			@media all and (max-width:1339px)
-				width 82px
-		&.select-100
-			width 100px
-		&.select-150
-			width 150px
+		background url(../img/select.png) right center no-repeat #FFF
 
 	textarea
 		height 70px
@@ -73,6 +67,7 @@ form.controls
 		padding 0
 		margin-right 2px
 		vertical-align -4px
+		background url(../img/checked.png) center -20px no-repeat
 		&:checked
 			background-color primary_color
 			border-color primary_color
@@ -80,8 +75,6 @@ form.controls
 
 	.radio
 		radius 15px
-	.checkbox
-		background url(../img/checked.png) center -20px no-repeat
 
 	label:hover
 		.checkbox,
@@ -123,8 +116,7 @@ form.controls
 	.control
 		display block
 		margin-bottom 5px
-		padding 5px 0
-		//text-align center
+		padding 2px 0
 		overflow hidden
 
 		.control-name
@@ -137,9 +129,12 @@ form.controls
 
 		.control-name
 			width w_name
-			padding-right 20px
+			padding-right w_name_sep
 			padding-top 8px
 			text-align right
+			&.control-name-2lines
+				padding-top 0
+				line-height 18px
 
 		.control-value
 			width w_value
@@ -152,14 +147,16 @@ form.controls
 				&.inline
 					display inline-block
 
-		.control-legend
-			padding-left 20px
-			color #999
-			margin-left w_name
-			width w_value
-			text-align left
-
-
+		.control-error
+			transition .5s ease
+			line-height 0px
+			opacity 0
+			&.in
+				line-height 20px
+				opacity 1
+				&.out
+					line-height 0px
+					opacity 0
 
 		&.error
 			.control-value
@@ -168,45 +165,19 @@ form.controls
 			.control-legend
 				color secondary_color
 
-	.icon-error
-		display none
-		position absolute
-		top 5px
-		left 105%
-		width 30px
-		height 30px
-		radius 30px
-		line-height 30px
-		text-align center
-		color white
-		background red
-		animation slideFadeLeft .2s ease
-		span
-			width 0
-			height 0
-			border 10px solid transparent
-			border-right-color red
-			display block
-			position absolute
-			top 5px
-			right 26px
-
 
 	.error
 		input, select, textarea
-			color red
 			border-color red
-			&:focus
-			&:hover
-				color red
-				border-color red
-		.icon-error
-			display block
+		.control-error
+			color red
 
 
 
-@media all and (max-width:810px)
-	form.controls
+
+@media break2
+	form.controls,
+	form.wpcf7-form
 		max-width none
 		.control
 			.control-name
@@ -219,7 +190,13 @@ form.controls
 				width auto
 
 @media break1
-	form.controls
+	form.controls,
+	form.wpcf7-form
 		.control		
 			padding-top 0
 			margin-bottom 0
+
+
+
+
+

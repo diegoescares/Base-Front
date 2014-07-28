@@ -163,12 +163,12 @@ h4
 
 
 
-.button, form.controls .button
+.button, .button.button
 	font-family fuente1
 	font-size 15px
 	line-height 18px
-	radius 3px
-	padding 8px 20px 5px
+	radius rad2
+	padding 8px 20px
 	text-decoration none
 	display inline-block
 	text-transform uppercase
@@ -194,7 +194,7 @@ h4
 		border-color darken(primary_color,30%)
 		&:hover
 			background lighten(primary_color,10%)
-	&.button-primary
+	&.button-secondary
 		color white
 		background secondary_color
 		border-color darken(secondary_color,30%)
@@ -203,16 +203,16 @@ h4
 	&.button-small
 		font-size 11px
 		line-height 11px
-		padding  8px 8px 5px
+		padding  8px 8px
 	&.button-medium
 		font-size 18px
 		line-height 18px
-		padding 10px 22px 6px
+		padding 10px 22px
 	&.button-big
 		font-size 20px
 		line-height 20px
-		padding 12px 25px 9px
-		radius 5px
+		padding 12px 25px
+		radius rad
 	&.disabled
 		background #999
 		border-color #999

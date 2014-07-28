@@ -27,6 +27,7 @@
 	<script src="js/all.js"></script>
 	<script src="js/scripts.js"></script>
 
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/styles.css" />
 	
