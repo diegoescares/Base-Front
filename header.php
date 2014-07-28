@@ -42,18 +42,50 @@
 <body>
 
 
-<div id="container">
+<div id="container" class="secretmenu-container">
 
-	<header>
+	<header class="secretmenu-translate">
 		<div class="limit">
 			<div class="inner">
 
-				dsfdsfdsf
+				<div class="secretmenu-button">
+					<div class="secretmenu-button-bars">
+						<div class="secretmenu-button-bar"></div>
+						<div class="secretmenu-button-bar"></div>
+						<div class="secretmenu-button-bar"></div>
+					</div>
+				</div>
+
+				<nav>
+					<ul>
+						<li><a href="index.php">Inicio</a></li>
+						<li><a href="example-scroll.php">Scroll</a></li>
+						<li><a href="example-forms.php">Forms</a></li>
+						<li><a href="index.php">Inicio</a></li>
+						<li><a href="example-scroll.php">Scroll</a></li>
+						<li><a href="example-forms.php">Forms</a></li>
+						<li><a href="index.php">Inicio</a></li>
+						<li><a href="example-scroll.php">Scroll</a></li>
+						<li><a href="example-forms.php">Forms</a></li>
+						<li><a href="index.php">Inicio</a></li>
+						<li><a href="example-scroll.php">Scroll</a></li>
+						<li><a href="example-forms.php">Forms</a></li>
+						<li><a href="index.php">Inicio</a></li>
+						<li><a href="example-scroll.php">Scroll</a></li>
+						<li><a href="example-forms.php">Forms</a></li>
+					</ul>
+				</nav>
 
 			</div>
 		</div>
 	</header>
 
-	<div id="body">
+	<div class="secretmenu-container-back">
+		<div class="secretmenu" data-html="header nav"></div>
+	</div>
+
+	<div class="secretmenu-container-front">
+
+		<div id="body">
 
 

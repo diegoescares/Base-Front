@@ -10,16 +10,33 @@ _out = (element) ->
 
 
 
-openMenu = ->
-	$(".responsive-openmenu").addClass("active")
-	$(".responsive-menu").addClass("active")
+secretMenuOpen = (direction="left") ->
 
-closeMenu = ->
-	$(".responsive-openmenu").removeClass("active")
-	$(".responsive-menu").addClass("out")
+	$(".secretmenu").html( $($(".secretmenu").attr("data-html")).html() )
+
+	$("body").addClass("secretmenu-in")
+	if direction=="right"
+		$("body").addClass("secretmenu-right")
+	else
+		$("body").addClass("secretmenu-left")
+
+
+secretMenuClose = ->
+	$("body").addClass("secretmenu-out")
 	setTimeout ->
-		$(".responsive-menu").removeClass("active out")
+		$("body").removeClass("secretmenu-in secretmenu-out secretmenu-left secretmenu-right")
 	,500
+
+secretMenu = ->
+	$(".secretmenu-button").click ->
+		if !$("body").hasClass("secretmenu-in")
+			secretMenuOpen()
+		else
+			secretMenuClose()
+	$(".secretmenu-container-front").click ->
+		if $("body").hasClass("secretmenu-in")
+			secretMenuClose()
+
 
 
 

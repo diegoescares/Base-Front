@@ -29,7 +29,10 @@
             </div>
         </div>
 
+    </div>
 
+    <div class="inner">
+    
         <div class="scroll" id="scroll2" style="height:200px;">
             <div class="scroll-inner">
                 <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae esse earum cupiditate architecto officiis corporis, labore, dicta cumque neque ipsam unde nisi reiciendis in minima modi perspiciatis atque porro cum.</div>

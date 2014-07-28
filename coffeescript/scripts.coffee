@@ -23,6 +23,8 @@ $(document).ready ->
 
 
 
+	secretMenu()
+
 
 	# Tooltips
 	$("[data-tooltip]").each ->

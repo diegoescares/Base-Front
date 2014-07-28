@@ -81,3 +81,15 @@ placeholder()
 	&:-ms-input-placeholder
 		color arguments
 
+overflow()
+	overflow arguments
+	if arguments == "auto" || arguments == "scroll"
+		-webkit-overflow-scrolling touch
+
+tap()
+	if arguments == "0"
+		-webkit-tap-highlight-color rgba(0,0,0,0)
+	else
+		-webkit-tap-highlight-color arguments
+
+

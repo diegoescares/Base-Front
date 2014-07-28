@@ -81,6 +81,10 @@ h4 {
   font-size: 16px;
   line-height: 20px;
 }
+ul,
+ol {
+  list-style-type: none;
+}
 .inner {
   padding: 20px;
 }
@@ -95,7 +99,7 @@ h4 {
   position: relative;
 }
 .in {
-  display: block !important;
+  display: block;
   -webkit-animation: fadeIn 0.5s ease both;
   -moz-animation: fadeIn 0.5s ease both;
   -ms-animation: fadeIn 0.5s ease both;
@@ -182,6 +186,12 @@ h4 {
 .content iframe {
   max-width: 100%;
   display: block;
+}
+.content ul {
+  list-style-type: disc;
+}
+.content ol {
+  list-style-type: decimal;
 }
 .content ol,
 .content ul {
@@ -1200,6 +1210,144 @@ h4 {
     width: 100%;
   }
 }
+.secretmenu-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.secretmenu-container .secretmenu-container-front {
+  background: #eee;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.secretmenu-container .secretmenu-container-back {
+  background: #444;
+  position: absolute;
+  top: 0;
+  width: 240px;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+body.secretmenu-in .secretmenu-container-back {
+  display: block;
+}
+body.secretmenu-in.secretmenu-left .secretmenu-container-back {
+  left: 0;
+}
+body.secretmenu-in.secretmenu-left .secretmenu-container-front,
+body.secretmenu-in.secretmenu-left .secretmenu-translate {
+  -webkit-transform: translateX(240px);
+  -moz-transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -o-transform: translateX(240px);
+  transform: translateX(240px);
+}
+body.secretmenu-in.secretmenu-right .secretmenu-container-back {
+  right: 0;
+}
+body.secretmenu-in.secretmenu-right .secretmenu-container-front,
+body.secretmenu-in.secretmenu-right .secretmenu-translate {
+  -webkit-transform: translateX(-240px);
+  -moz-transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -o-transform: translateX(-240px);
+  transform: translateX(-240px);
+}
+body.secretmenu-in.secretmenu-out .secretmenu-container-front,
+body.secretmenu-in.secretmenu-out .secretmenu-translate {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+.secretmenu-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #3cc;
+  width: 50px;
+  height: 50px;
+  display: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-animation: fadeIn 0.5s ease;
+  -moz-animation: fadeIn 0.5s ease;
+  -ms-animation: fadeIn 0.5s ease;
+  -o-animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s ease;
+}
+.secretmenu-button .secretmenu-button-bars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 16px;
+  margin-left: -12px;
+  margin-top: -8px;
+}
+.secretmenu-button .secretmenu-button-bars .secretmenu-button-bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.secretmenu-button .secretmenu-button-bars .secretmenu-button-bar:nth-child(1) {
+  top: 0;
+}
+.secretmenu-button .secretmenu-button-bars .secretmenu-button-bar:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+}
+.secretmenu-button .secretmenu-button-bars .secretmenu-button-bar:nth-child(3) {
+  bottom: 0;
+}
+body.secretmenu-in .secretmenu-button .secretmenu-button-bars .secretmenu-button-bar {
+  -moz-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  -ms-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+body.secretmenu-in .secretmenu-button .secretmenu-button-bars .secretmenu-button-bar:nth-child(2) {
+  -webkit-transform: scale(0, 1);
+  -moz-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  -o-transform: scale(0, 1);
+  transform: scale(0, 1);
+}
+body.secretmenu-in .secretmenu-button .secretmenu-button-bars .secretmenu-button-bar:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+  -moz-transform: rotate(45deg) translate(5px, 5px);
+  -ms-transform: rotate(45deg) translate(5px, 5px);
+  -o-transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
+}
+body.secretmenu-in .secretmenu-button .secretmenu-button-bars .secretmenu-button-bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(5px, -5px);
+  -moz-transform: rotate(-45deg) translate(5px, -5px);
+  -ms-transform: rotate(-45deg) translate(5px, -5px);
+  -o-transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 .isotope,
 .isotope .isotope-item {
   -webkit-transition-duration: 0.6s;
@@ -1316,7 +1464,7 @@ form.wpcf7-form .radio {
   padding: 0;
   margin-right: 2px;
   vertical-align: -4px;
-  background: url("../img/checked.png") center -20px no-repeat;
+  background: url("../img/checked.png") center -20px no-repeat #fff;
 }
 form.controls .checkbox:checked,
 form.wpcf7-form .checkbox:checked,
@@ -1510,6 +1658,7 @@ form.wpcf7-form .error .control-error {
   width: 100%;
   height: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   -webkit-overflow-scrolling: touch;
   -webkit-animation: fadeIn 0.5s ease;
   -moz-animation: fadeIn 0.5s ease;
@@ -1845,4 +1994,55 @@ form.wpcf7-form .error .control-error {
 }
 .scroll:hover .iScrollVerticalScrollbar {
   opacity: 0.5;
+}
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  background: #555;
+  z-index: 2;
+  height: 70px;
+  overflow: hidden;
+}
+header .inner {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+header ul li {
+  display: inline-block;
+}
+header ul li a {
+  display: block;
+  padding: 25px 10px;
+}
+#body {
+  padding-top: 70px;
+}
+@media all and (max-width:479px) {
+  header {
+    height: 50px;
+  }
+  header .secretmenu-button {
+    display: block;
+  }
+  header ul {
+    padding-left: 50px;
+  }
+  header ul li a {
+    padding: 15px 10px;
+  }
+  #body {
+    padding-top: 50px;
+  }
+}
+.secretmenu a {
+  padding: 15px;
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
