@@ -1,0 +1,64 @@
+
+
+
+tooltip_triangle = 5px
+tooltip_width    = 200px
+tooltip_color    = secondary_color
+
+.tooltip-parent
+	position relative
+
+.tooltip
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	z-index 100
+	display block
+	&:hover
+		.tooltip-container
+			display block
+	.tooltip-container
+		width tooltip_width
+		position absolute
+		display none
+		animation fadeIn .2s ease
+		.tooltip-triangle
+			border tooltip_triangle solid transparent
+			position absolute
+			display block
+		.tooltip-content
+			padding 10px
+			background tooltip_color
+			display block
+			color white
+			text-align center
+			radius 2px
+			position relative
+
+	&.tooltip-bottom
+		.tooltip-container
+			left 50%
+			top 100%
+			.tooltip-content
+				margin-top tooltip_triangle
+				left (tooltip_width/-2)
+			.tooltip-triangle
+				border-bottom-color tooltip_color
+				left - tooltip_triangle
+				top - tooltip_triangle
+
+	&.tooltip-top
+		.tooltip-container
+			left 50%
+			bottom 100%
+			.tooltip-content
+				margin-bottom tooltip_triangle
+				left (tooltip_width/-2)
+			.tooltip-triangle
+				border-top-color tooltip_color
+				left - tooltip_triangle
+				bottom - tooltip_triangle
+
+

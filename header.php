@@ -92,7 +92,7 @@
 								<li><a href="index.php">12 dolor sit amet</a></li>
 							</ul>
 						</li>
-						<li><a href="example-scroll.php">Scroll lorem ipsum</a>
+						<li><a href="example-scroll.php">Scroll</a>
 							<ul>
 								<li><a href="example-scroll.php">1</a></li>
 								<li><a href="example-scroll.php">2</a></li>
@@ -104,7 +104,8 @@
 								<li><a href="example-scroll.php">8</a></li>
 							</ul>
 						</li>
-						<li><a href="example-forms.php">Forms dolor amet</a></li>
+						<li><a href="example-forms.php">Forms</a></li>
+						<li><a href="example-tooltips.php">Tooltips</a></li>
 					</ul>
 				</nav>
 

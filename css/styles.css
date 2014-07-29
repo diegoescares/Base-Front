@@ -2235,6 +2235,75 @@ form.wpcf7-form .error .control-error {
 .scroll:hover .iScrollVerticalScrollbar {
   opacity: 0.5;
 }
+.tooltip-parent {
+  position: relative;
+}
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: block;
+}
+.tooltip:hover .tooltip-container {
+  display: block;
+}
+.tooltip .tooltip-container {
+  width: 200px;
+  position: absolute;
+  display: none;
+  -webkit-animation: fadeIn 0.2s ease;
+  -moz-animation: fadeIn 0.2s ease;
+  -ms-animation: fadeIn 0.2s ease;
+  -o-animation: fadeIn 0.2s ease;
+  animation: fadeIn 0.2s ease;
+}
+.tooltip .tooltip-container .tooltip-triangle {
+  border: 5px solid transparent;
+  position: absolute;
+  display: block;
+}
+.tooltip .tooltip-container .tooltip-content {
+  padding: 10px;
+  background: #399;
+  display: block;
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  position: relative;
+}
+.tooltip.tooltip-bottom .tooltip-container {
+  left: 50%;
+  top: 100%;
+}
+.tooltip.tooltip-bottom .tooltip-container .tooltip-content {
+  margin-top: 5px;
+  left: -100px;
+}
+.tooltip.tooltip-bottom .tooltip-container .tooltip-triangle {
+  border-bottom-color: #399;
+  left: -5px;
+  top: -5px;
+}
+.tooltip.tooltip-top .tooltip-container {
+  left: 50%;
+  bottom: 100%;
+}
+.tooltip.tooltip-top .tooltip-container .tooltip-content {
+  margin-bottom: 5px;
+  left: -100px;
+}
+.tooltip.tooltip-top .tooltip-container .tooltip-triangle {
+  border-top-color: #399;
+  left: -5px;
+  bottom: -5px;
+}
 header {
   position: fixed;
   left: 0;

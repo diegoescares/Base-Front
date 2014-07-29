@@ -25,11 +25,8 @@ $(document).ready ->
 
 	secretMenu()
 
-
-	# Tooltips
-	$("[data-tooltip]").each ->
-		$(this).append "<span class='newtooltip'><span class='newtooltip-container'><span class='newtooltip-triangle'></span><span class='newtooltip-content'>" + $(this).attr("data-tooltip") + "</span></span></span>"
-
+	setTooltips()
+	
 
 	# Click tabs
 	$(".box-tabs .box-tabs-header a").live "click", ->
