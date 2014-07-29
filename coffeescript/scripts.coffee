@@ -16,8 +16,8 @@ $(document).ready ->
 		resizing = true
 		clearTimeout(resizing_timeout)
 		resizing_timeout = setTimeout ->
-			$container.isotope
-				relayout: true
+			#$container.isotope
+			#	relayout: true
 			resizing = false
 		,200
 
@@ -40,8 +40,8 @@ $(document).ready ->
 		parent.find(".box-tabs-header a").eq(index).addClass "active"
 		parent.find(".box-tabs-content").removeClass "active"
 		parent.find(".box-tabs-content").eq(index).addClass "active"
-		$container.isotope
-			relayout: true
+		#$container.isotope
+		#	relayout: true
 		false
 
 
@@ -64,16 +64,16 @@ $(document).ready ->
 				$newItems = html.find(".articles >")
 				#console.log $newItems
 				link_next = html.find(".load-more").attr("href")
-				$container.isotope( 'insert', $newItems )
+				#$container.isotope( 'insert', $newItems )
 				setTimeout ->
 					$(".load-more").html("CARGAR MÁS CONTENIDO").attr "href", link_next
-					$container.isotope
-						relayout: true
+					#$container.isotope
+					#	relayout: true
 					equidist()
 				,500
 				$(window).load ->
-					$container.isotope
-						relayout: true
+					#$container.isotope
+					#	relayout: true
 					equidist()
 		return false
 

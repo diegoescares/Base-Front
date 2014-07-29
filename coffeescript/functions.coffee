@@ -10,32 +10,62 @@ _out = (element) ->
 
 
 
-secretMenuOpen = (direction="left") ->
-
-	$(".secretmenu").html( $($(".secretmenu").attr("data-html")).html() )
-
-	$("body").addClass("secretmenu-in")
-	if direction=="right"
-		$("body").addClass("secretmenu-right")
-	else
-		$("body").addClass("secretmenu-left")
-
-
-secretMenuClose = ->
-	$("body").addClass("secretmenu-out")
-	setTimeout ->
-		$("body").removeClass("secretmenu-in secretmenu-out secretmenu-left secretmenu-right")
-	,500
 
 secretMenu = ->
 	$(".secretmenu-button").click ->
 		if !$("body").hasClass("secretmenu-in")
-			secretMenuOpen()
+			secretMenuOpen( $("header nav").html() )
 		else
 			secretMenuClose()
 	$(".secretmenu-container-front").click ->
 		if $("body").hasClass("secretmenu-in")
 			secretMenuClose()
+
+secretMenuOpen = (html,children=false,direction="left") ->
+
+	length    = $(".secretmenu").length + 1
+	container = '<div class="secretmenu secretmenu-lvl-'+($(".secretmenu").length + 1)+'"></div>'
+
+	if !children
+		$(".secretmenu-container-back").html(container) 
+		back =""
+	else
+		$(".secretmenu-container-back").append(container)
+		back ='<a href="#" class="secretmenu-back"><i class="fa fa-chevron-left"></i> Atrás</a>'
+
+	$(".secretmenu").eq(-1).html('<div class="secretmenu-inner">'+back+html+'</div>')
+
+	$("body").addClass("secretmenu-in secretmenu-"+direction)
+	$("body").attr("data-secretmenu-lvl",length)
+
+	# Si tiene hijos
+	$(".secretmenu ul li a").each ->
+		if $(this).parent().find("ul").length
+			if !$(this).hasClass("secretmenu-parent")
+				$(this).addClass("secretmenu-parent").prepend('<i class="fa fa-chevron-right"></i>')
+
+	# Click en item de menú
+	$(".secretmenu ul li a.secretmenu-parent").unbind("click").bind "click", ->
+		secretMenuOpen("<ul>"+$(this).parent().find("ul").html()+"</ul>",true)
+		false
+
+	$(".secretmenu a.secretmenu-back").unbind("click").bind "click", ->
+		lastmenu = parseInt $("body").attr("data-secretmenu-lvl")
+		$("body").attr("data-secretmenu-lvl",(lastmenu-1))
+		$(".secretmenu.secretmenu-lvl-"+lastmenu).addClass("out")
+		setTimeout ->
+			$(".secretmenu.secretmenu-lvl-"+lastmenu).remove()
+		,700
+		false
+
+secretMenuClose = ->
+	$("body").addClass("secretmenu-out")
+	setTimeout ->
+		$("body").removeClass "secretmenu-in secretmenu-out secretmenu-left secretmenu-right secretmenu-lvl-"+$("body").attr("data-secretmenu-lvl")
+		$("body").removeAttr("data-secretmenu-lvl")
+		$(".secretmenu").remove()
+	,700
+
 
 
 

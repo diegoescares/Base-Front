@@ -12,30 +12,10 @@ _out = function(element) {
   }, 500);
 };
 
-secretMenuOpen = function(direction) {
-  if (direction == null) {
-    direction = "left";
-  }
-  $(".secretmenu").html($($(".secretmenu").attr("data-html")).html());
-  $("body").addClass("secretmenu-in");
-  if (direction === "right") {
-    return $("body").addClass("secretmenu-right");
-  } else {
-    return $("body").addClass("secretmenu-left");
-  }
-};
-
-secretMenuClose = function() {
-  $("body").addClass("secretmenu-out");
-  return setTimeout(function() {
-    return $("body").removeClass("secretmenu-in secretmenu-out secretmenu-left secretmenu-right");
-  }, 500);
-};
-
 secretMenu = function() {
   $(".secretmenu-button").click(function() {
     if (!$("body").hasClass("secretmenu-in")) {
-      return secretMenuOpen();
+      return secretMenuOpen($("header nav").html());
     } else {
       return secretMenuClose();
     }
@@ -45,6 +25,58 @@ secretMenu = function() {
       return secretMenuClose();
     }
   });
+};
+
+secretMenuOpen = function(html, children, direction) {
+  var back, container, length;
+  if (children == null) {
+    children = false;
+  }
+  if (direction == null) {
+    direction = "left";
+  }
+  length = $(".secretmenu").length + 1;
+  container = '<div class="secretmenu secretmenu-lvl-' + ($(".secretmenu").length + 1) + '"></div>';
+  if (!children) {
+    $(".secretmenu-container-back").html(container);
+    back = "";
+  } else {
+    $(".secretmenu-container-back").append(container);
+    back = '<a href="#" class="secretmenu-back"><i class="fa fa-chevron-left"></i> Atrás</a>';
+  }
+  $(".secretmenu").eq(-1).html('<div class="secretmenu-inner">' + back + html + '</div>');
+  $("body").addClass("secretmenu-in secretmenu-" + direction);
+  $("body").attr("data-secretmenu-lvl", length);
+  $(".secretmenu ul li a").each(function() {
+    if ($(this).parent().find("ul").length) {
+      if (!$(this).hasClass("secretmenu-parent")) {
+        return $(this).addClass("secretmenu-parent").prepend('<i class="fa fa-chevron-right"></i>');
+      }
+    }
+  });
+  $(".secretmenu ul li a.secretmenu-parent").unbind("click").bind("click", function() {
+    secretMenuOpen("<ul>" + $(this).parent().find("ul").html() + "</ul>", true);
+    return false;
+  });
+  return $(".secretmenu a.secretmenu-back").unbind("click").bind("click", function() {
+    var lastmenu;
+    lastmenu = parseInt($("body").attr("data-secretmenu-lvl"));
+    $("body").attr("data-secretmenu-lvl", lastmenu - 1);
+    $(".secretmenu.secretmenu-lvl-" + lastmenu).addClass("out");
+    setTimeout(function() {
+      return $(".secretmenu.secretmenu-lvl-" + lastmenu).remove();
+    }, 700);
+    return false;
+  });
+};
+
+secretMenuClose = function() {
+  $("body").addClass("secretmenu-out");
+  return setTimeout(function() {
+    $("body").removeClass("secretmenu-in secretmenu-out secretmenu-left secretmenu-right secretmenu-lvl-" + $("body").attr("data-secretmenu-lvl"));
+    $("body").removeAttr("data-secretmenu-lvl");
+    return $(".secretmenu").remove();
+  }, 700);
 };
 
 popupWindow = function(url, w, h) {
@@ -329,9 +361,6 @@ $(document).ready(function() {
     resizing = true;
     clearTimeout(resizing_timeout);
     return resizing_timeout = setTimeout(function() {
-      $container.isotope({
-        relayout: true
-      });
       return resizing = false;
     }, 200);
   });
@@ -347,9 +376,6 @@ $(document).ready(function() {
     parent.find(".box-tabs-header a").eq(index).addClass("active");
     parent.find(".box-tabs-content").removeClass("active");
     parent.find(".box-tabs-content").eq(index).addClass("active");
-    $container.isotope({
-      relayout: true
-    });
     return false;
   });
   $(".goto").click(function() {
@@ -368,18 +394,11 @@ $(document).ready(function() {
         html = $(html);
         $newItems = html.find(".articles >");
         link_next = html.find(".load-more").attr("href");
-        $container.isotope('insert', $newItems);
         setTimeout(function() {
           $(".load-more").html("CARGAR MÁS CONTENIDO").attr("href", link_next);
-          $container.isotope({
-            relayout: true
-          });
           return equidist();
         }, 500);
         return $(window).load(function() {
-          $container.isotope({
-            relayout: true
-          });
           return equidist();
         });
       }

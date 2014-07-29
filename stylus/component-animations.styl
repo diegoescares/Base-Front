@@ -41,14 +41,36 @@
 
 
 
-// Slide Left-right
+// Slide Left
 
 @keyframes slideLeft
 	0%
-		transform translateY(-100%)
+		transform translateX(-100%)
+
+@keyframes slideLeftOut
+	100%
+		transform translateX(100%)
+
+@keyframes slideMiddleLeft
+	0%
+		transform translateX(-50%)
+
+
+
+// Slide Right
+
 @keyframes slideRight
 	0%
-		transform translateY(100%)
+		transform translateX(100%)
+
+@keyframes slideRightOut
+	100%
+		transform translateX(-100%)
+
+@keyframes slideMiddleRight
+	0%
+		transform translateX(50%)
+
 
 
 
