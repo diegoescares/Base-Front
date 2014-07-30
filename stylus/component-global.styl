@@ -173,17 +173,14 @@ ol
 
 .button, .button.button
 	font-family fuente1
-	font-size 15px
+	font-size 14px
 	line-height 18px
 	radius rad2
-	padding 8px 20px
+	padding 6px 15px
 	text-decoration none
 	display inline-block
 	text-transform uppercase
 	font-weight bold
-	border 2px solid #CCC
-	border-top 0
-	border-left 0
 	border-right-width 1px
 	width auto
 	margin-bottom 2px
@@ -195,23 +192,20 @@ ol
 		cursor pointer
 		color #FFF
 		background primary_color
-		border-color darken(primary_color,30%)
 	&.button-primary
 		color white
 		background primary_color
-		border-color darken(primary_color,30%)
 		&:hover
 			background lighten(primary_color,10%)
 	&.button-secondary
 		color white
-		background secondary_color
-		border-color darken(secondary_color,30%)
+		background lighten(secondary_color,10%)
 		&:hover
-			background lighten(secondary_color,10%)
+			background lighten(secondary_color,20%)
 	&.button-small
-		font-size 11px
+		font-size 12px
 		line-height 11px
-		padding  8px 8px
+		padding 6px 8px
 	&.button-medium
 		font-size 18px
 		line-height 18px
@@ -221,7 +215,14 @@ ol
 		line-height 20px
 		padding 12px 25px
 		radius rad
-	&.disabled
+	&.button-line
+		border 1px solid #DDD
+		background transparent
+		color white
+		&:hover
+			background primary_color
+			border-color primary_color
+	&.button-disabled
 		background #999
 		border-color #999
 		&:hover

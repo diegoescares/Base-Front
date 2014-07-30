@@ -225,21 +225,18 @@ ol {
 .button,
 .button.button {
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 18px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  padding: 8px 20px;
+  padding: 6px 15px;
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
   font-weight: bold;
-  border: 2px solid #ccc;
-  border-top: 0;
-  border-left: 0;
   border-right-width: 1px;
   width: auto;
   margin-bottom: 2px;
@@ -257,13 +254,11 @@ ol {
   cursor: pointer;
   color: #fff;
   background: #3cc;
-  border-color: #248f8f;
 }
 .button.button-primary,
 .button.button.button-primary {
   color: #fff;
   background: #3cc;
-  border-color: #248f8f;
 }
 .button.button-primary:hover,
 .button.button.button-primary:hover {
@@ -272,18 +267,17 @@ ol {
 .button.button-secondary,
 .button.button.button-secondary {
   color: #fff;
-  background: #399;
-  border-color: #246b6b;
+  background: #3bb0b0;
 }
 .button.button-secondary:hover,
 .button.button.button-secondary:hover {
-  background: #3bb0b0;
+  background: #47c2c2;
 }
 .button.button-small,
 .button.button.button-small {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 11px;
-  padding: 8px 8px;
+  padding: 6px 8px;
 }
 .button.button-medium,
 .button.button.button-medium {
@@ -302,13 +296,24 @@ ol {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-.button.disabled,
-.button.button.disabled {
+.button.button-line,
+.button.button.button-line {
+  border: 1px solid #ddd;
+  background: transparent;
+  color: #fff;
+}
+.button.button-line:hover,
+.button.button.button-line:hover {
+  background: #3cc;
+  border-color: #3cc;
+}
+.button.button-disabled,
+.button.button.button-disabled {
   background: #999;
   border-color: #999;
 }
-.button.disabled:hover,
-.button.button.disabled:hover {
+.button.button-disabled:hover,
+.button.button.button-disabled:hover {
   background: #999;
   border-color: #999;
   cursor: default;
