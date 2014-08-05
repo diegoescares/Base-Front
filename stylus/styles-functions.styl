@@ -92,4 +92,28 @@ tap()
 	else
 		-webkit-tap-highlight-color arguments
 
+triangle(width,direction,color)
+	position absolute
+	border width solid transparent
+	if direction=="top"
+		border-bottom-color color
+		bottom 100%
+		left 50%
+		margin-left width*-1
+	if direction=="right"
+		border-left-color color
+		left 100%
+		top 50%
+		margin-top width*-1
+	if direction=="bottom"
+		border-top-color color
+		top 100%
+		left 50%
+		margin-left width*-1
+	if direction=="left"
+		border-right-color color
+		right 100%
+		top 50%
+		margin-top width*-1
+
 
