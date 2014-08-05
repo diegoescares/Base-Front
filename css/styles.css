@@ -95,7 +95,7 @@ ol {
   }
 }
 .limit {
-  max-width: limit;
+  max-width: 1260px;
   margin: 0 auto;
   position: relative;
 }
@@ -1400,7 +1400,7 @@ ol {
   }
 }
 .secretmenu-container .secretmenu-container-front {
-  background: #eee;
+  background: #fff;
   position: relative;
   height: 100%;
   width: 100%;
@@ -2302,48 +2302,82 @@ form.wpcf7-form .error .control-error {
   left: -5px;
   bottom: -5px;
 }
-header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background: #444;
-  z-index: 2;
-  height: 70px;
-  overflow: hidden;
-}
-header .inner {
+header .header-top {
   padding-top: 0;
   padding-bottom: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
-header ul li {
+header .header-top .inner {
+  background: #444;
+  padding: 0;
+  height: 70px;
+}
+header .header-top ul {
+  padding: 0 15px;
+}
+header .header-top ul li {
   display: inline-block;
 }
-header ul li a {
+header .header-top ul li a {
   display: block;
   padding: 25px 10px;
 }
-header ul li ul {
+header .header-top ul li ul {
   display: none;
+}
+header .header-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+header .header-left .limit {
+  height: 100%;
+}
+header .header-left .inner {
+  width: 260px;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  background: #ddd;
+  padding-top: 70px;
+}
+header .header-left ul li a {
+  display: block;
+  padding: 15px 25px;
 }
 #body {
   padding-top: 70px;
+  margin-left: 260px;
+  position: relative;
+  z-index: 4;
 }
 @media all and (max-width:719px) {
-  header {
-    height: 50px;
-  }
   header .secretmenu-button {
     display: block;
   }
-  header ul {
-    padding-left: 50px;
+  header .header-top .inner {
+    height: 50px;
   }
-  header ul li a {
+  header .header-top ul {
+    margin-left: 50px;
+  }
+  header .header-top ul li a {
+    display: block;
     padding: 15px 10px;
+  }
+  header .header-left {
+    display: none;
   }
   #body {
     padding-top: 50px;
+    margin-left: 0;
   }
 }
 .secretmenu a {

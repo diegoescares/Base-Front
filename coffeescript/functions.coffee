@@ -14,7 +14,7 @@ _out = (element) ->
 secretMenu = ->
 	$(".secretmenu-button").click ->
 		if !$("body").hasClass("secretmenu-in")
-			secretMenuOpen( $("header nav").html() )
+			secretMenuOpen( $(".secretmenu-content").html() )
 		else
 			secretMenuClose()
 	$(".secretmenu-container-front").click ->

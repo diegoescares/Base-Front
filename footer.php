@@ -1,19 +1,8 @@
 
 
 
-
-	</div><!-- #body -->
-
-	<footer>
-		<div class="limit">
-			<div class="inner">
-					
-				Footer
-
-			</div>
-		</div>
-	</footer>
-
+			</div><!-- #body -->
+		</div><!-- .limit -->
 
 
 	</div><!-- #container-back -->
@@ -46,6 +35,9 @@ window.___gcfg = {lang: 'es-419'};
 
 <!-- Pinterest -->
 <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+
+</body>
+</html>cript" async src="//assets.pinterest.com/js/pinit.js"></script>
 
 </body>
 </html>
