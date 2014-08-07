@@ -115,7 +115,7 @@ openAlert = (options) ->
 	options.close = true if options.close == undefined
 
 	if options.close == true
-		close = '<button class="close false">X</button>'
+		close = '<button class="close false"><i class="fa fa-times"></i></button>'
 
 	if options.buttons
 		buttons += options.buttons + " "
