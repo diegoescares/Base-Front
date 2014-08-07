@@ -4,6 +4,11 @@ $(document).ready ->
 
 
 
+	if isMobile()
+		$("body").addClass "mobile"
+	else
+		$("body").addClass "desktop"
+
 
 
 	resizing_timeout = false
@@ -93,11 +98,6 @@ $(document).ready ->
 
 		if $("#sliderhome").length
 
-			_n_slides = 0
-			$("#sliderhome .royalSlider .rsContent").each ->
-				$(this).attr("data-slide",$(this).index())
-				_n_slides++
-			
 			$("#sliderhome .royalSlider").royalSlider
 				imageScaleMode: 'fit'
 				sliderDrag: false
