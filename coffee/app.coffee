@@ -1,6 +1,8 @@
 
 
-app.init = ->
+app =
+
+	init: ->
 
 		# Clase IE
 		$("body").addClass "ie" + parseInt($.browser.version) if $.browser.msie
@@ -48,19 +50,3 @@ app.init = ->
 
 		# Plugins
 		#app.plugins.init()
-
-		# Sitio
-		app.site.init()
-
-
-app.site =
-	init: ->
-		console.log "osea helouuuu"
-
-
-
-
-
-
-$(document).ready ->
-	app.init()

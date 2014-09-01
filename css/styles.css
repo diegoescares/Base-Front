@@ -30,7 +30,7 @@ select {
   transition: 0.2s ease;
 }
 a {
-  color: #c00;
+  color: #0cc;
   text-decoration: none;
 }
 a,
@@ -58,7 +58,7 @@ h1 {
   font-size: 64px;
   line-height: 54px;
   font-weight: bold;
-  color: #c00;
+  color: #0cc;
 }
 @media all and (max-width:479px) {
   h1 {
@@ -158,13 +158,13 @@ ol {
 }
 .content h1 {
   margin-bottom: 20px;
-  color: #c00;
+  color: #0cc;
 }
 .content h2,
 .content h3,
 .content h4 {
   margin-bottom: 10px;
-  color: #c00;
+  color: #0cc;
   padding-top: 10px;
 }
 .content p,
@@ -195,7 +195,7 @@ ol {
 .content blockquote {
   padding: 15px 15px 1px 35px;
   background: url("../img/icons/cite.png") 15px 15px no-repeat #fff;
-  border-left: 2px solid #c00;
+  border-left: 2px solid #0cc;
   font-size: 1.2em;
   line-height: 1.25em;
   font-style: italic;
@@ -244,25 +244,25 @@ ol {
 .button.button:hover {
   cursor: pointer;
   color: #fff;
-  background: #c00;
+  background: #0cc;
 }
 .button.button-primary,
 .button.button.button-primary {
   color: #fff;
-  background: #c00;
+  background: #0cc;
 }
 .button.button-primary:hover,
 .button.button.button-primary:hover {
-  background: #eb0000;
+  background: #00ebeb;
 }
 .button.button-secondary,
 .button.button.button-secondary {
   color: #fff;
-  background: #eb0000;
+  background: #00ebeb;
 }
 .button.button-secondary:hover,
 .button.button.button-secondary:hover {
-  background: #ff0a0a;
+  background: #0affff;
 }
 .button.button-small,
 .button.button.button-small {
@@ -295,8 +295,8 @@ ol {
 }
 .button.button-line:hover,
 .button.button.button-line:hover {
-  background: #c00;
-  border-color: #c00;
+  background: #0cc;
+  border-color: #0cc;
 }
 .button.button-disabled,
 .button.button.button-disabled {
@@ -531,7 +531,7 @@ ol {
   position: absolute;
   top: 0;
   left: 0;
-  background: #c00;
+  background: #0cc;
   width: 50px;
   height: 50px;
   display: none;
@@ -660,7 +660,7 @@ body.secretmenu-in .secretmenu-button .secretmenu-button-bars .secretmenu-button
 .alert .alert-box h2 {
   padding: 0;
   margin-bottom: 10px;
-  color: #c00;
+  color: #0cc;
   text-align: center;
 }
 .alert .alert-box p {
@@ -700,7 +700,7 @@ body.secretmenu-in .secretmenu-button .secretmenu-button-bars .secretmenu-button
   color: #fff;
 }
 .alert .alert-box .inner .close:hover {
-  background: #eb0000;
+  background: #00ebeb;
 }
 .alert .alert-box .inner .botones {
   text-align: right;
@@ -809,8 +809,8 @@ form.controls .checkbox:checked,
 form.wpcf7-form .checkbox:checked,
 form.controls .radio:checked,
 form.wpcf7-form .radio:checked {
-  background-color: #c00;
-  border-color: #c00;
+  background-color: #0cc;
+  border-color: #0cc;
   background-position: center center;
 }
 form.controls .radio,
@@ -831,7 +831,7 @@ form.controls label:hover .checkbox:checked,
 form.wpcf7-form label:hover .checkbox:checked,
 form.controls label:hover .radio:checked,
 form.wpcf7-form label:hover .radio:checked {
-  background-color: #c00;
+  background-color: #0cc;
 }
 form.controls .number,
 form.wpcf7-form .number {
@@ -850,7 +850,7 @@ form.wpcf7-form .number button {
 }
 form.controls .number button:hover,
 form.wpcf7-form .number button:hover {
-  background: #c00;
+  background: #0cc;
 }
 form.controls .number .mas,
 form.wpcf7-form .number .mas {
@@ -942,11 +942,11 @@ form.controls .control.error .control-value select,
 form.wpcf7-form .control.error .control-value select,
 form.controls .control.error .control-value textarea,
 form.wpcf7-form .control.error .control-value textarea {
-  border-color: #c00;
+  border-color: #0cc;
 }
 form.controls .control.error .control-legend,
 form.wpcf7-form .control.error .control-legend {
-  color: #c00;
+  color: #0cc;
 }
 form.controls .error input,
 form.wpcf7-form .error input,
@@ -1004,7 +1004,7 @@ form.wpcf7-form .error .control-error {
   transition: all 0.2s ease;
 }
 .scroll .iScrollVerticalScrollbar .iScrollIndicator {
-  background: #c00;
+  background: #0cc;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -1047,7 +1047,7 @@ form.wpcf7-form .error .control-error {
   float: left;
   height: 75px;
   width: 110px;
-  background: #c00;
+  background: #0cc;
   overflow: hidden;
 }
 .rsThumbs .rsThumbsContainer .rsThumb img {
@@ -1284,7 +1284,7 @@ form.wpcf7-form .error .control-error {
 }
 .tooltip .tooltip-container .tooltip-content {
   padding: 10px;
-  background: #c00;
+  background: #0cc;
   display: block;
   color: #fff;
   text-align: center;
@@ -1304,7 +1304,7 @@ form.wpcf7-form .error .control-error {
   left: -100px;
 }
 .tooltip.tooltip-bottom .tooltip-container .tooltip-triangle {
-  border-bottom-color: #c00;
+  border-bottom-color: #0cc;
   left: -5px;
   top: -5px;
 }
@@ -1317,7 +1317,7 @@ form.wpcf7-form .error .control-error {
   left: -100px;
 }
 .tooltip.tooltip-top .tooltip-container .tooltip-triangle {
-  border-top-color: #c00;
+  border-top-color: #0cc;
   left: -5px;
   bottom: -5px;
 }

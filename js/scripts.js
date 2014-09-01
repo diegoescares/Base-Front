@@ -1,6 +1,41 @@
 (function() {
   var app;
 
+  app = {
+    init: function() {
+      if ($.browser.msie) {
+        $("body").addClass("ie" + parseInt($.browser.version));
+      }
+      if (app.isMobile()) {
+        $(".displayscroll").addClass("in");
+      }
+      if (($.browser.msie && parseInt($.browser.version) <= 8) || navigator.appVersion.indexOf('Trident/') !== -1) {
+        $(".displayscroll").addClass("in");
+        $("body").addClass("ie");
+        if (parseInt($.browser.version) <= 7) {
+          app.alert.open({
+            title: "Estás usando un navegador muy antiguo",
+            content: "Actualiza tu navegador ahora y disfruta de una mejor experiencia en Falabella Novios.",
+            buttons: "<a href='http://browsehappy.com/?locale=es' target='_blank' class='button button-primary button-big'>Actualizar ahora</a>",
+            "static": true
+          });
+        }
+      } else {
+        $("head").append("<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>");
+      }
+      app.secretMenu.init();
+      app.shares.init();
+      app.tooltips();
+      app.alert.equidist();
+      setTimeout(function() {
+        return app.alert.equidist();
+      }, 1000);
+      app.validation.form($(".controls"));
+      app.gmap();
+      return app.scroll();
+    }
+  };
+
   app.alert = {
     open: function(options) {
       var alertclass, alertlightclass, buttons, close, content, html, title;
@@ -710,49 +745,15 @@
     }
   };
 
-  app = {
+  app.site = {
     init: function() {
-      if ($.browser.msie) {
-        $("body").addClass("ie" + parseInt($.browser.version));
-      }
-      if (app.isMobile()) {
-        $(".displayscroll").addClass("in");
-      }
-      if (($.browser.msie && parseInt($.browser.version) <= 8) || navigator.appVersion.indexOf('Trident/') !== -1) {
-        $(".displayscroll").addClass("in");
-        $("body").addClass("ie");
-        if (parseInt($.browser.version) <= 7) {
-          app.alert.open({
-            title: "Estás usando un navegador muy antiguo",
-            content: "Actualiza tu navegador ahora y disfruta de una mejor experiencia en Falabella Novios.",
-            buttons: "<a href='http://browsehappy.com/?locale=es' target='_blank' class='button button-primary button-big'>Actualizar ahora</a>",
-            "static": true
-          });
-        }
-      } else {
-        $("head").append("<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>");
-      }
-      app.secretMenu.init();
-      app.shares.init();
-      app.tooltips();
-      app.alert.equidist();
-      setTimeout(function() {
-        return app.alert.equidist();
-      }, 1000);
-      app.validation.form($(".controls"));
-      app.gmap();
-      app.scroll();
-      return app.site.init();
-    },
-    site: {
-      init: function() {
-        return console.log("osea helouuuu");
-      }
+      return console.log("osea helouuuu");
     }
   };
 
   $(document).ready(function() {
-    return app.init();
+    app.init();
+    return app.site.init();
   });
 
 }).call(this);
