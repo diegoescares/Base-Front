@@ -24,12 +24,12 @@
 		
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="js/all.js"></script>
-	<script src="js/scripts.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/app.js"></script>
 
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/styles.css" />
+	<link href="css/main.css" rel="stylesheet" />
 	
 	<link href="img/favicon.ico" rel="shortcut icon" />
 	

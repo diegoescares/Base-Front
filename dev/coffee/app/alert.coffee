@@ -2,6 +2,14 @@
 
 app.alert =
 
+	init: ->
+		app.alert.equidist()
+		setTimeout ->
+			app.alert.equidist()
+		,1000
+		$(window).resize ->
+			app.alert.equidist()
+
 	open: (options) ->
 
 		title = ""
@@ -10,10 +18,10 @@ app.alert =
 		close = ""
 
 		if options.title
-			title = "<h2>" + options.title + "</h2>"
+			title = "<h2 class='alert-title'>" + options.title + "</h2>"
 
 		if options.content
-			content = "<div>" + options.content + "</div>"
+			content = "<div class='alert-content'>" + options.content + "</div>"
 
 		if options.static == true
 			alertlightclass    = ''
@@ -35,26 +43,24 @@ app.alert =
 			buttons += options.buttons + " "
 
 		if options.cancel == true
-			buttons += '<button class="button button-medium false">Cancelar</button> '
+			buttons += '<button class="button false">Cancelar</button> '
 
 		if options.accept == true
-			buttons += '<button class="button button-medium button-primary true">Aceptar</button> '
+			buttons += '<button class="button button-primary true">Aceptar</button> '
 
 		if buttons
-			buttons = '<div class="buttons">'+buttons+'</div>'
+			buttons = '<div class="alert-buttons">'+buttons+'</div>'
 
 
 		html =
-			'<div class="alert in '+alertclass+'">'+
+			'<div class="alert '+alertclass+' in">'+
 				'<div class="alert-light '+alertlightclass+'"></div>'+
 				'<div class="alert-box equidist">'+
 					'<div class="alert-inner">'+
 						close +
-						'<div class="alert-content">' +
-							title +
-							content +
-							buttons +
-						'</div>' +
+						title +
+						content +
+						buttons +
 					'</div>'+
 				'</div>'+
 			'</div>'

@@ -90,6 +90,15 @@
 		opacity 0
 
 
+
+// Rotate
+
+@keyframes rotate360
+	0%
+		transform rotate(-360deg)
+
+
+
 // Bounce
 
 @keyframes bounceInDown
@@ -105,5 +114,26 @@
 		transform translateY(-1%)
 	100%
 		transform translateY(0)
+
+@keyframes bounceIn
+	0%
+		opacity 0
+		transform scale(0)
+	60%
+		opacity 1
+		transform scale(1.1)
+	70%
+		transform scale(.9)
+	80%
+		transform scale(1.03)
+	90%
+		transform scale(.97)
+	100%
+		opacity 1
+		transform scale(1)
+
+
+
+
 
 

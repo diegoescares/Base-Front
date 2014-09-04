@@ -9,6 +9,7 @@ var sourcemaps	= require('gulp-sourcemaps');
 var prefix		= require('gulp-autoprefixer');
 var notify		= require('gulp-notify');
 var plumber 	= require('gulp-plumber');
+var concat 		= require('gulp-concat');
 
 var path_dev	= "dev/"
 var path_final	= "hola/"
@@ -39,6 +40,14 @@ gulp.task("build-js",function(){
 	.pipe(coffee())
 	.pipe(notify("Compiled: <%= file.relative %>"))
 	.pipe(sourcemaps.write())
+	.pipe(gulp.dest(path_dev+'/js'));
+});
+
+gulp.task("build-js-plugins",function(){
+	gulp.src(path_dev+"/js/plugins/**/*.js")
+	.pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
+	.pipe(notify("Compiled: <%= file.relative %>"))
+	.pipe(concat('plugins.js'))
 	.pipe(gulp.dest(path_dev+'/js'));
 });
 

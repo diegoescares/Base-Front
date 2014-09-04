@@ -1,0 +1,48 @@
+
+
+loading_w = 50px
+loading_bgcolor = color_primary
+loading_color = white
+
+.loading
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background rgba(255,255,255,.5)
+	animation fadeIn .5s ease
+	z-index 250
+	&.out
+		animation fadeOut .5s ease both
+	.loading-icon
+		circle loading_w
+		background loading_bgcolor
+		position absolute
+		top 50%
+		left 50%
+		animation scaleIn .4s .5s ease backwards
+		margin-left (loading_w / -2)
+		margin-top (loading_w / -2)
+		.loading-icon-circle
+			circle (loading_w - 30)
+			margin 13px
+			border 2px solid loading_color
+			div
+				background loading_bgcolor
+				width 6px
+				height 50%
+				position absolute
+				top 0
+				left 50%
+				margin-left -3px
+				transform-origin center bottom
+				animation rotate360 1.5s linear infinite
+body.is-ie
+	.loading
+		.loading-icon
+			background url(../img/loader.gif) center center no-repeat loading_bgcolor
+			.loading-icon-circle
+				display none
+
+
