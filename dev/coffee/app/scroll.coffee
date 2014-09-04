@@ -7,7 +7,7 @@ app.scroll = ->
 		$(window).scroll ->
 
 			# Esconder header
-
+			###
 			scroll = $(window).scrollTop()
 			height_window = $(window).height()
 			height_body = $("body").height()
@@ -20,7 +20,7 @@ app.scroll = ->
 			else
 				$(".header-top-elements").removeClass "hide"
 			scroll_prev = scroll
-
+			###
 
 			# Mostrar en scroll
 

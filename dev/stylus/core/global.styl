@@ -123,16 +123,25 @@ ol
 	h1
 		margin-bottom 20px
 		color primary_color
+
 	h2, h3, h4
 		margin-bottom 10px
 		color primary_color
 		padding-top 10px
+
 	p, ol, ul, table
 		margin-bottom 15px
+
 	img,
 	iframe
 		max-width 100%
 		display block
+
+	iframe
+		width 100%
+		@media break1
+			height 200px
+
 	ul
 		list-style-type disc
 	ol
@@ -141,25 +150,38 @@ ol
 		margin-left 30px
 		li
 			margin-bottom 5px
+
 	blockquote
 		padding 15px 15px 1px 35px
-		background url(../img/icons/cite.png) 15px 15px no-repeat white
+		background url(../img/icon-cite.png) 15px 15px no-repeat white
 		border-left 2px solid secondary_color
 		font-size 1.2em
 		line-height 1.25em
 		font-style italic
 		margin-bottom 15px
+
 	.important
 		background #FFC
 		padding 15px 15px 1px
 		margin-bottom 15px
+		
 	a
 		text-decoration none
 		color color_secondary
 		&:hover
 			text-decoration underline
 
+	// WP
 
+	img
+		&.alignright
+			float right
+			margin-left 20px
+		&.alignleft
+			float left
+			margin-right 20px
+		&.aligncenter
+			margin 0 auto
 
 
 

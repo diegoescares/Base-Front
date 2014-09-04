@@ -16,7 +16,6 @@ w_form = w_name + w_name_sep + w_value
 	margin 0 auto
 	max-width w_form
 
-
 	a
 		text-decoration none
 
@@ -48,7 +47,7 @@ w_form = w_name + w_name_sep + w_value
 
 
 	select
-		background url(../img/select.png) right center no-repeat #FFF
+		background url(../img/icon-select.png) right center no-repeat #FFF
 
 	textarea
 		height 70px
@@ -63,7 +62,7 @@ w_form = w_name + w_name_sep + w_value
 		padding 0
 		margin-right 2px
 		vertical-align -4px
-		background url(../img/checked.png) center -20px no-repeat #FFF
+		background url(../img/icon-checked.png) center -20px no-repeat #FFF
 		&:checked
 			background-color primary_color
 			border-color primary_color
@@ -170,10 +169,22 @@ w_form = w_name + w_name_sep + w_value
 
 
 
+	&.controls-nowidth
+		max-width none
+	
+	&.controls-nolayout
+		.control
+			.control-name
+			.control-value
+			.control-legend
+				display block
+				margin 0
+				padding 0 0 5px
+				text-align left
+				width auto
 
 @media break2
 	.controls
-		max-width none
 		.control
 			.control-name
 			.control-value

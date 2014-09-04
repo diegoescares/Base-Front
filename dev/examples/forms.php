@@ -4,7 +4,7 @@
 <div class="limit">
     <div class="inner">
 
-        <form method="POST" class="user-forms controls" action="">
+        <form method="POST" class="controls controls-nolayout" action="">
           
             <div class="errorHeader"></div>
             <input type="hidden" id="fb" name="fb"/>

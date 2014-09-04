@@ -6,9 +6,36 @@ app.alert =
 		app.alert.equidist()
 		setTimeout ->
 			app.alert.equidist()
+		,100
+		setTimeout ->
+			app.alert.equidist()
 		,1000
 		$(window).resize ->
 			app.alert.equidist()
+
+
+		if $("[data-alert]").length
+
+			$("a[data-alert]").live "click", ->
+				element = $(this)
+				app.alert.open
+					title: element.attr("data-title")
+					content: element.attr("data-content")
+					accept: true
+					cancel: true
+					callback_true: ->
+						location.href = element.attr("href")
+				false
+
+			$("[data-alert]").each ->
+				element = $(this)
+				if !element.is("a") && !element.is("button")
+					app.alert.open
+						title: element.attr("data-title")
+						content: element.attr("data-content")
+						accept: true
+						cancel: true
+
 
 	open: (options) ->
 
@@ -16,12 +43,6 @@ app.alert =
 		content = ""
 		buttons = ""
 		close = ""
-
-		if options.title
-			title = "<h2 class='alert-title'>" + options.title + "</h2>"
-
-		if options.content
-			content = "<div class='alert-content'>" + options.content + "</div>"
 
 		if options.static == true
 			alertlightclass    = ''
@@ -34,10 +55,17 @@ app.alert =
 		else
 			alertclass = "alert-default"
 
-		options.close = true if options.close == undefined
+		if options.title
+			title = "<h2 class='alert-title'>" + options.title + "</h2>"
+
+		if options.content
+			content = "<div class='alert-content'>" + options.content + "</div>"
+
+		if options.close == undefined
+			options.close = true
 
 		if options.close == true
-			close = '<button class="close false"><i class="fa fa-times"></i></button>'
+			close = '<button class="alert-close false"><i class="fa fa-times"></i></button>'
 
 		if options.buttons
 			buttons += options.buttons + " "
@@ -123,6 +151,6 @@ app.alert =
 				alertclass: cssclass
 			if callback
 				callback()
-			app.plugins.relayout()
+			#app.plugins.relayout()
 
 

@@ -16,7 +16,7 @@
 </div>
     
 
-<div class="loadingIn"></div>
+<div data-loading></div>
 
 
 <?php require("footer.php"); ?>

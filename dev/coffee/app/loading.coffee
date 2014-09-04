@@ -3,7 +3,7 @@
 app.loading =
 
 	init: ->
-		if $(".loadingIn").length
+		if $("[data-loading]").length
 			app.loading.in()
 		###
 		app.loading.in()

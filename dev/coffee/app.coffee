@@ -28,12 +28,12 @@ app =
 		app.loading.init()
 
 		# Mapa
-		# app.gmap()
+		app.gmap()
 
 		# Eventos en scroll
-		# app.scroll()
+		app.scroll()
 
 		# Plugins
-		# app.plugins.init()
+		app.plugins.init()
 
 #=include_tree app
