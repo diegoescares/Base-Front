@@ -1,4 +1,6 @@
 
+$(document).ready ->
+	app.init()
 
 app =
 
@@ -14,7 +16,7 @@ app =
 		# IE
 		if ($.browser.msie && parseInt($.browser.version) <= 8) || navigator.appVersion.indexOf('Trident/')!=-1
 			$(".displayscroll").addClass("in")
-			$("body").addClass("ie")
+			$("body").addClass("ie") 
 			if parseInt($.browser.version) <= 7
 				app.alert.open
 					title: "Estás usando un navegador muy antiguo"
@@ -22,7 +24,7 @@ app =
 					buttons: "<a href='http://browsehappy.com/?locale=es' target='_blank' class='button button-primary button-big'>Actualizar ahora</a>"
 					static: true
 		else
-			$("head").append "<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>"
+			$("head").append "<link asdhref='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>"
 
 		# Menú
 		app.secretMenu.init()

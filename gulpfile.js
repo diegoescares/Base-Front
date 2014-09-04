@@ -7,6 +7,8 @@ var livereload	= require('gulp-livereload');
 var include		= require('gulp-include');
 var sourcemaps	= require('gulp-sourcemaps');
 var prefix		= require('gulp-autoprefixer');
+var notify		= require('gulp-notify');
+var plumber 	= require('gulp-plumber');
 
 var path_dev	= "dev/"
 var path_final	= "hola/"
@@ -33,7 +35,9 @@ gulp.task("build-js",function(){
 	gulp.src(files.coffee.to)
 	.pipe(include())
 	.pipe(sourcemaps.init())
+	.pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
 	.pipe(coffee())
+	.pipe(notify("Compiled: <%= file.relative %>"))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path_dev+'/js'));
 });
@@ -42,9 +46,12 @@ gulp.task("build-css",function(){
 	gulp.src(files.stylus.to)
 	.pipe(include())
 	.pipe(sourcemaps.init())
+	.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
 	.pipe(stylus())
+	.pipe(notify("Compiled: <%= file.relative %>"))
 	.pipe(prefix())
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path_dev+'/css'))
 });
+
 
