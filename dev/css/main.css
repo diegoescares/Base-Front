@@ -65,16 +65,46 @@ h1 {
   }
 }
 h2 {
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 40px;
+  line-height: 40px;
+}
+@media all and (max-width:959px) {
+  h2 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+@media all and (max-width:719px) {
+  h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
 }
 h3 {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 30px;
+  line-height: 30px;
+}
+@media all and (max-width:959px) {
+  h3 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+@media all and (max-width:719px) {
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 h4 {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 24px;
+  line-height: 24px;
+}
+@media all and (max-width:959px) {
+  h4 {
+    font-size: 20px;
+    line-height: 20px;
+  }
 }
 ul,
 ol {
@@ -718,7 +748,7 @@ table th {
   position: absolute;
   top: 0;
   left: 0;
-  background: primary_color;
+  background: #0fc;
   width: 50px;
   height: 50px;
   display: none;
@@ -1103,16 +1133,16 @@ form .input-number .input-number-button:hover,
 }
 .content blockquote {
   padding: 15px 15px 1px 35px;
-  background: url("../img/icon-cite.png") 15px 15px no-repeat #fff;
-  border-left: 2px solid secondary_color;
+  background: url("../img/icon-cite.png") 15px 15px no-repeat;
+  border-left: 2px solid #0fc;
   font-size: 1.2em;
-  line-height: 1.25em;
+  line-height: 1.5em;
   font-style: italic;
   margin-bottom: 15px;
 }
 .content .important {
   background: #ffc;
-  padding: 15px 15px 1px;
+  padding: 15px 20px 1px;
   margin-bottom: 15px;
 }
 .content a {
@@ -1251,7 +1281,7 @@ body.alert-in {
           transition: 0.2s ease;
 }
 .scroll .iScrollVerticalScrollbar .iScrollIndicator {
-  background: primary_color;
+  background: #0fc;
   border-radius: 5px;
 }
 .scroll:hover .iScrollVerticalScrollbar {
@@ -1341,7 +1371,7 @@ body.is-ie .loading .loading-icon .loading-icon-circle {
   float: left;
   height: 75px;
   width: 110px;
-  background: primary_color;
+  background: #0fc;
   overflow: hidden;
 }
 .rsThumbs .rsThumbsContainer .rsThumb img {
