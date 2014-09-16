@@ -3,13 +3,9 @@
 app.alert =
 
 	init: ->
+
 		app.alert.equidist()
-		setTimeout ->
-			app.alert.equidist()
-		,100
-		setTimeout ->
-			app.alert.equidist()
-		,1000
+
 		$(window).resize ->
 			app.alert.equidist()
 
@@ -98,6 +94,9 @@ app.alert =
 		$("body").addClass("alert-in")
 
 		app.alert.equidist()
+		setTimeout ->
+			app.alert.equidist()
+		,100
 
 
 		$(".alert .true, .alert .false").unbind("click").bind "click", -> 
@@ -107,7 +106,6 @@ app.alert =
 			alertorigin.addClass("out")
 			setTimeout ->
 				alertorigin.remove()
-				#alertorigin.removeClass("in out")
 				$("body").removeClass("alert-in")
 			,200
 
@@ -151,6 +149,5 @@ app.alert =
 				alertclass: cssclass
 			if callback
 				callback()
-			#app.plugins.relayout()
 
 

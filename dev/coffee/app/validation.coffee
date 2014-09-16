@@ -9,23 +9,23 @@ app.validation =
 
 			form = $(this)
 
-			form.find(".control .control-value").append("<div class='control-error'></div>")
+			form.find(".control .control-value").append("<div class='control-message'></div>")
 
 			form.find("input,textarea,select").each ->
-				input = $(this)
-				input.addClass( $(this).attr("type") )
+				input = $(this)				
+				input.addClass( "input-"+$(this).attr("type") ) if $(this).is "input"
 				input.addClass( "disabled" ) if input.is(":disabled")
 				input.live "blur, change", ->
 					app.validation.formInput(input)
 
-			form.find("input.checkbox, input.radio").each ->
+			form.find(".input-checkbox, .input-radio").each ->
 				if $(this).is(":checked")
 					$(this).closest("label").addClass("checked")
 				else
 					$(this).closest("label").removeClass("checked")
 			
-			form.find("input.checkbox, input.radio").change ->
-				form.find("input.checkbox, input.radio").each ->
+			form.find(".input-checkbox, .input-radio").change ->
+				form.find(".input-checkbox, .input-radio").each ->
 					if $(this).is(":checked")
 						$(this).closest("label").addClass("checked")
 					else
@@ -82,8 +82,10 @@ app.validation =
 				form.find("input,textarea,select").each ->
 					app.validation.formInput($(this),true)
 
-				diverror = form.find(".error").eq(0)
+				diverror = form.find(".control-error").eq(0)
+
 				if diverror.length
+
 					send = false
 					top = diverror.offset().top - $(".header-top").height() - 25
 
@@ -105,6 +107,9 @@ app.validation =
 	formInput: (input,validateEmpty=false) ->
 
 		parent = input.closest(".control-value")
+
+		controls = input.closest(".controls")
+		control  = input.closest(".control")
 
 		fvErrors = {
 			"empty": "Este campo es requerido",
@@ -150,7 +155,7 @@ app.validation =
 
 				# Validar repetir contraseña
 				if input.is("[data-repeat]")
-					if input.val() != $("[name='"+input.attr("data-repeat")+"']").val()
+					if input.val() != controls.find("[name='"+input.attr("data-repeat")+"']").val()
 						if input.is("[type='password']")
 							app.validation.formInputMessage(input,fvErrors.invalidPassRepeat)
 							error = true
@@ -161,11 +166,12 @@ app.validation =
 
 				# Validar checkboxs/radios
 				if (input.is("[type='checkbox']") || input.is("[type='radio']"))
-					if parent.length && !parent.find("input[name='"+input.attr("name")+"']:checked").length
+					if !controls.find("input[name='"+input.attr("name")+"']:checked").length
 						app.validation.formInputMessage(input,fvErrors.emptyCheckbox) if input.is("[type='checkbox']")
 						app.validation.formInputMessage(input,fvErrors.emptyRadio)    if input.is("[type='radio']")
+						app.validation.formInputMessage(input,fvErrors.terms)         if input.is(".input-terms")
 						error = true
-						parent.find(".error").removeClass("error")
+						parent.find(".control-error").removeClass("error")
 
 
 				# Validar RUT
@@ -183,17 +189,17 @@ app.validation =
 
 	formInputMessage: (input,message) ->
 		if message
-			input.addClass("error")
+			input.addClass("control-error")
 			parent = input.closest(".control-value")
-			parent.addClass("error")
-			parent.find(".control-error").text(message).addClass("in")
+			parent.addClass("control-error")
+			parent.find(".control-message").text(message).addClass("in")
 		else
-			input.removeClass("error")
+			input.removeClass("control-error")
 			parent = input.closest(".control-value")
-			parent.removeClass("error")	
-			parent.find(".control-error").addClass("out")
+			parent.removeClass("control-error")	
+			parent.find(".control-message").addClass("out")
 			setTimeout ->
-				parent.find(".control-error").removeClass("in out").text("")
+				parent.find(".control-message").removeClass("in out").text("")
 			,500
 
 

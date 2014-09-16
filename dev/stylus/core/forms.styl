@@ -1,0 +1,166 @@
+
+
+
+// Estilos de formularios
+
+form
+.form
+
+	input
+	button
+	select
+	textarea
+		display block
+		width 100%
+		border 1px solid lightgray
+		padding 8px 10px
+		vertical-align top
+		background #FFF
+		margin-bottom 1px
+		radius 0
+		box-sizing border-box
+		appearance none
+		&:hover
+		&:focus
+			border-color gray
+
+	label:hover
+		input
+		button
+		select
+		textarea
+			border-color gray
+
+	select
+		background url(../img/icon-select.png) right center no-repeat transparent
+
+	textarea
+		height 100px
+		transition height .2s ease
+		resize none
+
+	.input-checkbox,
+	.input-radio
+		display inline-block
+		width 16px
+		height 16px
+		padding 0
+		margin-right 2px
+		margin-top 2px
+		background url(../img/icon-checked.png) center -20px no-repeat transparent
+		&:checked
+			background-color color
+			border-color color
+			background-position center center
+
+	.input-radio
+		radius 15px
+
+	.input-number
+		position relative
+		width 100px
+		.input-number-button
+			position absolute
+			right 0
+			padding 0
+			width 30px
+			height 50%
+			text-align center
+			background #CCC
+			&.input-number-more
+				top 0
+			&.input-number-less
+				bottom 0
+			&:hover
+				background color
+
+
+
+
+// Estilos para controles de formularios
+
+w_name = 100px
+w_name_sep = 20px
+w_value = 280px
+w_form = w_name + w_name_sep + w_value
+
+.controls
+
+	.control
+		display block
+		overflow hidden
+		margin-bottom 15px
+		position relative
+
+		.control-name
+			margin-bottom 5px
+
+		.control-value
+			label
+				display block
+				padding 5px
+				&:first-child
+					padding-left 0
+				&.inline
+					display inline-block
+
+		.control-message
+			transition .5s ease
+			line-height 0px
+			opacity 0
+			&.in
+				line-height 20px
+				opacity 1
+				&.out
+					line-height 0px
+					opacity 0
+
+
+	.control-error
+		input
+		select
+		textarea
+			border-color red
+		.control-message
+			color red
+			margin-top 5px
+
+
+	&.controls-center
+		margin 0 auto
+		max-width w_form
+	
+	&.controls-layout
+		.control
+			.control-name
+			.control-value
+				float left
+			.control-name
+				width w_name
+				text-align right
+				padding-right w_name_sep
+				padding-top 8px
+				&.control-name-2lines
+					padding-top 0
+					line-height 18px
+			.control-value
+				width w_value
+
+
+@media break2
+	.controls
+		&.controls-layout
+			.control
+				.control-name
+				.control-value
+					float none
+					width auto
+				.control-name
+					padding 0
+					text-align left
+					&.control-name-2lines
+						line-height inherit
+
+
+
+

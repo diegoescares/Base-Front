@@ -1,3 +1,6 @@
+
+// Reset
+
 *
 	margin 0
 	padding 0
@@ -5,22 +8,23 @@
 	outline 0
 
 
+// Base styles
+
 body
 	-webkit-font-smoothing antialiased
-	background white
-
+	background global_bg
 
 body, button, input, textarea, select
-	font-family fuente1
-	color black
-	font-size 14px
-	line-height 20px
+	font-family font
+	color global_color
+	font-size global_size
+	line-height global_lh
 
 a, button, input, textarea, select
-	transition .2s ease
+	transition tn
 
 a
-	color secondary_color
+	color color
 	text-decoration none
 
 a, input, button, select
@@ -31,26 +35,26 @@ button, select, input[type='submit']
 		cursor pointer
 
 h1, h2, h3, h4
-	font-family fuente2
+	font-family font_2
 
 h1
-	font-size 64px
-	line-height 54px
-	font-weight bold
-	color primary_color
-	@media break1
-		font-size 44px
-		line-height 34px
+	font-size 50px
+	line-height 50px
+	@media break3
+		font-size 40px
+		line-height 40px
+	@media break2
+		font-size 30px
+		line-height 30px
 
 h2
 	font-size 25px
 	line-height 25px
-	&.big
-		font-size 38px
-		line-height 38px
+
 h3
 	font-size 20px
 	line-height 24px
+
 h4
 	font-size 16px
 	line-height 20px
@@ -59,47 +63,62 @@ ul
 ol
 	list-style-type none
 
+img
+	display block
 
-.inner
-	padding 20px
-@media break1
-	.inner
+table
+	border-collapse collapse
+	td
+	th
+		border 1px solid lightgray
 		padding 10px
+	th
+		background-color darkgray
+		border-color darkgray
+		color white
 
+
+// Particular classes
+
+.clear
+	clear both
+
+.center
+	text-align center
+
+.left
+	text-align left
+
+.right
+	text-align right
+
+.float-left
+	float left
+
+.float-right
+	float right
+
+.overflow
+	overflow hidden
+
+.none
+	display none
+
+.nowrap
+	white-space nowrap
+
+
+// Base layout
 
 .limit
 	max-width limit
 	margin 0 auto
 	position relative
 
-
-.in
-	display block
-	animation fadeIn .5s ease both
-	&.out
-		animation fadeOut .5s ease both
-
-
-.clear
-	clear both
-.center
-	text-align center
-.left
-	text-align left
-.right
-	text-align right
-.float-right
-	float right
-.float-left
-	float left
-
-.overflow
-	overflow hidden
-.none
-	display none
-
-
-
+.inner
+	padding sep
+	@media break1
+		padding (sep/2)
 
 .nomobile
 	display block
@@ -112,143 +131,12 @@ ol
 		display block
 
 
+// Generic animation
 
-
-
-
-.content
-	font-size 15px
-	line-height 24px
-
-	h1
-		margin-bottom 20px
-		color primary_color
-
-	h2, h3, h4
-		margin-bottom 10px
-		color primary_color
-		padding-top 10px
-
-	p, ol, ul, table
-		margin-bottom 15px
-
-	img,
-	iframe
-		max-width 100%
-		display block
-
-	iframe
-		width 100%
-		@media break1
-			height 200px
-
-	ul
-		list-style-type disc
-	ol
-		list-style-type decimal
-	ol,ul
-		margin-left 30px
-		li
-			margin-bottom 5px
-
-	blockquote
-		padding 15px 15px 1px 35px
-		background url(../img/icon-cite.png) 15px 15px no-repeat white
-		border-left 2px solid secondary_color
-		font-size 1.2em
-		line-height 1.25em
-		font-style italic
-		margin-bottom 15px
-
-	.important
-		background #FFC
-		padding 15px 15px 1px
-		margin-bottom 15px
-		
-	a
-		text-decoration none
-		color color_secondary
-		&:hover
-			text-decoration underline
-
-	// WP
-
-	img
-		&.alignright
-			float right
-			margin-left 20px
-		&.alignleft
-			float left
-			margin-right 20px
-		&.aligncenter
-			margin 0 auto
-
-
-
-
-
-.button, .button.button
-	font-family fuente1
-	font-size 14px
-	line-height 18px
-	radius rad2
-	padding 6px 15px
-	text-decoration none
-	display inline-block
-	text-transform uppercase
-	font-weight bold
-	border 0
-	width auto
-	margin-bottom 2px
-	background #DDD
-	color #666
-	transition tnormal
-	text-align center
-	&:hover
-		cursor pointer
-		color #FFF
-		background primary_color
-	&.button-primary
-		color white
-		background primary_color
-		&:hover
-			background lighten(primary_color,10%)
-	&.button-secondary
-		color white
-		background lighten(secondary_color,10%)
-		&:hover
-			background lighten(secondary_color,20%)
-	&.button-small
-		font-size 12px
-		line-height 11px
-		padding 6px 8px
-	&.button-medium
-		font-size 18px
-		line-height 18px
-		padding 10px 22px
-	&.button-big
-		font-size 20px
-		line-height 20px
-		padding 12px 25px
-		radius rad
-	&.button-line
-		border 1px solid #DDD
-		background transparent
-		color white
-		&:hover
-			background primary_color
-			border-color primary_color
-	&.button-disabled
-		background #999
-		border-color #999
-		&:hover
-			background #999
-			border-color #999
-			cursor default
-
-
-
-
-
+.in
+	display block
+	animation fadeIn .5s ease both
+	&.out
+		animation fadeOut .5s ease both
 
 

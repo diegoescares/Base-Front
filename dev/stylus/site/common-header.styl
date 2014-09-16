@@ -6,6 +6,20 @@ header_height_min = 50px
 header_width = 260px
 
 header
+	
+	nav
+		ul
+			padding 0 15px
+			li
+				display inline-block
+				a
+					display block
+					padding 25px 10px
+					.fa
+						display none
+				ul
+					display none
+
 	.header-top
 		padding-top 0
 		padding-bottom 0
@@ -18,15 +32,8 @@ header
 			background #444
 			padding 0
 			height header_height
-		ul
-			padding 0 15px
-			li
-				display inline-block
-				a
-					display block
-					padding 25px 10px
-				ul
-					display none
+
+
 	.header-left
 		
 		position fixed
@@ -45,17 +52,21 @@ header
 			background #DDD
 			padding-top header_height
 		ul
+			padding 0
 			li
+				display block
 				a
 					display block
 					padding 15px 25px
+					color darkgray
 
 
 #body
 	padding-top header_height
-	margin-left header_width
 	position relative
 	z-index 4 // Al medio
+	&.body-left
+		padding-left header_width
 
 @media break2
 	header
@@ -74,7 +85,8 @@ header
 			display none
 	#body
 		padding-top header_height_min
-		margin-left 0
+		&.body-left
+			padding-left 0
 
 
 
@@ -84,4 +96,6 @@ header
 		padding 15px
 		display block
 		border-bottom 1px solid rgba(0,0,0,.1)
+		.fa
+			font-size 10px
 

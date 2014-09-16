@@ -22,17 +22,19 @@
 	<meta name="twitter:description" content="{descripcion}">
 	<meta name="twitter:image:src" content="{url imagen}">
 		
-
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="img/favicon.ico" rel="shortcut icon" />
+	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
 	<script src="js/plugins.js"></script>
 	<script src="js/app.js"></script>
 
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-	<link href="css/main.css" rel="stylesheet" />
-	
-	<link href="img/favicon.ico" rel="shortcut icon" />
-	
+
+
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -59,56 +61,58 @@
 						</div>
 
 						<div class="secretmenu-content">
-							<ul>
-								<li><a href="index.php">Inicio</a>
-									<ul>
-										<li><a href="index.php">1 dolor sit amet</a><ul>
-												<li><a href="index.php">LOREM dolor 1</a></li>
-												<li><a href="index.php">LOREM dolor 2</a></li>
-												<li><a href="index.php">LOREM dolor 3</a></li>
-												<li><a href="index.php">LOREM dolor 4</a></li>
-												<li><a href="index.php">LOREM dolor 5</a></li>
-											</ul></li>
-										<li><a href="index.php">2 dolor sit amet</a><ul>
-												<li><a href="index.php">LOREM dolor 1</a></li>
-												<li><a href="index.php">LOREM dolor 2</a></li>
-												<li><a href="index.php">LOREM dolor 3</a></li>
-												<li><a href="index.php">LOREM dolor 4</a></li>
-												<li><a href="index.php">LOREM dolor 5</a></li>
-											</ul></li>
-										<li><a href="index.php">3 dolor sit amet</a><ul>
-												<li><a href="index.php">LOREM dolor 1</a></li>
-												<li><a href="index.php">LOREM dolor 2</a></li>
-												<li><a href="index.php">LOREM dolor 3</a></li>
-												<li><a href="index.php">LOREM dolor 4</a></li>
-												<li><a href="index.php">LOREM dolor 5</a></li>
-											</ul></li>
-										<li><a href="index.php">4 dolor sit amet</a></li>
-										<li><a href="index.php">5 dolor sit amet</a></li>
-										<li><a href="index.php">6 dolor sit amet</a></li>
-										<li><a href="index.php">7 dolor sit amet</a></li>
-										<li><a href="index.php">8 dolor sit amet</a></li>
-										<li><a href="index.php">9 dolor sit amet</a></li>
-										<li><a href="index.php">10 dolor sit amet</a></li>
-										<li><a href="index.php">11 dolor sit amet</a></li>
-										<li><a href="index.php">12 dolor sit amet</a></li>
-									</ul>
-								</li>
-								<li><a href="example-scroll.php">Scroll</a>
-									<ul>
-										<li><a href="example-scroll.php">1</a></li>
-										<li><a href="example-scroll.php">2</a></li>
-										<li><a href="example-scroll.php">3</a></li>
-										<li><a href="example-scroll.php">4</a></li>
-										<li><a href="example-scroll.php">5</a></li>
-										<li><a href="example-scroll.php">6</a></li>
-										<li><a href="example-scroll.php">7</a></li>
-										<li><a href="example-scroll.php">8</a></li>
-									</ul>
-								</li>
-								<li><a href="example-forms.php">Forms</a></li>
-								<li><a href="example-tooltips.php">Tooltips</a></li>
-							</ul>
+							<nav>
+								<ul>
+									<li><a href="index.php">Inicio</a>
+										<ul>
+											<li><a href="index.php">1 dolor sit amet</a><ul>
+													<li><a href="index.php">LOREM dolor 1</a></li>
+													<li><a href="index.php">LOREM dolor 2</a></li>
+													<li><a href="index.php">LOREM dolor 3</a></li>
+													<li><a href="index.php">LOREM dolor 4</a></li>
+													<li><a href="index.php">LOREM dolor 5</a></li>
+												</ul></li>
+											<li><a href="index.php">2 dolor sit amet</a><ul>
+													<li><a href="index.php">LOREM dolor 1</a></li>
+													<li><a href="index.php">LOREM dolor 2</a></li>
+													<li><a href="index.php">LOREM dolor 3</a></li>
+													<li><a href="index.php">LOREM dolor 4</a></li>
+													<li><a href="index.php">LOREM dolor 5</a></li>
+												</ul></li>
+											<li><a href="index.php">3 dolor sit amet</a><ul>
+													<li><a href="index.php">LOREM dolor 1</a></li>
+													<li><a href="index.php">LOREM dolor 2</a></li>
+													<li><a href="index.php">LOREM dolor 3</a></li>
+													<li><a href="index.php">LOREM dolor 4</a></li>
+													<li><a href="index.php">LOREM dolor 5</a></li>
+												</ul></li>
+											<li><a href="index.php">4 dolor sit amet</a></li>
+											<li><a href="index.php">5 dolor sit amet</a></li>
+											<li><a href="index.php">6 dolor sit amet</a></li>
+											<li><a href="index.php">7 dolor sit amet</a></li>
+											<li><a href="index.php">8 dolor sit amet</a></li>
+											<li><a href="index.php">9 dolor sit amet</a></li>
+											<li><a href="index.php">10 dolor sit amet</a></li>
+											<li><a href="index.php">11 dolor sit amet</a></li>
+											<li><a href="index.php">12 dolor sit amet</a></li>
+										</ul>
+									</li>
+									<li><a href="index.php">Inicio</a>
+										<ul>
+											<li><a href="index.php">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
+										</ul>
+									</li>
+									<li><a href="index.php">Inicio</a></li>
+									<li><a href="index.php">Inicio</a></li>
+								</ul>
+							</nav>
 						</div>
 
 				</div>
@@ -142,8 +146,8 @@
 
 	<div class="secretmenu-container-back"></div>
 	<div class="secretmenu-container-front">
-		
-		<div class="limit">
-			<div id="body">
+	
+		<div class="limit">	
+			<div id="body" class="body-left">
 
 

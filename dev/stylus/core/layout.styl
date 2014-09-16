@@ -1,26 +1,48 @@
 
 
-separationcol = 20px
+cols_sep = sep
 
 .cols
 	overflow hidden
-	margin 0 0-(separationcol/2)
+
+
+	// Separación entre columnas: normal
+	
+	margin 0 0 (cols_sep/-1) (cols_sep/-1)
+	.col .col-inner
+		margin 0 0 (cols_sep) (cols_sep)
+
+
+	// Separación entre columnas: la mitad de normal
+		
+	&.cols-halfsep
+		margin 0 0 (cols_sep/-2) (cols_sep/-2)
+		.col .col-inner
+			margin 0 0 (cols_sep/2) (cols_sep/2)
+
+
+	// Separación entre columnas: el doble de normal
+
+	&.cols-doublesep
+		margin 0 0 (cols_sep*-2) (cols_sep*-2)
+		.col .col-inner
+			margin 0 0 (cols_sep*2) (cols_sep*2)
+
+
+	// Separación entre columnas: 0
+		
+	&.cols-nosep
+		margin 0
+		.col .col-inner
+			margin 0
+
+	
+	&.cols-nobp .col, // Columnas sin break points
 	.col
 		float left
-		.col-inner
-			margin 0 (separationcol/2)
-
-	&.cols-halfsep
-		margin 0 0-(separationcol/4)
-		.col-inner
-			margin 0 (separationcol/4)
-
-	.col
 		width 100%
 		&.col-20
 			width 20%
-		&.col-23
-			width 23.33%
 		&.col-25
 			width 25%
 		&.col-30
@@ -31,6 +53,8 @@ separationcol = 20px
 			width 40%
 		&.col-50
 			width 50%
+		&.col-60
+			width 60%
 		&.col-66
 			width 66.66%
 		&.col-70
@@ -41,13 +65,9 @@ separationcol = 20px
 			width 80%
 
 
-
 @media break3
 	.cols
 		.col
-
-			&.col-23
-				width 33.33%
 
 			&.col-20
 			&.col-25
@@ -55,29 +75,26 @@ separationcol = 20px
 			&.col-33
 				width 50%
 
-			&.col-50
-				.col-50
-					width 50%
-
-			&.col-40
-			&.col-50
 			&.col-66
 			&.col-70
 			&.col-75
+			&.col-80
 				width 100%
 
-			&.col-30
-				&.col-to-100
-					width 100%
+			&.col-to-100
+				width 100%
 
 
 @media break2
 	.cols
 		.col
-			&.col-to-100
+			&.col-40
+			&.col-50
+			&.col-60
 				width 100%
 
 @media break1
+
 	.cols
 		.col
 			&.col-20
@@ -86,14 +103,36 @@ separationcol = 20px
 			&.col-33
 				width 100%
 
-			&.col-50
-				.col-50
-					width 100%
+
+	// Separación entre columnas: la mitad de normal
+
+	.cols
+		margin-bottom (cols_sep/-2)
+		.col .col-inner
+			margin-bottom (cols_sep/2)
 
 
 
 
 
 
+// Columnas 50/50 aplicables en un break point específico (aplicar dentro de un sidebar, por ejemplo)
+
+.cols
+	&.cols-bk
+		.col
+			width 100%
+
+@media break3
+	.cols
+		&.cols-bk
+			.col
+				width 50%
+
+@media break2
+	.cols
+		&.cols-bk
+			.col
+				width 100%
 
 
