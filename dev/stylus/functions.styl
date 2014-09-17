@@ -78,3 +78,10 @@ centre(width,height)
 	margin-left (width/-2)
 	margin-top (height/-2)
 
+animation-stagger(iterations,delay)
+	iterations -= 1
+	for iteration in (0..iterations)
+		&:nth-child({iteration})
+			animation-delay delay*iteration
+
+
