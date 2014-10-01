@@ -84,4 +84,35 @@ animation-stagger(iterations,delay)
 		&:nth-child({iteration})
 			animation-delay delay*iteration
 
+title(h)
+	if h == "h1"
+		font-size title_1
+		line-height title_1_lh
+		@media break3
+			font-size title_2
+			line-height title_2_lh
+		@media break2
+			font-size title_3
+			line-height title_3_lh
+	if h == "h2"
+		font-size title_2
+		line-height title_2_lh
+		@media break3
+			font-size title_3
+			line-height title_3_lh
+		@media break2
+			font-size title_4
+			line-height title_4_lh
+	if h == "h3"
+		font-size title_3
+		line-height title_3_lh
+		@media break3
+			font-size title_4
+			line-height title_4_lh
+	if h == "h4"
+		font-size title_4
+		line-height title_4_lh
+	if h == "h5"
+		font-size title_5
+		line-height title_5_lh
 

@@ -30,17 +30,16 @@ a {
   color: #0fc;
   text-decoration: none;
 }
-a,
-input,
-button,
-select {
-  -webkit-transition: 0.2s ease;
-          transition: 0.2s ease;
+a.a-classic {
+  text-decoration: underline;
 }
 button:hover,
 select:hover,
-input[type='submit']:hover {
+label:hover {
   cursor: pointer;
+}
+p {
+  margin-bottom: 15px;
 }
 h1,
 h2,
@@ -48,63 +47,65 @@ h3,
 h4 {
   font-family: 'Open Sans', sans-serif;
 }
-h1 {
-  font-size: 50px;
-  line-height: 50px;
+h1,
+.h1 {
+  font-size: 48px;
+  line-height: 53px;
 }
 @media all and (max-width:959px) {
-  h1 {
-    font-size: 40px;
-    line-height: 40px;
+  h1,
+  .h1 {
+    font-size: 38px;
+    line-height: 42px;
   }
 }
 @media all and (max-width:719px) {
-  h1 {
-    font-size: 30px;
-    line-height: 30px;
+  h1,
+  .h1 {
+    font-size: 28px;
+    line-height: 31px;
   }
 }
-h2 {
-  font-size: 40px;
-  line-height: 40px;
+h2,
+.h2 {
+  font-size: 38px;
+  line-height: 42px;
 }
 @media all and (max-width:959px) {
-  h2 {
-    font-size: 30px;
-    line-height: 30px;
+  h2,
+  .h2 {
+    font-size: 28px;
+    line-height: 31px;
   }
 }
 @media all and (max-width:719px) {
-  h2 {
-    font-size: 24px;
-    line-height: 24px;
-  }
-}
-h3 {
-  font-size: 30px;
-  line-height: 30px;
-}
-@media all and (max-width:959px) {
-  h3 {
-    font-size: 24px;
-    line-height: 24px;
-  }
-}
-@media all and (max-width:719px) {
-  h3 {
-    font-size: 20px;
+  h2,
+  .h2 {
+    font-size: 18px;
     line-height: 20px;
   }
 }
-h4 {
-  font-size: 24px;
-  line-height: 24px;
+h3,
+.h3 {
+  font-size: 28px;
+  line-height: 31px;
 }
 @media all and (max-width:959px) {
-  h4 {
-    font-size: 20px;
+  h3,
+  .h3 {
+    font-size: 18px;
     line-height: 20px;
   }
+}
+h4,
+.h4 {
+  font-size: 18px;
+  line-height: 20px;
+}
+h5,
+.h5 {
+  font-size: 15.5px;
+  line-height: 18px;
 }
 ul,
 ol {
@@ -113,8 +114,18 @@ ol {
 img {
   display: block;
 }
+img.img-ma {
+  margin: 0 auto;
+}
+img.img-mw {
+  max-width: 100%;
+}
+img.img-circle {
+  border-radius: 50%;
+}
 table {
   border-collapse: collapse;
+  line-height: 20px;
 }
 table td,
 table th {
@@ -152,6 +163,21 @@ table th {
 }
 .nowrap {
   white-space: nowrap;
+}
+.mb0 {
+  margin-bottom: 0;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+.mb20 {
+  margin-bottom: 20px;
 }
 .limit {
   max-width: 1220px;
@@ -1184,9 +1210,6 @@ body.alert-in {
   z-index: 100;
   display: none;
 }
-.alert .button {
-  padding: 7px 20px 5px;
-}
 .alert.in {
   display: block;
 }
@@ -1614,6 +1637,137 @@ body.is-ie .loading .loading-icon .loading-icon-circle {
   border-top-color: #444;
   left: -5px;
   bottom: -5px;
+}
+.tour-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  overflow: hidden;
+}
+@media all and (max-width:959px) {
+  .tour-container {
+    display: none;
+  }
+}
+.tour-container.out .tour {
+  -webkit-animation: fadeOut 0.5s ease both;
+          animation: fadeOut 0.5s ease both;
+}
+.tour {
+  position: absolute;
+  -webkit-animation: tourIn 0.8s ease;
+          animation: tourIn 0.8s ease;
+  -webkit-transition: 0.5s 0.4s ease;
+          transition: 0.5s 0.4s ease;
+}
+.tour .tour-tip {
+  position: absolute;
+  top: 100%;
+  line-height: 20px;
+  width: 300px;
+  overflow: hidden;
+  color: #fff;
+}
+.tour .tour-tip .tour-tip-inner {
+  -webkit-animation: slideDown 0.5s 0.8s ease backwards;
+          animation: slideDown 0.5s 0.8s ease backwards;
+  background: color_primary;
+}
+.tour .tour-tip .tour-body {
+  padding: 15px;
+}
+.tour .tour-tip .tour-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.tour .tour-tip .tour-buttons {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 15px;
+  overflow: hidden;
+}
+.tour .tour-tip .tour-buttons .button {
+  border-color: #fff;
+}
+.tour .tour-tip .tour-buttons .button.tour-button-nextpage {
+  float: right;
+}
+.tour .tour-tip .tour-buttons .button:hover {
+  border-color: #fff;
+  background: #fff;
+  color: color_primary;
+}
+.tour .tour-tip .tour-buttons .button.tour-button-inactive {
+  opacity: 0.5;
+}
+.tour .tour-tip .tour-buttons .button.tour-button-inactive:hover {
+  background: color_primary;
+  color: #fff;
+  cursor: default;
+}
+.tour .tour-bg {
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+}
+.tour .tour-bg.tour-bg-top {
+  bottom: 100%;
+  left: -200%;
+  width: 500%;
+  height: 2000px;
+  box-shadow: 0 -100px 100px rgba(0,0,0,0.5);
+}
+.tour .tour-bg.tour-bg-bottom {
+  top: 100%;
+  left: -200%;
+  width: 500%;
+  height: 2000px;
+  box-shadow: 0 100px 100px rgba(0,0,0,0.5);
+}
+.tour .tour-bg.tour-bg-left {
+  right: 100%;
+  top: 0;
+  width: 200%;
+  height: 100%;
+}
+.tour .tour-bg.tour-bg-right {
+  left: 100%;
+  top: 0;
+  width: 200%;
+  height: 100%;
+}
+.tour .tour-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+  color: #999;
+}
+.tour .tour-close:hover {
+  cursor: pointer;
+  color: color_primary;
+}
+@-webkit-keyframes tourIn {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes tourIn {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 0;
+  }
 }
 header nav ul {
   padding: 0 15px;

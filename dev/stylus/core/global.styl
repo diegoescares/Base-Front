@@ -26,53 +26,38 @@ a, button, input, textarea, select
 a
 	color color
 	text-decoration none
+	&.a-classic
+		text-decoration underline
 
-a, input, button, select
-	transition tnormal
-
-button, select, input[type='submit']
+button, select, label
 	&:hover
 		cursor pointer
+
+p
+	margin-bottom 15px
 
 h1, h2, h3, h4
 	font-family font_2
 
 h1
-	font-size 50px
-	line-height 50px
-	@media break3
-		font-size 40px
-		line-height 40px
-	@media break2
-		font-size 30px
-		line-height 30px
+.h1
+	title h1
 
 h2
-	font-size 40px
-	line-height 40px
-	@media break3
-		font-size 30px
-		line-height 30px
-	@media break2
-		font-size 24px
-		line-height 24px
+.h2
+	title h2
 
 h3
-	font-size 30px
-	line-height 30px
-	@media break3
-		font-size 24px
-		line-height 24px
-	@media break2
-		font-size 20px
-		line-height 20px
+.h3
+	title h3
 
 h4
-	font-size 24px
-	line-height 24px
-	@media break3
-		font-size 20px
-		line-height 20px
+.h4
+	title h4
+
+h5		
+.h5
+	title h5
 
 ul
 ol
@@ -80,9 +65,16 @@ ol
 
 img
 	display block
+	&.img-ma
+		margin 0 auto
+	&.img-mw
+		max-width 100%
+	&.img-circle
+		radius 50%
 
 table
 	border-collapse collapse
+	line-height global_lh
 	td
 	th
 		border 1px solid lightgray
@@ -121,6 +113,17 @@ table
 
 .nowrap
 	white-space nowrap
+
+.mb0
+	margin-bottom 0
+.mb5
+	margin-bottom 5px
+.mb10
+	margin-bottom 10px
+.mb15
+	margin-bottom 15px
+.mb20
+	margin-bottom 20px
 
 
 // Base layout

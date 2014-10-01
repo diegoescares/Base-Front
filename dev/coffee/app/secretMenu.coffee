@@ -5,6 +5,7 @@ app.secretMenu =
 	init: ->
 
 		# Compare URL in menu
+		###
 		url = document.URL
 		url_split = url.split("/")
 		name_page = url_split[url_split.length-1]
@@ -13,6 +14,7 @@ app.secretMenu =
 		li = $(".secretmenu-content a[href='"+name_page_clear+"']").parent("li")
 		li.addClass "current-item"
 		li.parent().parent("li").addClass "current-item"
+		###
 
 		# Desktop
 		$(".secretmenu-content ul li a").each ->

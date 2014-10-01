@@ -11,14 +11,14 @@ red                 = #D00
 yellow              = #FFC
 
 // Social colors
-color_facebook		= #3b5998
-color_twitter		= #00aced
-color_googleplus	= #dd4b39
-color_youtube		= #bb0000
-color_linkedin		= #007bb6
-color_instagram		= #517fa4
-color_pinterest		= #cb2027
-color_foursquare	= #0072b1
+color_facebook      = #3b5998
+color_twitter       = #00aced
+color_googleplus    = #dd4b39
+color_youtube       = #bb0000
+color_linkedin      = #007bb6
+color_instagram     = #517fa4
+color_pinterest     = #cb2027
+color_foursquare    = #0072b1
 
 // Global
 global_bg           = white
@@ -41,14 +41,32 @@ boxshadow			= 2px 2px 4px rgba(0,0,0,.1)
 border				= 1px solid lightgray
 rad					= 5px
 rad_2				= 3px
-tnormal				= .2s ease
 tn   				= .2s ease
 cb					= cubic-bezier(0.770, 0.000, 0.175, 1.000)
 
-// RESPONSIVE BREAKPOINTS VARS [240px * (n+1) - 1]
-break1 = "all and (max-width:479px)"
-break2 = "all and (max-width:719px)"
-break3 = "all and (max-width:959px)"
-break4 = "all and (max-width:1199px)"
-break5 = "all and (min-width:1440px)"
+// Responsive break points [240px * (n+1) - 1]
+break1              = "all and (max-width:479px)"
+break2              = "all and (max-width:719px)"
+break3              = "all and (max-width:959px)"
+break4              = "all and (max-width:1199px)"
+break5              = "all and (min-width:1440px)"
+
+
+// Titles configuration
+
+title_base       = 18px
+title_aument     = 10px
+title_lineheight = 1.1
+
+title_1          = title_base + (title_aument*3)
+title_2          = title_base + (title_aument*2)
+title_3          = title_base + (title_aument*1)
+title_4          = title_base + (title_aument*0)
+title_5          = title_base - (title_aument*.25)
+
+title_1_lh       = ceil( title_1 * title_lineheight )
+title_2_lh       = ceil( title_2 * title_lineheight )
+title_3_lh       = ceil( title_3 * title_lineheight )
+title_4_lh       = ceil( title_4 * title_lineheight )
+title_5_lh       = ceil( title_5 * title_lineheight )
 
