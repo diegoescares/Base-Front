@@ -36,4 +36,7 @@ app =
 		# Plugins
 		app.plugins.init()
 
+		# Tools
+		app.tools()
+
 #=include_tree app

@@ -14,19 +14,6 @@
 	p, ol, ul, table
 		margin-bottom 15px
 
-	img
-		height auto
-
-	iframe
-		width 100%
-		@media break1
-			height 200px
-
-	img,
-	iframe
-		max-width 100%
-		display block
-
 	ul
 		list-style-type disc
 	ol
@@ -56,17 +43,34 @@
 		&:hover
 			text-decoration underline
 
-	// WP
-
 	img
+		height auto
+		width auto
+		max-width 100%
+		display block
+
+		// WP
 		&.alignright
 			float right
 			margin-left 20px
+			@media break2
+				float none
+				margin-left 0
 		&.alignleft
 			float left
 			margin-right 20px
+			@media break2
+				float none
+				margin-left 0
 		&.aligncenter
 			margin 0 auto
+
+	iframe
+		width 100%
+		max-width 100%
+		display block
+		@media break1
+			height 200px
 
 
 
