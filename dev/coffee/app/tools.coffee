@@ -3,8 +3,9 @@ app.tools = ->
 	app.video.init()
 	app.goto.init()
 	app.faq.init()
-	#app.previewfile.init()
+	app.previewfile.init()
 	app.placeholder.init()
+	app.tabs.init()
 
 
 app.video = 
@@ -41,6 +42,22 @@ app.faq =
 				else
 					$(this).find(".faq-answer").slideUp()
 					$(this).removeClass("faq-open")
+
+
+app.tabs = 
+	init: ->
+		$(".tabs .tabs-header .tab").eq(0).addClass("tab-active")
+		$(".tabs .tabs-body .tab").eq(0).addClass("tab-active")
+		$(".tabs .tabs-header .tab").click ->
+			index = $(this).index()
+			app.tabs.open index
+			false
+	open: (index) ->
+		$(".tabs .tabs-header .tab").removeClass("tab-active")
+		$(".tabs .tabs-header .tab").eq(index).addClass("tab-active")
+		$(".tabs .tabs-body .tab").removeClass("tab-active")
+		$(".tabs .tabs-body .tab").eq(index).addClass("tab-active")
+		false
 
 
 app.previewfile =
