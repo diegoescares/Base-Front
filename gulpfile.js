@@ -11,8 +11,7 @@ var notify		= require('gulp-notify');
 var plumber 	= require('gulp-plumber');
 var concat 		= require('gulp-concat');
 
-var path_dev	= "dev/"
-var path_final	= "hola/"
+var path_dev	= "project/"
 
 var files = {
 	coffee: {
@@ -35,11 +34,11 @@ gulp.task('default', function () {
 gulp.task("build-js",function(){
 	gulp.src(files.coffee.to)
 	.pipe(include())
-	.pipe(sourcemaps.init())
+	//.pipe(sourcemaps.init())
 	.pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
 	.pipe(coffee())
 	.pipe(notify("Compiled: <%= file.relative %>"))
-	.pipe(sourcemaps.write())
+	//.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path_dev+'/js'));
 });
 
@@ -54,12 +53,12 @@ gulp.task("build-js-plugins",function(){
 gulp.task("build-css",function(){
 	gulp.src(files.stylus.to)
 	.pipe(include())
-	.pipe(sourcemaps.init())
+	//.pipe(sourcemaps.init())
 	.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
 	.pipe(stylus())
 	.pipe(notify("Compiled: <%= file.relative %>"))
 	.pipe(prefix())
-	.pipe(sourcemaps.write())
+	//.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path_dev+'/css'))
 });
 
