@@ -10,6 +10,7 @@ var prefix		= require('gulp-autoprefixer');
 var notify		= require('gulp-notify');
 var plumber 	= require('gulp-plumber');
 var concat 		= require('gulp-concat');
+var jade 		= require('gulp-jade');
 
 var path_dev	= "project/"
 
@@ -21,6 +22,10 @@ var files = {
 	stylus: {
 		from: path_dev+"/stylus/**/*.styl",
 		to:   path_dev+"/stylus/main.styl"
+	},
+	jade: {
+		from: path_dev+"/jade/**/*.jade",
+		to:   path_dev+"/jade/*.jade"
 	}
 }
 
@@ -29,6 +34,7 @@ gulp.task('default', function () {
     gulp.watch(path_dev + '/css/**/*.css').on('change', livereload.changed);
 	gulp.watch(files.stylus.from,['build-css']);
 	gulp.watch(files.coffee.from,['build-js']);
+	gulp.watch(files.jade.from,['build-html']);
 });
 
 gulp.task("build-js",function(){
@@ -36,7 +42,7 @@ gulp.task("build-js",function(){
 	.pipe(include())
 	//.pipe(sourcemaps.init())
 	.pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
-	.pipe(coffee())
+	.pipe(coffee({bare: true}))
 	.pipe(notify("Compiled: <%= file.relative %>"))
 	//.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path_dev+'/js'));
@@ -60,6 +66,14 @@ gulp.task("build-css",function(){
 	.pipe(prefix())
 	//.pipe(sourcemaps.write())
 	.pipe(gulp.dest(path_dev+'/css'))
+});
+
+gulp.task("build-html",function(){
+	gulp.src(files.jade.to)
+	//.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
+	.pipe(jade())
+	//.pipe(notify("Compiled: <%= file.relative %>"))
+	.pipe(gulp.dest(path_dev+'/jade'))
 });
 
 
