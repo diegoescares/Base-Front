@@ -18,6 +18,6 @@ app.browsers = ->
 		if parseInt($.browser.version) <= 7
 			app.alert.open
 				title: "Estás usando un navegador muy antiguo"
-				content: "Actualiza tu navegador ahora y disfruta de una mejor experiencia en Falabella Novios."
+				content: "Actualiza tu navegador ahora y disfruta de una mejor experiencia."
 				buttons: "<a href='http://browsehappy.com/?locale=es' target='_blank' class='button button-primary button-big'>Actualizar ahora</a>"
 				static: true
