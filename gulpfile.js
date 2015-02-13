@@ -70,8 +70,10 @@ gulp.task("build-css",function(){
 
 gulp.task("build-html",function(){
 	gulp.src(files.jade.to)
-	.pipe(jade())
-	.pipe(gulp.dest(path+'/jade'))
+	.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
+	.pipe(jade({pretty: true}))
+	.pipe(notify("Compiled: <%= file.relative %>"))
+	.pipe(gulp.dest(path))
 });
 
 

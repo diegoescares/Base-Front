@@ -1,0 +1,106 @@
+doctype html
+html(lang="es")
+
+	head
+		
+		title {titulo}
+
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+		meta(name='description', content='{descripcion}')
+
+		// Meta tags facebook
+		meta(property='og:image', content='{url imagen}')
+		meta(property='og:title', content='{titulo}')
+		meta(property='og:url', content='{url de la pagina}')
+		meta(property='og:description', content='{description de la pagina}')
+
+		// Meta tags twitter cards
+		meta(name='twitter:card', content='{url imagen}}')
+		meta(name='twitter:site', content='@loremipsum')
+		meta(name='twitter:creator', content='@loremipsum')
+		meta(name='twitter:title', content='{titulo}')
+		meta(name='twitter:description', content='{descripcion}')
+		meta(name='twitter:image:src', content='{url imagen}')
+		
+		// Style
+		link(href='css/main.css', rel='stylesheet', type='text/css')
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700', rel='stylesheet', type='text/css')
+		link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+		link(href='img/favicon.ico', rel='shortcut icon')
+		
+		// Scripts
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+		// script(src='http://maps.google.com/maps/api/js?sensor=false')
+		script(src='js/main.js')
+
+
+		//[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]
+	
+
+	body
+
+		header
+
+			.header-top
+				.header-limit
+					.header-inner
+
+						.header-logo
+							a(href="index.php")
+
+						.header-menu-button.secretmenu-button
+
+						.header-nav
+							nav
+								ul
+									li
+										a(href="index.php") Lorem ipsum 1
+									li
+										a(href="index.php") Lorem ipsum 2
+									li
+										a(href="index.php") Lorem ipsum 3
+									li
+										a(href="index.php") Lorem ipsum 4
+									li
+										a(href="index.php") Lorem ipsum 5
+									li
+										a(href="index.php") Lorem ipsum 6
+										ul
+											li
+												a(href="index.php") Lorem ipsum 6.1
+											li
+												a(href="index.php") Lorem ipsum 6.2
+											li
+												a(href="index.php") Lorem ipsum 6.3
+												ul
+													li
+														a(href="index.php") Lorem ipsum 6.3.1
+													li
+														a(href="index.php") Lorem ipsum 6.3.2
+													li
+														a(href="index.php") Lorem ipsum 6.3.3
+
+			.header-menu.secretmenu
+				.header-menu-back
+				.header-menu-inner.secretmenu-translate
+					.header-menu-content
+						.secretmenu-lvl(data-copy=".header-nav")
+
+
+		#body
+			.body-content
+
+				block page
+
+			footer
+				.limit
+					.inner
+						| bleh
+
+
+
+
+
+
