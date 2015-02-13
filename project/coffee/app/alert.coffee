@@ -15,7 +15,7 @@ app.alert =
 			$("a[data-alert]").live "click", ->
 				element = $(this)
 				app.alert.open
-					title: element.attr("data-title")
+					title: element.attr("data-alert")
 					content: element.attr("data-content")
 					accept: true
 					cancel: true
@@ -27,10 +27,9 @@ app.alert =
 				element = $(this)
 				if !element.is("a") && !element.is("button")
 					app.alert.open
-						title: element.attr("data-title")
+						title: element.attr("data-alert")
 						content: element.attr("data-content")
 						accept: true
-						cancel: true
 
 
 	open: (options) ->

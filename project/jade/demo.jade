@@ -1,0 +1,380 @@
+
+extends ./templates/default.jade
+
+block page
+
+	.page-header
+		.limit
+			.inner
+				
+				h1 Base Front Demo
+
+
+	section
+		.limit
+			.inner
+				.content
+		
+					h2 Botones
+
+					h4 Configuraciones:
+					pre.
+						button, button-small, button-medium, button-big
+						button-primary, button-secondary, button-dark, button-white, button-line, button-hover-2
+
+					h4 Normal:
+
+					a(href="#",class="button button-small") Lorem ipsum
+					| 
+					a(href="#",class="button button") Lorem ipsum
+					| 
+					a(href="#",class="button button-medium") Lorem ipsum
+					| 
+					a(href="#",class="button button-big") Lorem ipsum
+
+
+					h4 Primary:
+
+					a(href="#",class="button button-primary button-small") Lorem ipsum
+					| 
+					a(href="#",class="button button-primary button") Lorem ipsum
+					| 
+					a(href="#",class="button button-primary button-medium") Lorem ipsum
+					| 
+					a(href="#",class="button button-primary button-big") Lorem ipsum
+
+					h4 Secondary:
+
+					a(href="#",class="button button-secondary button-small") Lorem ipsum
+					| 
+					a(href="#",class="button button-secondary button") Lorem ipsum
+					| 
+					a(href="#",class="button button-secondary button-medium") Lorem ipsum
+					| 
+					a(href="#",class="button button-secondary button-big") Lorem ipsum
+
+					h4 Dark:
+
+					a(href="#",class="button button-dark button-small") Lorem ipsum
+					| 
+					a(href="#",class="button button-dark button") Lorem ipsum
+					| 
+					a(href="#",class="button button-dark button-medium") Lorem ipsum
+					| 
+					a(href="#",class="button button-dark button-big") Lorem ipsum
+
+					h4 Dark + hover secondary:
+
+					a(href="#",class="button button-dark button-hover-2 button-small") Lorem ipsum
+					| 
+					a(href="#",class="button button-dark button-hover-2 button") Lorem ipsum
+					| 
+					a(href="#",class="button button-dark button-hover-2 button-medium") Lorem ipsum
+					| 
+					a(href="#",class="button button-dark button-hover-2 button-big") Lorem ipsum
+
+
+					h4 White:
+					.inner(style="background:#333")
+						a(href="#",class="button button-white button-small") Lorem ipsum
+						| 
+						a(href="#",class="button button-white button") Lorem ipsum
+						| 
+						a(href="#",class="button button-white button-medium") Lorem ipsum
+						| 
+						a(href="#",class="button button-white button-big") Lorem ipsum
+
+					h4 Line:
+					.inner(style="background:#333")
+						a(href="#",class="button button-line button-small") Lorem ipsum
+						| 
+						a(href="#",class="button button-line button") Lorem ipsum
+						| 
+						a(href="#",class="button button-line button-medium") Lorem ipsum
+						| 
+						a(href="#",class="button button-line button-big") Lorem ipsum
+
+
+
+	section
+		.limit
+			.inner
+				.content
+
+					h2 Alertas
+
+					h4 Simple:
+					pre.
+						a(href="#",data-alert="Hola") Simple
+						a(href="#",data-alert="Hola") Simple
+						div(data-alert,data-title="Hola",data-content="¡Exito!")
+
+					h4 Con contenido:
+					pre.
+						a(href="#",data-alert="Hola") Link
+						a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Link
+
+					h4 Lanzar al tiro:
+					pre.
+						div(data-alert,data-title="Hola",data-content="¡Exito!")
+					
+					h4 Demo:
+					a.button(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Abrir alerta
+
+
+	section
+		.limit
+			.inner
+				.content
+		
+					h2 Multi Google Maps & Markers
+
+					h4 Marcadores con contenido:
+					pre.
+						.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
+							.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
+								| Optional content marker
+							.map-marker(data-lat='-33.4580000', data-lng='-70.629371')
+								| Optional content marker
+
+					h4 Ejemplos:
+
+				.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
+					.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
+						ul
+							li
+								i.fa.fa-home
+								| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
+							li
+								a(href='tel:+56223935367')
+									i.fa.fa-phone
+									| +(56) 2 2393 5367
+							li
+								a(href='mailto:contacto@fprogreso.org')
+									i.fa.fa-envelope
+									| contacto@fprogreso.org
+					.map-marker(data-lat='-33.4580000', data-lng='-70.629371')
+						.content.inner.inner-half
+							h3 Lorem ipsum dolor
+							p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, nihil odit voluptatibus iure temporibus repellat quo hic fugiat consequatur sequi ipsa minus harum nemo molestias, atque ullam suscipit! Eaque, delectus.
+
+				.sep
+
+				.map(data-zoom='16', data-lat='-33.4585000', data-lng='-70.629371')
+					.map-marker(data-lat='-33.4600000', data-lng='-70.629371') :3
+					.map-marker(data-lat='-33.4580000', data-lng='-70.628371')
+
+
+
+	section
+		.limit
+			.inner
+				.content
+					h2 FAQ
+					.faq
+						.faq-item.faq-open
+							h3.faq-question ¿Lorem?
+							.faq-answer
+								p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+						.faq-item
+							h3.faq-question ¿Lorem?
+							.faq-answer
+								p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+						.faq-item
+							h3.faq-question ¿Lorem?
+							.faq-answer
+								p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+
+
+
+
+
+	section
+		.limit
+			.inner
+
+				.content
+					h2 Formularios
+					h4 Con layout y centrado
+
+				form.controls.controls-layout.controls-center(method='POST', action='')
+					.control
+						.control-name Email
+						.control-value
+							input(type='email', name='email')
+					.control
+						.control-name Nombre
+						.control-value
+							input(type='text', name='nombre')
+					.control
+						.control-name RUT
+						.control-value
+							input.rut(type='text', name='rut')
+					.control
+						.control-name.control-name-2lines Fecha de Nacimiento
+						.control-value
+							.cols.cols-halfsep.cols-nobp
+								.col.col-33
+									.col-inner
+										select(name='bday_d')
+											option(value='') Día
+								.col.col-33
+									.col-inner
+										select(name='bday_m')
+											option(value='') Mes
+								.col.col-33
+									.col-inner
+										select(name='bday_y')
+											option(value='') Año
+					.control
+						.control-name Teléfono
+						.control-value
+							.cols.cols-halfsep.cols-nobp
+								.col.col-20
+									.col-inner
+										input(type='text', maxlength='2', name='phone_prefix')
+								.col.col-80
+									.col-inner
+										input(type='text', maxlength='8', name='phone')
+					.control
+						.control-name Región
+						.control-value
+							select.optional(name='rid')
+								option(value='') Selecciona una región
+					.control
+						.control-name Ciudad
+						.control-value
+							input.optional(type='text', name='city')
+					.control
+						.control-name Contraseña
+						.control-value
+							input(type='password', name='pass')
+					.control
+						.control-name.control-name-2lines Confirmar Contraseña
+						.control-value
+							input(type='password', name='pass2', data-repeat='pass')
+					.control
+						.control-name Sexo
+						.control-value
+							label.inline
+								input(type='radio', name='sexo', value='Male')
+								|  Masculino
+							label.inline
+								input(type='radio', name='sexo', value='Female')
+								|  Femenino
+					.control
+						.control-name Mensaje
+						.control-value
+							textarea(name='message')
+					.control
+						.control-name
+						.control-value
+							label
+								input.input-terms(type='checkbox', name='terms', value='1')
+								|  Acepto
+					.control
+						.control-name
+						.control-value
+							input.button.button-primary(type='submit', value='Enviar')
+		.limit
+			.inner
+				.content
+					h4 Líquido y centrado:
+				form.controls.controls-center(method='POST', action='')
+					.control
+						.control-name Email
+						.control-value
+							input(type='email', name='email')
+					.control
+						.control-name Nombre
+						.control-value
+							input(type='text', name='nombre')
+					.control
+						.control-name RUT
+						.control-value
+							input.rut(type='text', name='rut')
+					.control
+						.control-name.control-name-2lines Fecha de Nacimiento
+						.control-value
+							.cols.cols-halfsep.cols-nobp
+								.col.col-33
+									.col-inner
+										select(name='bday_d')
+											option(value='') Día
+								.col.col-33
+									.col-inner
+										select(name='bday_m')
+											option(value='') Mes
+								.col.col-33
+									.col-inner
+										select(name='bday_y')
+											option(value='') Año
+					.control
+						.control-name
+						.control-value
+							input.button.button-primary(type='submit', value='Enviar')
+		.limit
+			.inner
+				.content
+					h4 Líquido
+				form.controls(method='POST', action='')
+					.control
+						.control-name Email
+						.control-value
+							input(type='email', name='email')
+					.control
+						.control-name Nombre
+						.control-value
+							input(type='text', name='nombre')
+					.control
+						.control-name RUT
+						.control-value
+							input.rut(type='text', name='rut')
+					.control
+						.control-name.control-name-2lines Fecha de Nacimiento
+						.control-value
+							.cols.cols-halfsep.cols-nobp
+								.col.col-33
+									.col-inner
+										select(name='bday_d')
+											option(value='') Día
+								.col.col-33
+									.col-inner
+										select(name='bday_m')
+											option(value='') Mes
+								.col.col-33
+									.col-inner
+										select(name='bday_y')
+											option(value='') Año
+				
+					.control
+						.control-name
+						.control-value
+							input.button.button-primary(type='submit', value='Enviar')
+
+	section.section-light
+		.limit
+			.inner.inner-2
+				.content
+
+					h2 Tabs
+			
+					.tabs
+						.tabs-header
+							a.tab(href='#') Lorem
+							a.tab(href='#') Ipsum
+						.tabs-body
+							.tab
+								.inner
+									| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto libero, commodi, at ab facere saepe. Sapiente ullam architecto ea voluptatibus harum. Tempore repellendus veritatis voluptates vel culpa voluptatem facilis, dolorum!
+							.tab
+								.inner
+									| Tempora, expedita hic dolorem id, nisi voluptas tempore non laudantium mollitia? Blanditiis eum ab soluta veniam ipsa accusamus quasi, possimus hic aut sapiente neque voluptas nostrum accusantium quae distinctio id.
+
+
+
+
+
+
+
+

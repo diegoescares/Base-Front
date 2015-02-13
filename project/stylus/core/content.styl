@@ -4,15 +4,16 @@
 	font-size 15px
 	line-height 24px
 
-	h1
-		margin-bottom 15px
-
-	h2, h3, h4
+	h1, h2, h3, h4
 		padding-top 10px
 		margin-bottom 15px
+		&:first-child
+			padding-top 0
 
 	p, ol, ul, table
 		margin-bottom 15px
+		&:last-child
+			margin-bottom 0
 
 	ul
 		list-style-type disc
@@ -31,17 +32,18 @@
 		line-height 1.5em
 		font-style italic
 		margin-bottom 15px
+		
+	pre
+		background lighter
+		padding 15px 20px
+		margin-bottom 15px
+		overflow auto
 
 	.important
 		background yellow
 		padding 15px 20px 1px
 		margin-bottom 15px
 		
-	a
-		text-decoration none
-		color color_2
-		&:hover
-			text-decoration underline
 
 	img
 		height auto
@@ -72,6 +74,10 @@
 		@media break1
 			height 200px
 
-
-
+	a
+		text-decoration none
+		color color_2
+		&:hover
+			text-decoration underline
+			
 

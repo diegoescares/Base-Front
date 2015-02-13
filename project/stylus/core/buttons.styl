@@ -2,19 +2,19 @@
 
 .button, .button.button
 	font-family font
-	radius rad2
 	text-decoration none
 	display inline-block
-	border 0
+	border 1px solid transparent
 	width auto
 	transition tn
 	text-align center
 	margin-bottom 2px
 	vertical-align middle
+	radius rad_2
 
 	// Types
 
-	background lightgray
+	background light
 	color gray
 	&:hover
 		cursor pointer
@@ -36,12 +36,19 @@
 
 	&.button-dark
 		color white
-		background darkgray
+		background dark
 		&:hover
 			background color
 	
+	&.button-white
+		color dark
+		background white
+		&:hover
+			background color
+			color white
+	
 	&.button-line
-		border 1px solid white
+		border-color white
 		background transparent
 		color white
 		&:hover
@@ -49,12 +56,17 @@
 			border-color color
 	
 	&.button-disabled
-		background lightgray
-		border-color lightgray
+		background light
+		border-color light
 		&:hover
-			background lightgray
-			border-color lightgray
+			background light
+			border-color light
 			cursor default
+
+	&.button-hover-2
+		&:hover
+			background color_2
+			color white
 
 
 	// Sizes

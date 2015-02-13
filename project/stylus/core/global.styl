@@ -125,6 +125,27 @@ table
 .mb20
 	margin-bottom 20px
 
+.sep
+	height sep
+	&.sep-2
+		height sep*2
+		@media break1
+			height sep
+	&.sep-3
+		height sep*3
+		@media break2
+			height sep*2
+		@media break1
+			height sep
+	&.sep-4
+		height sep*4
+		@media break3
+			height sep*3
+		@media break2
+			height sep*2
+		@media break1
+			height sep
+
 
 // Base layout
 
@@ -137,6 +158,30 @@ table
 	padding sep
 	@media break1
 		padding (sep/2)
+	&.inner-half
+		padding (sep/2)
+	&.inner-2
+		padding sep*2 sep
+		@media break2
+			padding sep
+		@media break1
+			padding (sep/2)
+	&.inner-3
+		padding sep*3 sep
+		@media break3
+			padding sep*2 sep
+		@media break2
+			padding sep
+		@media break1
+			padding (sep/2)
+	&.inner-4
+		padding sep*4 sep
+		@media break3
+			padding sep*3 sep
+		@media break2
+			padding sep*2 sep
+		@media break1
+			padding sep*2 (sep/2)
 
 .nomobile
 	display block

@@ -42,9 +42,15 @@ header
 			display block
 
 			/* test */
-			background dark
-			width 120px
-			height 60px
+			background color
+			color white
+			font-weight bold
+			font-size 200%
+			padding 30px 20px
+			margin-top -10px  
+			@media header_height_change
+				padding 20px
+				margin-top 0
 
 	.header-nav
 		@media header_menu_show
@@ -60,10 +66,11 @@ header
 					display none
 						
 	.header-menu-button
-		float right
 		z-index 2
-		position relative
 		display none
+		position fixed
+		top 0
+		right 0
 		@media header_menu_show
 			display block
 	
