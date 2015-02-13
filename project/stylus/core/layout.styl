@@ -37,6 +37,15 @@ cols_sep = sep
 			margin 0
 
 	
+	// Sin overflow hidden
+
+	&.cols-ov
+		overflow visible
+		&:after
+			content ""
+			clear both
+
+	
 	&.cols-nobp .col, // Columnas sin break points
 	.col
 		float left
