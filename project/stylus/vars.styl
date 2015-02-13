@@ -3,9 +3,9 @@
 color               = #0FC
 color_2             = #0FF
 black               = #222
-darkgray            = #444
+dark                = #333
 gray                = #999
-lightgray           = #DDD
+light               = #DDD
 white               = #FFF
 red                 = #D00
 yellow              = #FFC
@@ -29,44 +29,81 @@ global_sep          = 20px
 
 // Layout
 sep                 = 20px
-limit               = 1220px
+limit               = 1240px
 
 // Fonts
-font				= 'Open Sans', sans-serif
-font_2				= 'Open Sans', sans-serif
+font                = 'Open Sans', sans-serif
+font_2              = 'Open Sans', sans-serif
 
 // CSS vars
-shadow				= 1px 1px 0px rgba(0,0,0,.4)
-boxshadow			= 2px 2px 4px rgba(0,0,0,.1)
-border				= 1px solid lightgray
-rad					= 5px
-rad_2				= 3px
-tn   				= .2s ease
-cb					= cubic-bezier(0.770, 0.000, 0.175, 1.000)
+shadow              = 1px 1px 0px rgba(0,0,0,.4)
+shadow_2            = 2px 2px 4px rgba(0,0,0,.1)
+border              = 1px solid light
+rad                 = 5px
+rad_2               = 3px
+tn                  = .2s ease
+cb                  = cubic-bezier(0.770, 0.000, 0.175, 1.000)
 
 // Responsive break points [240px * (n+1) - 1]
-break1              = "all and (max-width:479px)"
-break2              = "all and (max-width:719px)"
-break3              = "all and (max-width:959px)"
-break4              = "all and (max-width:1199px)"
-break5              = "all and (min-width:1440px)"
-
+break               = 240
+break1              = "all and (max-width:" + ( (break*2) - 1 ) + "px)"
+break2              = "all and (max-width:" + ( (break*3) - 1 ) + "px)"
+break3              = "all and (max-width:" + ( (break*4) - 1 ) + "px)"
+break4              = "all and (max-width:" + ( (break*5) - 1 ) + "px)"
+break5              = "all and (min-width:" + ( (break*6) ) + "px)"
+break_limit         = "all and (max-width:" + limit + ")"
 
 // Titles configuration
 
-title_base       = 18px
-title_aument     = 10px
-title_lineheight = 1.1
+title_base          = 18px
+title_aument        = 10px
+title_lineheight    = 1.1
 
-title_1          = title_base + (title_aument*3)
-title_2          = title_base + (title_aument*2)
-title_3          = title_base + (title_aument*1)
-title_4          = title_base + (title_aument*0)
-title_5          = title_base - (title_aument*.25)
+title_h1            = title_base + (title_aument*3.5)
+title_h2            = title_base + (title_aument*2)
+title_h3            = title_base + (title_aument*1)
+title_h4            = title_base + (title_aument*0)
+title_h5            = title_base - (title_aument*.5)
 
-title_1_lh       = ceil( title_1 * title_lineheight )
-title_2_lh       = ceil( title_2 * title_lineheight )
-title_3_lh       = ceil( title_3 * title_lineheight )
-title_4_lh       = ceil( title_4 * title_lineheight )
-title_5_lh       = ceil( title_5 * title_lineheight )
+title_h1_lh         = ceil( title_h1 * title_lineheight )
+title_h2_lh         = ceil( title_h2 * title_lineheight )
+title_h3_lh         = ceil( title_h3 * title_lineheight )
+title_h4_lh         = ceil( title_h4 * title_lineheight )
+title_h5_lh         = ceil( title_h5 * title_lineheight )
+
+
+// Easing
+
+sine-in             = cubic-bezier(0.47, 0, 0.745, 0.715)
+sine-out            = cubic-bezier(0.39, 0.575, 0.565, 1)
+sine-in-out         = cubic-bezier(0.445, 0.05, 0.55, 0.95)
+
+quad-in             = cubic-bezier(0.55, 0.085, 0.68, 0.53)
+quad-out            = cubic-bezier(0.25, 0.46, 0.45, 0.94)
+quad-in-out         = cubic-bezier(0.455, 0.03, 0.515, 0.955)
+
+cubic-in            = cubic-bezier(0.55, 0.055, 0.675, 0.19)
+cubic-out           = cubic-bezier(0.215, 0.61, 0.355, 1)
+cubic-in-out        = cubic-bezier(0.645, 0.045, 0.355, 1)
+
+quart-in            = cubic-bezier(0.895, 0.03, 0.685, 0.22)
+quart-out           = cubic-bezier(0.165, 0.84, 0.44, 1)
+quart-in-out        = cubic-bezier(0.77, 0, 0.175, 1)
+
+quint-in            = cubic-bezier(0.755, 0.05, 0.855, 0.06)
+quint-out           = cubic-bezier(0.23, 1, 0.32, 1)
+quint-in-out        = cubic-bezier(0.86, 0, 0.07, 1)
+
+expo-in             = cubic-bezier(0.95, 0.05, 0.795, 0.035)
+expo-out            = cubic-bezier(0.19, 1, 0.22, 1)
+expo-in-out         = cubic-bezier(1, 0, 0, 1)
+
+circ-in             = cubic-bezier(0.6, 0.04, 0.98, 0.335)
+circ-out            = cubic-bezier(0.075, 0.82, 0.165, 1)
+circ-in-out         = cubic-bezier(0.785, 0.135, 0.15, 0.86)
+
+back-in             = cubic-bezier(0.6, -0.28, 0.735, 0.045)
+back-out            = cubic-bezier(0.175, 0.885, 0.32, 1.275)
+back-in-out         = cubic-bezier(0.68, -0.55, 0.265, 1.55)
+
 

@@ -10,7 +10,7 @@ app =
 		app.browsers()
 
 		# Menú
-		app.secretMenu.init()
+		app.secretmenu.init()
 
 		# Shares
 		app.shares.init()
@@ -33,10 +33,11 @@ app =
 		# Eventos en scroll
 		app.scroll()
 
-		# Plugins
-		app.plugins.init()
-
 		# Tools
 		app.tools()
+
+		# Actions
+		app.actions.init()
+
 
 #=include_tree app

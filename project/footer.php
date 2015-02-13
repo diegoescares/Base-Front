@@ -1,8 +1,7 @@
 
 
 
-			</div><!-- #body -->
-		</div><!-- .limit -->
+		</div><!-- #body -->
 
 
 	</div><!-- #container-back -->

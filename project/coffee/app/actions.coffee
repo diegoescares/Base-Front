@@ -1,8 +1,33 @@
 
-
-app.plugins =
-
+app.actions = 
 	init: ->
+
+		console.log "Hello world!"
+
+		# On load window
+		# $(window).on "load", ->
+
+		# On load images
+		# $("body").imagesLoaded ->
+
+		# On resize window
+		# $(window).resize ->
+
+		# On resize window with delay
+		###
+		r_time = false
+		$(window).resize ->
+			r = true
+			clearTimeout(r_time)
+			r_time = setTimeout ->
+				r = false
+				console.log "End!"
+			,600
+		###
+
+
+
+	plugins: ->
 
 		###
 		#  Autosize
@@ -35,18 +60,7 @@ app.plugins =
 					autoHeight: true
 		,50
 
-		$(window).on "load", ->
-			app.plugins.relayout()
 
-		r_time = false
-		$(window).resize ->
-			app.plugins.relayout()
-			r = true
-			clearTimeout(r_time)
-			r_time = setTimeout ->
-				app.plugins.relayout()
-				r = false
-			,600
 		###
 
 
@@ -55,15 +69,17 @@ app.plugins =
 
 		###
 		app.alert.equidist()
+
 		if $(".isotope").length
 			$(".isotope").isotope
 				relayout: true
 	
 		$("body").imagesLoaded ->
 			app.alert.equidist()
-			app.alert.equidist()
 			if $(".isotope").length
 				$(".isotope").isotope
 					relayout: true
 		###
+
+
 

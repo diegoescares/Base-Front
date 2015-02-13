@@ -1,101 +1,120 @@
 
+header_height        = 80px
+header_height_min    = 60px
+header_bg            = black
+header_color         = white
+header_height_change = break3
 
+header_menu_width    = 400px
+header_menu_bg       = dark
+header_menu_color    = white
+header_menu_show     = break2
 
-header_height = 70px
-header_height_min = 50px
-header_width = 260px
 
 header
+	position relative
+	z-index 10
 	
-	nav
+	.header-inner
+		padding 10px sep
+		@media header_height_change
+			padding 0
+			
+	.header-limit
+		height header_height
+		max-width limit
+		margin 0 auto
+		overflow hidden
+		@media header_height_change
+			height header_height_min
+
+	.header-top 
+		position fixed
+		top 0
+		left 0
+		width 100%
+		background header_bg
+	
+	.header-logo
+		float left
+		margin-right 20px
+		a
+			display block
+
+			/* test */
+			background dark
+			width 120px
+			height 60px
+
+	.header-nav
+		@media header_menu_show
+			display none
 		ul
-			padding 0 15px
 			li
 				display inline-block
 				a
-					display block
-					padding 25px 10px
-					.fa
-						display none
+					padding 20px
+					display inline-block
+					color header_color
 				ul
 					display none
-
-	.header-top
-		padding-top 0
-		padding-bottom 0
-		position fixed
-		width 100%
-		top 0
-		left 0
-		z-index 5 // Arriba
-		.inner
-			background #444
-			padding 0
-			height header_height
-
-
-	.header-left
-		
+						
+	.header-menu-button
+		float right
+		z-index 2
+		position relative
+		display none
+		@media header_menu_show
+			display block
+	
+	.header-menu
+		z-index 1
 		position fixed
 		top 0
-		left 0
+		right 0
 		height 100%
-		width 100%
-		z-index 3 // Abajo
-		.limit
+		overflow hidden
+		display none
+		@media header_menu_show
+			display block
+
+		.header-menu-inner
+			background darken(header_menu_bg,20%)
 			height 100%
-		.inner
-			width header_width
-			padding 0
+			width header_menu_width
 			position relative
-			height 100%
-			background #DDD
-			padding-top header_height
-		ul
-			padding 0
-			li
-				display block
-				a
-					display block
-					padding 15px 25px
-					color darkgray
+			max-width 100%
+			margin 0 0 0 auto
+		
+		.secretmenu-lvl
+			background header_menu_bg
+
+		.header-menu-content
+			ul
+				li
+					a
+						padding 20px
+						display block
+						color header_menu_color
+						border-bottom 1px solid rgba(255,255,255,.1)
+					ul
+						display none
+						display block
+						background red
+						plane absolute
+						overflow auto
+						opacity .5
+						display none
+
 
 
 #body
-	padding-top header_height
-	position relative
-	z-index 4 // Al medio
-	&.body-left
-		padding-left header_width
-
-@media break2
-	header
-		.secretmenu-button
-			display block
-		.header-top
-			.inner
-				height header_height_min
-			ul
-				margin-left 50px
-				li
-					a
-						display block
-						padding 15px 10px
-		.header-left
-			display none
-	#body
-		padding-top header_height_min
-		&.body-left
-			padding-left 0
-
-
-
-
-.secretmenu
-	a
-		padding 15px
-		display block
-		border-bottom 1px solid rgba(0,0,0,.1)
-		.fa
-			font-size 10px
+	@media header_menu_show
+		plane absolute
+		overflow auto
+	
+	.body-content
+		padding-top header_height		
+		@media header_height_change
+			padding-top header_height_min
 
