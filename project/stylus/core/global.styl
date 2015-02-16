@@ -72,16 +72,25 @@ img
 	&.img-circle
 		radius 50%
 
+.table-container
+	overflow auto
+	table
+		width 100%
+		
 table
 	border-collapse collapse
 	line-height global_lh
+	text-align left
+	background white
 	td
 	th
-		border 1px solid lightgray
-		padding 10px
+		border border
+		padding 15px 20px
+		@media break2
+			padding 10px
 	th
-		background-color darkgray
-		border-color darkgray
+		background-color dark
+		border-color dark
 		color white
 
 
@@ -197,7 +206,7 @@ table
 // Generic animation
 
 .in
-	display block
+	display block !important
 	animation fadeIn .5s ease both
 	&.out
 		animation fadeOut .5s ease both

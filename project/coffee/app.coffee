@@ -28,7 +28,7 @@ app =
 		app.loading.init()
 
 		# Mapa
-		app.gmap()
+		app.gmap.init()
 
 		# Eventos en scroll
 		app.scroll()

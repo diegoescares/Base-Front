@@ -20,44 +20,48 @@ app.video =
 
 app.goto =
 	init: ->
-		$("[data-goto]").click ->
+		$("[data-goto]").click (e) ->
 			to = $(this).attr "data-goto"
 			app.goto.to to
-			false
+			e.preventDefault()
 	to: (to,add=0) ->
-		top = $(to).offset().top - $(".header-primary").height() - add + $(".secretmenu-container-front").scrollTop()
-		$("html,body,.secretmenu-container-front").animate
+		top = $(to).offset().top - $(".header-primary").height() - add - $("header .header-top").height()
+		$("body").animate
 			scrollTop: top
 
 
 app.faq =
 	init: ->
-		$(".faq .faq-item:not(.faq-open) .faq-answer").hide()
-		$(".faq .faq-question").click ->
-			faq_index = $(this).parent().index()
-			$(".faq .faq-item").each ->
-				if $(this).index() == faq_index
-					$(this).find(".faq-answer").slideToggle()
-					$(this).toggleClass("faq-open")
-				else
-					$(this).find(".faq-answer").slideUp()
-					$(this).removeClass("faq-open")
+		$(".faq").each ->
+			faq = $(this)
+			faq.find(".faq-item:not(.faq-open) .faq-answer").hide()
+			faq.find(".faq-question").click ->
+				faq_index = $(this).parent().index()
+				$(".faq .faq-item").each ->
+					if $(this).index() == faq_index
+						$(this).find(".faq-answer").slideToggle()
+						$(this).toggleClass("faq-open")
+					else
+						$(this).find(".faq-answer").slideUp()
+						$(this).removeClass("faq-open")
 
 
 app.tabs = 
 	init: ->
-		$(".tabs .tabs-header .tab").eq(0).addClass("tab-active")
-		$(".tabs .tabs-body .tab").eq(0).addClass("tab-active")
-		$(".tabs .tabs-header .tab").click ->
-			index = $(this).index()
-			app.tabs.open index
-			false
-	open: (index) ->
-		$(".tabs .tabs-header .tab").removeClass("tab-active")
-		$(".tabs .tabs-header .tab").eq(index).addClass("tab-active")
-		$(".tabs .tabs-body .tab").removeClass("tab-active")
-		$(".tabs .tabs-body .tab").eq(index).addClass("tab-active")
-		false
+		$(".tabs").each ->
+			tab = $(this)
+			tab.find(".tabs-header .tab").eq(0).addClass("tab-active")
+			tab.find(".tabs-body .tab").eq(0).addClass("tab-active")
+			tab.find(".tabs-header .tab").click (e) ->
+				index = $(this).index()
+				app.tabs.open tab,index
+				e.preventDefault()
+
+	open: (tab,index) ->
+		tab.find(".tabs-header .tab").removeClass("tab-active")
+		tab.find(".tabs-header .tab").eq(index).addClass("tab-active")
+		tab.find(".tabs-body .tab").removeClass("tab-active")
+		tab.find(".tabs-body .tab").eq(index).addClass("tab-active")
 
 
 app.previewfile =

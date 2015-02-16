@@ -12,8 +12,8 @@ form
 	textarea
 		display block
 		width 100%
-		border 1px solid lightgray
-		padding 8px 10px
+		border border
+		padding 10px
 		vertical-align top
 		background #FFF
 		margin-bottom 1px
@@ -91,6 +91,8 @@ w_form = w_name + w_name_sep + w_value
 		overflow hidden
 		margin-bottom 15px
 		position relative
+		&:last-child
+			margin-bottom 0
 
 		.control-name
 			margin-bottom 5px
@@ -99,8 +101,7 @@ w_form = w_name + w_name_sep + w_value
 			label
 				display block
 				padding 5px
-				&:first-child
-					padding-left 0
+				margin 0 5px 0 -5px
 				&.inline
 					display inline-block
 

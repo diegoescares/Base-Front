@@ -3,13 +3,18 @@
 app.loading =
 
 	init: ->
+
 		if $("[data-loading]").length
 			app.loading.in()
-		###
-		app.loading.in()
-		$("body").imagesLoaded ->
-			app.loading.out()
-		###
+			$("body").imagesLoaded ->
+				app.loading.out()
+
+		$(".loading-test").click (e) ->
+			e.preventDefault()
+			app.loading.in()
+			setTimeout ->
+				app.loading.out()
+			,2000
 
 	in: (element) ->
 		element = $("body") if !element
