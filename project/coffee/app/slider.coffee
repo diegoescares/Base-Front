@@ -34,7 +34,7 @@ app.slider =
 
 					for for_n_item in [1 .. slide_items ]
 
-						slider_generate.find(slide_items_selector).eq(for_n_item-1).clone().appendTo( slider.find(slide_item_in).eq(for_n_slide-1) )
+						slider_generate.find(slide_items_selector).eq(n_item-1).clone().appendTo( slider.find(slide_item_in).eq(for_n_slide-1) )
 
 						n_item++
 						break if n_item > slide_items_total
@@ -81,9 +81,9 @@ app.slider =
 			slide_prev = slides_total-1 if slide_prev < 0
 
 			if $(this).hasClass "slider-nav-right"
-				app.slider.changeSlide slider, slide_current, slide_next
+				app.slider.changeSlide slider, slide_current, slide_next, "right"
 			if $(this).hasClass "slider-nav-left"
-				app.slider.changeSlide slider, slide_current, slide_prev
+				app.slider.changeSlide slider, slide_current, slide_prev, "left"
 
 
 		$(".slider .slider-bullet").click ->
@@ -91,17 +91,21 @@ app.slider =
 			app.slider.changeSlide slider, slider.find(".slider-bullet-active").index(), $(this).index()
 
 
-	changeSlide: (slider,from,to) ->
+	changeSlide: (slider,from,to,dir) ->
 
 		if !slider.hasClass("slider-animate")
 
 			if from != to
 
+				slider.removeClass("slider-dir-left")
+				slider.removeClass("slider-dir-right")
+				slider.addClass("slider-dir-"+dir)
+
 				slider.addClass("slider-animate")
 				slider.find(".slide-active").addClass("slide-out").removeClass("slide-active")
 				slider.find(".slide").eq(to).addClass("slide-active")
 
-				slider.find(".dscroll").addClass "dscroll-in"
+				#slider.find(".dscroll").addClass "dscroll-in"
 
 				slider.find(".slider-bullet").removeClass("slider-bullet-active")
 				slider.find(".slider-bullet").eq(to).addClass("slider-bullet-active")
@@ -112,3 +116,5 @@ app.slider =
 				,700
 
 				app.relayout()
+
+

@@ -23,17 +23,17 @@
 		position relative
 		overflow hidden
 		display none
-		&.slide-loaded
-			opacity 1		
-			animation fadeIn .5s ease
 		&.slide-active
 			display block
+			opacity 1
 			z-index 1
+			animation fadeIn .5s ease
 		&.slide-out
 			cover absolute
 			display block
+			opacity 1
 			z-index 2
-			animation fadeOut .5s .2s ease both
+			animation fadeOut .5s ease both
 
 			
 	.slider-bullets
@@ -100,30 +100,52 @@
 
 
 
+
+
+	&.slider-directional
+		&.slider-dir-left
+			.slide
+				&.slide-active
+					animation slideRight .5s ease both
+				&.slide-out
+					animation slideRightOut .5s ease both
+		&.slider-dir-right
+			.slide
+				&.slide-active
+					animation slideLeft .5s ease both
+				&.slide-out
+					animation slideLeftOut .5s ease both
+
+
+
+
 	&.slider-content
 
 		.slider-slides-generate
 			@media break3
 				display block
+
 		.slider-slides
 			margin 0 70px
 			@media break3
 				display none
 				margin 0
+
 		.slide
-			padding-bottom 2px
 			@media break3
 				padding 0
 				display block
 				opacity 1
 				margin-bottom 20px
-		.slider-nav
-			@media break3
-				display none
-			&.slider-nav-left
-				left 3px
-			&.slider-nav-right
-				right 3px
+
+		.slider-navigation
+			.slider-nav
+				color dark
+				&.slider-nav-left
+					left 3px
+				&.slider-nav-right
+					right 3px
+
 		.slider-bullets
 			display none
 			

@@ -578,44 +578,7 @@ block page
 
 
 
-
-
-
 		section.lighter
-			.limit
-				.inner.inner-2
-					.content
-			
-						h2 Slider
-
-						h4 Jade:
-						pre.
-							.prop
-						pre.
-							.prop.prop-2-1
-						pre.
-							.prop.prop-4-3
-						pre.
-							.prop.prop-16-9
-
-						h4 Demos:
-
-
-					.slider
-						.slider-slides
-							.slide
-								.prop.prop-2-1.gray
-									.cover: .va.center 1
-							.slide
-								.prop.prop-2-1.color
-									.cover: .va.center 2
-							.slide
-								.prop.prop-2-1.color-2
-									.cover: .va.center 3
-
-
-
-		section
 			.limit
 				.inner.inner-2
 					.content
@@ -636,19 +599,19 @@ block page
 
 					.cols
 						.col.col-25: .col-inner
-							.prop.lighter
+							.prop.white
 								.cover: .inner Prop 1:1
 
 						.col.col-25: .col-inner
-							.prop.prop-2-1.lighter
+							.prop.prop-2-1.white
 								.cover: .inner Prop 2:1
 
 						.col.col-25: .col-inner
-							.prop.prop-4-3.lighter
+							.prop.prop-4-3.white
 								.cover: .inner Prop 4:3
 
 						.col.col-25: .col-inner
-							.prop.prop-16-9.lighter
+							.prop.prop-16-9.white
 								.cover: .inner Prop 16:9
 
 
@@ -671,38 +634,102 @@ block page
 					.cols
 						.col.col-25: .col-inner
 							.prop.gray.dscroll
-								.cover: .inner Prop 1:1
-
-						.col.col-25: .col-inner
-							.prop.prop-2-1.gray.dscroll
-								.cover: .inner Prop 2:1
-
-						.col.col-25: .col-inner
-							.prop.prop-4-3.gray.dscroll
-								.cover: .inner Prop 4:3
-
-						.col.col-25: .col-inner
-							.prop.prop-16-9.gray.dscroll
-								.cover: .inner Prop 16:9
 						.col.col-25: .col-inner
 							.prop.gray.dscroll
-								.cover: .inner Prop 1:1
-
 						.col.col-25: .col-inner
-							.prop.prop-2-1.gray.dscroll
-								.cover: .inner Prop 2:1
-
+							.prop.gray.dscroll
 						.col.col-25: .col-inner
-							.prop.prop-4-3.gray.dscroll
-								.cover: .inner Prop 4:3
+							.prop.gray.dscroll
 
-						.col.col-25: .col-inner
-							.prop.prop-16-9.gray.dscroll
-								.cover: .inner Prop 16:9
-						.col.col-25: .col-inner
-							.prop.prop-16-9.gray.dscroll
-								.cover: .inner Prop 16:9
 
+
+
+		section.lighter
+			.limit
+				.inner.inner-2
+					.content
+			
+						h2 Slider
+
+						h4 Jade:
+						pre.
+							.slider
+								.slider-slides
+									.slide
+										.prop.prop-2-1
+											.content
+									.slide
+										.prop.prop-2-1
+											.content
+									.slide
+										.prop.prop-2-1
+											.content
+						pre.
+
+							.slider.slider-content.slider-directional
+								.slider-slides
+								.slider-slides-generate(data-items="4",data-selector=".col")
+									.cols
+										.col.col-25: .col-inner
+											.prop.white
+												.content
+										.col.col-25: .col-inner
+											.prop.white
+												.content
+										.col.col-25: .col-inner
+											.prop.white
+												.content
+										.col.col-25: .col-inner
+											.prop.white
+												.content
+										.col.col-25: .col-inner
+											.prop.white
+												.content
+										.col.col-25: .col-inner
+											.prop.white
+												.content
+
+						h4 Demos:
+
+
+					.slider
+						.slider-slides
+							.slide
+								.prop.prop-2-1.gray
+									.cover: .va.center 1
+							.slide
+								.prop.prop-2-1.color
+									.cover: .va.center 2
+							.slide
+								.prop.prop-2-1.color-2
+									.cover: .va.center 3
+
+					.sep
+
+					.slider.slider-content.slider-directional
+						.slider-slides
+						.slider-slides-generate(data-items="4",data-selector=".col")
+							.cols
+								.col.col-25: .col-inner
+									.prop.white: .cover: .va.center 1
+								.col.col-25: .col-inner
+									.prop.white: .cover: .va.center 2
+								.col.col-25: .col-inner
+									.prop.white: .cover: .va.center 3
+								.col.col-25: .col-inner
+									.prop.white: .cover: .va.center 4
+								.col.col-25: .col-inner
+									.prop.gray: .cover: .va.center 5
+								.col.col-25: .col-inner
+									.prop.gray: .cover: .va.center 6
+								.col.col-25: .col-inner
+									.prop.gray: .cover: .va.center 7
+								.col.col-25: .col-inner
+									.prop.gray: .cover: .va.center 8
+								.col.col-25: .col-inne
+									.prop.black: .cover: .va.center 9
+								.col.col-25: .col-inner
+									.prop.black: .cover: .va.center 10
 
 
 		section.dark
@@ -722,7 +749,7 @@ block page
 
 						h4 Demos:
 
-					.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
+					.map.prop.prop-2-1(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
 						.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
 							ul
 								li
@@ -743,7 +770,7 @@ block page
 
 					.sep
 
-					.map(data-zoom='16', data-lat='-33.4585000', data-lng='-70.629371')
+					.map.prop.prop-2-1(data-zoom='16', data-lat='-33.4585000', data-lng='-70.629371')
 						.map-marker(data-lat='-33.4600000', data-lng='-70.629371') :3
 						.map-marker(data-lat='-33.4580000', data-lng='-70.628371')
 

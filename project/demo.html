@@ -728,12 +728,131 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             <div class="limit">
               <div class="inner inner-2">
                 <div class="content">
-                  <h2>Slider</h2>
+                  <h2>Proportional element</h2>
                   <h4>Jade:</h4>
                   <pre>.prop</pre>
                   <pre>.prop.prop-2-1</pre>
                   <pre>.prop.prop-4-3</pre>
                   <pre>.prop.prop-16-9
+</pre>
+                  <h4>Demos:</h4>
+                </div>
+                <div class="cols">
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop white">
+                        <div class="cover">
+                          <div class="inner">Prop 1:1</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop prop-2-1 white">
+                        <div class="cover">
+                          <div class="inner">Prop 2:1</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop prop-4-3 white">
+                        <div class="cover">
+                          <div class="inner">Prop 4:3</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop prop-16-9 white">
+                        <div class="cover">
+                          <div class="inner">Prop 16:9</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="limit">
+              <div class="inner inner-2">
+                <div class="content">
+                  <h2>Mostrar en scroll</h2>
+                  <p>Display scroll = dscroll</p>
+                  <h4>Jade:</h4>
+                  <pre>.prop.gray.dscroll
+</pre>
+                  <h4>Demos:</h4>
+                </div>
+                <div class="cols">
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop gray dscroll"></div>
+                    </div>
+                  </div>
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop gray dscroll"></div>
+                    </div>
+                  </div>
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop gray dscroll"></div>
+                    </div>
+                  </div>
+                  <div class="col col-25">
+                    <div class="col-inner">
+                      <div class="prop gray dscroll"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="lighter">
+            <div class="limit">
+              <div class="inner inner-2">
+                <div class="content">
+                  <h2>Slider</h2>
+                  <h4>Jade:</h4>
+                  <pre>.slider
+	.slider-slides
+		.slide
+			.prop.prop-2-1
+				.content
+		.slide
+			.prop.prop-2-1
+				.content
+		.slide
+			.prop.prop-2-1
+				.content</pre>
+                  <pre>.slider.slider-content.slider-directional
+	.slider-slides
+	.slider-slides-generate(data-items="4",data-selector=".col")
+		.cols
+			.col.col-25: .col-inner
+				.prop.white
+					.content
+			.col.col-25: .col-inner
+				.prop.white
+					.content
+			.col.col-25: .col-inner
+				.prop.white
+					.content
+			.col.col-25: .col-inner
+				.prop.white
+					.content
+			.col.col-25: .col-inner
+				.prop.white
+					.content
+			.col.col-25: .col-inner
+				.prop.white
+					.content
 </pre>
                   <h4>Demos:</h4>
                 </div>
@@ -762,152 +881,99 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="limit">
-              <div class="inner inner-2">
-                <div class="content">
-                  <h2>Proportional element</h2>
-                  <h4>Jade:</h4>
-                  <pre>.prop</pre>
-                  <pre>.prop.prop-2-1</pre>
-                  <pre>.prop.prop-4-3</pre>
-                  <pre>.prop.prop-16-9
-</pre>
-                  <h4>Demos:</h4>
-                </div>
-                <div class="cols">
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop lighter">
-                        <div class="cover">
-                          <div class="inner">Prop 1:1</div>
+                <div class="sep"></div>
+                <div class="slider slider-content slider-directional">
+                  <div class="slider-slides"></div>
+                  <div data-items="4" data-selector=".col" class="slider-slides-generate">
+                    <div class="cols">
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop white">
+                            <div class="cover">
+                              <div class="va center">1</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-2-1 lighter">
-                        <div class="cover">
-                          <div class="inner">Prop 2:1</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop white">
+                            <div class="cover">
+                              <div class="va center">2</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-4-3 lighter">
-                        <div class="cover">
-                          <div class="inner">Prop 4:3</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop white">
+                            <div class="cover">
+                              <div class="va center">3</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-16-9 lighter">
-                        <div class="cover">
-                          <div class="inner">Prop 16:9</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop white">
+                            <div class="cover">
+                              <div class="va center">4</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div class="limit">
-              <div class="inner inner-2">
-                <div class="content">
-                  <h2>Mostrar en scroll</h2>
-                  <p>Display scroll = dscroll</p>
-                  <h4>Jade:</h4>
-                  <pre>.prop.gray.dscroll
-</pre>
-                  <h4>Demos:</h4>
-                </div>
-                <div class="cols">
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 1:1</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop gray">
+                            <div class="cover">
+                              <div class="va center">5</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-2-1 gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 2:1</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop gray">
+                            <div class="cover">
+                              <div class="va center">6</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-4-3 gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 4:3</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop gray">
+                            <div class="cover">
+                              <div class="va center">7</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-16-9 gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 16:9</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop gray">
+                            <div class="cover">
+                              <div class="va center">8</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 1:1</div>
+                      <div class="col col-25">
+                        <div class="col-inne">
+                          <div class="prop black">
+                            <div class="cover">
+                              <div class="va center">9</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-2-1 gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 2:1</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-4-3 gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 4:3</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-16-9 gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 16:9</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-25">
-                    <div class="col-inner">
-                      <div class="prop prop-16-9 gray dscroll">
-                        <div class="cover">
-                          <div class="inner">Prop 16:9</div>
+                      <div class="col col-25">
+                        <div class="col-inner">
+                          <div class="prop black">
+                            <div class="cover">
+                              <div class="va center">10</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -930,7 +996,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
 </pre>
                   <h4>Demos:</h4>
                 </div>
-                <div data-zoom="14" data-lat="-33.4585000" data-lng="-70.629371" class="map">
+                <div data-zoom="14" data-lat="-33.4585000" data-lng="-70.629371" class="map prop prop-2-1">
                   <div data-lat="-33.4600000" data-lng="-70.628371" class="map-marker">
                     <ul>
                       <li><i class="fa fa-home"></i>Avenida del Parque 4161, oficina 103, Ciudad Empresarial</li>
@@ -946,7 +1012,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                   </div>
                 </div>
                 <div class="sep"></div>
-                <div data-zoom="16" data-lat="-33.4585000" data-lng="-70.629371" class="map">
+                <div data-zoom="16" data-lat="-33.4585000" data-lng="-70.629371" class="map prop prop-2-1">
                   <div data-lat="-33.4600000" data-lng="-70.629371" class="map-marker">:3</div>
                   <div data-lat="-33.4580000" data-lng="-70.628371" class="map-marker"></div>
                 </div>
