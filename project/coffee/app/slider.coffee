@@ -111,4 +111,4 @@ app.slider =
 					slider.removeClass("slider-animate")
 				,700
 
-				app.actions.relayout()
+				app.relayout()
