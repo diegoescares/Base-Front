@@ -3,7 +3,7 @@ extends ./templates/default.jade
 
 block page
 
-	.page-header
+	.page-header.lighter
 		.limit
 			.inner.inner-4
 				h1 Base Front Demo
@@ -176,7 +176,7 @@ block page
 						a.button(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Abrir alerta
 
 
-		section.section-lighter
+		section.lighter
 			.limit
 				.inner.inner-2
 					.content
@@ -231,7 +231,7 @@ block page
 
 
 
-		section.section-lighter
+		section.lighter
 			.limit
 				.inner.inner-2
 					.content
@@ -295,7 +295,7 @@ block page
 
 
 
-		section.section-lighter
+		section.lighter
 			.limit
 				.inner.inner-2
 
@@ -579,7 +579,47 @@ block page
 
 
 
-		section.section-dark
+
+
+		section
+			.limit
+				.inner.inner-2
+					.content
+			
+						h2 Proportional element
+
+						h4 Jade:
+						pre.
+							.prop
+						pre.
+							.prop.prop-2-1
+						pre.
+							.prop.prop-4-3
+						pre.
+							.prop.prop-16-9
+
+						h4 Demos:
+
+					.cols
+						.col.col-25: .col-inner
+							.prop.lighter
+								.cover: .inner Prop 1:1
+
+						.col.col-25: .col-inner
+							.prop.prop-2-1.lighter
+								.cover: .inner Prop 2:1
+
+						.col.col-25: .col-inner
+							.prop.prop-4-3.lighter
+								.cover: .inner Prop 4:3
+
+						.col.col-25: .col-inner
+							.prop.prop-16-9.lighter
+								.cover: .inner Prop 16:9
+
+
+
+		section.dark
 			.limit
 				.inner.inner-2
 					.content
