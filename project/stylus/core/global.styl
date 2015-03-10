@@ -38,6 +38,7 @@ p
 
 h1, h2, h3, h4
 	font-family font_2
+	margin-bottom 15px
 
 h1
 .h1
@@ -71,6 +72,11 @@ img
 		max-width 100%
 	&.img-circle
 		radius 50%
+
+svg
+	display block
+	max-width 100%
+
 
 .table-container
 	overflow auto
@@ -209,6 +215,7 @@ table
 	display block !important
 	animation fadeIn .5s ease both
 	&.out
+		display block !important
 		animation fadeOut .5s ease both
 
 
@@ -216,3 +223,22 @@ table
 
 .fa
 	vertical-align middle
+
+// Vertical align
+.va
+	position relative
+
+
+// Proportional element
+
+.prop
+	proportion 1,1
+	&.prop-2-1
+		proportion 2,1
+	&.prop-4-3
+		proportion 4,3
+	&.prop-16-9
+		proportion 16,9
+
+
+

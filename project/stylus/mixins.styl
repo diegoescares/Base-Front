@@ -1,5 +1,5 @@
 
-// FUNCIONES
+// MIXINS
 
 radius()
 	border-radius arguments
@@ -62,7 +62,7 @@ circle()
 	radius 50%
 	overflow hidden
 
-plane()
+cover()
 	position arguments
 	top 0
 	left 0
@@ -84,6 +84,9 @@ animation-stagger(iterations,delay)
 		&:nth-child({iteration})
 			animation-delay delay*iteration
 
+proportion(w,h)
+	padding-bottom ( (h / w) * 100 ) %
+
 title(h)
 	if h == "h1"
 		font-size title_h1
@@ -91,18 +94,18 @@ title(h)
 		@media break3
 			font-size title_h2
 			line-height title_h2_lh
-		@media break2
-			font-size title_h3
-			line-height title_h3_lh
+		//@media break2
+		//	font-size title_h3
+		//	line-height title_h3_lh
 	if h == "h2"
 		font-size title_h2
 		line-height title_h2_lh
 		@media break3
 			font-size title_h3
 			line-height title_h3_lh
-		@media break2
-			font-size title_h4
-			line-height title_h4_lh
+		//@media break2
+		//	font-size title_h4
+		//	line-height title_h4_lh
 	if h == "h3"
 		font-size title_h3
 		line-height title_h3_lh

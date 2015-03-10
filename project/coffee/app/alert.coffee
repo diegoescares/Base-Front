@@ -4,15 +4,10 @@ app.alert =
 
 	init: ->
 
-		app.alert.equidist()
-
-		$(window).resize ->
-			app.alert.equidist()
-
 
 		if $("[data-alert]").length
 
-			$("a[data-alert]").live "click", ->
+			$("a[data-alert]").click ->
 				element = $(this)
 				app.alert.open
 					title: element.attr("data-alert")
@@ -78,7 +73,7 @@ app.alert =
 		html =
 			'<div class="alert '+alertclass+' in">'+
 				'<div class="alert-light '+alertlightclass+'"></div>'+
-				'<div class="alert-box equidist">'+
+				'<div class="alert-box va">'+
 					'<div class="alert-inner">'+
 						close +
 						title +
@@ -92,11 +87,7 @@ app.alert =
 		$("body").append(html)
 		$("body").addClass("alert-in")
 
-		app.alert.equidist()
-		setTimeout ->
-			app.alert.equidist()
-		,100
-
+		app.relayout()
 
 		$(".alert .true, .alert .false").unbind("click").bind "click", -> 
 
@@ -126,17 +117,6 @@ app.alert =
 			$(".alert").remove()
 			$("body").removeClass("alert-in")
 		,200
-
-	equidist: ->
-		$(".equidist").each ->
-			_this = $(this)
-			_left = (_this.parent().width() - _this.width()) / 2
-			_left = 0 if _left < 0
-			_top = (_this.parent().height() - _this.height()) / 2
-			_top = 0 if _top < 0
-			_this.css
-			  left: _left + "px"
-			  top: _top + "px"
 
 	load: (href,cssclass="default",callback=false) ->
 		$.ajax(

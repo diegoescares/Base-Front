@@ -6,12 +6,6 @@
 body.alert-in
 	overflow hidden
 
-.equidist
-	position absolute
-	top 0
-	left 0
-	
-
 .alert
 	position fixed
 	top 0
@@ -34,8 +28,10 @@ body.alert-in
 		height 100%
 		background rgba(0,0,0,.5)
 	.alert-box
-		max-width 800px
+		max-width 600px
+		margin 0 auto
 		animation slideFadeUp .5s ease
+		overflow hidden
 
 		.alert-inner
 			padding 20px
@@ -54,17 +50,15 @@ body.alert-in
 				vertical-align 0
 			&:hover
 				background color
-
-
+		
 		.alert-content
-			padding-top 15px
-			overflow hidden
+			margin-bottom 20px
 
 		.alert-buttons
 			text-align center
-			padding-top 15px
 
 		iframe
+			display block
 			width 100%
 
 	&.alert-default
