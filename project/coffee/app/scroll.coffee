@@ -46,11 +46,26 @@ app.scroll =
 		# Mostrar en scroll
 
 		if $(".dscroll").length
-			$(".dscroll:visible").each ->
+			element_top_prev  = 0
+			element_top_delay = 0
+			$(".dscroll:visible:not(.dscroll-in)").each ->
 				element = $(this)
 				element_top = element.offset().top
 				if scroll + height_window > element_top + 100
 					element.addClass "dscroll-in"
+
+					if element_top == element_top_prev
+						console.log ":D"
+						element_top_delay++
+						delay = element_top_delay/10
+						element.css
+							'-webkit-animation-delay': delay+"s"
+							'animation-delay': delay+"s"
+					else
+						element_top_delay=0
+
+
+					element_top_prev = element_top
 
 	navscroll:
 
