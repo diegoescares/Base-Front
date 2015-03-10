@@ -1,11 +1,10 @@
 
+app = []
+#=include_tree app
+
 $(document).ready ->
 	app.init()
 
-
-app = []
-
-#=include_tree app
 
 
 app.init = ->
@@ -54,6 +53,12 @@ app.init = ->
 
 	# Preview file input
 	app.previewfile.init()
+
+	# Big select
+	# app.bigselect.init()
+
+	# Tour
+	# app.tour.init()
 
 	# Placeholder crossbrowser
 	# app.placeholder.init()
