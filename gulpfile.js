@@ -17,6 +17,7 @@ var combineMq 	= require('gulp-combine-mq');
 var imagemin	= require('gulp-imagemin');
 var pngquant	= require('imagemin-pngquant'); 
 var svgo		= require('imagemin-svgo');
+var changed     = require('gulp-changed');
 
 var path	= "project/"
 
@@ -70,10 +71,11 @@ gulp.task("build-css",function(){
 
 gulp.task("build-html",function(){
 	gulp.src(files.jade.to)
+	.pipe(changed(path+"html/",{extension: ".html"}))
 	.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
 	.pipe(jade({pretty: true}))
 	.pipe(notify("Compiled: <%= file.relative %>"))
-	.pipe(gulp.dest(path))
+	.pipe(gulp.dest(path+"html/"))
 });
 
 
