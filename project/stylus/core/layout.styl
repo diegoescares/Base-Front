@@ -44,7 +44,21 @@ cols_sep = sep
 		.col .col-inner
 			margin 0
 
-	
+
+
+	// Natural read left
+	.col
+		float left
+		// Read inverse
+		.col-right
+			float right
+
+
+	// Read inverse
+	&.cols-right
+		.col
+			float right
+
 
 	
 	&.cols-nobp .col, // Columnas sin break points
