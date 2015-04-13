@@ -3,14 +3,15 @@
 cols_sep = sep
 
 .cols
-	&:after
-		content ""
-		clear both
-		display block
+	overflow hidden
 	
-	// Crowss browser
-	&.cols-classic
-		overflow hidden
+	&.cols-ov
+		overflow visible
+		&:after
+			content ""
+			clear both
+			display block
+	
 
 
 	// Separación entre columnas: normal

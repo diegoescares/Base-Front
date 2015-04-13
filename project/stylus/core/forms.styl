@@ -39,8 +39,8 @@ form
 		height 100px
 		resize none
 
-	.input-checkbox,
-	.input-radio
+	input[type='checkbox'],
+	input[type='radio']
 		display inline-block
 		width 16px
 		height 16px
@@ -53,7 +53,7 @@ form
 			border-color color
 			background-position center center
 
-	.input-radio
+	input[type='radio']
 		radius 15px
 
 	.input-number
@@ -88,7 +88,6 @@ w_form = w_name + w_name_sep + w_value
 
 	.control
 		display block
-		overflow hidden
 		margin-bottom 15px
 		position relative
 		&:last-child
@@ -133,6 +132,7 @@ w_form = w_name + w_name_sep + w_value
 	
 	&.controls-layout
 		.control
+			overflow hidden
 			.control-name
 			.control-value
 				float left

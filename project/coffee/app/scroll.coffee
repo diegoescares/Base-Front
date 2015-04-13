@@ -90,8 +90,6 @@ app.scroll =
 			el.each ->
 				index  = $(this).index()
 				top    = $(this).offset().top
-				console.log (scroll + height_window)
-				console.log top
 				if (height_window/2) + scroll > top && top < scroll + height_window
 					current = $(this).index()
 			app.scroll.navscroll.change current
