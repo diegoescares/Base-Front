@@ -3,14 +3,23 @@
 mixin cols(limit,width)
 	.cols
 		- for (var a=0; a<limit; a++)
-			.col(class="col-"+width).dscroll
+			.col(class="col-"+width)
 				.col-inner
 					block
 
+mixin col(width,to100)
+	if !to100
+		- var htmlclass = "col-"+width
+	else
+		- var htmlclass = "col-"+width+" col-to-100"
+	.col(class=htmlclass)
+		.col-inner
+			block
+				
 
 mixin img(width,height,htmlclass)
 	- var num = Math.floor((Math.random()*7))
-	- var url = "http://lorempixel.com/"+width+"/"+height+"/nature/"+num
+	- var url = "http://lorempixel.com/"+width+"/"+height+"/technics/"+num
 	img( src = url, class = htmlclass )
 
 		

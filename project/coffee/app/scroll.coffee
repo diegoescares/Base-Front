@@ -55,7 +55,6 @@ app.scroll =
 					element.addClass "dscroll-in"
 
 					if element_top == element_top_prev
-						console.log ":D"
 						element_top_delay++
 						delay = element_top_delay/10
 						element.css

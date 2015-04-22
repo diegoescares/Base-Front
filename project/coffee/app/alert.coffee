@@ -46,7 +46,7 @@ app.alert =
 			alertclass = "alert-default"
 
 		if options.title
-			title = "<h2 class='alert-title'>" + options.title + "</h2>"
+			title = "<h3 class='alert-title'>" + options.title + "</h3>"
 
 		if options.content
 			content = "<div class='alert-content'>" + options.content + "</div>"

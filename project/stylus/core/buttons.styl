@@ -22,13 +22,13 @@
 		background color
 		text-decoration none
 
-	&.button-primary
+	&.button-color
 		color white
 		background color
 		&:hover
 			background lighten(color,10%)
 
-	&.button-secondary
+	&.button-color-2
 		color white
 		background color_2
 		&:hover
@@ -48,19 +48,30 @@
 			color white
 	
 	&.button-line
+		border-color gray
+		background transparent
+		color dark
+		&:hover
+			background color
+			border-color color
+			color white
+
+	&.button-line-white
 		border-color white
 		background transparent
 		color white
 		&:hover
-			background color
-			border-color color
+			background white
+			color color
 	
 	&.button-disabled
 		background light
 		border-color light
+		color white
 		&:hover
 			background light
 			border-color light
+			color white
 			cursor default
 
 	&.button-hover-2
