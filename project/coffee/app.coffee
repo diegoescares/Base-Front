@@ -12,6 +12,9 @@ app.init = ->
 	# Menú
 	app.secretmenu.init()
 
+	# Menú
+	app.activelinks.init()
+
 	# Browsers classes
 	app.browsers()
 
@@ -49,10 +52,10 @@ app.init = ->
 	app.tabs.init()
 
 	# Validation forms
-	app.validation.form $(".controls")
+	#app.validation.form $(".validate")
 
 	# Preview file input
-	app.previewfile.init()
+	#app.previewfile.init()
 
 	# Big select
 	# app.bigselect.init()

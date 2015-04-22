@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>{titulo}</title>
+    <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{descripcion}">
+    <meta name="description" content="">
     <!-- Meta tags facebook-->
-    <meta property="og:image" content="{url imagen}">
-    <meta property="og:title" content="{titulo}">
-    <meta property="og:url" content="{url de la pagina}">
-    <meta property="og:description" content="{description de la pagina}">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
     <!-- Meta tags twitter cards-->
-    <meta name="twitter:card" content="{url imagen}}">
-    <meta name="twitter:site" content="@loremipsum">
-    <meta name="twitter:creator" content="@loremipsum">
-    <meta name="twitter:title" content="{titulo}">
-    <meta name="twitter:description" content="{descripcion}">
-    <meta name="twitter:image:src" content="{url imagen}">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:card" content="">
+    <meta name="twitter:image:src" content="">
     <!-- Style-->
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>css/main.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../img/favicon.png" rel="shortcut icon">
+    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>img/favicon.ico" rel="shortcut icon">
     <!-- Scripts-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="../js/main.js"></script>
+    <script src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>js/main.js"></script>
     <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
   </head>
   <body>
@@ -33,13 +32,13 @@
       <div class="header-top">
         <div class="header-limit">
           <div class="header-inner">
-            <div class="header-logo"><a href="index.html">Base Front</a></div>
+            <div class="header-logo"><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>">Base Front</a></div>
             <div class="header-nav">
               <nav>
                 <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="single.html">Single</a></li>
-                  <li><a href="demo.html">Demo</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>">Inicio</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>single.php">Single</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>demo.php">Demo</a></li>
                   <li><a href="#">Multi-menu</a>
                     <ul>
                       <li><a href="#">Lorem ipsum 1</a></li>

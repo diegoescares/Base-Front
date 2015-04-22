@@ -18,6 +18,8 @@ var imagemin	= require('gulp-imagemin');
 var pngquant	= require('imagemin-pngquant'); 
 var svgo		= require('imagemin-svgo');
 var changed     = require('gulp-changed');
+var rename      = require("gulp-rename");
+var unescapeHtml= require('gulp-unescape-html')
 
 var path	= "project/"
 
@@ -41,7 +43,8 @@ gulp.task('default', function () {
     gulp.watch(path + '/css/**/*.css').on('change', livereload.changed);
 	gulp.watch(files.stylus.from,['build-css']);
 	gulp.watch(files.coffee.from,['build-js']);
-	gulp.watch(files.jade.from,['build-html']);
+	//gulp.watch(files.jade.from,['build-html']);
+	gulp.watch(files.jade.from,['build-php']);
 });
 
 gulp.task("build-js",function(){
@@ -68,7 +71,6 @@ gulp.task("build-css",function(){
 	.pipe(gulp.dest(path+'/css'))
 });
 
-
 gulp.task("build-html",function(){
 	gulp.src(files.jade.to)
 	.pipe(changed(path+"html/",{extension: ".html"}))
@@ -78,6 +80,16 @@ gulp.task("build-html",function(){
 	.pipe(gulp.dest(path+"html/"))
 });
 
+gulp.task("build-php",function(){
+	gulp.src(files.jade.to)
+	//.pipe(changed(path,{extension: ".html"}))
+	.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
+	.pipe(jade({pretty: true}))
+	.pipe(notify("Compiled: <%= file.relative %>"))
+	.pipe(unescapeHtml())
+	.pipe(rename({extname: ".php"}))
+	.pipe(gulp.dest(path))
+});
 
 gulp.task('imagemin', function () {
     gulp.src([path+'/img_origin/**/*'])

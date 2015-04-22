@@ -18,14 +18,13 @@
     <meta name="twitter:card" content="">
     <meta name="twitter:image:src" content="">
     <!-- Style-->
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>css/main.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../img/favicon.ico" rel="shortcut icon">
+    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>img/favicon.ico" rel="shortcut icon">
     <!-- Scripts-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="../js/main.js"></script>
+    <script src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>js/main.js"></script>
     <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
   </head>
   <body>
@@ -33,13 +32,13 @@
       <div class="header-top">
         <div class="header-limit">
           <div class="header-inner">
-            <div class="header-logo"><a href="index.html">Base Front</a></div>
+            <div class="header-logo"><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>">Base Front</a></div>
             <div class="header-nav">
               <nav>
                 <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="single.html">Single</a></li>
-                  <li><a href="demo.html">Demo</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>">Inicio</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>single.php">Single</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>demo.php">Demo</a></li>
                   <li><a href="#">Multi-menu</a>
                     <ul>
                       <li><a href="#">Lorem ipsum 1</a></li>
@@ -72,7 +71,10 @@
     <div id="body">
       <div class="body-content">
         <div class="limit">
-          <div class="inner">Index</div>
+          <div class="inner">
+            Index
+            <?php echo "Test"; ?>
+          </div>
         </div>
       </div>
       <!--footer-->
