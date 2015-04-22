@@ -6,7 +6,11 @@ include ./mixins.jade
 - share_title       = ""
 - share_twitter     = ""
 
-- SITE_URL          = "<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>"
+- SITE_URL          = "<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>"
+- TEMPLATE_URL      = "<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>"
+
+- fbsdk             = false
+- gmaps             = false
 
 block vars
 
@@ -38,17 +42,19 @@ html(lang="es")
 		
 		// Style
 		block styles
-		link(href=SITE_URL+'css/main.css', rel='stylesheet', type='text/css')
+		link(href=TEMPLATE_URL+'css/main.css', rel='stylesheet', type='text/css')
 		link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700', rel='stylesheet', type='text/css')
 		link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet', type='text/css')
-		link(href=SITE_URL+'img/favicon.ico', rel='shortcut icon')
+		link(href=TEMPLATE_URL+'img/favicon.ico', rel='shortcut icon')
 		
 		// Scripts
 		block scripts
-		if maps == true
+		if gmaps
 			script(src='http://maps.google.com/maps/api/js?sensor=false')
+		if fbsdk
+			script(src="//connect.facebook.net/en_US/sdk.js")
 		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
-		script(src=SITE_URL+'js/main.js')
+		script(src=TEMPLATE_URL+'js/main.js')
 
 
 		//[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]

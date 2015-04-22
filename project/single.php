@@ -18,13 +18,13 @@
     <meta name="twitter:card" content="">
     <meta name="twitter:image:src" content="">
     <!-- Style-->
-    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>css/main.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>css/main.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>img/favicon.ico" rel="shortcut icon">
+    <link href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>img/favicon.ico" rel="shortcut icon">
     <!-- Scripts-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>js/main.js"></script>
+    <script src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>js/main.js"></script>
     <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
   </head>
   <body>
@@ -32,13 +32,13 @@
       <div class="header-top">
         <div class="header-limit">
           <div class="header-inner">
-            <div class="header-logo"><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>">Base Front</a></div>
+            <div class="header-logo"><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>">Base Front</a></div>
             <div class="header-nav">
               <nav>
                 <ul>
-                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>">Inicio</a></li>
-                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>single.php">Single</a></li>
-                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']).'/' ?>demo.php">Demo</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>">Inicio</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>single.php">Single</a></li>
+                  <li><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/' ?>demo.php">Demo</a></li>
                   <li><a href="#">Multi-menu</a>
                     <ul>
                       <li><a href="#">Lorem ipsum 1</a></li>
@@ -82,7 +82,8 @@
             <div class="inner inner-2">
               <div class="content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum aliquam, ipsa nobis atque dicta possimus voluptatem libero tenetur facere? Enim nostrum ducimus labore ullam corporis velit nesciunt id, doloribus eligendi!</p>
-                <p>img(src="http://placehold.it/700x400/3e444b")</p>
+                <p><img src="http://lorempixel.com/700/400/technics/1"/>
+                </p>
                 <p>Ratione, <strong>obcaecati quia eligendi</strong> voluptatem perferendis amet suscipit ullam enim voluptatibus voluptas praesentium pariatur qui porro libero ipsum consectetur sapiente culpa aperiam omnis animi iusto magnam laboriosam. Ea consequuntur, alias.</p>
                 <p>Excepturi inventore maiores, non repellendus quidem <a href="#">necessitatibus soluta</a> doloribus, dolorum velit explicabo a nobis, fugit natus molestiae placeat minus suscipit itaque commodi ex sit, aspernatur laudantium deserunt porro. Voluptate, ea.</p>
                 <h2>Lorem ipsum dolor sit amet</h2>

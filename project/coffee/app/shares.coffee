@@ -3,7 +3,7 @@
 app.shares =
 
 	init: ->
-		$(".share").click ->
+		$(document).on "click", ".share", ->
 			app.shares.share $(this)
 
 	share: (element) ->
