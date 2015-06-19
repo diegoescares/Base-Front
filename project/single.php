@@ -82,7 +82,7 @@
             <div class="inner inner-2">
               <div class="content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum aliquam, ipsa nobis atque dicta possimus voluptatem libero tenetur facere? Enim nostrum ducimus labore ullam corporis velit nesciunt id, doloribus eligendi!</p>
-                <p><img src="http://lorempixel.com/700/400/technics/1"/>
+                <p><img src="http://lorempixel.com/700/400/technics/6"/>
                 </p>
                 <p>Ratione, <strong>obcaecati quia eligendi</strong> voluptatem perferendis amet suscipit ullam enim voluptatibus voluptas praesentium pariatur qui porro libero ipsum consectetur sapiente culpa aperiam omnis animi iusto magnam laboriosam. Ea consequuntur, alias.</p>
                 <p>Excepturi inventore maiores, non repellendus quidem <a href="#">necessitatibus soluta</a> doloribus, dolorum velit explicabo a nobis, fugit natus molestiae placeat minus suscipit itaque commodi ex sit, aspernatur laudantium deserunt porro. Voluptate, ea.</p>

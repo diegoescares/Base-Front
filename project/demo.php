@@ -84,71 +84,54 @@
               <div class="inner inner-2">
                 <div class="content">
                   <h2>Layout</h2>
-                  <div class="cols">
+                  <div class="cols cols-doublesep">
+                    <div class="col col-33 col-to100 col-right">
+                      <div class="inner lighter">.col.col-33</div>
+                    </div>
                     <div class="col col-66">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-66</div>
-                      </div>
+                      <div class="inner lighter">.col.col-66</div>
                     </div>
-                    <div class="col col-33">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-33</div>
-                      </div>
+                    <div class="col col-50 col-nobreak">
+                      <div class="inner lighter">.col.col-50.col-nobreak</div>
                     </div>
-                    <div class="col col-50">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-50</div>
-                      </div>
-                    </div>
-                    <div class="col col-50">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-50</div>
-                      </div>
+                    <div class="col col-50 col-nobreak">
+                      <div class="inner lighter">.col.col-50.col-nobreak</div>
                     </div>
                     <div class="col col-25">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-25</div>
-                      </div>
+                      <div class="inner lighter">.col.col-25</div>
                     </div>
                     <div class="col col-25">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-25</div>
-                      </div>
+                      <div class="inner lighter">.col.col-25</div>
                     </div>
                     <div class="col col-25">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-25</div>
-                      </div>
+                      <div class="inner lighter">.col.col-25</div>
                     </div>
                     <div class="col col-25">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-25</div>
-                      </div>
+                      <div class="inner lighter">.col.col-25</div>
                     </div>
                     <div class="col col-20">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-20</div>
-                      </div>
+                      <div class="inner lighter">.col.col-20</div>
                     </div>
                     <div class="col col-20">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-20</div>
-                      </div>
+                      <div class="inner lighter">.col.col-20</div>
                     </div>
                     <div class="col col-20">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-20</div>
-                      </div>
+                      <div class="inner lighter">.col.col-20</div>
                     </div>
-                    <div class="col col-20">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-20</div>
-                      </div>
+                    <div class="col col-20 col-nobreak1">
+                      <div class="inner lighter">.col.col-20.col-nobreak1</div>
                     </div>
-                    <div class="col col-20">
-                      <div class="col-inner">
-                        <div class="inner lighter">.col.col-20</div>
-                      </div>
+                    <div class="col col-20 col-nobreak1">
+                      <div class="inner lighter">.col.col-20.col-nobreak1</div>
+                    </div>
+                  </div>
+                  <h2>Columnas activas bajo break point 3</h2>
+                  <div class="cols">
+                    <div class="col col-60-break3">
+                      <div class="inner lighter">.col.col-60-3</div>
+                    </div>
+                    <div class="col col-40-break3">
+                      <div class="inner lighter">.col.col-40-3</div>
                     </div>
                   </div>
                 </div>
@@ -162,18 +145,19 @@
                   <h2>Botones</h2>
                   <h4>Configuraciones:</h4>
                   <pre>button, button-small, button-medium, button-big
-button-color, button-color-2, button-dark, button-white, button-line, button-hover-2
+button-color-2, button-white, button-light, button-gray, button-dark, button-line, button-line-white, button-hover-2
 </pre>
-                  <h4>Normal:</h4><a href="#" class="button button-small">Lorem ipsum</a> <a href="#" class="button button">Lorem ipsum</a> <a href="#" class="button button-medium">Lorem ipsum</a> <a href="#" class="button button-big">Lorem ipsum</a>
-                  <h4>Primary:</h4><a href="#" class="button button-color button-small">Lorem ipsum</a> <a href="#" class="button button-color button">Lorem ipsum</a> <a href="#" class="button button-color button-medium">Lorem ipsum</a> <a href="#" class="button button-color button-big">Lorem ipsum</a>
-                  <h4>Secondary:</h4><a href="#" class="button button-color-2 button-small">Lorem ipsum</a> <a href="#" class="button button-color-2 button">Lorem ipsum</a> <a href="#" class="button button-color-2 button-medium">Lorem ipsum</a> <a href="#" class="button button-color-2 button-big">Lorem ipsum</a>
-                  <h4>Dark:</h4><a href="#" class="button button-dark button-small">Lorem ipsum</a> <a href="#" class="button button-dark button">Lorem ipsum</a> <a href="#" class="button button-dark button-medium">Lorem ipsum</a> <a href="#" class="button button-dark button-big">Lorem ipsum</a>
-                  <h4>Dark + hover 2:</h4><a href="#" class="button button-dark button-hover-2 button-small">Lorem ipsum</a> <a href="#" class="button button-dark button-hover-2 button">Lorem ipsum</a> <a href="#" class="button button-dark button-hover-2 button-medium">Lorem ipsum</a> <a href="#" class="button button-dark button-hover-2 button-big">Lorem ipsum</a>
-                  <h4>Line:</h4><a href="#" class="button button-line button-small">Lorem ipsum</a> <a href="#" class="button button-line button">Lorem ipsum</a> <a href="#" class="button button-line button-medium">Lorem ipsum</a> <a href="#" class="button button-line button-big">Lorem ipsum</a>
+                  <h4>Normal:</h4><a href="#" class="button button-small">Lorem ipsum</a> <a href="#" class="button">Lorem ipsum</a> <a href="#" class="button button-medium">Lorem ipsum</a> <a href="#" class="button button-big">Lorem ipsum</a>
+                  <h4>Color 2:</h4><a href="#" class="button button-color-2 button-small">Lorem ipsum</a> <a href="#" class="button button-color-2">Lorem ipsum</a> <a href="#" class="button button-color-2 button-medium">Lorem ipsum</a> <a href="#" class="button button-color-2 button-big">Lorem ipsum</a>
+                  <h4>Light:</h4><a href="#" class="button button-light button-small">Lorem ipsum</a> <a href="#" class="button button-light">Lorem ipsum</a> <a href="#" class="button button-light button-medium">Lorem ipsum</a> <a href="#" class="button button-light button-big">Lorem ipsum</a>
+                  <h4>Gray:</h4><a href="#" class="button button-gray button-small">Lorem ipsum</a> <a href="#" class="button button-gray">Lorem ipsum</a> <a href="#" class="button button-gray button-medium">Lorem ipsum</a> <a href="#" class="button button-gray button-big">Lorem ipsum</a>
+                  <h4>Dark:</h4><a href="#" class="button button-dark button-small">Lorem ipsum</a> <a href="#" class="button button-dark">Lorem ipsum</a> <a href="#" class="button button-dark button-medium">Lorem ipsum</a> <a href="#" class="button button-dark button-big">Lorem ipsum</a>
+                  <h4>Black + hover 2:</h4><a href="#" class="button button-black button-hover-2 button-small">Lorem ipsum</a> <a href="#" class="button button-black button-hover-2">Lorem ipsum</a> <a href="#" class="button button-black button-hover-2 button-medium">Lorem ipsum</a> <a href="#" class="button button-black button-hover-2 button-big">Lorem ipsum</a>
+                  <h4>Line:</h4><a href="#" class="button button-line button-small">Lorem ipsum</a> <a href="#" class="button button-line">Lorem ipsum</a> <a href="#" class="button button-line button-medium">Lorem ipsum</a> <a href="#" class="button button-line button-big">Lorem ipsum</a>
                   <h4>White:</h4>
-                  <div class="inner dark"><a href="#" class="button button-white button-small">Lorem ipsum</a> <a href="#" class="button button-white button">Lorem ipsum</a> <a href="#" class="button button-white button-medium">Lorem ipsum</a> <a href="#" class="button button-white button-big">Lorem ipsum</a></div>
+                  <div class="inner dark"><a href="#" class="button button-white button-small">Lorem ipsum</a> <a href="#" class="button button-white">Lorem ipsum</a> <a href="#" class="button button-white button-medium">Lorem ipsum</a> <a href="#" class="button button-white button-big">Lorem ipsum</a></div>
                   <h4>Line:</h4>
-                  <div class="inner dark"><a href="#" class="button button-line-white button-small">Lorem ipsum</a> <a href="#" class="button button-line-white button">Lorem ipsum</a> <a href="#" class="button button-line-white button-medium">Lorem ipsum</a> <a href="#" class="button button-line-white button-big">Lorem ipsum</a></div>
+                  <div class="inner dark"><a href="#" class="button button-line-white button-small">Lorem ipsum</a> <a href="#" class="button button-line-white">Lorem ipsum</a> <a href="#" class="button button-line-white button-medium">Lorem ipsum</a> <a href="#" class="button button-line-white button-big">Lorem ipsum</a></div>
                 </div>
               </div>
             </div>

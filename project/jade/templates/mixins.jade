@@ -4,17 +4,18 @@ mixin cols(limit,width)
 	.cols
 		- for (var a=0; a<limit; a++)
 			.col(class="col-"+width)
-				.col-inner
-					block
+				block
 
-mixin col(width,to100)
-	if !to100
-		- var htmlclass = "col-"+width
-	else
-		- var htmlclass = "col-"+width+" col-to-100"
+mixin col(width,prop1,prop2)
+	if !width
+		- var width = 50
+	- var htmlclass = "col-"+width
+	if prop1
+		- var htmlclass = "col-"+width+" col-"+prop1
+	if prop2
+		- var htmlclass = "col-"+width+" col-"+prop1+" col-"+prop2
 	.col(class=htmlclass)
-		.col-inner
-			block
+		block
 				
 
 mixin img(width,height,htmlclass)

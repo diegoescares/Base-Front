@@ -21,51 +21,58 @@ block page
 			
 						h2 Layout
 
-						.cols
-							.col.col-66: .col-inner
-								.inner.lighter
-									| .col.col-66
-							.col.col-33: .col-inner
+						.cols.cols-doublesep
+							+col(33,"to100","right")
 								.inner.lighter
 									| .col.col-33
+							+col(66)
+								.inner.lighter
+									| .col.col-66
+							+col(50,"nobreak")
+								.inner.lighter
+									| .col.col-50.col-nobreak
+							+col(50,"nobreak")
+								.inner.lighter
+									| .col.col-50.col-nobreak
 
-							.col.col-50: .col-inner
-								.inner.lighter
-									| .col.col-50
-							.col.col-50: .col-inner
-								.inner.lighter
-									| .col.col-50
-
-							.col.col-25: .col-inner
+							+col(25)
 								.inner.lighter
 									| .col.col-25
-							.col.col-25: .col-inner
+							+col(25)
 								.inner.lighter
 									| .col.col-25
-							.col.col-25: .col-inner
+							+col(25)
 								.inner.lighter
 									| .col.col-25
-							.col.col-25: .col-inner
+							+col(25)
 								.inner.lighter
 									| .col.col-25
 
-							.col.col-20: .col-inner
+							+col(20)
 								.inner.lighter
 									| .col.col-20
-							.col.col-20: .col-inner
+							+col(20)
 								.inner.lighter
 									| .col.col-20
-							.col.col-20: .col-inner
+							+col(20)
 								.inner.lighter
 									| .col.col-20
-							.col.col-20: .col-inner
+							+col(20,"nobreak1")
 								.inner.lighter
-									| .col.col-20
-							.col.col-20: .col-inner
+									| .col.col-20.col-nobreak1
+							+col(20,"nobreak1")
 								.inner.lighter
-									| .col.col-20
+									| .col.col-20.col-nobreak1
 							
+						h2 Columnas activas bajo break point 3
 
+						.cols
+							+col("60-break3")
+								.inner.lighter
+									| .col.col-60-3
+							+col("40-break3")
+								.inner.lighter
+									| .col.col-40-3
 
 		section
 			.limit
@@ -77,63 +84,73 @@ block page
 						h4 Configuraciones:
 						pre.
 							button, button-small, button-medium, button-big
-							button-color, button-color-2, button-dark, button-white, button-line, button-hover-2
+							button-color-2, button-white, button-light, button-gray, button-dark, button-line, button-line-white, button-hover-2
 
 						h4 Normal:
 
 						a(href="#",class="button button-small") Lorem ipsum
 						| 
-						a(href="#",class="button button") Lorem ipsum
+						a(href="#",class="button") Lorem ipsum
 						| 
 						a(href="#",class="button button-medium") Lorem ipsum
 						| 
 						a(href="#",class="button button-big") Lorem ipsum
 
-
-						h4 Primary:
-
-						a(href="#",class="button button-color button-small") Lorem ipsum
-						| 
-						a(href="#",class="button button-color button") Lorem ipsum
-						| 
-						a(href="#",class="button button-color button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-color button-big") Lorem ipsum
-
-						h4 Secondary:
+						h4 Color 2:
 
 						a(href="#",class="button button-color-2 button-small") Lorem ipsum
 						| 
-						a(href="#",class="button button-color-2 button") Lorem ipsum
+						a(href="#",class="button button-color-2") Lorem ipsum
 						| 
 						a(href="#",class="button button-color-2 button-medium") Lorem ipsum
 						| 
 						a(href="#",class="button button-color-2 button-big") Lorem ipsum
 
+						h4 Light:
+
+						a(href="#",class="button button-light button-small") Lorem ipsum
+						| 
+						a(href="#",class="button button-light") Lorem ipsum
+						| 
+						a(href="#",class="button button-light button-medium") Lorem ipsum
+						| 
+						a(href="#",class="button button-light button-big") Lorem ipsum
+
+
+						h4 Gray:
+
+						a(href="#",class="button button-gray button-small") Lorem ipsum
+						| 
+						a(href="#",class="button button-gray") Lorem ipsum
+						| 
+						a(href="#",class="button button-gray button-medium") Lorem ipsum
+						| 
+						a(href="#",class="button button-gray button-big") Lorem ipsum
+
 						h4 Dark:
 
 						a(href="#",class="button button-dark button-small") Lorem ipsum
 						| 
-						a(href="#",class="button button-dark button") Lorem ipsum
+						a(href="#",class="button button-dark") Lorem ipsum
 						| 
 						a(href="#",class="button button-dark button-medium") Lorem ipsum
 						| 
 						a(href="#",class="button button-dark button-big") Lorem ipsum
 
-						h4 Dark + hover 2:
+						h4 Black + hover 2:
 
-						a(href="#",class="button button-dark button-hover-2 button-small") Lorem ipsum
+						a(href="#",class="button button-black button-hover-2 button-small") Lorem ipsum
 						| 
-						a(href="#",class="button button-dark button-hover-2 button") Lorem ipsum
+						a(href="#",class="button button-black button-hover-2") Lorem ipsum
 						| 
-						a(href="#",class="button button-dark button-hover-2 button-medium") Lorem ipsum
+						a(href="#",class="button button-black button-hover-2 button-medium") Lorem ipsum
 						| 
-						a(href="#",class="button button-dark button-hover-2 button-big") Lorem ipsum
+						a(href="#",class="button button-black button-hover-2 button-big") Lorem ipsum
 
 						h4 Line:
 						a(href="#",class="button button-line button-small") Lorem ipsum
 						| 
-						a(href="#",class="button button-line button") Lorem ipsum
+						a(href="#",class="button button-line") Lorem ipsum
 						| 
 						a(href="#",class="button button-line button-medium") Lorem ipsum
 						| 
@@ -144,7 +161,7 @@ block page
 						.inner.dark
 							a(href="#",class="button button-white button-small") Lorem ipsum
 							| 
-							a(href="#",class="button button-white button") Lorem ipsum
+							a(href="#",class="button button-white") Lorem ipsum
 							| 
 							a(href="#",class="button button-white button-medium") Lorem ipsum
 							| 
@@ -154,7 +171,7 @@ block page
 						.inner.dark
 							a(href="#",class="button button-line-white button-small") Lorem ipsum
 							| 
-							a(href="#",class="button button-line-white button") Lorem ipsum
+							a(href="#",class="button button-line-white") Lorem ipsum
 							| 
 							a(href="#",class="button button-line-white button-medium") Lorem ipsum
 							| 

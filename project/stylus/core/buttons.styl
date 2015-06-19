@@ -12,58 +12,66 @@
 	vertical-align middle
 	radius rad_2
 
-	// Types
-
-	background light
-	color gray
-	&:hover
-		cursor pointer
-		color white
-		background color
-		text-decoration none
-
-	&.button-color
-		color white
-		background color
-		&:hover
-			background lighten(color,10%)
+	background color
+	color white
 
 	&.button-color-2
-		color white
 		background color_2
-		&:hover
-			background lighten(color_2,10%)
+		color white
+
+	&.button-white
+		background white
+		color dark
+
+	&.button-light
+		background light
+		color dark
+
+	&.button-gray
+		background gray
+		color white
 
 	&.button-dark
 		color white
 		background dark
-		&:hover
-			background color
-	
-	&.button-white
-		color dark
-		background white
-		&:hover
-			background color
-			color white
+
+	&.button-black
+		color white
+		background black
 	
 	&.button-line
-		border-color gray
+		border-color light
 		background transparent
 		color dark
-		&:hover
-			background color
-			border-color color
-			color white
 
 	&.button-line-white
 		border-color white
 		background transparent
 		color white
+
+
+	// Standar hover
+
+	&:hover
+		border-color lighten(color,10%)
+		background lighten(color,10%)
+		color white
+		text-decoration none
+		cursor pointer
+
+
+	// Hover color 2
+
+	&.button-color-2
+	&.button-hover-2
 		&:hover
-			background white
-			color color
+			border-color lighten(color_2,10%)
+			background lighten(color_2,10%)
+			color white
 	
+
+	// Others
+
 	&.button-disabled
 		background light
 		border-color light
@@ -73,11 +81,6 @@
 			border-color light
 			color white
 			cursor default
-
-	&.button-hover-2
-		&:hover
-			background color_2
-			color white
 
 	&.button-block
 		display block
