@@ -17,13 +17,13 @@ app.init = ->
 	app.activelinks.init()
 
 	# Browsers classes
-	app.browsers()
+	app.browsers.init()
 
 	# Shares
 	app.shares.init()
 
 	# Tooltips
-	app.tooltips()
+	app.tooltips.init()
 
 	# Alertas
 	app.alert.init()
@@ -53,7 +53,7 @@ app.init = ->
 	app.tabs.init()
 
 	# Validation forms
-	app.validation.form $(".controls")
+	app.forms.init()
 
 	# Preview file input
 	#app.previewfile.init()

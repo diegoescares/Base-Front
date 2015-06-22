@@ -5,17 +5,18 @@ app.isMobile = ->
 	else
 		false
 
-app.browsers = ->
+app.browsers =
+	init: ->
 
-	# Mobile
-	if app.isMobile()
-		$("html").addClass("is-mobile")
+		# Mobile
+		if app.isMobile()
+			$("html").addClass("is-mobile")
 
-	# IE
-	if $("html").hasClass("lt-ie9")
-		app.alert.open
-			title: "Estás usando un navegador muy antiguo"
-			content: "Actualiza tu navegador ahora y disfruta de una experiencia mucho mejor."
-			buttons: "<a href='http://browsehappy.com/?locale=es' target='_blank' class='button button-primary button-big'>Actualizar ahora</a>"
-			#static: true
-	
+		# IE
+		if $("html").hasClass("lt-ie9")
+			app.alert.open
+				title: "Estás usando un navegador muy antiguo"
+				content: "Actualiza tu navegador ahora y disfruta de una experiencia mucho mejor."
+				buttons: "<a href='http://browsehappy.com/?locale=es' target='_blank' class='button button-primary button-big'>Actualizar ahora</a>"
+				#static: true
+		

@@ -15,22 +15,15 @@ form
 		border border
 		padding 10px
 		vertical-align top
-		background #FFF
+		background white
 		radius 0
 		box-sizing border-box
 		appearance none
 		&:focus
-			border-color gray
-
-	label:hover
-		input
-		button
-		select
-		textarea
-			border-color gray
+			border-color color
 
 	select
-		background url(../img/icon-select.png) right center no-repeat transparent
+		background url(../img/icon-select.png) right center no-repeat white
 		padding-right 40px
 
 	textarea
@@ -45,7 +38,7 @@ form
 		padding 0
 		margin-right 2px
 		margin-top 2px
-		background url(../img/icon-checked.png) center -20px no-repeat transparent
+		background url(../img/icon-checked.png) center -20px no-repeat white
 		&:checked
 			background-color color
 			border-color color
@@ -58,12 +51,15 @@ form
 // Estilos para controles de formularios
 
 w_name = 160px
-w_name_sep = 20px
-w_value = 280px
+w_value = 240px
 w_form = w_name + w_value
 
 .controls
 
+	&.controls-center
+		margin 0 auto
+		max-width w_form
+	
 	.control
 		display block
 		margin-bottom 15px
@@ -72,73 +68,27 @@ w_form = w_name + w_value
 			margin-bottom 0
 
 		.control-name
-			margin-bottom 5px
+			padding-bottom 5px
+			transition .2s ease
+			overflow hidden
 
+			.control-message
+				display inline
+				font-weight bold
+				animation fadeIn .5s .1s ease backwards
+				
 		.control-value
+			position relative
 			label
 				display block
 				padding 5px
 				margin 0 5px 0 -5px
-				&.inline
+				&.label-inline
 					display inline-block
 
-		.control-message
-			transition .5s ease
-			line-height 0px
-			opacity 0
-			&.in
-				line-height 20px
-				opacity 1
-				&.out
-					line-height 0px
-					opacity 0
-
-	.control-error
-		input
-		select
-		textarea
-			border-color red
-		.control-message
-			color red
-			margin-top 5px
-
-
-	&.controls-center
-		margin 0 auto
-		max-width w_form
-	
-	&.controls-layout
-		.control
-			overflow hidden
+		&.control-error
 			.control-name
-			.control-value
-				float left
-			.control-name
-				width w_name
-				text-align right
-				padding-right w_name_sep
-				padding-top 8px
-				&.control-name-2lines
-					padding-top 0
-					line-height 18px
-			.control-value
-				width w_value
-
-
-@media break2
-	.controls
-		&.controls-layout
-			.control
-				.control-name
-				.control-value
-					float none
-					width auto
-				.control-name
-					padding 0
-					text-align left
-					&.control-name-2lines
-						line-height inherit
-
-
+				background lighter
+				padding 10px 10px
 
 

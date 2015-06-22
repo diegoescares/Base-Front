@@ -18,6 +18,12 @@ app.actions = ->
 
 
 
+	# Forms
+	app.forms.validate $("form.validate")
+
+
+
+
 app.loadingContent = ->
 
 	# On load articles

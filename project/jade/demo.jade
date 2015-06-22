@@ -259,75 +259,25 @@ block page
 				.limit
 					.inner.inner-2
 
-						.content
-							h2 Formularios
-						.sep
+						h2 Formularios
+						.white.inner.inner-2
 
-						.tabs
-							.tabs-header
-								a.tab(href='#') Con layout y centrado
-								a.tab(href='#') Líquido y centrado
-								a.tab(href='#') Líquido
-							.tabs-body
-								.tab
-									.inner.inner-2
-
-										form.controls.controls-layout.controls-center(method='POST', action='')
-											+control("email","email","Email")
-											+control("text","name","Nombre")
-											+control("text","rut","RUT")
-											+control("text","dob","Fecha de nacimiento")
-											+control("text","phone","Teléfono")
-											+control("select","region","Región")
-											+control("select","city","Ciudad")
-											+control("textarea","message","Mensaje")
-											+control("password","password","Contraseña")
-											+control("password","password_repeat","Repetir contraseña")(data-repeat="password")
-											+control("radio","gender","Sexo",{"m":"Masculino","f":"Femenino"})
-											+control("checkbox","terms","",{"true":"Acepto los términos legales"})
-											.right
-												button.button.button-medium Enviar
-													span.fa.fa-angle-right
-
-								.tab
-									.inner.inner-2
-
-										form.controls.controls-center(method='POST', action='')
-											+control("email","email","Email")
-											+control("text","name","Nombre")
-											+control("text","rut","RUT")
-											+control("text","dob","Fecha de nacimiento")
-											+control("text","phone","Teléfono")
-											+control("select","region","Región")
-											+control("select","city","Ciudad")
-											+control("textarea","message","Mensaje")
-											+control("password","password","Contraseña")
-											+control("password","password_repeat","Repetir contraseña")(data-repeat="password")
-											+control("radio","gender","Sexo",{"m":"Masculino","f":"Femenino"})
-											+control("checkbox","terms","",{"true":"Acepto los términos legales"})
-											.right
-												button.button.button-medium Enviar
-													span.fa.fa-angle-right
-
-								.tab
-									.inner.inner-2
-
-										form.controls(method='POST', action='')
-											+control("email","email","Email")
-											+control("text","name","Nombre")
-											+control("text","rut","RUT")
-											+control("text","dob","Fecha de nacimiento")
-											+control("text","phone","Teléfono")
-											+control("select","region","Región")
-											+control("select","city","Ciudad")
-											+control("textarea","message","Mensaje")
-											+control("password","password","Contraseña")
-											+control("password","password_repeat","Repetir contraseña")(data-repeat="password")
-											+control("radio","gender","Sexo",{"m":"Masculino","f":"Femenino"})
-											+control("checkbox","terms","",{"true":"Acepto los términos legales"})
-											.right
-												button.button.button-medium Enviar
-													span.fa.fa-angle-right
+							form.controls.controls-center.validate(method='POST', action='')
+								+control("text","name","Nombre")
+								+control("email","email","Email")
+								+control("text","rut","RUT")									
+								+control("text","dob","Fecha de nacimiento")
+								+control("text","phone","Teléfono")
+								+control("select","region","Región")
+								+control("select","city","Ciudad")
+								+control("textarea","message","Mensaje")
+								+control("password","password","Contraseña")
+								+control("password","password_repeat","Repetir contraseña")(data-repeat="password")
+								+control("radio","gender","Sexo",{"m":"Masculino","f":"Femenino"})
+								+control("checkbox","terms","",{"true":"Acepto los términos legales"})
+								.right
+									button.button.button-medium Enviar
+										span.fa.fa-angle-right
 
 			section.white
 				.limit

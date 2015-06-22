@@ -199,17 +199,17 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
               <div class="content">
                 <h2>Tabs</h2>
                 <div class="tabs">
-                  <div class="tabs-header"><a href="#" class="tab">Rutrum vulputate</a><a href="#" class="tab">Conubia magna</a></div>
+                  <div class="tabs-header"><a href="#" class="tab">Volutpat proin</a><a href="#" class="tab">Aliquam ut</a></div>
                   <div class="tabs-body">
                     <div class="tab">
                       <div class="inner">
-                        <p>Et molestie purus porttitor quisque varius bibendum non vulputate pellentesque. Dapibus eros libero hendrerit aliquam venenatis sapien rutrum duis vivamus. Congue gravida colus sed curabitur ad tristique porta vulputate mattis aptent bibendum faucibus dictumst in augue urna ut mi cursus.
+                        <p>Ligula venenatis imperdiet potenti nam massa primis aliquet turpis vitae. Sodales bibendum sagittis hac tristique congue varius non ac vehicula. Tristique sem duis fames lacus suspendisse maecenas porttitor lacus donec molestie aliquet luctus sed varius taciti magna donec per elementum.
                         </p>
                       </div>
                     </div>
                     <div class="tab">
                       <div class="inner">
-                        <p>A senectus augue tellus sociosqu nam fringilla laoreet nunc primis. Pretium consectetur nisi sociosqu at eleifend nostra habitasse curabitur fames. Ut vitae nisi faucibus mauris sodales ornare mattis netus urna primis praesent bibendum tempus cubilia imperdiet vulputate magna placerat etiam.
+                        <p>Vitae mollis dictumst tincidunt et consequat ultricies a ut porta. Ut eu sociosqu ornare suspendisse porta ut molestie curae pellentesque. Porta quisque habitant varius suscipit at laoreet quisque ac hac lacinia cursus eget bibendum potenti feugiat taciti urna cubilia litora.
                         </p>
                       </div>
                     </div>
@@ -242,26 +242,26 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                 <h4>Demo:</h4>
                 <div class="faq">
                   <div class="faq-item faq-open">
-                    <h3 class="faq-question">Dui ad suspendisse pellentesque fermentum
+                    <h3 class="faq-question">Aliquam tempor convallis nostra erat
                     </h3>
                     <div class="faq-answer">
-                      <p>Ad venenatis nam id gravida taciti vel torquent vitae ad. Feugiat iaculis mollis libero erat class sed varius et lacinia. Est sem etiam blandit arcu lobortis elementum eu erat rutrum neque facilisis feugiat fusce quis etiam habitasse sodales vehicula vivamus.
+                      <p>Etiam at dui ac vivamus non sapien quisque etiam mi. Fusce duis nam eleifend cubilia enim class fermentum auctor fermentum. Inceptos molestie aliquet pellentesque erat fames vestibulum urna pharetra neque platea urna justo cursus eu etiam ornare iaculis auctor torquent.
                       </p>
                     </div>
                   </div>
                   <div class="faq-item">
-                    <h3 class="faq-question">Facilisis suscipit venenatis phasellus aliquam
+                    <h3 class="faq-question">Ultrices purus himenaeos morbi at
                     </h3>
                     <div class="faq-answer">
-                      <p>Consectetur curabitur consequat interdum gravida ad interdum cursus viverra donec. Aenean sed fusce massa convallis conubia a nulla sodales quam. Aenean fermentum tempor sed diam aptent colus iaculis aliquam rhoncus donec duis nullam conubia justo vivamus inceptos senectus himenaeos dictumst.
+                      <p>Risus torquent orci senectus molestie ut mollis phasellus nulla eget. Velit fames auctor habitasse tempor lectus proin lobortis eu adipiscing. Condimentum eleifend hendrerit at diam urna ac lectus tellus posuere eleifend diam nec molestie fusce vitae sollicitudin cursus blandit ad.
                       </p>
                     </div>
                   </div>
                   <div class="faq-item">
-                    <h3 class="faq-question">Quisque hendrerit rutrum fermentum felis
+                    <h3 class="faq-question">Commodo faucibus class rhoncus nunc
                     </h3>
                     <div class="faq-answer">
-                      <p>Nulla tempor inceptos tempor cubilia sollicitudin quis justo dapibus purus. Mi pellentesque sagittis dui dictum primis integer id habitasse tortor. Facilisis fames pellentesque dictumst vehicula nam quisque colus quam nullam ac varius est habitant sem quis pulvinar egestas diam litora.
+                      <p>Duis cras nulla cubilia cubilia vitae nam erat ligula sem. Mollis in eget risus nec curabitur aliquam venenatis porttitor malesuada. Lectus quisque facilisis pretium sed elit himenaeos quisque habitant magna ut nisl bibendum iaculis volutpat lacinia elementum feugiat semper dui.
                       </p>
                     </div>
                   </div>
@@ -278,111 +278,111 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                 <div class="table-container">
                   <table>
                     <tr>
-                      <th>Rutrum
+                      <th>Auctor
                       </th>
-                      <th>Netus
+                      <th>Magna
                       </th>
-                      <th>Tempor
+                      <th>Sollicitudin
                       </th>
-                      <th>Nunc
+                      <th>Eget
                       </th>
-                      <th>Tempus
+                      <th>Tellus
+                      </th>
+                      <th>A
                       </th>
                       <th>Luctus
                       </th>
-                      <th>Turpis
-                      </th>
-                      <th>Tempus
+                      <th>Integer
                       </th>
                     </tr>
                     <tr>
-                      <td>Purus congue
+                      <td>Sollicitudin dictum
                       </td>
-                      <td>Tincidunt ullamcorper
+                      <td>Torquent est
                       </td>
-                      <td>Per sodales
+                      <td>Nisi nunc
                       </td>
-                      <td>Est orci
+                      <td>Aenean potenti
                       </td>
-                      <td>Orci elit
+                      <td>Orci volutpat
                       </td>
-                      <td>Etiam mattis
+                      <td>Nostra tempus
                       </td>
-                      <td>Lectus turpis
+                      <td>Bibendum urna
                       </td>
-                      <td>Mauris colus
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Litora primis
-                      </td>
-                      <td>Hac tincidunt
-                      </td>
-                      <td>Fermentum vestibulum
-                      </td>
-                      <td>Vehicula integer
-                      </td>
-                      <td>Porttitor habitant
-                      </td>
-                      <td>Turpis in
-                      </td>
-                      <td>Auctor vitae
-                      </td>
-                      <td>Dictumst imperdiet
+                      <td>Suscipit mattis
                       </td>
                     </tr>
                     <tr>
-                      <td>Massa molestie
+                      <td>Hendrerit sem
                       </td>
-                      <td>Interdum orci
+                      <td>Aliquam venenatis
                       </td>
-                      <td>Maecenas potenti
+                      <td>Nostra vehicula
                       </td>
-                      <td>Dictum mollis
+                      <td>Platea metus
                       </td>
-                      <td>Mattis mi
+                      <td>Imperdiet tempus
                       </td>
-                      <td>Dictumst vulputate
+                      <td>Scelerisque proin
                       </td>
-                      <td>Eget orci
+                      <td>Aliquam fusce
                       </td>
-                      <td>Mattis praesent
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Ornare semper
-                      </td>
-                      <td>Suscipit purus
-                      </td>
-                      <td>Dapibus viverra
-                      </td>
-                      <td>Id curabitur
-                      </td>
-                      <td>Diam enim
-                      </td>
-                      <td>Vitae habitasse
-                      </td>
-                      <td>Posuere augue
-                      </td>
-                      <td>Nostra scelerisque
+                      <td>Id lacus
                       </td>
                     </tr>
                     <tr>
-                      <td>Ac bibendum
+                      <td>Consectetur a
                       </td>
-                      <td>Vitae massa
+                      <td>Elit fringilla
                       </td>
-                      <td>Hac etiam
+                      <td>Himenaeos id
                       </td>
-                      <td>Quis in
+                      <td>Odio a
                       </td>
-                      <td>Tortor felis
+                      <td>Id habitant
                       </td>
-                      <td>Tincidunt faucibus
+                      <td>Bibendum suscipit
                       </td>
-                      <td>Adipiscing vulputate
+                      <td>Ullamcorper volutpat
                       </td>
-                      <td>Aliquam mollis
+                      <td>Vehicula massa
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Dui ac
+                      </td>
+                      <td>Rhoncus orci
+                      </td>
+                      <td>Colus faucibus
+                      </td>
+                      <td>Feugiat bibendum
+                      </td>
+                      <td>Torquent enim
+                      </td>
+                      <td>Egestas metus
+                      </td>
+                      <td>Litora tellus
+                      </td>
+                      <td>Leo mauris
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Lacinia aptent
+                      </td>
+                      <td>Maecenas adipiscing
+                      </td>
+                      <td>Habitant quisque
+                      </td>
+                      <td>Massa nisi
+                      </td>
+                      <td>Aliquam colus
+                      </td>
+                      <td>Senectus primis
+                      </td>
+                      <td>Dapibus maecenas
+                      </td>
+                      <td>Nam velit
                       </td>
                     </tr>
                   </table>
@@ -422,410 +422,136 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
         <section class="lighter">
           <div class="limit">
             <div class="inner inner-2">
-              <div class="content">
-                <h2>Formularios</h2>
-              </div>
-              <div class="sep"></div>
-              <div class="tabs">
-                <div class="tabs-header"><a href="#" class="tab">Con layout y centrado</a><a href="#" class="tab">Líquido y centrado</a><a href="#" class="tab">Líquido</a></div>
-                <div class="tabs-body">
-                  <div class="tab">
-                    <div class="inner inner-2">
-                      <form method="POST" action="" class="controls controls-layout controls-center">
-                        <div class="control">
-                          <div class="control-name">Email</div>
-                          <div class="control-value">
-                            <input type="email" name="email" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Nombre</div>
-                          <div class="control-value">
-                            <input type="text" name="name" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">RUT</div>
-                          <div class="control-value">
-                            <input type="text" name="rut" class="input-rut"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Fecha de nacimiento</div>
-                          <div class="control-value">
-                            <input type="text" name="dob" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Teléfono</div>
-                          <div class="control-value">
-                            <input type="text" name="phone" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Región</div>
-                          <div class="control-value">
-                            <select name="region" class="false">
-                              <option>Selecciona...</option>
-                              <option>Mattis potenti
-                              </option>
-                              <option>Morbi adipiscing
-                              </option>
-                              <option>Lacus vehicula
-                              </option>
-                              <option>Nec est
-                              </option>
-                              <option>Tempus luctus
-                              </option>
-                              <option>Suscipit cursus
-                              </option>
-                              <option>Accumsan id
-                              </option>
-                              <option>Vestibulum aptent
-                              </option>
-                              <option>Aliquet at
-                              </option>
-                              <option>Bibendum habitant
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Ciudad</div>
-                          <div class="control-value">
-                            <select name="city" class="false">
-                              <option>Selecciona...</option>
-                              <option>Elit lacinia
-                              </option>
-                              <option>Nam sed
-                              </option>
-                              <option>Sodales dui
-                              </option>
-                              <option>Class cubilia
-                              </option>
-                              <option>Etiam dictumst
-                              </option>
-                              <option>Bibendum phasellus
-                              </option>
-                              <option>Commodo hendrerit
-                              </option>
-                              <option>Blandit metus
-                              </option>
-                              <option>Imperdiet class
-                              </option>
-                              <option>Aptent tristique
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Mensaje</div>
-                          <div class="control-value">
-                            <textarea name="message" class="false"></textarea>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Contraseña</div>
-                          <div class="control-value">
-                            <input type="password" name="password" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Repetir contraseña</div>
-                          <div class="control-value">
-                            <input type="password" name="password_repeat" class="false" data-repeat="password"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Sexo</div>
-                          <div class="control-value">
-                            <label class="inline">
-                              <input type="radio" name="gender" value="m" class="false"/> Masculino
-                            </label>
-                            <label class="inline">
-                              <input type="radio" name="gender" value="f" class="false"/> Femenino
-                            </label>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name"></div>
-                          <div class="control-value">
-                            <label class="inline">
-                              <input type="checkbox" name="terms" value="true" class="input-terms"/> Acepto los términos legales
-                            </label>
-                          </div>
-                        </div>
-                        <div class="right">
-                          <button class="button button-medium">Enviar<span class="fa fa-angle-right"></span></button>
-                        </div>
-                      </form>
+              <h2>Formularios</h2>
+              <div class="white inner inner-2">
+                <form method="POST" action="" class="controls controls-center validate">
+                  <div class="control">
+                    <div class="control-name">Nombre</div>
+                    <div class="control-value">
+                      <input type="text" name="name" class="false"/>
                     </div>
                   </div>
-                  <div class="tab">
-                    <div class="inner inner-2">
-                      <form method="POST" action="" class="controls controls-center">
-                        <div class="control">
-                          <div class="control-name">Email</div>
-                          <div class="control-value">
-                            <input type="email" name="email" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Nombre</div>
-                          <div class="control-value">
-                            <input type="text" name="name" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">RUT</div>
-                          <div class="control-value">
-                            <input type="text" name="rut" class="input-rut"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Fecha de nacimiento</div>
-                          <div class="control-value">
-                            <input type="text" name="dob" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Teléfono</div>
-                          <div class="control-value">
-                            <input type="text" name="phone" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Región</div>
-                          <div class="control-value">
-                            <select name="region" class="false">
-                              <option>Selecciona...</option>
-                              <option>Quisque venenatis
-                              </option>
-                              <option>Tempor ac
-                              </option>
-                              <option>Tortor rutrum
-                              </option>
-                              <option>Quam nulla
-                              </option>
-                              <option>Placerat nunc
-                              </option>
-                              <option>Sapien curae
-                              </option>
-                              <option>Proin faucibus
-                              </option>
-                              <option>Donec phasellus
-                              </option>
-                              <option>Taciti himenaeos
-                              </option>
-                              <option>Tristique torquent
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Ciudad</div>
-                          <div class="control-value">
-                            <select name="city" class="false">
-                              <option>Selecciona...</option>
-                              <option>Massa diam
-                              </option>
-                              <option>Sociosqu primis
-                              </option>
-                              <option>Et vitae
-                              </option>
-                              <option>Donec turpis
-                              </option>
-                              <option>Suscipit etiam
-                              </option>
-                              <option>Quis vulputate
-                              </option>
-                              <option>Ornare nunc
-                              </option>
-                              <option>Curabitur auctor
-                              </option>
-                              <option>Dapibus pulvinar
-                              </option>
-                              <option>Tortor libero
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Mensaje</div>
-                          <div class="control-value">
-                            <textarea name="message" class="false"></textarea>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Contraseña</div>
-                          <div class="control-value">
-                            <input type="password" name="password" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Repetir contraseña</div>
-                          <div class="control-value">
-                            <input type="password" name="password_repeat" class="false" data-repeat="password"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Sexo</div>
-                          <div class="control-value">
-                            <label class="inline">
-                              <input type="radio" name="gender" value="m" class="false"/> Masculino
-                            </label>
-                            <label class="inline">
-                              <input type="radio" name="gender" value="f" class="false"/> Femenino
-                            </label>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name"></div>
-                          <div class="control-value">
-                            <label class="inline">
-                              <input type="checkbox" name="terms" value="true" class="input-terms"/> Acepto los términos legales
-                            </label>
-                          </div>
-                        </div>
-                        <div class="right">
-                          <button class="button button-medium">Enviar<span class="fa fa-angle-right"></span></button>
-                        </div>
-                      </form>
+                  <div class="control">
+                    <div class="control-name">Email</div>
+                    <div class="control-value">
+                      <input type="email" name="email" class="false"/>
                     </div>
                   </div>
-                  <div class="tab">
-                    <div class="inner inner-2">
-                      <form method="POST" action="" class="controls">
-                        <div class="control">
-                          <div class="control-name">Email</div>
-                          <div class="control-value">
-                            <input type="email" name="email" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Nombre</div>
-                          <div class="control-value">
-                            <input type="text" name="name" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">RUT</div>
-                          <div class="control-value">
-                            <input type="text" name="rut" class="input-rut"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Fecha de nacimiento</div>
-                          <div class="control-value">
-                            <input type="text" name="dob" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Teléfono</div>
-                          <div class="control-value">
-                            <input type="text" name="phone" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Región</div>
-                          <div class="control-value">
-                            <select name="region" class="false">
-                              <option>Selecciona...</option>
-                              <option>Nisi phasellus
-                              </option>
-                              <option>Auctor maecenas
-                              </option>
-                              <option>Morbi urna
-                              </option>
-                              <option>Himenaeos lobortis
-                              </option>
-                              <option>Elementum bibendum
-                              </option>
-                              <option>Sed integer
-                              </option>
-                              <option>Neque semper
-                              </option>
-                              <option>Porttitor litora
-                              </option>
-                              <option>Praesent netus
-                              </option>
-                              <option>Pulvinar praesent
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Ciudad</div>
-                          <div class="control-value">
-                            <select name="city" class="false">
-                              <option>Selecciona...</option>
-                              <option>At laoreet
-                              </option>
-                              <option>Malesuada inceptos
-                              </option>
-                              <option>Porta dictumst
-                              </option>
-                              <option>Etiam arcu
-                              </option>
-                              <option>Netus condimentum
-                              </option>
-                              <option>Fermentum sagittis
-                              </option>
-                              <option>Porttitor vel
-                              </option>
-                              <option>Sed cras
-                              </option>
-                              <option>Etiam est
-                              </option>
-                              <option>Auctor lacus
-                              </option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Mensaje</div>
-                          <div class="control-value">
-                            <textarea name="message" class="false"></textarea>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Contraseña</div>
-                          <div class="control-value">
-                            <input type="password" name="password" class="false"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Repetir contraseña</div>
-                          <div class="control-value">
-                            <input type="password" name="password_repeat" class="false" data-repeat="password"/>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name">Sexo</div>
-                          <div class="control-value">
-                            <label class="inline">
-                              <input type="radio" name="gender" value="m" class="false"/> Masculino
-                            </label>
-                            <label class="inline">
-                              <input type="radio" name="gender" value="f" class="false"/> Femenino
-                            </label>
-                          </div>
-                        </div>
-                        <div class="control">
-                          <div class="control-name"></div>
-                          <div class="control-value">
-                            <label class="inline">
-                              <input type="checkbox" name="terms" value="true" class="input-terms"/> Acepto los términos legales
-                            </label>
-                          </div>
-                        </div>
-                        <div class="right">
-                          <button class="button button-medium">Enviar<span class="fa fa-angle-right"></span></button>
-                        </div>
-                      </form>
+                  <div class="control">
+                    <div class="control-name">RUT</div>
+                    <div class="control-value">
+                      <input type="text" name="rut" class="input-rut"/>
                     </div>
                   </div>
-                </div>
+                  <div class="control">
+                    <div class="control-name">Fecha de nacimiento</div>
+                    <div class="control-value">
+                      <input type="text" name="dob" class="false"/>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name">Teléfono</div>
+                    <div class="control-value">
+                      <input type="text" name="phone" class="false"/>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name">Región</div>
+                    <div class="control-value">
+                      <select name="region" class="false">
+                        <option>Selecciona...</option>
+                        <option>Nisl ut
+                        </option>
+                        <option>Sodales tincidunt
+                        </option>
+                        <option>Vulputate nulla
+                        </option>
+                        <option>Nostra fusce
+                        </option>
+                        <option>Lacus netus
+                        </option>
+                        <option>Mi ante
+                        </option>
+                        <option>Curabitur tempus
+                        </option>
+                        <option>Quisque vehicula
+                        </option>
+                        <option>Elementum accumsan
+                        </option>
+                        <option>Sapien netus
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name">Ciudad</div>
+                    <div class="control-value">
+                      <select name="city" class="false">
+                        <option>Selecciona...</option>
+                        <option>Convallis mauris
+                        </option>
+                        <option>Tristique metus
+                        </option>
+                        <option>Vel congue
+                        </option>
+                        <option>Sociosqu curae
+                        </option>
+                        <option>Habitasse posuere
+                        </option>
+                        <option>Habitasse cras
+                        </option>
+                        <option>Aliquam dapibus
+                        </option>
+                        <option>Cubilia fusce
+                        </option>
+                        <option>Molestie quisque
+                        </option>
+                        <option>Per lacus
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name">Mensaje</div>
+                    <div class="control-value">
+                      <textarea name="message" class="false"></textarea>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name">Contraseña</div>
+                    <div class="control-value">
+                      <input type="password" name="password" class="false"/>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name">Repetir contraseña</div>
+                    <div class="control-value">
+                      <input type="password" name="password_repeat" class="false" data-repeat="password"/>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name">Sexo</div>
+                    <div class="control-value">
+                      <label class="label-inline">
+                        <input type="radio" name="gender" value="m" class="false"/> Masculino
+                      </label>
+                      <label class="label-inline">
+                        <input type="radio" name="gender" value="f" class="false"/> Femenino
+                      </label>
+                    </div>
+                  </div>
+                  <div class="control">
+                    <div class="control-name"></div>
+                    <div class="control-value">
+                      <label class="label-inline">
+                        <input type="checkbox" name="terms" value="true" class="input-terms"/> Acepto los términos legales
+                      </label>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <button class="button button-medium">Enviar<span class="fa fa-angle-right"></span></button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

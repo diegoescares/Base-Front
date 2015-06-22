@@ -56,7 +56,7 @@ app.scroll =
 
 					if element_top == element_top_prev
 						element_top_delay++
-						delay = element_top_delay*0.5
+						delay = element_top_delay*0.2
 						element.css
 							'-webkit-animation-delay': delay+"s"
 							'animation-delay': delay+"s"

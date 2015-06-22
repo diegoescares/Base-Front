@@ -49,7 +49,7 @@ mixin control(type,name,text,endval)
 
 			if type == "checkbox" || type == "radio"
 				- each inputtext, inputval in endval
-					label.inline
+					label.label-inline
 						input(type=type, name=name, value=inputval, class=inputclass)
 						|  
 						=inputtext
