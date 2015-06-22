@@ -69,87 +69,85 @@
       </div>
     </header>
     <div id="body">
-      <div class="body-content">
-        <div class="limit inner inner-2">
-          <div class="cols">
-            <div class="row">
-              <div class="col col-66">
-                <article class="article-bg">
-                  <div class="article-image">
-                    <div class="bg"><img src="http://lorempixel.com/400/300/city/5" alt="Base Front"/>
-                    </div>
+      <div class="limit inner inner-2">
+        <div class="cols">
+          <div class="row">
+            <div class="col col-66">
+              <article class="article-bg">
+                <div class="article-image">
+                  <div class="bg"><img src="http://lorempixel.com/400/300/city/4" alt="Base Front"/>
                   </div>
-                  <div class="article-cover">
-                    <h2 class="article-title"><a href="<?= $URL ?>/single.php">Quis senectus imperdiet elit potenti</a></h2>
-                    <p class="article-description">Turpis consectetur hendrerit augue quisque curabitur pretium venenatis tristique nec
-                    </p><a href="<?= $URL ?>/single.php" class="button button-line-white button-cover">Leer más</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col col-33">
-                <article class="article-default">
-                  <div class="article-image"><img src="http://lorempixel.com/400/300/city/3" alt="Base Front"/>
-                  </div>
-                  <div class="article-body">
-                    <h3 class="article-title"><a href="<?= $URL ?>/single.php">Nibh lobortis ligula eget habitant</a></h3>
-                    <p class="article-description">Est cursus curabitur massa condimentum magna maecenas curabitur faucibus etiam
-                    </p><a href="<?= $URL ?>/single.php" class="button button-cover">Leer más</a>
-                  </div>
-                </article>
-              </div>
+                </div>
+                <div class="article-cover">
+                  <h2 class="article-title"><a href="<?= $URL ?>/single.php">Cubilia pellentesque urna enim elementum</a></h2>
+                  <p class="article-description">Adipiscing morbi porttitor ultrices potenti taciti hendrerit sagittis quisque fringilla
+                  </p><a href="<?= $URL ?>/single.php" class="button button-line-white button-cover">Leer más</a>
+                </div>
+              </article>
             </div>
-            <div class="row">
-              <div class="col col-33">
-                <article class="article-default">
-                  <div class="article-image"><img src="http://lorempixel.com/400/300/city/3" alt="Base Front"/>
-                  </div>
-                  <div class="article-body">
-                    <h3 class="article-title"><a href="<?= $URL ?>/single.php">Nullam laoreet aenean vestibulum lectus</a></h3>
-                    <p class="article-description">Nam lobortis laoreet purus venenatis velit fusce suscipit cubilia at
-                    </p><a href="<?= $URL ?>/single.php" class="button button-cover">Leer más</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col col-33">
-                <article class="article-default">
-                  <div class="article-image"><img src="http://lorempixel.com/400/300/city/2" alt="Base Front"/>
-                  </div>
-                  <div class="article-body">
-                    <h3 class="article-title"><a href="<?= $URL ?>/single.php">Ullamcorper orci condimentum eget maecenas</a></h3>
-                    <p class="article-description">Lectus iaculis scelerisque habitant curae torquent massa dapibus hac morbi
-                    </p><a href="<?= $URL ?>/single.php" class="button button-cover">Leer más</a>
-                  </div>
-                </article>
-              </div>
-              <div class="col col-33">
-                <article class="article-min">
-                  <div class="article-image"><img src="http://lorempixel.com/200/200/city/5" alt="Base Front"/>
-                  </div>
-                  <div class="article-body">
-                    <h3 class="article-title"><a href="<?= $URL ?>/single.php">Condimentum habitasse commodo feugiat ac</a></h3>
-                    <p class="article-description">Congue consectetur integer ac lacinia imperdiet ullamcorper neque odio eleifend
-                    </p>
-                  </div>
-                </article>
-                <article class="article-min">
-                  <div class="article-image"><img src="http://lorempixel.com/200/200/city/5" alt="Base Front"/>
-                  </div>
-                  <div class="article-body">
-                    <h3 class="article-title"><a href="<?= $URL ?>/single.php">Nulla auctor enim ullamcorper commodo</a></h3>
-                    <p class="article-description">Habitasse posuere quam nunc sagittis potenti posuere primis blandit quam
-                    </p>
-                  </div>
-                </article>
-                <article class="article-min">
-                  <div class="article-image"><img src="http://lorempixel.com/200/200/city/4" alt="Base Front"/>
-                  </div>
-                  <div class="article-body">
-                    <h3 class="article-title"><a href="<?= $URL ?>/single.php">Nunc mattis aenean nullam inceptos</a></h3>
-                    <p class="article-description">Sollicitudin eros id etiam fusce sociosqu platea aliquam hac nostra
-                    </p>
-                  </div>
-                </article>
-              </div>
+            <div class="col col-33">
+              <article class="article-default">
+                <div class="article-image"><img src="http://lorempixel.com/400/300/city/3" alt="Base Front"/>
+                </div>
+                <div class="article-body">
+                  <h3 class="article-title"><a href="<?= $URL ?>/single.php">Placerat primis quisque accumsan sociosqu</a></h3>
+                  <p class="article-description">Imperdiet justo mollis consequat velit phasellus sapien eros cubilia et
+                  </p><a href="<?= $URL ?>/single.php" class="button button-cover">Leer más</a>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-33">
+              <article class="article-default">
+                <div class="article-image"><img src="http://lorempixel.com/400/300/city/3" alt="Base Front"/>
+                </div>
+                <div class="article-body">
+                  <h3 class="article-title"><a href="<?= $URL ?>/single.php">Curae aenean enim aenean neque</a></h3>
+                  <p class="article-description">Pharetra mattis egestas vel sociosqu sagittis auctor bibendum lacus colus
+                  </p><a href="<?= $URL ?>/single.php" class="button button-cover">Leer más</a>
+                </div>
+              </article>
+            </div>
+            <div class="col col-33">
+              <article class="article-default">
+                <div class="article-image"><img src="http://lorempixel.com/400/300/city/2" alt="Base Front"/>
+                </div>
+                <div class="article-body">
+                  <h3 class="article-title"><a href="<?= $URL ?>/single.php">Ultricies aenean phasellus at maecenas</a></h3>
+                  <p class="article-description">Posuere euismod gravida orci fermentum aenean proin suspendisse netus quisque
+                  </p><a href="<?= $URL ?>/single.php" class="button button-cover">Leer más</a>
+                </div>
+              </article>
+            </div>
+            <div class="col col-33">
+              <article class="article-min">
+                <div class="article-image"><img src="http://lorempixel.com/200/200/city/5" alt="Base Front"/>
+                </div>
+                <div class="article-body">
+                  <h3 class="article-title"><a href="<?= $URL ?>/single.php">Venenatis adipiscing pretium etiam habitasse</a></h3>
+                  <p class="article-description">Mauris proin lectus vehicula mi consequat eget libero suscipit nam
+                  </p>
+                </div>
+              </article>
+              <article class="article-min">
+                <div class="article-image"><img src="http://lorempixel.com/200/200/city/2" alt="Base Front"/>
+                </div>
+                <div class="article-body">
+                  <h3 class="article-title"><a href="<?= $URL ?>/single.php">Ultrices maecenas nisi maecenas sociosqu</a></h3>
+                  <p class="article-description">Lacinia tellus ornare risus quisque scelerisque accumsan neque quisque etiam
+                  </p>
+                </div>
+              </article>
+              <article class="article-min">
+                <div class="article-image"><img src="http://lorempixel.com/200/200/city/5" alt="Base Front"/>
+                </div>
+                <div class="article-body">
+                  <h3 class="article-title"><a href="<?= $URL ?>/single.php">Mattis risus justo platea quam</a></h3>
+                  <p class="article-description">Nisl risus ultrices etiam suspendisse primis suscipit ante ac fusce
+                  </p>
+                </div>
+              </article>
             </div>
           </div>
         </div>

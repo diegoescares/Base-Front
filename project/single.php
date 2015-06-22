@@ -69,47 +69,45 @@
       </div>
     </header>
     <div id="body">
-      <div class="body-content">
-        <div class="page">
-          <div class="page-header lighter">
-            <div class="limit inner inner-4">
-              <h1>Lorem ipsum dolor sit amet</h1>
-            </div>
+      <div class="page">
+        <div class="page-header lighter">
+          <div class="limit inner inner-4">
+            <h1>Lorem ipsum dolor sit amet</h1>
           </div>
-          <div class="page white">
-            <div class="limit inner inner-2">
-              <div class="content">
-                <p>Pellentesque sociosqu torquent scelerisque fames cursus eu feugiat arcu vehicula. Nunc sociosqu donec interdum hac nisi colus lacus aliquam magna. Ad ultrices blandit tempor magna porta mauris litora leo facilisis feugiat cursus morbi taciti gravida himenaeos sociosqu curabitur habitasse venenatis.
+        </div>
+        <div class="page white">
+          <div class="limit inner inner-2">
+            <div class="content">
+              <p>Eleifend augue in nam diam duis ac netus torquent quam. Auctor rutrum tortor luctus etiam morbi tempus fames morbi donec. Cubilia ad ante lobortis at rhoncus sem euismod taciti venenatis egestas eros ligula eleifend neque senectus fermentum tincidunt quis at.
+              </p>
+              <p>Consequat dui ultrices egestas sem congue pulvinar imperdiet potenti arcu. Habitant iaculis vivamus varius vestibulum adipiscing massa elit lectus blandit. Eu non pulvinar semper lacinia senectus semper morbi est varius gravida fusce phasellus sollicitudin nullam non condimentum tempor adipiscing aliquam.
+              </p>
+              <p><img src="http://lorempixel.com/700/400/city/2" alt="Base Front"/>
+              </p>
+              <p>Ratione, <strong>obcaecati quia eligendi</strong> voluptatem perferendis amet suscipit ullam enim voluptatibus voluptas praesentium pariatur qui porro libero ipsum consectetur sapiente culpa aperiam omnis animi iusto magnam laboriosam. Ea consequuntur, alias.</p>
+              <p>Excepturi inventore maiores, non repellendus quidem <a href="#">necessitatibus soluta</a> doloribus, dolorum velit explicabo a nobis, fugit natus molestiae placeat minus suscipit itaque commodi ex sit, aspernatur laudantium deserunt porro. Voluptate, ea.</p>
+              <h2>Nec hac vel eu pellentesque tempus
+              </h2>
+              <blockquote>
+                <p>Tincidunt lectus eget lobortis pulvinar ornare tellus orci nec egestas. Sodales odio platea aptent non ut curae lacus curabitur leo. Potenti ullamcorper praesent quis donec donec aenean velit dapibus velit erat sociosqu aliquam vulputate ante maecenas tellus platea iaculis nibh.
                 </p>
-                <p>Mauris eget etiam ut sodales egestas et vestibulum vivamus netus. Cras cursus ligula ultrices maecenas bibendum hendrerit eleifend mollis libero. Tellus mattis imperdiet ante erat cubilia tellus condimentum donec luctus bibendum tortor at sociosqu molestie fames velit duis litora accumsan.
-                </p>
-                <p><img src="http://lorempixel.com/700/400/city/6" alt="Base Front"/>
-                </p>
-                <p>Ratione, <strong>obcaecati quia eligendi</strong> voluptatem perferendis amet suscipit ullam enim voluptatibus voluptas praesentium pariatur qui porro libero ipsum consectetur sapiente culpa aperiam omnis animi iusto magnam laboriosam. Ea consequuntur, alias.</p>
-                <p>Excepturi inventore maiores, non repellendus quidem <a href="#">necessitatibus soluta</a> doloribus, dolorum velit explicabo a nobis, fugit natus molestiae placeat minus suscipit itaque commodi ex sit, aspernatur laudantium deserunt porro. Voluptate, ea.</p>
-                <h2>Nullam aptent proin ac ad consectetur
-                </h2>
-                <blockquote>
-                  <p>Aenean ac urna varius congue litora vehicula rutrum dictum colus. Cras himenaeos aenean bibendum ornare sapien pretium ultricies metus porta. Pulvinar mauris cursus tortor donec habitasse quam metus leo habitasse donec ut dictum at non tortor leo congue torquent hendrerit.
-                  </p>
-                </blockquote>
-                <p>Morbi nisi porttitor massa consectetur integer aenean pretium morbi purus. Pellentesque purus fermentum duis feugiat aptent aptent porttitor rhoncus hac. Malesuada scelerisque mollis sociosqu ac facilisis fames nunc inceptos per erat class volutpat pellentesque rutrum ultrices velit purus ligula sapien.
-                </p>
-                <p>Aptent neque pellentesque nibh litora libero a pulvinar in fringilla. Nisi pharetra fames diam ligula nibh metus habitant volutpat est. Primis quis curabitur habitasse ad sed elit tempor consectetur accumsan erat odio diam nostra primis tellus orci condimentum aliquam eros.
-                </p>
-                <h3>Mattis adipiscing lectus ultrices interdum proin
-                </h3>
-                <p>Aenean ligula dui blandit convallis laoreet semper habitasse eleifend donec. Conubia nostra metus ullamcorper leo tellus consequat netus ultricies nec. Ac convallis congue placerat velit urna lobortis purus velit neque scelerisque inceptos platea etiam sollicitudin mauris bibendum tincidunt etiam velit.
-                </p>
-                <div class="important">
-                  <p>Tellus nibh ultrices nullam cursus ac ultricies scelerisque lacinia elementum. Sodales velit fusce curae bibendum dui iaculis sapien aenean imperdiet. Aliquet sem ultrices cursus semper aliquet eu aptent potenti vel condimentum nam semper accumsan ut class convallis cras ad consequat.
-                  </p>
-                </div>
-                <h4>Viverra dui diam curae a tincidunt
-                </h4>
-                <p>Sapien cras eu nec himenaeos ad eu ornare suscipit blandit. Quisque consequat felis sapien augue dictumst aliquam primis potenti id. Suspendisse etiam felis convallis pulvinar donec nisi mauris adipiscing eget torquent sapien cursus adipiscing porta et non metus morbi duis.
+              </blockquote>
+              <p>Tincidunt aptent semper curabitur rhoncus a nullam congue lacinia quisque. Netus colus egestas varius himenaeos pellentesque ac ligula tempus nam. Ultricies ante venenatis tempor ultricies semper interdum inceptos vel fusce per laoreet fames mauris morbi luctus magna convallis etiam nulla.
+              </p>
+              <p>Commodo vulputate mattis cubilia interdum id ante pretium nibh dictumst. Venenatis sapien dapibus enim sed urna quis dictumst varius nostra. Elementum integer convallis lobortis arcu egestas aliquam tempor vel sollicitudin aenean quis tempus dapibus nisl sodales conubia conubia et ante.
+              </p>
+              <h3>Rhoncus rhoncus iaculis morbi quisque ac
+              </h3>
+              <p>Volutpat quam maecenas nunc nam et etiam imperdiet interdum adipiscing. In aenean lacus per himenaeos sodales sapien malesuada aptent blandit. Interdum donec gravida adipiscing ullamcorper iaculis vestibulum cursus tempor blandit est enim vitae rutrum nibh dui aliquam laoreet cras auctor.
+              </p>
+              <div class="important">
+                <p>Tincidunt sociosqu per molestie ligula integer integer mi condimentum pharetra. Fusce praesent scelerisque rhoncus ut egestas quam metus sapien ad. Aliquet massa cras auctor mi viverra consectetur fringilla senectus tristique hendrerit hac primis semper vehicula purus himenaeos nisi vestibulum etiam.
                 </p>
               </div>
+              <h4>Ante torquent nibh dictum tempor justo
+              </h4>
+              <p>Varius donec interdum faucibus sapien nulla sociosqu enim metus class. Fermentum diam tellus convallis duis habitant condimentum morbi facilisis curabitur. Sodales curabitur laoreet cursus senectus libero netus hendrerit euismod bibendum integer fames justo sociosqu placerat lacinia pellentesque himenaeos enim varius.
+              </p>
             </div>
           </div>
         </div>
