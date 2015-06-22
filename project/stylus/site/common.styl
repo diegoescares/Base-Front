@@ -25,7 +25,25 @@
 	
 .color
 	background-color color
-	
-.color-2
-	background-color color_2
+
+if color_2
+	.color-2
+		background-color color_2
+
+
+#body
+	animation fadeIn .5s .2s ease backwards
+
+
+.bg
+	cover absolute
+	background center center no-repeat
+	background-size cover
+	opacity 0
+	&.bg-loaded
+		animation fadeIn .5s ease
+		opacity 1
+	img
+		display none
+
 

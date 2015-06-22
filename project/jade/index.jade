@@ -3,8 +3,19 @@ extends ./templates/default.jade
 
 block page
 
-	.limit
-		.inner
-			| Index
-
-
+	.limit.inner.inner-2
+		
+		.cols
+			.row
+				+col(66)
+					+articleBg()
+				+col(33)
+					+article()
+			.row
+				+col(33)
+					+article()
+				+col(33)
+					+article()
+				+col(33)
+					+loop(3)
+						+articleMin()

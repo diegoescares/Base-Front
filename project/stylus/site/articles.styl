@@ -2,9 +2,76 @@
 
 article
 	position relative
+	overflow hidden
+	background white
+	margin-bottom sep
+	&:last-child
+		margin-bottom 0
+	if sep_half_break1
+		@media break1
+			margin-bottom (sep/2)
+
+	opacity 0
+	&.article-loaded
+		opacity 1
+		animation fadeIn .5s ease backwards
+		animation-stagger 5, .1s
+	
 	.article-image
 		img
 			width 100%
 
+	.article-body
+		padding sep
+
+	.article-cover
+		position absolute
+		width 100%
+		left 0
+		bottom 0
+		padding sep
+
+	.article-title
+		a
+			display block
+			&:after
+				content ""
+				cover absolute
+	
+	.article-title
+	.article-description
+		margin-bottom 10px
+		&:last-child
+			margin-bottom 0
+
+
+	//&.article-default
+
+
+	&.article-min
+		.article-body
+			overflow hidden
+			padding 10px
+		.article-title
+			title h4
+			margin-bottom 5px
+		.article-image
+			width 140px
+			@media break2
+				width 100px
+			float left
+			padding 10px
+			margin-right -10px
+
+	&.article-bg
+		height 500px
+		color white
+		background dark
+		.article-image
+			.bg
+				opacity .5
+		.article-title
+			a
+				color white
 
 

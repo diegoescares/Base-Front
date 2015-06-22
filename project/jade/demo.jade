@@ -2,309 +2,320 @@
 extends ./templates/default.jade
 
 block vars
-	- gmaps = true
+	- COMPONENT_GMAPS = true
 
 block page
 
-	.page-header.lighter
-		.limit
-			.inner.inner-4
-				h1 Base Front Demo
-
 	.page
 
-
-		section
+		.page-header.lighter
 			.limit
-				.inner.inner-2
-					.content
-			
-						h2 Layout
+				.inner.inner-4
+					h1 Base Front Demo
 
-						.cols.cols-doublesep
-							+col(33,"to100","right")
-								.inner.lighter
-									| .col.col-33
-							+col(66)
-								.inner.lighter
-									| .col.col-66
-							+col(50,"nobreak")
-								.inner.lighter
-									| .col.col-50.col-nobreak
-							+col(50,"nobreak")
-								.inner.lighter
-									| .col.col-50.col-nobreak
+		.page-body
 
-							+col(25)
-								.inner.lighter
-									| .col.col-25
-							+col(25)
-								.inner.lighter
-									| .col.col-25
-							+col(25)
-								.inner.lighter
-									| .col.col-25
-							+col(25)
-								.inner.lighter
-									| .col.col-25
-
-							+col(20)
-								.inner.lighter
-									| .col.col-20
-							+col(20)
-								.inner.lighter
-									| .col.col-20
-							+col(20)
-								.inner.lighter
-									| .col.col-20
-							+col(20,"nobreak1")
-								.inner.lighter
-									| .col.col-20.col-nobreak1
-							+col(20,"nobreak1")
-								.inner.lighter
-									| .col.col-20.col-nobreak1
-							
-						h2 Columnas activas bajo break point 3
-
-						.cols
-							+col("60-break3")
-								.inner.lighter
-									| .col.col-60-3
-							+col("40-break3")
-								.inner.lighter
-									| .col.col-40-3
-
-		section
-			.limit
-				.inner.inner-2
-					.content
-			
-						h2 Botones
-
-						h4 Configuraciones:
-						pre.
-							button, button-small, button-medium, button-big
-							button-color-2, button-white, button-light, button-gray, button-dark, button-line, button-line-white, button-hover-2
-
-						h4 Normal:
-
-						a(href="#",class="button button-small") Lorem ipsum
-						| 
-						a(href="#",class="button") Lorem ipsum
-						| 
-						a(href="#",class="button button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-big") Lorem ipsum
-
-						h4 Color 2:
-
-						a(href="#",class="button button-color-2 button-small") Lorem ipsum
-						| 
-						a(href="#",class="button button-color-2") Lorem ipsum
-						| 
-						a(href="#",class="button button-color-2 button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-color-2 button-big") Lorem ipsum
-
-						h4 Light:
-
-						a(href="#",class="button button-light button-small") Lorem ipsum
-						| 
-						a(href="#",class="button button-light") Lorem ipsum
-						| 
-						a(href="#",class="button button-light button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-light button-big") Lorem ipsum
-
-
-						h4 Gray:
-
-						a(href="#",class="button button-gray button-small") Lorem ipsum
-						| 
-						a(href="#",class="button button-gray") Lorem ipsum
-						| 
-						a(href="#",class="button button-gray button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-gray button-big") Lorem ipsum
-
-						h4 Dark:
-
-						a(href="#",class="button button-dark button-small") Lorem ipsum
-						| 
-						a(href="#",class="button button-dark") Lorem ipsum
-						| 
-						a(href="#",class="button button-dark button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-dark button-big") Lorem ipsum
-
-						h4 Black + hover 2:
-
-						a(href="#",class="button button-black button-hover-2 button-small") Lorem ipsum
-						| 
-						a(href="#",class="button button-black button-hover-2") Lorem ipsum
-						| 
-						a(href="#",class="button button-black button-hover-2 button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-black button-hover-2 button-big") Lorem ipsum
-
-						h4 Line:
-						a(href="#",class="button button-line button-small") Lorem ipsum
-						| 
-						a(href="#",class="button button-line") Lorem ipsum
-						| 
-						a(href="#",class="button button-line button-medium") Lorem ipsum
-						| 
-						a(href="#",class="button button-line button-big") Lorem ipsum
-
-
-						h4 White:
-						.inner.dark
-							a(href="#",class="button button-white button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-white") Lorem ipsum
-							| 
-							a(href="#",class="button button-white button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-white button-big") Lorem ipsum
-
-						h4 Line:
-						.inner.dark
-							a(href="#",class="button button-line-white button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-line-white") Lorem ipsum
-							| 
-							a(href="#",class="button button-line-white button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-line-white button-big") Lorem ipsum
-
-
-
-		section
-			.limit
-				.inner.inner-2
-					.content
-
-						h2 Alertas
-
-						h4 Simple:
-						pre.
-							a(href="#",data-alert="Hola") Simple
-							a(href="#",data-alert="Hola") Simple
-							div(data-alert,data-title="Hola",data-content="¡Exito!")
-
-						h4 Con contenido:
-						pre.
-							a(href="#",data-alert="Hola") Link
-							a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Link
-
-						h4 Lanzar al tiro:
-						pre.
-							div(data-alert,data-title="Hola",data-content="¡Exito!")
-						
-						h4 Demo:
-						a.button(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Abrir alerta
-
-
-		section.lighter
-			.limit
-				.inner.inner-2
-					.content
-
-						h2 Tabs
+			section.white
+				.limit
+					.inner.inner-2
+						.content
 				
-						.tabs
-							.tabs-header
-								a.tab(href='#') Lorem
-								a.tab(href='#') Ipsum
-							.tabs-body
-								.tab
-									.inner
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto libero, commodi, at ab facere saepe. Sapiente ullam architecto ea voluptatibus harum. Tempore repellendus veritatis voluptates vel culpa voluptatem facilis, dolorum!
-								.tab
-									.inner
-										| Tempora, expedita hic dolorem id, nisi voluptas tempore non laudantium mollitia? Blanditiis eum ab soluta veniam ipsa accusamus quasi, possimus hic aut sapiente neque voluptas nostrum accusantium quae distinctio id.
+							h2 Layout
+
+							.cols
+								+col(33,"to100","right")
+									.inner.lighter
+										| .col.col-33
+								+col(66)
+									.inner.lighter
+										| .col.col-66
+								+col(50,"nobreak")
+									.inner.lighter
+										| .col.col-50.col-nobreak
+								+col(50,"nobreak")
+									.inner.lighter
+										| .col.col-50.col-nobreak
+
+								+col(25)
+									.inner.lighter
+										| .col.col-25
+								+col(25)
+									.inner.lighter
+										| .col.col-25
+								+col(25)
+									.inner.lighter
+										| .col.col-25
+								+col(25)
+									.inner.lighter
+										| .col.col-25
+
+								+col(20)
+									.inner.lighter
+										| .col.col-20
+								+col(20)
+									.inner.lighter
+										| .col.col-20
+								+col(20)
+									.inner.lighter
+										| .col.col-20
+								+col(20,"nobreak1")
+									.inner.lighter
+										| .col.col-20.col-nobreak1
+								+col(20,"nobreak1")
+									.inner.lighter
+										| .col.col-20.col-nobreak1
+								
+							.sep
+							h2 Columnas activas bajo break point 3
+
+							.cols
+								+col("60-break3")
+									.inner.lighter
+										| .col.col-60-3
+								+col("40-break3")
+									.inner.lighter
+										| .col.col-40-3
+
+			section.white
+				.limit
+					.inner.inner-2
+						.content
+				
+							h2 Botones
+
+							h4 Configuraciones:
+							pre.
+								button, button-small, button-medium, button-big
+								button-color-2, button-white, button-light, button-gray, button-dark, button-line, button-line-white, button-hover-2
+
+							h4 Normal:
+
+							a(href="#",class="button button-small") Lorem ipsum
+							| 
+							a(href="#",class="button") Lorem ipsum
+							| 
+							a(href="#",class="button button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-big") Lorem ipsum
+
+							h4 Lighter:
+
+							a(href="#",class="button button-lighter button-small") Lorem ipsum
+							| 
+							a(href="#",class="button button-lighter") Lorem ipsum
+							| 
+							a(href="#",class="button button-lighter button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-lighter button-big") Lorem ipsum
+
+							h4 Light:
+
+							a(href="#",class="button button-light button-small") Lorem ipsum
+							| 
+							a(href="#",class="button button-light") Lorem ipsum
+							| 
+							a(href="#",class="button button-light button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-light button-big") Lorem ipsum
+
+							h4 Gray:
+
+							a(href="#",class="button button-gray button-small") Lorem ipsum
+							| 
+							a(href="#",class="button button-gray") Lorem ipsum
+							| 
+							a(href="#",class="button button-gray button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-gray button-big") Lorem ipsum
+
+							h4 Dark:
+
+							a(href="#",class="button button-dark button-small") Lorem ipsum
+							| 
+							a(href="#",class="button button-dark") Lorem ipsum
+							| 
+							a(href="#",class="button button-dark button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-dark button-big") Lorem ipsum
+
+							h4 Black + hover 2:
+
+							a(href="#",class="button button-black button-hover-2 button-small") Lorem ipsum
+							| 
+							a(href="#",class="button button-black button-hover-2") Lorem ipsum
+							| 
+							a(href="#",class="button button-black button-hover-2 button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-black button-hover-2 button-big") Lorem ipsum
+
+							h4 Line:
+							a(href="#",class="button button-line button-small") Lorem ipsum
+							| 
+							a(href="#",class="button button-line") Lorem ipsum
+							| 
+							a(href="#",class="button button-line button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-line button-big") Lorem ipsum
+
+							h4 Color 2:
+
+							a(href="#",class="button button-color-2 button-small") Lorem ipsum
+							| 
+							a(href="#",class="button button-color-2") Lorem ipsum
+							| 
+							a(href="#",class="button button-color-2 button-medium") Lorem ipsum
+							| 
+							a(href="#",class="button button-color-2 button-big") Lorem ipsum
+
+							h4 White:
+							.inner.dark
+								a(href="#",class="button button-white button-small") Lorem ipsum
+								| 
+								a(href="#",class="button button-white") Lorem ipsum
+								| 
+								a(href="#",class="button button-white button-medium") Lorem ipsum
+								| 
+								a(href="#",class="button button-white button-big") Lorem ipsum
+
+							h4 Line:
+							.inner.dark
+								a(href="#",class="button button-line-white button-small") Lorem ipsum
+								| 
+								a(href="#",class="button button-line-white") Lorem ipsum
+								| 
+								a(href="#",class="button button-line-white button-medium") Lorem ipsum
+								| 
+								a(href="#",class="button button-line-white button-big") Lorem ipsum
 
 
 
-		section
-			.limit
-				.inner.inner-2
-					.content
-						h2 FAQ
-						h4 Jade:
-						pre.
+			section.white
+				.limit
+					.inner.inner-2
+						.content
+
+							h2 Alertas
+
+							h4 Simple:
+							pre.
+								a(href="#",data-alert="Hola") Simple
+								a(href="#",data-alert="Hola") Simple
+								div(data-alert,data-title="Hola",data-content="¡Exito!")
+
+							h4 Con contenido:
+							pre.
+								a(href="#",data-alert="Hola") Link
+								a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Link
+
+							h4 Lanzar al tiro:
+							pre.
+								div(data-alert,data-title="Hola",data-content="¡Exito!")
+							
+							h4 Demo:
+							a.button(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Abrir alerta
+
+
+			section.lighter
+				.limit
+					.inner.inner-2
+						.content
+
+							h2 Tabs
+					
+							.tabs
+								.tabs-header
+									a.tab(href='#') Lorem
+									a.tab(href='#') Ipsum
+								.tabs-body
+									.tab
+										.inner
+											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto libero, commodi, at ab facere saepe. Sapiente ullam architecto ea voluptatibus harum. Tempore repellendus veritatis voluptates vel culpa voluptatem facilis, dolorum!
+									.tab
+										.inner
+											| Tempora, expedita hic dolorem id, nisi voluptas tempore non laudantium mollitia? Blanditiis eum ab soluta veniam ipsa accusamus quasi, possimus hic aut sapiente neque voluptas nostrum accusantium quae distinctio id.
+
+
+
+			section.white
+				.limit
+					.inner.inner-2
+						.content
+							h2 FAQ
+							h4 Jade:
+							pre.
+								.faq
+									.faq-item.faq-open
+										h3.faq-question ¿Lorem?
+										.faq-answer
+											p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+									.faq-item
+										h3.faq-question ¿Lorem?
+										.faq-answer
+											p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+
+							h4 Demo:
 							.faq
 								.faq-item.faq-open
-									h3.faq-question ¿Lorem?
+									h3.faq-question ¿Lorem ipsum?
 									.faq-answer
-										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
 								.faq-item
-									h3.faq-question ¿Lorem?
+									h3.faq-question ¿Lorem consectetur?
 									.faq-answer
-										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-
-						h4 Demo:
-						.faq
-							.faq-item.faq-open
-								h3.faq-question ¿Lorem ipsum?
-								.faq-answer
-									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
-							.faq-item
-								h3.faq-question ¿Lorem consectetur?
-								.faq-answer
-									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
-							.faq-item
-								h3.faq-question ¿Lorem adipisicing?
-								.faq-answer
-									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+								.faq-item
+									h3.faq-question ¿Lorem adipisicing?
+									.faq-answer
+										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
 
 
 
-		section.lighter
-			.limit
-				.inner.inner-2
-					.content
-
-						h2 Tablas
-
-						.table-container
-							table
-								tr
-									th Lorem
-									th Lorem
-									th Lorem
-									th Lorem
-									th Lorem
-									th Lorem
-								tr
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-								tr
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-								tr
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
-									td Lorem
+			section.lighter
 				.limit
-					.inner.inner-1
+					.inner.inner-2
+						.content
+
+							h2 Tablas
+
+							.table-container
+								table
+									tr
+										th Lorem
+										th Lorem
+										th Lorem
+										th Lorem
+										th Lorem
+										th Lorem
+									tr
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+									tr
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+									tr
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+										td Lorem
+
+						.sep
+						
 						nav.pagination
 							ul
 								li
-									a(href="#") <<
+									a(href="#"): span.fa.fa-angle-double-left
 								li
-									a(href="#") <
+									a(href="#"): span.fa.fa-angle-left
 								li
 									a(href="#") 1
 								li
@@ -316,506 +327,506 @@ block page
 								li
 									a(href="#") 5
 								li
-									a(href="#") >
+									a(href="#"): span.fa.fa-angle-right
 								li
-									a(href="#") >>
+									a(href="#"): span.fa.fa-angle-double-right
 
-		section
-			.limit
-				.inner.inner-2
-					.content
+			section.white
+				.limit
+					.inner.inner-2
+						.content
 
-						h2 Tooltips
-						
-						h4 Jade:
-						pre.
-							a(href="#",data-tooltip="Lorem ipsum") Lorem
-						pre.
-							a(href="#",data-tooltip="Lorem ipsum",data-tooltip-position="top") Lorem
+							h2 Tooltips
+							
+							h4 Jade:
+							pre.
+								a(href="#",data-tooltip="Lorem ipsum") Lorem
+							pre.
+								a(href="#",data-tooltip="Lorem ipsum",data-tooltip-position="top") Lorem
 
-						h4 Demo:
-						|  Lorem ipsum dolor sit amet, consectetur. Repellat eligendi enim 
-						a(href="#",data-tooltip="Ose helou!") lorem
-						|  recusandae voluptatum commodi quisquam quibusdam perspiciatis veritatis et excepturi dignissimos maxime, mollitia deserunt reprehenderit, quae ipsa itaque corporis laboriosam a facere. Debitis, dolore 
-						a(href="#",data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit.",data-tooltip-position="top") ipsum dolor
-						|  perspiciatis veritatis et excepturi dignissimos maxime, mollitia deserunt reprehenderit, quae ipsa itaque corporis laboriosam a facere.
-
-
-
-
-
-
-		section.lighter
-			.limit
-				.inner.inner-2
-
-					.content
-						h2 Formularios
-
-					.tabs
-						.tabs-header
-							a.tab(href='#') Con layout y centrado
-							a.tab(href='#') Líquido y centrado
-							a.tab(href='#') Líquido
-						.tabs-body
-							.tab
-								.inner.inner-2
-
-									form.controls.controls-layout.controls-center(method='POST', action='')
-										.control
-											.control-name Email
-											.control-value
-												input(type='email', name='email')
-										.control
-											.control-name Nombre
-											.control-value
-												input(type='text', name='nombre')
-										.control
-											.control-name RUT
-											.control-value
-												input.rut(type='text', name='rut')
-										.control
-											.control-name.control-name-2lines Fecha de Nacimiento
-											.control-value
-												.cols.cols-halfsep.cols-nobp
-													.col.col-33
-														.col-inner
-															select(name='bday_d')
-																option(value='') Día
-													.col.col-33
-														.col-inner
-															select(name='bday_m')
-																option(value='') Mes
-													.col.col-33
-														.col-inner
-															select(name='bday_y')
-																option(value='') Año
-										.control
-											.control-name Teléfono
-											.control-value
-												.cols.cols-halfsep.cols-nobp
-													.col.col-20
-														.col-inner
-															input(type='text', maxlength='2', name='phone_prefix')
-													.col.col-80
-														.col-inner
-															input(type='text', maxlength='8', name='phone')
-										.control
-											.control-name Región
-											.control-value
-												select.optional(name='rid')
-													option(value='') Selecciona una región
-										.control
-											.control-name Ciudad
-											.control-value
-												input.optional(type='text', name='city')
-										.control
-											.control-name Contraseña
-											.control-value
-												input(type='password', name='pass')
-										.control
-											.control-name.control-name-2lines Confirmar Contraseña
-											.control-value
-												input(type='password', name='pass2', data-repeat='pass')
-										.control
-											.control-name Sexo
-											.control-value
-												label.inline
-													input(type='radio', name='sexo', value='Male')
-													|  Masculino
-												label.inline
-													input(type='radio', name='sexo', value='Female')
-													|  Femenino
-										.control
-											.control-name Mensaje
-											.control-value
-												textarea(name='message')
-										.control
-											.control-name
-											.control-value
-												label
-													input.input-terms(type='checkbox', name='terms', value='1')
-													|  Acepto
-										.control
-											.control-name
-											.control-value
-												input.button.button-primary(type='submit', value='Enviar')
-
-							.tab
-								.inner.inner-2
-
-									form.controls.controls-center(method='POST', action='')
-										.control
-											.control-name Email
-											.control-value
-												input(type='email', name='email')
-										.control
-											.control-name Nombre
-											.control-value
-												input(type='text', name='nombre')
-										.control
-											.control-name RUT
-											.control-value
-												input.rut(type='text', name='rut')
-										.control
-											.control-name.control-name-2lines Fecha de Nacimiento
-											.control-value
-												.cols.cols-halfsep.cols-nobp
-													.col.col-33
-														.col-inner
-															select(name='bday_d')
-																option(value='') Día
-													.col.col-33
-														.col-inner
-															select(name='bday_m')
-																option(value='') Mes
-													.col.col-33
-														.col-inner
-															select(name='bday_y')
-																option(value='') Año
-										.control
-											.control-name Teléfono
-											.control-value
-												.cols.cols-halfsep.cols-nobp
-													.col.col-20
-														.col-inner
-															input(type='text', maxlength='2', name='phone_prefix')
-													.col.col-80
-														.col-inner
-															input(type='text', maxlength='8', name='phone')
-										.control
-											.control-name Región
-											.control-value
-												select.optional(name='rid')
-													option(value='') Selecciona una región
-										.control
-											.control-name Ciudad
-											.control-value
-												input.optional(type='text', name='city')
-										.control
-											.control-name Contraseña
-											.control-value
-												input(type='password', name='pass')
-										.control
-											.control-name.control-name-2lines Confirmar Contraseña
-											.control-value
-												input(type='password', name='pass2', data-repeat='pass')
-										.control
-											.control-name Sexo
-											.control-value
-												label.inline
-													input(type='radio', name='sexo', value='Male')
-													|  Masculino
-												label.inline
-													input(type='radio', name='sexo', value='Female')
-													|  Femenino
-										.control
-											.control-name Mensaje
-											.control-value
-												textarea(name='message')
-										.control
-											.control-name
-											.control-value
-												label
-													input.input-terms(type='checkbox', name='terms', value='1')
-													|  Acepto
-										.control
-											.control-name
-											.control-value
-												input.button.button-primary(type='submit', value='Enviar')
-
-							.tab
-								.inner.inner-2
-
-									form.controls(method='POST', action='')
-										.control
-											.control-name Email
-											.control-value
-												input(type='email', name='email')
-										.control
-											.control-name Nombre
-											.control-value
-												input(type='text', name='nombre')
-										.control
-											.control-name RUT
-											.control-value
-												input.rut(type='text', name='rut')
-										.control
-											.control-name.control-name-2lines Fecha de Nacimiento
-											.control-value
-												.cols.cols-halfsep.cols-nobp
-													.col.col-33
-														.col-inner
-															select(name='bday_d')
-																option(value='') Día
-													.col.col-33
-														.col-inner
-															select(name='bday_m')
-																option(value='') Mes
-													.col.col-33
-														.col-inner
-															select(name='bday_y')
-																option(value='') Año
-										.control
-											.control-name Teléfono
-											.control-value
-												.cols.cols-halfsep.cols-nobp
-													.col.col-20
-														.col-inner
-															input(type='text', maxlength='2', name='phone_prefix')
-													.col.col-80
-														.col-inner
-															input(type='text', maxlength='8', name='phone')
-										.control
-											.control-name Región
-											.control-value
-												select.optional(name='rid')
-													option(value='') Selecciona una región
-										.control
-											.control-name Ciudad
-											.control-value
-												input.optional(type='text', name='city')
-										.control
-											.control-name Contraseña
-											.control-value
-												input(type='password', name='pass')
-										.control
-											.control-name.control-name-2lines Confirmar Contraseña
-											.control-value
-												input(type='password', name='pass2', data-repeat='pass')
-										.control
-											.control-name Sexo
-											.control-value
-												label.inline
-													input(type='radio', name='sexo', value='Male')
-													|  Masculino
-												label.inline
-													input(type='radio', name='sexo', value='Female')
-													|  Femenino
-										.control
-											.control-name Mensaje
-											.control-value
-												textarea(name='message')
-										.control
-											.control-name
-											.control-value
-												label
-													input.input-terms(type='checkbox', name='terms', value='1')
-													|  Acepto
-										.control
-											.control-name
-											.control-value
-												input.button.button-primary(type='submit', value='Enviar')
-
-
-
-		section
-			.limit
-				.inner.inner-2
-					.content
-
-						h2 Loading
-
-						h4 Jade:
-						pre.
-							div(data-loading)
-
-						h4 Demo:
-						a.button.loading-test(href="#") Abrir loader
+							h4 Demo:
+							|  Lorem ipsum dolor sit amet, consectetur. Repellat eligendi enim 
+							a(href="#",data-tooltip="Ose helou!") lorem
+							|  recusandae voluptatum commodi quisquam quibusdam perspiciatis veritatis et excepturi dignissimos maxime, mollitia deserunt reprehenderit, quae ipsa itaque corporis laboriosam a facere. Debitis, dolore 
+							a(href="#",data-tooltip="Lorem ipsum dolor sit amet, consectetur adipisicing elit.",data-tooltip-position="top") ipsum dolor
+							|  perspiciatis veritatis et excepturi dignissimos maxime, mollitia deserunt reprehenderit, quae ipsa itaque corporis laboriosam a facere.
 
 
 
 
 
 
-		section.lighter
-			.limit
-				.inner.inner-2
-					.content
-			
-						h2 Proportional element
+			section.lighter
+				.limit
+					.inner.inner-2
 
-						h4 Jade:
-						pre.
-							.prop
-						pre.
-							.prop.prop-2-1
-						pre.
-							.prop.prop-4-3
-						pre.
-							.prop.prop-16-9
+						.content
+							h2 Formularios
 
-						h4 Demos:
+						.tabs
+							.tabs-header
+								a.tab(href='#') Con layout y centrado
+								a.tab(href='#') Líquido y centrado
+								a.tab(href='#') Líquido
+							.tabs-body
+								.tab
+									.inner.inner-2
 
-					.cols
-						.col.col-25: .col-inner
-							.prop.white
-								.cover: .inner Prop 1:1
+										form.controls.controls-layout.controls-center(method='POST', action='')
+											.control
+												.control-name Email
+												.control-value
+													input(type='email', name='email')
+											.control
+												.control-name Nombre
+												.control-value
+													input(type='text', name='nombre')
+											.control
+												.control-name RUT
+												.control-value
+													input.rut(type='text', name='rut')
+											.control
+												.control-name.control-name-2lines Fecha de Nacimiento
+												.control-value
+													.cols.cols-halfsep.cols-nobp
+														.col.col-33
+															.col-inner
+																select(name='bday_d')
+																	option(value='') Día
+														.col.col-33
+															.col-inner
+																select(name='bday_m')
+																	option(value='') Mes
+														.col.col-33
+															.col-inner
+																select(name='bday_y')
+																	option(value='') Año
+											.control
+												.control-name Teléfono
+												.control-value
+													.cols.cols-halfsep.cols-nobp
+														.col.col-20
+															.col-inner
+																input(type='text', maxlength='2', name='phone_prefix')
+														.col.col-80
+															.col-inner
+																input(type='text', maxlength='8', name='phone')
+											.control
+												.control-name Región
+												.control-value
+													select.optional(name='rid')
+														option(value='') Selecciona una región
+											.control
+												.control-name Ciudad
+												.control-value
+													input.optional(type='text', name='city')
+											.control
+												.control-name Contraseña
+												.control-value
+													input(type='password', name='pass')
+											.control
+												.control-name.control-name-2lines Confirmar Contraseña
+												.control-value
+													input(type='password', name='pass2', data-repeat='pass')
+											.control
+												.control-name Sexo
+												.control-value
+													label.inline
+														input(type='radio', name='sexo', value='Male')
+														|  Masculino
+													label.inline
+														input(type='radio', name='sexo', value='Female')
+														|  Femenino
+											.control
+												.control-name Mensaje
+												.control-value
+													textarea(name='message')
+											.control
+												.control-name
+												.control-value
+													label
+														input.input-terms(type='checkbox', name='terms', value='1')
+														|  Acepto
+											.control
+												.control-name
+												.control-value
+													input.button.button-primary(type='submit', value='Enviar')
 
-						.col.col-25: .col-inner
-							.prop.prop-2-1.white
-								.cover: .inner Prop 2:1
+								.tab
+									.inner.inner-2
 
-						.col.col-25: .col-inner
-							.prop.prop-4-3.white
-								.cover: .inner Prop 4:3
+										form.controls.controls-center(method='POST', action='')
+											.control
+												.control-name Email
+												.control-value
+													input(type='email', name='email')
+											.control
+												.control-name Nombre
+												.control-value
+													input(type='text', name='nombre')
+											.control
+												.control-name RUT
+												.control-value
+													input.rut(type='text', name='rut')
+											.control
+												.control-name.control-name-2lines Fecha de Nacimiento
+												.control-value
+													.cols.cols-halfsep.cols-nobp
+														.col.col-33
+															.col-inner
+																select(name='bday_d')
+																	option(value='') Día
+														.col.col-33
+															.col-inner
+																select(name='bday_m')
+																	option(value='') Mes
+														.col.col-33
+															.col-inner
+																select(name='bday_y')
+																	option(value='') Año
+											.control
+												.control-name Teléfono
+												.control-value
+													.cols.cols-halfsep.cols-nobp
+														.col.col-20
+															.col-inner
+																input(type='text', maxlength='2', name='phone_prefix')
+														.col.col-80
+															.col-inner
+																input(type='text', maxlength='8', name='phone')
+											.control
+												.control-name Región
+												.control-value
+													select.optional(name='rid')
+														option(value='') Selecciona una región
+											.control
+												.control-name Ciudad
+												.control-value
+													input.optional(type='text', name='city')
+											.control
+												.control-name Contraseña
+												.control-value
+													input(type='password', name='pass')
+											.control
+												.control-name.control-name-2lines Confirmar Contraseña
+												.control-value
+													input(type='password', name='pass2', data-repeat='pass')
+											.control
+												.control-name Sexo
+												.control-value
+													label.inline
+														input(type='radio', name='sexo', value='Male')
+														|  Masculino
+													label.inline
+														input(type='radio', name='sexo', value='Female')
+														|  Femenino
+											.control
+												.control-name Mensaje
+												.control-value
+													textarea(name='message')
+											.control
+												.control-name
+												.control-value
+													label
+														input.input-terms(type='checkbox', name='terms', value='1')
+														|  Acepto
+											.control
+												.control-name
+												.control-value
+													input.button.button-primary(type='submit', value='Enviar')
 
-						.col.col-25: .col-inner
-							.prop.prop-16-9.white
-								.cover: .inner Prop 16:9
+								.tab
+									.inner.inner-2
+
+										form.controls(method='POST', action='')
+											.control
+												.control-name Email
+												.control-value
+													input(type='email', name='email')
+											.control
+												.control-name Nombre
+												.control-value
+													input(type='text', name='nombre')
+											.control
+												.control-name RUT
+												.control-value
+													input.rut(type='text', name='rut')
+											.control
+												.control-name.control-name-2lines Fecha de Nacimiento
+												.control-value
+													.cols.cols-halfsep.cols-nobp
+														.col.col-33
+															.col-inner
+																select(name='bday_d')
+																	option(value='') Día
+														.col.col-33
+															.col-inner
+																select(name='bday_m')
+																	option(value='') Mes
+														.col.col-33
+															.col-inner
+																select(name='bday_y')
+																	option(value='') Año
+											.control
+												.control-name Teléfono
+												.control-value
+													.cols.cols-halfsep.cols-nobp
+														.col.col-20
+															.col-inner
+																input(type='text', maxlength='2', name='phone_prefix')
+														.col.col-80
+															.col-inner
+																input(type='text', maxlength='8', name='phone')
+											.control
+												.control-name Región
+												.control-value
+													select.optional(name='rid')
+														option(value='') Selecciona una región
+											.control
+												.control-name Ciudad
+												.control-value
+													input.optional(type='text', name='city')
+											.control
+												.control-name Contraseña
+												.control-value
+													input(type='password', name='pass')
+											.control
+												.control-name.control-name-2lines Confirmar Contraseña
+												.control-value
+													input(type='password', name='pass2', data-repeat='pass')
+											.control
+												.control-name Sexo
+												.control-value
+													label.inline
+														input(type='radio', name='sexo', value='Male')
+														|  Masculino
+													label.inline
+														input(type='radio', name='sexo', value='Female')
+														|  Femenino
+											.control
+												.control-name Mensaje
+												.control-value
+													textarea(name='message')
+											.control
+												.control-name
+												.control-value
+													label
+														input.input-terms(type='checkbox', name='terms', value='1')
+														|  Acepto
+											.control
+												.control-name
+												.control-value
+													input.button.button-primary(type='submit', value='Enviar')
+
+
+
+			section.white
+				.limit
+					.inner.inner-2
+						.content
+
+							h2 Loading
+
+							h4 Jade:
+							pre.
+								div(data-loading)
+
+							h4 Demo:
+							a.button.loading-test(href="#") Abrir loader
 
 
 
 
-		section
-			.limit
-				.inner.inner-2
-					.content
-			
-						h2 Mostrar en scroll
-						p Display scroll = dscroll
-
-						h4 Jade:
-						pre.
-							.prop.gray.dscroll
-
-						h4 Demos:
-
-					.cols
-						.col.col-25: .col-inner
-							.prop.gray.dscroll
-						.col.col-25: .col-inner
-							.prop.gray.dscroll
-						.col.col-25: .col-inner
-							.prop.gray.dscroll
-						.col.col-25: .col-inner
-							.prop.gray.dscroll
 
 
+			section.lighter
+				.limit
+					.inner.inner-2
+						.content
+				
+							h2 Proportional element
+
+							h4 Jade:
+							pre.
+								.prop
+							pre.
+								.prop.prop-2-1
+							pre.
+								.prop.prop-4-3
+							pre.
+								.prop.prop-16-9
+
+							h4 Demos:
+
+						.cols
+							.col.col-25: .col-inner
+								.prop.white
+									.cover: .inner Prop 1:1
+
+							.col.col-25: .col-inner
+								.prop.prop-2-1.white
+									.cover: .inner Prop 2:1
+
+							.col.col-25: .col-inner
+								.prop.prop-4-3.white
+									.cover: .inner Prop 4:3
+
+							.col.col-25: .col-inner
+								.prop.prop-16-9.white
+									.cover: .inner Prop 16:9
 
 
-		section.lighter
-			.limit
-				.inner.inner-2
-					.content
-			
-						h2 Slider
-
-						h4 Jade:
-						pre.
-							.slider
-								.slider-slides
-									.slide
-										.prop.prop-2-1
-											| Contenido
-									.slide
-										.prop.prop-2-1
-											| Contenido
-									.slide
-										.prop.prop-2-1
-											| Contenido
-						pre.
-
-							.slider.slider-content.slider-directional
-								.slider-slides
-								.slider-slides-generate(data-items="4",data-selector=".col")
-									.cols
-										.col.col-25: .col-inner
-											| Contenido
-										.col.col-25: .col-inner
-											| Contenido
-										.col.col-25: .col-inner
-											| Contenido
-										.col.col-25: .col-inner
-											| Contenido
-										.col.col-25: .col-inner
-											| Contenido
-										.col.col-25: .col-inner
-											| Contenido
-
-						h4 Demos:
 
 
-					.slider
-						.slider-slides
-							.slide
-								.prop.prop-2-1.gray
-									.cover: .va.center 1
-							.slide
-								.prop.prop-2-1.color
-									.cover: .va.center 2
-							.slide
-								.prop.prop-2-1.color-2
-									.cover: .va.center 3
+			section.white
+				.limit
+					.inner.inner-2
+						.content
+				
+							h2 Mostrar en scroll
+							p Display scroll = dscroll
 
-					.sep.sep-2
+							h4 Jade:
+							pre.
+								.prop.gray.dscroll
 
-					.slider.slider-content.slider-directional
-						.slider-slides
-						.slider-slides-generate(data-items="4",data-selector=".col")
-							.cols
-								.col.col-25: .col-inner
-									.prop.gray: .cover: .va.center 1
-								.col.col-25: .col-inner
-									.prop.gray: .cover: .va.center 2
-								.col.col-25: .col-inner
-									.prop.gray: .cover: .va.center 3
-								.col.col-25: .col-inner
-									.prop.gray: .cover: .va.center 4
-								.col.col-25: .col-inner
-									.prop.color: .cover: .va.center 5
-								.col.col-25: .col-inner
-									.prop.color: .cover: .va.center 6
-								.col.col-25: .col-inner
-									.prop.color: .cover: .va.center 7
-								.col.col-25: .col-inner
-									.prop.color: .cover: .va.center 8
-								.col.col-25: .col-inne
-									.prop.color-2: .cover: .va.center 9
-								.col.col-25: .col-inner
-									.prop.color-2: .cover: .va.center 10
+							h4 Demos:
+
+						.cols
+							.col.col-25: .col-inner
+								.prop.gray.dscroll
+							.col.col-25: .col-inner
+								.prop.gray.dscroll
+							.col.col-25: .col-inner
+								.prop.gray.dscroll
+							.col.col-25: .col-inner
+								.prop.gray.dscroll
 
 
-		section.dark
-			.limit
-				.inner.inner-2
-					.content
-			
-						h2 Multi Google Maps & Markers
 
-						h4 Marcadores con contenido:
-						pre.
-							.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
-								.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
-									| Optional content marker
-								.map-marker(data-lat='-33.4580000', data-lng='-70.629371')
-									| Optional content marker
 
-						h4 Demos:
+			section.lighter
+				.limit
+					.inner.inner-2
+						.content
+				
+							h2 Slider
 
-					.map.prop.prop-2-1(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
-						.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
-							ul
-								li
-									i.fa.fa-home
-									| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
-								li
-									a(href='tel:+56223935367')
-										i.fa.fa-phone
-										| +(56) 2 2393 5367
-								li
-									a(href='mailto:contacto@fprogreso.org')
-										i.fa.fa-envelope
-										| contacto@fprogreso.org
-						.map-marker(data-lat='-33.4580000', data-lng='-70.629371')
-							.content.inner.inner-half
-								h3 Lorem ipsum dolor
-								p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, nihil odit voluptatibus iure temporibus repellat quo hic fugiat consequatur sequi ipsa minus harum nemo molestias, atque ullam suscipit! Eaque, delectus.
+							h4 Jade:
+							pre.
+								.slider
+									.slider-slides
+										.slide
+											.prop.prop-2-1
+												| Contenido
+										.slide
+											.prop.prop-2-1
+												| Contenido
+										.slide
+											.prop.prop-2-1
+												| Contenido
+							pre.
 
-					.sep
+								.slider.slider-content.slider-directional
+									.slider-slides
+									.slider-slides-generate(data-items="4",data-selector=".col")
+										.cols
+											.col.col-25: .col-inner
+												| Contenido
+											.col.col-25: .col-inner
+												| Contenido
+											.col.col-25: .col-inner
+												| Contenido
+											.col.col-25: .col-inner
+												| Contenido
+											.col.col-25: .col-inner
+												| Contenido
+											.col.col-25: .col-inner
+												| Contenido
 
-					.map.prop.prop-2-1(data-zoom='16', data-lat='-33.4585000', data-lng='-70.629371')
-						.map-marker(data-lat='-33.4600000', data-lng='-70.629371') :3
-						.map-marker(data-lat='-33.4580000', data-lng='-70.628371')
+							h4 Demos:
+
+
+						.slider
+							.slider-slides
+								.slide
+									.prop.prop-2-1.gray
+										.cover: .va.center 1
+								.slide
+									.prop.prop-2-1.color
+										.cover: .va.center 2
+								.slide
+									.prop.prop-2-1.color-2
+										.cover: .va.center 3
+
+						.sep.sep-2
+
+						.slider.slider-content.slider-directional
+							.slider-slides
+							.slider-slides-generate(data-items="4",data-selector=".col")
+								.cols
+									.col.col-25: .col-inner
+										.prop.gray: .cover: .va.center 1
+									.col.col-25: .col-inner
+										.prop.gray: .cover: .va.center 2
+									.col.col-25: .col-inner
+										.prop.gray: .cover: .va.center 3
+									.col.col-25: .col-inner
+										.prop.gray: .cover: .va.center 4
+									.col.col-25: .col-inner
+										.prop.color: .cover: .va.center 5
+									.col.col-25: .col-inner
+										.prop.color: .cover: .va.center 6
+									.col.col-25: .col-inner
+										.prop.color: .cover: .va.center 7
+									.col.col-25: .col-inner
+										.prop.color: .cover: .va.center 8
+									.col.col-25: .col-inne
+										.prop.color-2: .cover: .va.center 9
+									.col.col-25: .col-inner
+										.prop.color-2: .cover: .va.center 10
+
+
+			section.dark
+				.limit
+					.inner.inner-2
+						.content
+				
+							h2 Multi Google Maps & Markers
+
+							h4 Marcadores con contenido:
+							pre.
+								.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
+									.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
+										| Optional content marker
+									.map-marker(data-lat='-33.4580000', data-lng='-70.629371')
+										| Optional content marker
+
+							h4 Demos:
+
+						.map.prop.prop-2-1(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
+							.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
+								ul
+									li
+										i.fa.fa-home
+										| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
+									li
+										a(href='tel:+56223935367')
+											i.fa.fa-phone
+											| +(56) 2 2393 5367
+									li
+										a(href='mailto:contacto@fprogreso.org')
+											i.fa.fa-envelope
+											| contacto@fprogreso.org
+							.map-marker(data-lat='-33.4580000', data-lng='-70.629371')
+								.content.inner.inner-half
+									h3 Lorem ipsum dolor
+									p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, nihil odit voluptatibus iure temporibus repellat quo hic fugiat consequatur sequi ipsa minus harum nemo molestias, atque ullam suscipit! Eaque, delectus.
+
+						.sep
+
+						.map.prop.prop-2-1(data-zoom='16', data-lat='-33.4585000', data-lng='-70.629371')
+							.map-marker(data-lat='-33.4600000', data-lng='-70.629371') :3
+							.map-marker(data-lat='-33.4580000', data-lng='-70.628371')
 
 

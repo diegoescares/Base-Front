@@ -61,10 +61,10 @@ app.alert =
 			buttons += options.buttons + " "
 
 		if options.cancel == true
-			buttons += '<button class="button false">Cancelar</button> '
+			buttons += '<button class="button button-lighter false">Cancelar</button> '
 
 		if options.accept == true
-			buttons += '<button class="button button-primary true">Aceptar</button> '
+			buttons += '<button class="button true">Aceptar</button> '
 
 		if buttons
 			buttons = '<div class="alert-buttons">'+buttons+'</div>'

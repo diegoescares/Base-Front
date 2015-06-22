@@ -1,6 +1,5 @@
 
 
-
 tooltip_triangle = 5px
 tooltip_width    = 200px
 tooltip_color    = dark
@@ -9,56 +8,37 @@ tooltip_color    = dark
 	position relative
 
 .tooltip
-	position absolute
-	top 0
-	left 0
-	width 100%
-	height 100%
+	cover absolute
 	z-index 100
 	display block
-	&:hover
-		.tooltip-container
-			display block
-	.tooltip-container
+
+	.tooltip-content
 		width tooltip_width
 		position absolute
+		padding 10px
+		background tooltip_color
+		text-align center
+		color white
+		radius 2px
 		display none
 		animation fadeIn .2s ease
-		.tooltip-triangle
-			border tooltip_triangle solid transparent
-			position absolute
-			display block
-		.tooltip-content
-			padding 10px
-			background tooltip_color
-			display block
-			color white
-			text-align center
-			radius 2px
-			position relative
 
 	&.tooltip-bottom
-		.tooltip-container
+		.tooltip-content
 			left 50%
 			top 100%
-			.tooltip-content
-				margin-top tooltip_triangle
-				left (tooltip_width/-2)
-			.tooltip-triangle
-				border-bottom-color tooltip_color
-				left - tooltip_triangle
-				top - tooltip_triangle
+			margin-left (tooltip_width/-2)
+			margin-top tooltip_triangle
+			triangle tooltip_triangle tooltip_color top
 
 	&.tooltip-top
-		.tooltip-container
+		.tooltip-content
 			left 50%
 			bottom 100%
-			.tooltip-content
-				margin-bottom tooltip_triangle
-				left (tooltip_width/-2)
-			.tooltip-triangle
-				border-top-color tooltip_color
-				left - tooltip_triangle
-				bottom - tooltip_triangle
+			margin-left (tooltip_width/-2)
+			margin-bottom tooltip_triangle
+			triangle tooltip_triangle tooltip_color bottom
 
-
+	&:hover
+		.tooltip-content
+			display block

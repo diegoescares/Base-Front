@@ -8,9 +8,11 @@ app.secretmenu =
 
 
 		# Copy links in menu
-
-		if $(".secretmenu-lvl").attr("data-copy").length
-			$(".secretmenu-lvl").html $( $(".secretmenu-lvl").attr("data-copy") ).html()
+		if $(".secretmenu-lvl").length
+			if $(".secretmenu-lvl").attr("data-copy")
+				$(".secretmenu-lvl").html $( $(".secretmenu-lvl").attr("data-copy") ).html()
+			if $(".secretmenu-lvl").attr("data-copy-2")
+				$(".secretmenu-lvl").append $( $(".secretmenu-lvl").attr("data-copy-2") ).html()
 
 
 		# Icon in lvl parents

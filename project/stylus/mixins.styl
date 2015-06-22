@@ -30,30 +30,6 @@ tap()
 	else
 		-webkit-tap-highlight-color arguments
 
-triangle(width,direction,color)
-	position absolute
-	border width solid transparent
-	if direction=="top"
-		border-bottom-color color
-		bottom 100%
-		left 50%
-		margin-left width*-1
-	if direction=="right"
-		border-left-color color
-		left 100%
-		top 50%
-		margin-top width*-1
-	if direction=="bottom"
-		border-top-color color
-		top 100%
-		left 50%
-		margin-left width*-1
-	if direction=="left"
-		border-right-color color
-		right 100%
-		top 50%
-		margin-top width*-1
-
 circle()
 	width arguments
 	height arguments
@@ -69,7 +45,7 @@ cover()
 	width 100%
 	height 100%
 
-centre(width,height)
+centre(width,height=width)
 	position absolute
 	top 50%
 	left 50%
@@ -78,11 +54,11 @@ centre(width,height)
 	margin-left (width/-2)
 	margin-top (height/-2)
 
-animation-stagger(iterations,delay)
-	iterations -= 1
-	for iteration in (0..iterations)
+animation-stagger(iterations,delay,add=0)
+	for iteration in (1..iterations)
 		&:nth-child({iteration})
-			animation-delay delay*iteration
+			if !child
+				animation-delay delay*iteration+add
 
 proportion(w,h)
 	padding-bottom ( (h / w) * 100 ) %
@@ -118,4 +94,55 @@ title(h)
 	if h == "h5"
 		font-size title_h5
 		line-height title_h5_lh
+
+
+
+triangle(val1,val2,val3)
+
+	if val1 > 0
+		width = val1
+	if val2 > 0
+		width = val2
+	if val3 > 0
+		width = val3
+
+	if val1 == "left" || val1 == "right" || val1 == "top" || val1 == "bottom"
+		direction = val1
+	if val2 == "left" || val2 == "right" || val2 == "top" || val2 == "bottom"
+		direction = val2
+	if val3 == "left" || val3 == "right" || val3 == "top" || val3 == "bottom"
+		direction = val3
+
+	if dark(val1) || light(val1) && val1!=direction
+		color = val1
+	if dark(val2) || light(val2) && val2!=direction
+		color = val2
+	if dark(val3) || light(val3) && val3!=direction
+		color = val3
+
+	&:after
+		content ""
+		display block
+		position absolute
+		border width solid transparent
+		if direction=="top"
+			border-bottom-color color
+			bottom 100%
+			left 50%
+			margin-left width*-1
+		if direction=="right"
+			border-left-color color
+			left 100%
+			top 50%
+			margin-top width*-1
+		if direction=="bottom"
+			border-top-color color
+			top 100%
+			left 50%
+			margin-left width*-1
+		if direction=="left"
+			border-right-color color
+			right 100%
+			top 50%
+			margin-top width*-1
 

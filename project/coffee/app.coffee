@@ -58,9 +58,6 @@ app.init = ->
 	# Preview file input
 	#app.previewfile.init()
 
-	# Placeholder crossbrowser
-	# app.placeholder.init()
-
 	# Actions
 	app.actions()
 

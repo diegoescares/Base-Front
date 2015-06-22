@@ -1,6 +1,11 @@
 
+button_padding_base   = 6px 20px
+button_padding_aument = 2px 10px
+button_size_base      = global_size
+button_lh_base        = global_lh
+button_font_aument    = 2
 
-.button, .button.button
+.button
 	font-family font
 	text-decoration none
 	display inline-block
@@ -11,16 +16,40 @@
 	margin-bottom 2px
 	vertical-align middle
 	radius rad_2
-
 	background color
 	color white
 
-	&.button-color-2
-		background color_2
-		color white
+
+	// Sizes
+		
+	padding button_padding_base
+	font-size button_size_base
+	line-height button_lh_base
+
+	&.button-small
+		padding button_padding_base[0] - button_padding_aument[0] button_padding_base[1]
+		font-size button_size_base - button_font_aument
+		line-height button_lh_base - button_font_aument
+	
+	&.button-medium
+		padding button_padding_base[0] + button_padding_aument[0] button_padding_base[1] + button_padding_aument[1]
+		font-size button_size_base + button_font_aument
+		line-height button_lh_base + button_font_aument
+	
+	&.button-big
+		padding button_padding_base[0] + button_padding_aument[0]*2 button_padding_base[1] + button_padding_aument[1]*2
+		font-size button_size_base + button_font_aument*2
+		line-height button_lh_base + button_font_aument*2
+
+
+	// Styles
 
 	&.button-white
 		background white
+		color dark
+
+	&.button-lighter
+		background lighter
 		color dark
 
 	&.button-light
@@ -49,6 +78,17 @@
 		background transparent
 		color white
 
+	&.button-disabled
+	&[disabled]
+		background light
+		border-color light
+		color white
+		&:hover
+			background light
+			border-color light
+			color white
+			cursor default
+
 
 	// Standar hover
 
@@ -61,49 +101,29 @@
 
 
 	// Hover color 2
+	if color_2
 
-	&.button-color-2
-	&.button-hover-2
-		&:hover
-			border-color lighten(color_2,10%)
-			background lighten(color_2,10%)
+		&.button-color-2
+			background color_2
 			color white
-	
+
+		&.button-color-2
+		&.button-hover-2
+			&:hover
+				border-color lighten(color_2,10%)
+				background lighten(color_2,10%)
+				color white
+
 
 	// Others
 
-	&.button-disabled
-		background light
-		border-color light
-		color white
-		&:hover
-			background light
-			border-color light
-			color white
-			cursor default
-
 	&.button-block
 		display block
+		width 100%
+		
+	&.button-cover
+		&:after
+			content ""
+			cover absolute
 
-
-	// Sizes
-
-	font-size 16px
-	line-height 16px
-	padding 8px 15px
-
-	&.button-small
-		font-size 14px
-		line-height 14px
-		padding 6px 10px
-	
-	&.button-medium
-		font-size 18px
-		line-height 18px
-		padding 10px 22px
-	
-	&.button-big
-		font-size 20px
-		line-height 20px
-		padding 12px 25px
 

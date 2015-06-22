@@ -18,6 +18,11 @@ col_sep_double_m = 0 0 col_sep*-2 col_sep*-2
 		&.col-right // Reading inverse
 			float right
 
+	.row // Es mejor usar isotope, usar rows sólo en emergencias
+		overflow hidden
+		@media break3
+			overflow visible
+
 	// Cols overflow visible
 	&.cols-ov
 		overflow visible
@@ -26,24 +31,24 @@ col_sep_double_m = 0 0 col_sep*-2 col_sep*-2
 			clear both
 			display block
 
-	// Separación entre columnas: normal
+	// Separación normal
 	margin col_sep_normal_m
 	.col
 		padding col_sep_normal
 
-	// Separación entre columnas: la mitad de normal
+	// Separación media
 	&.cols-halfsep
 		margin col_sep_half_m
 		.col
 			padding col_sep_half
 
-	// Separación entre columnas: el doble de normal
+	// Separación doble
 	&.cols-doublesep
 		margin col_sep_double_m
 		.col
 			padding col_sep_double
 
-	// Separación entre columnas: 0
+	// Separación 0
 	&.cols-nosep
 		margin 0
 		.col
@@ -137,10 +142,16 @@ col_sep_double_m = 0 0 col_sep*-2 col_sep*-2
 			&.col-30
 			&.col-33
 				width 100%
-
-	.cols
-	.cols.cols-doublesep
-		margin col_sep_half_m
-		.col
-			padding col_sep_half
 	
+	if sep_half_break1
+		.cols
+		.cols.cols-doublesep
+			margin col_sep_half_m
+			.col
+				padding col_sep_half
+	
+	.cols.cols-nosep-break1
+		margin 0
+		.col
+			padding 0
+

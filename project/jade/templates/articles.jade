@@ -1,0 +1,39 @@
+
+
+mixin article()
+
+	article.article-default
+
+		.article-image
+			+img(400,300)
+
+		.article-body
+			h3.article-title: a(href=PAGES.single): +lorem(5)
+			p.article-description: +lorem(10)
+			a(href=PAGES.single).button.button-cover Leer más
+
+
+mixin articleMin()
+
+	article.article-min
+
+		.article-image
+			+img(200,200)
+
+		.article-body
+			h3.article-title: a(href=PAGES.single): +lorem(5)
+			p.article-description: +lorem(10)
+
+
+mixin articleBg()
+
+	article.article-bg
+
+		.article-image
+			.bg: +img(400,300)
+
+		.article-cover
+			h2.article-title: a(href=PAGES.single): +lorem(5)
+			p.article-description: +lorem(10)
+			a(href=PAGES.single).button.button-line-white.button-cover Leer más
+

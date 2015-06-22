@@ -32,48 +32,6 @@ app.validation =
 						$(this).closest("label").removeClass("checked")
 
 
-			form.find("input.number").each ->
-				$(this).removeClass("number").wrap("<div class='number'>").after("<div class='number-button number-more'>+</div><div class='number-button number-less'>-</div>")
-
-			form.find(".number .number-button").live "click", ->
-
-				_input = $(this).parent().find("input")
-
-				_max = parseInt(_input.attr("data-max"))
-				_min = parseInt(_input.attr("data-min"))
-				_min = 1 if !_min
-
-				_steps = parseInt(_input.attr("data-steps"))
-				_steps = 1 if !_steps
-
-				_val = parseInt(_input.val())
-				_val = _val + _steps if $(this).hasClass "number-more"
-				_val = _val - _steps if $(this).hasClass "number-less"
-				_val = _max if _val >= _max
-				_val = _min if _val <= _min
-
-				_input.val(_val)
-				
-				false
-
-			form.find(".number input").live "blur", ->
-
-				_input = $(this)
-
-				_max = parseInt(_input.attr("data-max"))
-				_min = parseInt(_input.attr("data-min"))
-				_min = 1 if !_min
-
-				_val = parseInt(_input.val())
-				_val = _max if _val >= _max
-				_val = _min if _val <= _min
-
-				_input.val(_val)
-
-				true
-
-
-
 			form.submit ->
 
 				send = true
@@ -175,7 +133,7 @@ app.validation =
 
 
 				# Validar RUT
-				if input.is(".rut")
+				if input.is(".input-rut")
 					input.val( $.Rut.formatear($.Rut.quitarFormato(input.val()),$.Rut.getDigito($.Rut.quitarFormato(input.val()))) )
 					if !$.Rut.validar(input.val())
 						app.validation.formInputMessage(input,fvErrors.invalidRut)

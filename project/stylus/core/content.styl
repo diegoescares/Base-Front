@@ -1,19 +1,18 @@
 
 
 .content
-	font-size 15px
-	line-height 24px
+	font-size global_size+1
+	line-height 26px
+
+	h1, h2, h3, h4,	p, ol, ul, table, blockquote, pre, .important
+		margin-bottom sep
+		&:last-child
+			margin-bottom 0
 
 	h1, h2, h3, h4
 		padding-top 10px
-		margin-bottom 15px
 		&:first-child
 			padding-top 0
-
-	p, ol, ul, table
-		margin-bottom 15px
-		&:last-child
-			margin-bottom 0
 
 	ul
 		list-style-type disc
@@ -31,26 +30,17 @@
 		font-size 1.2em
 		line-height 1.5em
 		font-style italic
-		margin-bottom 15px
 		
 	pre
 		background rgba(0,0,0,.05)
 		padding 15px 20px
-		margin-bottom 15px
 		overflow auto
 
 	.important
 		background yellow
 		padding 15px 20px
-		margin-bottom 15px
-		
 
 	img
-		height auto
-		width auto
-		max-width 100%
-		display block
-
 		// WP
 		&.alignright
 			float right
@@ -66,6 +56,11 @@
 				margin-left 0
 		&.aligncenter
 			margin 0 auto
+			
+		opacity 0
+		&.img-loaded
+			animation fadeIn .5s ease
+			opacity 1
 
 	iframe
 		width 100%
@@ -76,7 +71,7 @@
 
 	a
 		text-decoration none
-		&:hover
+		&:hover:not(.button)
 			text-decoration underline
 			
 

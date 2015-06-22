@@ -67,10 +67,11 @@ ol
 
 img
 	display block
+	width auto
+	height auto
+	max-width 100%
 	&.img-ma
 		margin 0 auto
-	&.img-mw
-		max-width 100%
 	&.img-rad
 		radius rad
 	&.img-circle
@@ -131,10 +132,16 @@ table
 
 .sep
 	height sep
+	if sep_half_break1
+		@media break1
+			height (sep/2)
 	&.sep-2
 		height sep*2
-		@media break1
+		@media break2
 			height sep
+		if sep_half_break1
+			@media break1
+				height (sep/2)
 	&.sep-3
 		height sep*3
 		@media break2
@@ -160,32 +167,36 @@ table
 
 .inner
 	padding sep
-	@media break1
-		padding (sep/2)
+	if sep_half_break1
+		@media break1
+			padding (sep/2)
 	&.inner-half
 		padding (sep/2)
 	&.inner-2
 		padding sep*2 sep
 		@media break2
 			padding sep
-		@media break1
-			padding (sep/2)
+		if sep_half_break1
+			@media break1
+				padding (sep/2)
 	&.inner-3
 		padding sep*3 sep
 		@media break3
 			padding sep*2 sep
 		@media break2
 			padding sep
-		@media break1
-			padding (sep/2)
+		if sep_half_break1
+			@media break1
+				padding (sep/2)
 	&.inner-4
 		padding sep*4 sep
 		@media break3
 			padding sep*3 sep
 		@media break2
 			padding sep*2 sep
-		@media break1
-			padding sep*2 (sep/2)
+		if sep_half_break1
+			@media break1
+				padding sep*2 (sep/2)
 
 .nomobile
 	display block
@@ -198,20 +209,11 @@ table
 		display block
 
 
-// Generic animation
-/*
-.in
-	display block !important
-	animation fadeIn .5s ease both
-	&.out
-		display block !important
-		animation fadeOut .5s ease both
-*/
-
 // Font awesome
 
 //.fa
 //	vertical-align 0
+
 
 // Vertical align
 .va
@@ -219,7 +221,6 @@ table
 
 
 // Proportional element
-
 .prop
 	display block
 	proportion 1,1
@@ -237,12 +238,14 @@ table
 	cover absolute
 	display block
 
-// Dscrol
+
+// Dscroll
 .dscroll
 	opacity 0
 	&.dscroll-in
 		animation fadeIn 1s ease backwards
 		opacity 1
-	@media break3
+	@media break4
 		opacity 1
+		animation none
 
