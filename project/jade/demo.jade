@@ -21,60 +21,41 @@ block page
 						.content
 				
 							h2 Layout
-
 							.cols
 								+col(33,"to100","right")
-									.inner.lighter
-										| .col.col-33
+									.inner.lighter .col.col-33
 								+col(66)
-									.inner.lighter
-										| .col.col-66
+									.inner.lighter .col.col-66
 								+col(50,"nobreak")
-									.inner.lighter
-										| .col.col-50.col-nobreak
+									.inner.lighter .col.col-50.col-nobreak
 								+col(50,"nobreak")
-									.inner.lighter
-										| .col.col-50.col-nobreak
-
+									.inner.lighter .col.col-50.col-nobreak
 								+col(25)
-									.inner.lighter
-										| .col.col-25
+									.inner.lighter .col.col-25
 								+col(25)
-									.inner.lighter
-										| .col.col-25
+									.inner.lighter .col.col-25
 								+col(25)
-									.inner.lighter
-										| .col.col-25
+									.inner.lighter .col.col-25
 								+col(25)
-									.inner.lighter
-										| .col.col-25
-
+									.inner.lighter .col.col-25
 								+col(20)
-									.inner.lighter
-										| .col.col-20
+									.inner.lighter .col.col-20
 								+col(20)
-									.inner.lighter
-										| .col.col-20
+									.inner.lighter .col.col-20
 								+col(20)
-									.inner.lighter
-										| .col.col-20
+									.inner.lighter .col.col-20
 								+col(20,"nobreak1")
-									.inner.lighter
-										| .col.col-20.col-nobreak1
+									.inner.lighter .col.col-20.col-nobreak1
 								+col(20,"nobreak1")
-									.inner.lighter
-										| .col.col-20.col-nobreak1
+									.inner.lighter .col.col-20.col-nobreak1
 								
 							.sep
 							h2 Columnas activas bajo break point 3
-
 							.cols
 								+col("60-break3")
-									.inner.lighter
-										| .col.col-60-3
+									.inner.lighter .col.col-60-break3
 								+col("40-break3")
-									.inner.lighter
-										| .col.col-40-3
+									.inner.lighter .col.col-40-break3
 
 			section.white
 				.limit
@@ -88,104 +69,46 @@ block page
 								button, button-small, button-medium, button-big
 								button-color-2, button-white, button-light, button-gray, button-dark, button-line, button-line-white, button-hover-2
 
-							h4 Normal:
+							mixin demoButtons(variant)
+								a(href="#",class="button button-small "+variant) Lorem ipsum
+								| 
+								a(href="#",class="button "+variant) Lorem ipsum
+								| 
+								a(href="#",class="button button-medium "+variant) Lorem ipsum
+								| 
+								a(href="#",class="button button-big "+variant) Lorem ipsum
 
-							a(href="#",class="button button-small") Lorem ipsum
-							| 
-							a(href="#",class="button") Lorem ipsum
-							| 
-							a(href="#",class="button button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-big") Lorem ipsum
+							h4 Normal:
+							+demoButtons()
 
 							h4 Lighter:
-
-							a(href="#",class="button button-lighter button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-lighter") Lorem ipsum
-							| 
-							a(href="#",class="button button-lighter button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-lighter button-big") Lorem ipsum
+							+demoButtons("button-lighter")
 
 							h4 Light:
-
-							a(href="#",class="button button-light button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-light") Lorem ipsum
-							| 
-							a(href="#",class="button button-light button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-light button-big") Lorem ipsum
+							+demoButtons("button-light")
 
 							h4 Gray:
-
-							a(href="#",class="button button-gray button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-gray") Lorem ipsum
-							| 
-							a(href="#",class="button button-gray button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-gray button-big") Lorem ipsum
+							+demoButtons("button-gray")
 
 							h4 Dark:
-
-							a(href="#",class="button button-dark button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-dark") Lorem ipsum
-							| 
-							a(href="#",class="button button-dark button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-dark button-big") Lorem ipsum
+							+demoButtons("button-dark")
 
 							h4 Black + hover 2:
-
-							a(href="#",class="button button-black button-hover-2 button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-black button-hover-2") Lorem ipsum
-							| 
-							a(href="#",class="button button-black button-hover-2 button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-black button-hover-2 button-big") Lorem ipsum
+							+demoButtons("button-black hover-2")
 
 							h4 Line:
-							a(href="#",class="button button-line button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-line") Lorem ipsum
-							| 
-							a(href="#",class="button button-line button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-line button-big") Lorem ipsum
+							+demoButtons("button-line")
 
 							h4 Color 2:
-
-							a(href="#",class="button button-color-2 button-small") Lorem ipsum
-							| 
-							a(href="#",class="button button-color-2") Lorem ipsum
-							| 
-							a(href="#",class="button button-color-2 button-medium") Lorem ipsum
-							| 
-							a(href="#",class="button button-color-2 button-big") Lorem ipsum
+							+demoButtons("button-color-2")
 
 							h4 White:
 							.inner.dark
-								a(href="#",class="button button-white button-small") Lorem ipsum
-								| 
-								a(href="#",class="button button-white") Lorem ipsum
-								| 
-								a(href="#",class="button button-white button-medium") Lorem ipsum
-								| 
-								a(href="#",class="button button-white button-big") Lorem ipsum
+								+demoButtons("button-white")
 
 							h4 Line:
 							.inner.dark
-								a(href="#",class="button button-line-white button-small") Lorem ipsum
-								| 
-								a(href="#",class="button button-line-white") Lorem ipsum
-								| 
-								a(href="#",class="button button-line-white button-medium") Lorem ipsum
-								| 
-								a(href="#",class="button button-line-white button-big") Lorem ipsum
+								+demoButtons("button-line-white")
 
 
 
@@ -221,18 +144,18 @@ block page
 						.content
 
 							h2 Tabs
-					
+							
 							.tabs
 								.tabs-header
-									a.tab(href='#') Lorem
-									a.tab(href='#') Ipsum
+									a.tab(href='#'): +lorem(2)
+									a.tab(href='#'): +lorem(2)
 								.tabs-body
 									.tab
 										.inner
-											| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto libero, commodi, at ab facere saepe. Sapiente ullam architecto ea voluptatibus harum. Tempore repellendus veritatis voluptates vel culpa voluptatem facilis, dolorum!
+											p: +lorem(40)
 									.tab
 										.inner
-											| Tempora, expedita hic dolorem id, nisi voluptas tempore non laudantium mollitia? Blanditiis eum ab soluta veniam ipsa accusamus quasi, possimus hic aut sapiente neque voluptas nostrum accusantium quae distinctio id.
+											p: +lorem(40)
 
 
 
@@ -241,32 +164,39 @@ block page
 					.inner.inner-2
 						.content
 							h2 FAQ
+							
 							h4 Jade:
+
 							pre.
 								.faq
 									.faq-item.faq-open
-										h3.faq-question ¿Lorem?
+										h3.faq-question: +lorem(5)
 										.faq-answer
-											p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+											p: +lorem(40)
 									.faq-item
-										h3.faq-question ¿Lorem?
+										h3.faq-question: +lorem(5)
 										.faq-answer
-											p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+											p: +lorem(40)
+									.faq-item
+										h3.faq-question: +lorem(5)
+										.faq-answer
+											p: +lorem(40)
 
 							h4 Demo:
+
 							.faq
 								.faq-item.faq-open
-									h3.faq-question ¿Lorem ipsum?
+									h3.faq-question: +lorem(5)
 									.faq-answer
-										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+										p: +lorem(40)
 								.faq-item
-									h3.faq-question ¿Lorem consectetur?
+									h3.faq-question: +lorem(5)
 									.faq-answer
-										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+										p: +lorem(40)
 								.faq-item
-									h3.faq-question ¿Lorem adipisicing?
+									h3.faq-question: +lorem(5)
 									.faq-answer
-										p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo dignissimos itaque nemo enim illo repudiandae doloribus repellat accusantium, ipsam laudantium, veritatis aliquam aliquid cupiditate nihil reiciendis maxime eligendi rerum!
+										p: +lorem(40)
 
 
 
@@ -280,56 +210,25 @@ block page
 							.table-container
 								table
 									tr
-										th Lorem
-										th Lorem
-										th Lorem
-										th Lorem
-										th Lorem
-										th Lorem
-									tr
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-									tr
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-									tr
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-										td Lorem
-
+										+loop(8)
+											th: +lorem(1)
+									+loop(5)
+										tr
+											+loop(8)
+												td: +lorem(2)
+		
 						.sep
-						
 						nav.pagination
 							ul
-								li
-									a(href="#"): span.fa.fa-angle-double-left
-								li
-									a(href="#"): span.fa.fa-angle-left
-								li
-									a(href="#") 1
-								li
-									a(href="#") 2
-								li.active
-									a(href="#") 3
-								li
-									a(href="#") 4
-								li
-									a(href="#") 5
-								li
-									a(href="#"): span.fa.fa-angle-right
-								li
-									a(href="#"): span.fa.fa-angle-double-right
+								li: a(href="#"): span.fa.fa-angle-double-left
+								li: a(href="#"): span.fa.fa-angle-left
+								li: a(href="#") 1
+								li: a(href="#") 2
+								li.active: a(href="#") 3
+								li: a(href="#") 4
+								li: a(href="#") 5
+								li: a(href="#"): span.fa.fa-angle-right
+								li: a(href="#"): span.fa.fa-angle-double-right
 
 			section.white
 				.limit
@@ -362,6 +261,7 @@ block page
 
 						.content
 							h2 Formularios
+						.sep
 
 						.tabs
 							.tabs-header
@@ -373,252 +273,61 @@ block page
 									.inner.inner-2
 
 										form.controls.controls-layout.controls-center(method='POST', action='')
-											.control
-												.control-name Email
-												.control-value
-													input(type='email', name='email')
-											.control
-												.control-name Nombre
-												.control-value
-													input(type='text', name='nombre')
-											.control
-												.control-name RUT
-												.control-value
-													input.rut(type='text', name='rut')
-											.control
-												.control-name.control-name-2lines Fecha de Nacimiento
-												.control-value
-													.cols.cols-halfsep.cols-nobp
-														.col.col-33
-															.col-inner
-																select(name='bday_d')
-																	option(value='') Día
-														.col.col-33
-															.col-inner
-																select(name='bday_m')
-																	option(value='') Mes
-														.col.col-33
-															.col-inner
-																select(name='bday_y')
-																	option(value='') Año
-											.control
-												.control-name Teléfono
-												.control-value
-													.cols.cols-halfsep.cols-nobp
-														.col.col-20
-															.col-inner
-																input(type='text', maxlength='2', name='phone_prefix')
-														.col.col-80
-															.col-inner
-																input(type='text', maxlength='8', name='phone')
-											.control
-												.control-name Región
-												.control-value
-													select.optional(name='rid')
-														option(value='') Selecciona una región
-											.control
-												.control-name Ciudad
-												.control-value
-													input.optional(type='text', name='city')
-											.control
-												.control-name Contraseña
-												.control-value
-													input(type='password', name='pass')
-											.control
-												.control-name.control-name-2lines Confirmar Contraseña
-												.control-value
-													input(type='password', name='pass2', data-repeat='pass')
-											.control
-												.control-name Sexo
-												.control-value
-													label.inline
-														input(type='radio', name='sexo', value='Male')
-														|  Masculino
-													label.inline
-														input(type='radio', name='sexo', value='Female')
-														|  Femenino
-											.control
-												.control-name Mensaje
-												.control-value
-													textarea(name='message')
-											.control
-												.control-name
-												.control-value
-													label
-														input.input-terms(type='checkbox', name='terms', value='1')
-														|  Acepto
-											.control
-												.control-name
-												.control-value
-													input.button.button-primary(type='submit', value='Enviar')
+											+control("email","email","Email")
+											+control("text","name","Nombre")
+											+control("text","rut","RUT")
+											+control("text","dob","Fecha de nacimiento")
+											+control("text","phone","Teléfono")
+											+control("select","region","Región")
+											+control("select","city","Ciudad")
+											+control("textarea","message","Mensaje")
+											+control("password","password","Contraseña")
+											+control("password","password_repeat","Repetir contraseña")(data-repeat="password")
+											+control("radio","gender","Sexo",{"m":"Masculino","f":"Femenino"})
+											+control("checkbox","terms","",{"true":"Acepto los términos legales"})
+											.right
+												button.button.button-medium Enviar
+													span.fa.fa-angle-right
 
 								.tab
 									.inner.inner-2
 
 										form.controls.controls-center(method='POST', action='')
-											.control
-												.control-name Email
-												.control-value
-													input(type='email', name='email')
-											.control
-												.control-name Nombre
-												.control-value
-													input(type='text', name='nombre')
-											.control
-												.control-name RUT
-												.control-value
-													input.rut(type='text', name='rut')
-											.control
-												.control-name.control-name-2lines Fecha de Nacimiento
-												.control-value
-													.cols.cols-halfsep.cols-nobp
-														.col.col-33
-															.col-inner
-																select(name='bday_d')
-																	option(value='') Día
-														.col.col-33
-															.col-inner
-																select(name='bday_m')
-																	option(value='') Mes
-														.col.col-33
-															.col-inner
-																select(name='bday_y')
-																	option(value='') Año
-											.control
-												.control-name Teléfono
-												.control-value
-													.cols.cols-halfsep.cols-nobp
-														.col.col-20
-															.col-inner
-																input(type='text', maxlength='2', name='phone_prefix')
-														.col.col-80
-															.col-inner
-																input(type='text', maxlength='8', name='phone')
-											.control
-												.control-name Región
-												.control-value
-													select.optional(name='rid')
-														option(value='') Selecciona una región
-											.control
-												.control-name Ciudad
-												.control-value
-													input.optional(type='text', name='city')
-											.control
-												.control-name Contraseña
-												.control-value
-													input(type='password', name='pass')
-											.control
-												.control-name.control-name-2lines Confirmar Contraseña
-												.control-value
-													input(type='password', name='pass2', data-repeat='pass')
-											.control
-												.control-name Sexo
-												.control-value
-													label.inline
-														input(type='radio', name='sexo', value='Male')
-														|  Masculino
-													label.inline
-														input(type='radio', name='sexo', value='Female')
-														|  Femenino
-											.control
-												.control-name Mensaje
-												.control-value
-													textarea(name='message')
-											.control
-												.control-name
-												.control-value
-													label
-														input.input-terms(type='checkbox', name='terms', value='1')
-														|  Acepto
-											.control
-												.control-name
-												.control-value
-													input.button.button-primary(type='submit', value='Enviar')
+											+control("email","email","Email")
+											+control("text","name","Nombre")
+											+control("text","rut","RUT")
+											+control("text","dob","Fecha de nacimiento")
+											+control("text","phone","Teléfono")
+											+control("select","region","Región")
+											+control("select","city","Ciudad")
+											+control("textarea","message","Mensaje")
+											+control("password","password","Contraseña")
+											+control("password","password_repeat","Repetir contraseña")(data-repeat="password")
+											+control("radio","gender","Sexo",{"m":"Masculino","f":"Femenino"})
+											+control("checkbox","terms","",{"true":"Acepto los términos legales"})
+											.right
+												button.button.button-medium Enviar
+													span.fa.fa-angle-right
 
 								.tab
 									.inner.inner-2
 
 										form.controls(method='POST', action='')
-											.control
-												.control-name Email
-												.control-value
-													input(type='email', name='email')
-											.control
-												.control-name Nombre
-												.control-value
-													input(type='text', name='nombre')
-											.control
-												.control-name RUT
-												.control-value
-													input.rut(type='text', name='rut')
-											.control
-												.control-name.control-name-2lines Fecha de Nacimiento
-												.control-value
-													.cols.cols-halfsep.cols-nobp
-														.col.col-33
-															.col-inner
-																select(name='bday_d')
-																	option(value='') Día
-														.col.col-33
-															.col-inner
-																select(name='bday_m')
-																	option(value='') Mes
-														.col.col-33
-															.col-inner
-																select(name='bday_y')
-																	option(value='') Año
-											.control
-												.control-name Teléfono
-												.control-value
-													.cols.cols-halfsep.cols-nobp
-														.col.col-20
-															.col-inner
-																input(type='text', maxlength='2', name='phone_prefix')
-														.col.col-80
-															.col-inner
-																input(type='text', maxlength='8', name='phone')
-											.control
-												.control-name Región
-												.control-value
-													select.optional(name='rid')
-														option(value='') Selecciona una región
-											.control
-												.control-name Ciudad
-												.control-value
-													input.optional(type='text', name='city')
-											.control
-												.control-name Contraseña
-												.control-value
-													input(type='password', name='pass')
-											.control
-												.control-name.control-name-2lines Confirmar Contraseña
-												.control-value
-													input(type='password', name='pass2', data-repeat='pass')
-											.control
-												.control-name Sexo
-												.control-value
-													label.inline
-														input(type='radio', name='sexo', value='Male')
-														|  Masculino
-													label.inline
-														input(type='radio', name='sexo', value='Female')
-														|  Femenino
-											.control
-												.control-name Mensaje
-												.control-value
-													textarea(name='message')
-											.control
-												.control-name
-												.control-value
-													label
-														input.input-terms(type='checkbox', name='terms', value='1')
-														|  Acepto
-											.control
-												.control-name
-												.control-value
-													input.button.button-primary(type='submit', value='Enviar')
-
-
+											+control("email","email","Email")
+											+control("text","name","Nombre")
+											+control("text","rut","RUT")
+											+control("text","dob","Fecha de nacimiento")
+											+control("text","phone","Teléfono")
+											+control("select","region","Región")
+											+control("select","city","Ciudad")
+											+control("textarea","message","Mensaje")
+											+control("password","password","Contraseña")
+											+control("password","password_repeat","Repetir contraseña")(data-repeat="password")
+											+control("radio","gender","Sexo",{"m":"Masculino","f":"Femenino"})
+											+control("checkbox","terms","",{"true":"Acepto los términos legales"})
+											.right
+												button.button.button-medium Enviar
+													span.fa.fa-angle-right
 
 			section.white
 				.limit
@@ -647,33 +356,29 @@ block page
 							h2 Proportional element
 
 							h4 Jade:
-							pre.
-								.prop
-							pre.
-								.prop.prop-2-1
-							pre.
-								.prop.prop-4-3
-							pre.
-								.prop.prop-16-9
+							pre .prop
+							pre .prop.prop-2-1
+							pre .prop.prop-4-3
+							pre .prop.prop-16-9
 
 							h4 Demos:
 
-						.cols
-							.col.col-25
-								.prop.white
-									.cover: .inner Prop 1:1
+							.cols
+								.col.col-25
+									.prop.white
+										.cover: .inner Prop 1:1
 
-							.col.col-25
-								.prop.prop-2-1.white
-									.cover: .inner Prop 2:1
+								.col.col-25
+									.prop.prop-2-1.white
+										.cover: .inner Prop 2:1
 
-							.col.col-25
-								.prop.prop-4-3.white
-									.cover: .inner Prop 4:3
+								.col.col-25
+									.prop.prop-4-3.white
+										.cover: .inner Prop 4:3
 
-							.col.col-25
-								.prop.prop-16-9.white
-									.cover: .inner Prop 16:9
+								.col.col-25
+									.prop.prop-16-9.white
+										.cover: .inner Prop 16:9
 
 
 
@@ -691,19 +396,9 @@ block page
 								.prop.gray.dscroll
 
 							h4 Demos:
-
-						.cols
-							.col.col-25
+							
+							+cols(4,25)
 								article.prop.gray.dscroll
-							.col.col-25
-								article.prop.gray.dscroll
-							.col.col-25
-								article.prop.gray.dscroll
-							.col.col-25
-								article.prop.gray.dscroll
-
-
-
 
 			section.lighter
 				.limit
@@ -764,27 +459,10 @@ block page
 						.slider.slider-content.slider-directional
 							.slider-slides
 							.slider-slides-generate(data-items="4",data-selector=".col")
-								.cols
-									.col.col-25
-										.prop.gray: .cover: .va.center 1
-									.col.col-25
-										.prop.gray: .cover: .va.center 2
-									.col.col-25
-										.prop.gray: .cover: .va.center 3
-									.col.col-25
-										.prop.gray: .cover: .va.center 4
-									.col.col-25
-										.prop.color: .cover: .va.center 5
-									.col.col-25
-										.prop.color: .cover: .va.center 6
-									.col.col-25
-										.prop.color: .cover: .va.center 7
-									.col.col-25
-										.prop.color: .cover: .va.center 8
-									.col.col-25: .col-inne
-										.prop.color-2: .cover: .va.center 9
-									.col.col-25
-										.prop.color-2: .cover: .va.center 10
+								- count = 1
+								+cols(10,25)
+									.prop.gray: .cover: .va.center=count
+									- count++
 
 
 			section.dark
@@ -808,15 +486,15 @@ block page
 							.map-marker(data-lat='-33.4600000', data-lng='-70.628371')
 								ul
 									li
-										i.fa.fa-home
+										span.fa.fa-home
 										| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
 									li
 										a(href='tel:+56223935367')
-											i.fa.fa-phone
+											span.fa.fa-phone
 											| +(56) 2 2393 5367
 									li
 										a(href='mailto:contacto@fprogreso.org')
-											i.fa.fa-envelope
+											span.fa.fa-envelope
 											| contacto@fprogreso.org
 							.map-marker(data-lat='-33.4580000', data-lng='-70.629371')
 								.content.inner.inner-half

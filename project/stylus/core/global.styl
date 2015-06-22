@@ -198,22 +198,6 @@ table
 			@media break1
 				padding sep*2 (sep/2)
 
-.nomobile
-	display block
-.mobile
-	display none
-@media break1
-	.nomobile
-		display none
-	.mobile
-		display block
-
-
-// Font awesome
-
-//.fa
-//	vertical-align 0
-
 
 // Vertical align
 .va
@@ -250,4 +234,16 @@ article.article-loaded.dscroll
 	@media break4
 		opacity 1
 		animation none
+
+
+// mobile or no mobile
+.nomobile
+	display block
+.mobile
+	display none
+@media break1
+	.nomobile
+		display none
+	.mobile
+		display block
 

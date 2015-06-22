@@ -15,7 +15,7 @@ app.validation =
 				input = $(this)				
 				input.addClass( "input-"+$(this).attr("type") ) if $(this).is "input"
 				input.addClass( "disabled" ) if input.is(":disabled")
-				input.live "blur, change", ->
+				input.on "blur, change", ->
 					app.validation.formInput(input)
 
 			form.find(".input-checkbox, .input-radio").each ->

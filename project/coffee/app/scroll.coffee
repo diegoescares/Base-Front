@@ -4,7 +4,7 @@ app.scroll =
 
 	init: ->
 
-		if !app.isMobile() && !$.browser.msie && $(window).width()>=960
+		if !app.isMobile() && $(window).width()>=960
 
 			app.scroll.dscroll(0)
 

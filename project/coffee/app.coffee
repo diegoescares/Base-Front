@@ -53,7 +53,7 @@ app.init = ->
 	app.tabs.init()
 
 	# Validation forms
-	#app.validation.form $(".validate")
+	app.validation.form $(".controls")
 
 	# Preview file input
 	#app.previewfile.init()

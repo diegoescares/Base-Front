@@ -4,6 +4,7 @@ mixin loop(limit)
 	- for (var a=1; a<=limit; a++)
 		block
 
+
 mixin col(width,prop1,prop2)
 	if !width
 		- width = 50
@@ -14,7 +15,8 @@ mixin col(width,prop1,prop2)
 		- htmlclass = "col-"+width+" col-"+prop1+" col-"+prop2
 	.col(class=htmlclass)
 		block
-				
+
+
 mixin cols(limit,width)
 	.cols
 		+loop(limit)
@@ -22,7 +24,38 @@ mixin cols(limit,width)
 				block
 
 
-mixin img(width_or_name,height,htmlclass)
+mixin control(type,name,text,endval)
+	.control
+		.control-name=text
+		.control-value
+
+			- inputclass = false
+			if name == "rut"
+				- inputclass = "input-rut"
+			if name == "terms"
+				- inputclass = "input-terms"
+						
+			if type == "text" || type == "email" || type=="password"
+				input(type=type, name=name, class=inputclass)&attributes(attributes)
+
+			if type == "textarea"
+				textarea(name=name, class=inputclass)
+
+			if type == "select"
+				select(name=name, class=inputclass)
+					option Selecciona...
+					+loop(10)
+						option: +lorem(2)
+
+			if type == "checkbox" || type == "radio"
+				- each inputtext, inputval in endval
+					label.inline
+						input(type=type, name=name, value=inputval, class=inputclass)
+						|  
+						=inputtext
+
+
+mixin img(width_or_name,height,imgclass)
 
 	if width_or_name > 0
 		- width = width_or_name
@@ -36,12 +69,12 @@ mixin img(width_or_name,height,htmlclass)
 	if name
 		- url = TEMPLATE_URL+"/img/"+name
 
-	img( src = url, alt=BRAND, class = htmlclass )
+	img( src = url, alt=BRAND, class = imgclass )
 
 
-mixin uploads(name)
+mixin uploads(name, imgclass)
 	- url = TEMPLATE_URL+"/uploads/"+name
-	img( src = url, alt=BRAND, class = htmlclass )
+	img( src = url, alt=BRAND, class = imgclass )
 
 
 mixin num(max,min,decimalPlaces)
@@ -57,14 +90,14 @@ mixin num(max,min,decimalPlaces)
 
 - colonEvery = 10
 - words = ['consectetur', 'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero', 'eleifend', 'blandit', 'nunc', 'ornare', 'odio', 'ut', 'orci', 'gravida', 'imperdiet', 'nullam', 'purus', 'lacinia', 'a', 'pretium', 'quis', 'congue', 'praesent', 'sagittis', 'laoreet', 'auctor', 'mauris', 'non', 'velit', 'eros', 'dictum', 'proin', 'accumsan', 'sapien', 'nec', 'massa', 'volutpat', 'venenatis', 'sed', 'eu', 'molestie', 'lacus', 'quisque', 'porttitor', 'ligula', 'dui', 'mollis', 'tempus', 'at', 'magna', 'vestibulum', 'turpis', 'ac', 'diam', 'tincidunt', 'id', 'condimentum', 'enim', 'sodales', 'in', 'hac', 'habitasse', 'platea', 'dictumst', 'aenean', 'neque', 'fusce', 'augue', 'leo', 'eget', 'semper', 'mattis', 'tortor', 'scelerisque', 'nulla', 'interdum', 'tellus', 'malesuada', 'rhoncus', 'porta', 'sem', 'aliquet', 'et', 'nam', 'suspendisse', 'potenti', 'vivamus', 'luctus', 'fringilla', 'erat', 'donec', 'justo', 'vehicula', 'ultricies', 'varius', 'ante', 'primis', 'faucibus', 'ultrices', 'posuere', 'cubilia', 'curae', 'etiam', 'cursus', 'aliquam', 'quam', 'dapibus', 'nisl', 'feugiat', 'egestas', 'class', 'aptent', 'taciti', 'sociosqu', 'ad', 'litora', 'torquent', 'per', 'conubia', 'nostra', 'inceptos', 'himenaeos', 'phasellus', 'nibh', 'pulvinar', 'vitae', 'urna', 'iaculis', 'lobortis', 'nisi', 'viverra', 'arcu', 'morbi', 'pellentesque', 'metus', 'commodo', 'ut', 'facilisis', 'felis', 'tristique', 'ullamcorper', 'placerat', 'aenean', 'convallis', 'sollicitudin', 'integer', 'rutrum', 'duis', 'est', 'etiam', 'bibendum', 'donec', 'pharetra', 'vulputate', 'maecenas', 'mi', 'fermentum', 'consequat', 'suscipit', 'aliquam', 'habitant', 'senectus', 'netus', 'fames', 'quisque', 'euismod', 'curabitur', 'lectus', 'elementum', 'tempor', 'risus', 'cras', 'colus', 'miga' ]
+- maxWords = (words.length - 1)
 
 mixin capitalize(string)
 	= string.charAt(0).toUpperCase() + string.slice(1)
+
 mixin beginSentence(string)
 	= '. ' 
 	mixin capitalize(string)
-
-- maxWords = (words.length - 1)
 
 mixin lorem(howmany)
 	- for (var i = 0; i < howmany; i++) {
@@ -79,9 +112,5 @@ mixin lorem(howmany)
 				if i == howmany - 1 && howmany > 10
 					= '.'
 	- }
-
-
-
-
 
 
