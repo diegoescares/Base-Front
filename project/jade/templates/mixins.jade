@@ -24,12 +24,34 @@ mixin cols(limit,width)
 				block
 
 
+mixin img(width_or_name,height,imgclass)
+
+	if width_or_name > 0
+		- width = width_or_name
+	else
+		- name = width_or_name
+
+	if width
+		- num = Math.floor((Math.random()*6)+1)
+		- url = "http://lorempixel.com/"+width+"/"+height+"/technics/"+num
+
+	if name
+		- url = TEMPLATE_URL+"/img/"+name
+
+	img( src = url, alt=BRAND, class = imgclass )
+
+
+mixin uploads(name, imgclass)
+	- url = TEMPLATE_URL+"/uploads/"+name
+	img( src = url, alt=BRAND, class = imgclass )
+
+
 mixin control(type,name,text,endval)
 	.control
 		.control-name=text
 		.control-value
 
-			- inputclass = false
+			- inputclass = ""
 			if name == "rut"
 				- inputclass = "input-rut"
 			if name == "terms"
@@ -53,28 +75,6 @@ mixin control(type,name,text,endval)
 						input(type=type, name=name, value=inputval, class=inputclass)
 						|  
 						=inputtext
-
-
-mixin img(width_or_name,height,imgclass)
-
-	if width_or_name > 0
-		- width = width_or_name
-	else
-		- name = width_or_name
-
-	if width
-		- num = Math.floor((Math.random()*7))
-		- url = "http://lorempixel.com/"+width+"/"+height+"/city/"+num
-
-	if name
-		- url = TEMPLATE_URL+"/img/"+name
-
-	img( src = url, alt=BRAND, class = imgclass )
-
-
-mixin uploads(name, imgclass)
-	- url = TEMPLATE_URL+"/uploads/"+name
-	img( src = url, alt=BRAND, class = imgclass )
 
 
 mixin num(max,min,decimalPlaces)

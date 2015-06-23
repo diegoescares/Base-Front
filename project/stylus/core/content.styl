@@ -24,21 +24,31 @@
 			margin-bottom 5px
 
 	blockquote
-		padding 15px 20px 15px 35px
-		background url(../img/icon-cite.png) 15px 15px no-repeat
+		padding 10px sep
+		padding-left 40px
 		border-left 2px solid color
 		font-size 1.2em
 		line-height 1.5em
 		font-style italic
+		position relative
+		&:before
+			content "\f10d"
+			font-family "FontAwesome"
+			position absolute
+			top 0
+			left 10px
+			opacity .5
+			display inline-block
+			padding-right 2px
 		
 	pre
 		background rgba(0,0,0,.05)
-		padding 15px 20px
+		padding 10px sep
 		overflow auto
 
 	.important
 		background yellow
-		padding 15px 20px
+		padding 10px sep
 
 	img
 		// WP

@@ -4,11 +4,13 @@ app.shares =
 
 	init: ->
 		$(document).on "click", ".share", ->
-			app.shares.share $(this)
+			a = $(this)
+			if !a.attr("target")
+				app.shares.share a
 
 	share: (element) ->
 
-		share_url = encodeURIComponent(element.attr("data-url"))
+		share_url = encodeURIComponent(element.attr("href"))
 		share_text = encodeURIComponent(element.attr("data-text"))
 		share_img = encodeURIComponent(element.attr("data-img"))
 

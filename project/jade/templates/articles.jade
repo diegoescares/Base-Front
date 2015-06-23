@@ -8,8 +8,16 @@ mixin article()
 			+img(400,300)
 
 		.article-body
+			//.article-category: a(href="#") Hola
+			.article-date 24/23/223
 			h3.article-title: a(href=PAGES.single): +lorem(5)
 			p.article-description: +lorem(10)
+			//.article-shares
+				a.share.share-facebook(href="#")
+				a.share.share-twitter(href="#")
+				a.share.share-instagram(href="#")
+				a.share.share-googleplus(href="#")
+				a.share.share-linkedin(href="#")
 			a(href=PAGES.single).button.button-cover Leer más
 
 
@@ -21,6 +29,7 @@ mixin articleMin()
 			+img(200,200)
 
 		.article-body
+			.article-date 24/23/223
 			h3.article-title: a(href=PAGES.single): +lorem(5)
 			p.article-description: +lorem(10)
 
@@ -33,6 +42,7 @@ mixin articleBg()
 			.bg: +img(400,300)
 
 		.article-cover
+			.article-date 24/23/223
 			h2.article-title: a(href=PAGES.single): +lorem(5)
 			p.article-description: +lorem(10)
 			a(href=PAGES.single).button.button-line-white.button-cover Leer más

@@ -199,17 +199,17 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
               <div class="content">
                 <h2>Tabs</h2>
                 <div class="tabs">
-                  <div class="tabs-header"><a href="#" class="tab">Volutpat proin</a><a href="#" class="tab">Aliquam ut</a></div>
+                  <div class="tabs-header"><a href="#" class="tab">Mauris volutpat</a><a href="#" class="tab">Accumsan non</a></div>
                   <div class="tabs-body">
                     <div class="tab">
                       <div class="inner">
-                        <p>Ligula venenatis imperdiet potenti nam massa primis aliquet turpis vitae. Sodales bibendum sagittis hac tristique congue varius non ac vehicula. Tristique sem duis fames lacus suspendisse maecenas porttitor lacus donec molestie aliquet luctus sed varius taciti magna donec per elementum.
+                        <p>Tellus orci taciti auctor colus congue tempus leo egestas enim. Dictumst purus lacinia euismod porta in aptent ante aptent fusce. Leo morbi lobortis sed hendrerit metus donec tempor tincidunt quis semper dapibus felis eget ullamcorper porta integer diam tempor praesent.
                         </p>
                       </div>
                     </div>
                     <div class="tab">
                       <div class="inner">
-                        <p>Vitae mollis dictumst tincidunt et consequat ultricies a ut porta. Ut eu sociosqu ornare suspendisse porta ut molestie curae pellentesque. Porta quisque habitant varius suscipit at laoreet quisque ac hac lacinia cursus eget bibendum potenti feugiat taciti urna cubilia litora.
+                        <p>Rutrum maecenas et maecenas fringilla congue gravida aliquam neque erat. Donec per nunc metus molestie sollicitudin neque ultrices diam tellus. Bibendum massa sagittis etiam quis phasellus torquent pretium non himenaeos eu facilisis sed vivamus semper luctus quis aliquam vitae cursus.
                         </p>
                       </div>
                     </div>
@@ -242,26 +242,26 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                 <h4>Demo:</h4>
                 <div class="faq">
                   <div class="faq-item faq-open">
-                    <h3 class="faq-question">Aliquam tempor convallis nostra erat
+                    <h3 class="faq-question">Fermentum posuere aliquam pulvinar consequat
                     </h3>
                     <div class="faq-answer">
-                      <p>Etiam at dui ac vivamus non sapien quisque etiam mi. Fusce duis nam eleifend cubilia enim class fermentum auctor fermentum. Inceptos molestie aliquet pellentesque erat fames vestibulum urna pharetra neque platea urna justo cursus eu etiam ornare iaculis auctor torquent.
+                      <p>Leo risus facilisis aenean erat aenean eget sollicitudin tempus elementum. Iaculis pharetra maecenas nisi vel class luctus ut in curabitur. Maecenas aliquam sem massa fringilla rutrum lobortis nibh primis massa id fames aliquam fermentum magna ligula et a primis pellentesque.
                       </p>
                     </div>
                   </div>
                   <div class="faq-item">
-                    <h3 class="faq-question">Ultrices purus himenaeos morbi at
+                    <h3 class="faq-question">A faucibus dictumst tellus cubilia
                     </h3>
                     <div class="faq-answer">
-                      <p>Risus torquent orci senectus molestie ut mollis phasellus nulla eget. Velit fames auctor habitasse tempor lectus proin lobortis eu adipiscing. Condimentum eleifend hendrerit at diam urna ac lectus tellus posuere eleifend diam nec molestie fusce vitae sollicitudin cursus blandit ad.
+                      <p>Neque donec nunc nibh tellus nulla accumsan suscipit imperdiet pharetra. Gravida consectetur semper curabitur rutrum molestie vestibulum praesent nostra ut. Cras senectus colus nostra libero dui dictum iaculis aptent aliquet gravida eros nulla aenean diam non dictumst platea imperdiet augue.
                       </p>
                     </div>
                   </div>
                   <div class="faq-item">
-                    <h3 class="faq-question">Commodo faucibus class rhoncus nunc
+                    <h3 class="faq-question">Porta iaculis elit diam fames
                     </h3>
                     <div class="faq-answer">
-                      <p>Duis cras nulla cubilia cubilia vitae nam erat ligula sem. Mollis in eget risus nec curabitur aliquam venenatis porttitor malesuada. Lectus quisque facilisis pretium sed elit himenaeos quisque habitant magna ut nisl bibendum iaculis volutpat lacinia elementum feugiat semper dui.
+                      <p>Id primis viverra tortor imperdiet rhoncus urna odio congue praesent. Donec non interdum porttitor feugiat orci euismod justo neque potenti. Ante malesuada laoreet tempus erat tellus a odio posuere rutrum ut nec mollis vitae convallis interdum scelerisque ad aliquam vitae.
                       </p>
                     </div>
                   </div>
@@ -278,111 +278,111 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                 <div class="table-container">
                   <table>
                     <tr>
-                      <th>Auctor
+                      <th>Dapibus
                       </th>
-                      <th>Magna
+                      <th>Nunc
                       </th>
-                      <th>Sollicitudin
+                      <th>Volutpat
                       </th>
-                      <th>Eget
+                      <th>Lacus
                       </th>
-                      <th>Tellus
+                      <th>Massa
                       </th>
-                      <th>A
+                      <th>Lobortis
                       </th>
-                      <th>Luctus
+                      <th>Ac
                       </th>
-                      <th>Integer
+                      <th>Interdum
                       </th>
                     </tr>
                     <tr>
-                      <td>Sollicitudin dictum
+                      <td>Orci cursus
                       </td>
-                      <td>Torquent est
+                      <td>Class porttitor
                       </td>
-                      <td>Nisi nunc
+                      <td>Libero feugiat
                       </td>
-                      <td>Aenean potenti
+                      <td>Senectus habitant
                       </td>
-                      <td>Orci volutpat
+                      <td>Quisque sed
                       </td>
-                      <td>Nostra tempus
+                      <td>Sodales vel
                       </td>
-                      <td>Bibendum urna
+                      <td>Dui metus
                       </td>
-                      <td>Suscipit mattis
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Hendrerit sem
-                      </td>
-                      <td>Aliquam venenatis
-                      </td>
-                      <td>Nostra vehicula
-                      </td>
-                      <td>Platea metus
-                      </td>
-                      <td>Imperdiet tempus
-                      </td>
-                      <td>Scelerisque proin
-                      </td>
-                      <td>Aliquam fusce
-                      </td>
-                      <td>Id lacus
+                      <td>Aliquam in
                       </td>
                     </tr>
                     <tr>
-                      <td>Consectetur a
+                      <td>Et eleifend
                       </td>
-                      <td>Elit fringilla
+                      <td>Class mi
                       </td>
-                      <td>Himenaeos id
+                      <td>Per eleifend
                       </td>
-                      <td>Odio a
+                      <td>Interdum inceptos
                       </td>
-                      <td>Id habitant
+                      <td>Aliquam dictumst
                       </td>
-                      <td>Bibendum suscipit
+                      <td>Dictumst curabitur
                       </td>
-                      <td>Ullamcorper volutpat
+                      <td>Ac ad
                       </td>
-                      <td>Vehicula massa
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Dui ac
-                      </td>
-                      <td>Rhoncus orci
-                      </td>
-                      <td>Colus faucibus
-                      </td>
-                      <td>Feugiat bibendum
-                      </td>
-                      <td>Torquent enim
-                      </td>
-                      <td>Egestas metus
-                      </td>
-                      <td>Litora tellus
-                      </td>
-                      <td>Leo mauris
+                      <td>Himenaeos accumsan
                       </td>
                     </tr>
                     <tr>
-                      <td>Lacinia aptent
+                      <td>Placerat sem
                       </td>
-                      <td>Maecenas adipiscing
+                      <td>Eget scelerisque
                       </td>
-                      <td>Habitant quisque
+                      <td>Duis id
                       </td>
-                      <td>Massa nisi
+                      <td>Cras luctus
                       </td>
-                      <td>Aliquam colus
+                      <td>Litora id
                       </td>
-                      <td>Senectus primis
+                      <td>Rutrum ut
                       </td>
-                      <td>Dapibus maecenas
+                      <td>Id accumsan
                       </td>
-                      <td>Nam velit
+                      <td>Pretium pretium
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Vulputate velit
+                      </td>
+                      <td>Iaculis et
+                      </td>
+                      <td>Inceptos facilisis
+                      </td>
+                      <td>Neque platea
+                      </td>
+                      <td>Class inceptos
+                      </td>
+                      <td>Lobortis et
+                      </td>
+                      <td>Nam sagittis
+                      </td>
+                      <td>Orci in
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Vestibulum vel
+                      </td>
+                      <td>Volutpat auctor
+                      </td>
+                      <td>Phasellus cras
+                      </td>
+                      <td>Augue phasellus
+                      </td>
+                      <td>Sodales senectus
+                      </td>
+                      <td>Adipiscing nullam
+                      </td>
+                      <td>Taciti nam
+                      </td>
+                      <td>Sed porta
                       </td>
                     </tr>
                   </table>
@@ -428,13 +428,13 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                   <div class="control">
                     <div class="control-name">Nombre</div>
                     <div class="control-value">
-                      <input type="text" name="name" class="false"/>
+                      <input type="text" name="name"/>
                     </div>
                   </div>
                   <div class="control">
                     <div class="control-name">Email</div>
                     <div class="control-value">
-                      <input type="email" name="email" class="false"/>
+                      <input type="email" name="email"/>
                     </div>
                   </div>
                   <div class="control">
@@ -446,39 +446,39 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                   <div class="control">
                     <div class="control-name">Fecha de nacimiento</div>
                     <div class="control-value">
-                      <input type="text" name="dob" class="false"/>
+                      <input type="text" name="dob"/>
                     </div>
                   </div>
                   <div class="control">
                     <div class="control-name">Teléfono</div>
                     <div class="control-value">
-                      <input type="text" name="phone" class="false"/>
+                      <input type="text" name="phone"/>
                     </div>
                   </div>
                   <div class="control">
                     <div class="control-name">Región</div>
                     <div class="control-value">
-                      <select name="region" class="false">
+                      <select name="region">
                         <option>Selecciona...</option>
-                        <option>Nisl ut
+                        <option>Inceptos porttitor
                         </option>
-                        <option>Sodales tincidunt
+                        <option>Aenean ultricies
                         </option>
-                        <option>Vulputate nulla
+                        <option>Sagittis tristique
                         </option>
-                        <option>Nostra fusce
+                        <option>Netus nostra
                         </option>
-                        <option>Lacus netus
+                        <option>Ut praesent
                         </option>
-                        <option>Mi ante
+                        <option>Magna inceptos
                         </option>
-                        <option>Curabitur tempus
+                        <option>Eros sollicitudin
                         </option>
-                        <option>Quisque vehicula
+                        <option>A magna
                         </option>
-                        <option>Elementum accumsan
+                        <option>Lacus vitae
                         </option>
-                        <option>Sapien netus
+                        <option>Aenean blandit
                         </option>
                       </select>
                     </div>
@@ -486,27 +486,27 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                   <div class="control">
                     <div class="control-name">Ciudad</div>
                     <div class="control-value">
-                      <select name="city" class="false">
+                      <select name="city">
                         <option>Selecciona...</option>
-                        <option>Convallis mauris
+                        <option>Libero maecenas
                         </option>
-                        <option>Tristique metus
+                        <option>Posuere urna
                         </option>
-                        <option>Vel congue
+                        <option>Pharetra elit
                         </option>
-                        <option>Sociosqu curae
+                        <option>Sapien potenti
                         </option>
-                        <option>Habitasse posuere
+                        <option>Lectus ac
                         </option>
-                        <option>Habitasse cras
+                        <option>Urna congue
                         </option>
-                        <option>Aliquam dapibus
+                        <option>Leo nulla
                         </option>
-                        <option>Cubilia fusce
+                        <option>Fames habitasse
                         </option>
-                        <option>Molestie quisque
+                        <option>Lectus platea
                         </option>
-                        <option>Per lacus
+                        <option>Aliquet eros
                         </option>
                       </select>
                     </div>
@@ -514,29 +514,29 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                   <div class="control">
                     <div class="control-name">Mensaje</div>
                     <div class="control-value">
-                      <textarea name="message" class="false"></textarea>
+                      <textarea name="message"></textarea>
                     </div>
                   </div>
                   <div class="control">
                     <div class="control-name">Contraseña</div>
                     <div class="control-value">
-                      <input type="password" name="password" class="false"/>
+                      <input type="password" name="password"/>
                     </div>
                   </div>
                   <div class="control">
                     <div class="control-name">Repetir contraseña</div>
                     <div class="control-value">
-                      <input type="password" name="password_repeat" class="false" data-repeat="password"/>
+                      <input type="password" name="password_repeat" data-repeat="password"/>
                     </div>
                   </div>
                   <div class="control">
                     <div class="control-name">Sexo</div>
                     <div class="control-value">
                       <label class="label-inline">
-                        <input type="radio" name="gender" value="m" class="false"/> Masculino
+                        <input type="radio" name="gender" value="m"/> Masculino
                       </label>
                       <label class="label-inline">
-                        <input type="radio" name="gender" value="f" class="false"/> Femenino
+                        <input type="radio" name="gender" value="f"/> Femenino
                       </label>
                     </div>
                   </div>
