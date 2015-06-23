@@ -1,26 +1,28 @@
 
-app.actions = ->
+app.actions =
+	init: ->
 
-	# Isotope
-	if $(".isotope").length
-		$(".isotope").isotope()
+		# Isotope
+		if $(".isotope").length
+			$(".isotope").isotope()
 
-	app.loadingContent()
-	app.relayout()
 
-	# On load window
-	$(window).on "load", ->
+		# Forms
+		app.forms.validate $("form.validate")
+
+		# Clases cuando se carga el contenido
+		app.loadingContent()
+
+		# Relayout
 		app.relayout()
 
-	# On resize window
-	$(window).resize ->
-		app.relayout()
+		# On load window
+		$(window).on "load", ->
+			app.relayout()
 
-
-
-	# Forms
-	app.forms.validate $("form.validate")
-
+		# On resize window
+		$(window).resize ->
+			app.relayout()
 
 
 
