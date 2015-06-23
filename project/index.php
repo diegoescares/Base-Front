@@ -85,21 +85,35 @@
               </div>
               <div class="article-cover">
                 <div class="article-date">24/23/223</div>
-                <h2 class="article-title"><a href="<?= $URL ?>/single.php">Nunc habitasse arcu lacus placerat</a></h2>
-                <p class="article-description">Ultrices phasellus turpis convallis phasellus elit per in adipiscing turpis
+                <h2 class="article-title"><a href="<?= $URL ?>/single.php">Ultricies suspendisse aptent ornare iaculis</a></h2>
+                <p class="article-description">Praesent per fusce ad posuere pharetra phasellus habitasse ornare ut
+                </p><a href="<?= $URL ?>/single.php" class="button button-line-white button-cover">Leer más</a>
+              </div>
+            </article>
+          </div>
+          <div class="col col-66">
+            <article class="article-bg">
+              <div class="article-image">
+                <div class="bg"><img src="http://lorempixel.com/400/300/technics/4" alt="Base Front"/>
+                </div>
+              </div>
+              <div class="article-cover">
+                <div class="article-date">24/23/223</div>
+                <h2 class="article-title"><a href="<?= $URL ?>/single.php">Pulvinar habitant elementum ut quisque</a></h2>
+                <p class="article-description">Rhoncus imperdiet praesent nullam libero congue vestibulum ligula nunc habitasse
                 </p><a href="<?= $URL ?>/single.php" class="button button-line-white button-cover">Leer más</a>
               </div>
             </article>
           </div>
           <div class="col col-33">
             <article class="article-default">
-              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/4" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/3" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Dui ornare purus proin faucibus</a></h3>
-                <p class="article-description">Donec sollicitudin feugiat sed tellus justo per lacus mollis taciti
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Adipiscing etiam arcu sagittis tristique</a></h3>
+                <p class="article-description">Fermentum curae tristique sapien curabitur aptent felis potenti donec elit
                 </p>
                 <!--.article-shares
                 a.share.share-facebook(href="#")
@@ -115,13 +129,13 @@
         <div class="row">
           <div class="col col-33">
             <article class="article-default">
-              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/2" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/1" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Enim hendrerit nisi interdum pulvinar</a></h3>
-                <p class="article-description">Accumsan enim ultrices id tristique mattis sapien himenaeos cras lacus
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Tellus duis nullam ac cursus</a></h3>
+                <p class="article-description">Tortor curae ullamcorper convallis imperdiet sem tincidunt bibendum neque luctus
                 </p>
                 <!--.article-shares
                 a.share.share-facebook(href="#")
@@ -135,13 +149,13 @@
           </div>
           <div class="col col-33">
             <article class="article-default">
-              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/1" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/2" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Fringilla cursus donec purus taciti</a></h3>
-                <p class="article-description">Enim etiam condimentum viverra ut vehicula pulvinar ultricies quam iaculis
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Maecenas hendrerit primis at etiam</a></h3>
+                <p class="article-description">Platea dictumst suspendisse ac quis habitasse lectus mattis sagittis nibh
                 </p>
                 <!--.article-shares
                 a.share.share-facebook(href="#")
@@ -155,32 +169,32 @@
           </div>
           <div class="col col-33">
             <article class="article-min">
+              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/3" alt="Base Front"/>
+              </div>
+              <div class="article-body">
+                <div class="article-date">24/23/223</div>
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Nisl viverra faucibus mi eleifend</a></h3>
+                <p class="article-description">Suspendisse nullam mattis tortor fermentum praesent eros ac proin pretium
+                </p>
+              </div>
+            </article>
+            <article class="article-min">
               <div class="article-image"><img src="http://lorempixel.com/200/200/technics/6" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Maecenas ligula enim convallis phasellus</a></h3>
-                <p class="article-description">Venenatis himenaeos pretium curae integer orci elit ligula per congue
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Leo pretium ut porta urna</a></h3>
+                <p class="article-description">Augue augue curabitur ornare aliquam habitasse duis tortor neque accumsan
                 </p>
               </div>
             </article>
             <article class="article-min">
-              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/5" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/3" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Euismod himenaeos torquent felis lacinia</a></h3>
-                <p class="article-description">Consequat mattis dictumst mollis habitasse taciti a ut vel pulvinar
-                </p>
-              </div>
-            </article>
-            <article class="article-min">
-              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/4" alt="Base Front"/>
-              </div>
-              <div class="article-body">
-                <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Diam elementum porttitor adipiscing leo</a></h3>
-                <p class="article-description">Sapien proin mauris sollicitudin eros sem euismod ad malesuada suscipit
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Et quam blandit augue tortor</a></h3>
+                <p class="article-description">Torquent senectus semper eleifend blandit ac varius dapibus senectus hac
                 </p>
               </div>
             </article>

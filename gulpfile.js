@@ -33,8 +33,10 @@ var files = {
 		to:   path+"/stylus/main.styl"
 	},
 	jade: {
-		from: path+"/jade/**/*.jade",
+		fromtemplates: path+"/jade/templates/*.jade",
+		from: path+"/jade/*.jade",
 		to:   path+"/jade/*.jade"
+	
 	}
 }
 
@@ -45,6 +47,7 @@ gulp.task('default', function () {
 	gulp.watch(files.coffee.from,['build-js']);
 	//gulp.watch(files.jade.from,['build-html']);
 	gulp.watch(files.jade.from,['build-php']);
+	gulp.watch(files.jade.fromtemplates,['build-php-full']);
 });
 
 gulp.task("build-js",function(){
@@ -82,7 +85,7 @@ gulp.task("build-html",function(){
 
 gulp.task("build-php",function(){
 	gulp.src(files.jade.to)
-	//.pipe(changed(path,{extension: ".html"}))
+	.pipe(changed(path,{extension: ".php"}))
 	.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
 	.pipe(jade({pretty: true}))
 	.pipe(notify("Compiled: <%= file.relative %>"))
@@ -90,6 +93,18 @@ gulp.task("build-php",function(){
 	.pipe(rename({extname: ".php"}))
 	.pipe(gulp.dest(path))
 });
+
+gulp.task("build-php-full",function(){
+	gulp.src(files.jade.to)
+	//.pipe(changed(path,{extension: ".php"}))
+	.pipe(plumber({errorHandler: notify.onError( "<%= error.message %>" ) }))
+	.pipe(jade({pretty: true}))
+	.pipe(notify("Compiled: <%= file.relative %>"))
+	.pipe(unescapeHtml())
+	.pipe(rename({extname: ".php"}))
+	.pipe(gulp.dest(path))
+});
+
 
 gulp.task('imagemin', function () {
     gulp.src([path+'/img_origin/**/*'])
