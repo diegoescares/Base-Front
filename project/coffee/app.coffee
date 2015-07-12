@@ -59,7 +59,7 @@ app.init = ->
 	#app.previewfile.init()
 
 	# Actions
-	app.actions()
+	app.actions.init()
 
 
 

@@ -1,6 +1,7 @@
 
+#body
+	animation fadeIn .5s .2s ease backwards
 
-// Colors background
 
 .white
 	background-color white
@@ -31,9 +32,42 @@ if color_2
 		background-color color_2
 
 
-#body
-	animation fadeIn .5s .2s ease backwards
+// Sections colors background
 
+section
+	position relative
+
+	&.section-white
+		background-color white
+		
+	&.section-light
+		background-color light
+		
+	&.section-lighter
+		background-color lighter
+		
+	&.section-gray
+		background-color gray
+		color white
+		
+	&.section-dark
+		background-color dark
+		color white
+		
+	&.section-black
+		background-color black
+		color white
+		
+	&.section-color
+		background-color color
+
+	if color_2
+		&.section-color-2
+			background-color color_2
+
+
+
+// Background img
 
 .bg
 	cover absolute

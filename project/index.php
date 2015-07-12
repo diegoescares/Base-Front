@@ -80,40 +80,26 @@
           <div class="col col-66">
             <article class="article-bg">
               <div class="article-image">
-                <div class="bg"><img src="http://lorempixel.com/400/300/technics/1" alt="Base Front"/>
+                <div class="bg"><img src="http://lorempixel.com/400/300/technics/5" alt="Base Front"/>
                 </div>
               </div>
               <div class="article-cover">
                 <div class="article-date">24/23/223</div>
-                <h2 class="article-title"><a href="<?= $URL ?>/single.php">Ultricies suspendisse aptent ornare iaculis</a></h2>
-                <p class="article-description">Praesent per fusce ad posuere pharetra phasellus habitasse ornare ut
-                </p><a href="<?= $URL ?>/single.php" class="button button-line-white button-cover">Leer más</a>
-              </div>
-            </article>
-          </div>
-          <div class="col col-66">
-            <article class="article-bg">
-              <div class="article-image">
-                <div class="bg"><img src="http://lorempixel.com/400/300/technics/4" alt="Base Front"/>
-                </div>
-              </div>
-              <div class="article-cover">
-                <div class="article-date">24/23/223</div>
-                <h2 class="article-title"><a href="<?= $URL ?>/single.php">Pulvinar habitant elementum ut quisque</a></h2>
-                <p class="article-description">Rhoncus imperdiet praesent nullam libero congue vestibulum ligula nunc habitasse
+                <h2 class="article-title"><a href="<?= $URL ?>/single.php">Rutrum curae augue nunc placerat</a></h2>
+                <p class="article-description">Dictumst praesent interdum lacinia cubilia hac lectus tristique posuere quisque
                 </p><a href="<?= $URL ?>/single.php" class="button button-line-white button-cover">Leer más</a>
               </div>
             </article>
           </div>
           <div class="col col-33">
             <article class="article-default">
-              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/3" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/5" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Adipiscing etiam arcu sagittis tristique</a></h3>
-                <p class="article-description">Fermentum curae tristique sapien curabitur aptent felis potenti donec elit
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Netus tellus sagittis auctor donec</a></h3>
+                <p class="article-description">Fermentum molestie etiam tempor arcu elementum euismod nullam turpis viverra
                 </p>
                 <!--.article-shares
                 a.share.share-facebook(href="#")
@@ -129,13 +115,13 @@
         <div class="row">
           <div class="col col-33">
             <article class="article-default">
-              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/1" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/3" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Tellus duis nullam ac cursus</a></h3>
-                <p class="article-description">Tortor curae ullamcorper convallis imperdiet sem tincidunt bibendum neque luctus
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Aptent viverra nostra morbi fringilla</a></h3>
+                <p class="article-description">Elit nullam ad semper tristique integer varius fringilla ligula consequat
                 </p>
                 <!--.article-shares
                 a.share.share-facebook(href="#")
@@ -149,13 +135,13 @@
           </div>
           <div class="col col-33">
             <article class="article-default">
-              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/2" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/400/300/technics/1" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Maecenas hendrerit primis at etiam</a></h3>
-                <p class="article-description">Platea dictumst suspendisse ac quis habitasse lectus mattis sagittis nibh
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Vel praesent elementum ut egestas</a></h3>
+                <p class="article-description">Magna nullam habitasse pulvinar velit nibh cubilia semper potenti ultricies
                 </p>
                 <!--.article-shares
                 a.share.share-facebook(href="#")
@@ -169,22 +155,12 @@
           </div>
           <div class="col col-33">
             <article class="article-min">
-              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/3" alt="Base Front"/>
+              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/2" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Nisl viverra faucibus mi eleifend</a></h3>
-                <p class="article-description">Suspendisse nullam mattis tortor fermentum praesent eros ac proin pretium
-                </p>
-              </div>
-            </article>
-            <article class="article-min">
-              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/6" alt="Base Front"/>
-              </div>
-              <div class="article-body">
-                <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Leo pretium ut porta urna</a></h3>
-                <p class="article-description">Augue augue curabitur ornare aliquam habitasse duis tortor neque accumsan
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Purus quisque metus duis phasellus</a></h3>
+                <p class="article-description">Rhoncus fames elit sem orci varius non morbi enim luctus
                 </p>
               </div>
             </article>
@@ -193,8 +169,18 @@
               </div>
               <div class="article-body">
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Et quam blandit augue tortor</a></h3>
-                <p class="article-description">Torquent senectus semper eleifend blandit ac varius dapibus senectus hac
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Praesent fusce convallis vehicula phasellus</a></h3>
+                <p class="article-description">Cras luctus faucibus porttitor curabitur arcu pharetra tortor venenatis magna
+                </p>
+              </div>
+            </article>
+            <article class="article-min">
+              <div class="article-image"><img src="http://lorempixel.com/200/200/technics/4" alt="Base Front"/>
+              </div>
+              <div class="article-body">
+                <div class="article-date">24/23/223</div>
+                <h3 class="article-title"><a href="<?= $URL ?>/single.php">Imperdiet tortor dictum netus a</a></h3>
+                <p class="article-description">Ultricies fames consectetur hac viverra dapibus molestie cursus rutrum eu
                 </p>
               </div>
             </article>

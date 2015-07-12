@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="page-body">
-        <section class="white">
+        <section class="section-white">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -144,7 +144,7 @@
             </div>
           </div>
         </section>
-        <section class="white">
+        <section class="section-white">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -171,7 +171,7 @@ button-color-2, button-white, button-light, button-gray, button-dark, button-lin
             </div>
           </div>
         </section>
-        <section class="white">
+        <section class="section-white">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -193,23 +193,23 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="lighter">
+        <section class="section-lighter">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
                 <h2>Tabs</h2>
                 <div class="tabs">
-                  <div class="tabs-header"><a href="#" class="tab">Mauris volutpat</a><a href="#" class="tab">Accumsan non</a></div>
+                  <div class="tabs-header"><a href="#" class="tab">Porttitor ullamcorper</a><a href="#" class="tab">Fames at</a></div>
                   <div class="tabs-body">
                     <div class="tab">
                       <div class="inner">
-                        <p>Tellus orci taciti auctor colus congue tempus leo egestas enim. Dictumst purus lacinia euismod porta in aptent ante aptent fusce. Leo morbi lobortis sed hendrerit metus donec tempor tincidunt quis semper dapibus felis eget ullamcorper porta integer diam tempor praesent.
+                        <p>Elit fermentum eros platea ut nullam convallis feugiat fames ac. Consequat elit auctor feugiat tristique class aliquet turpis sem porttitor. Placerat varius malesuada per sagittis nulla imperdiet interdum ac odio tincidunt maecenas proin class molestie iaculis sodales tincidunt viverra massa.
                         </p>
                       </div>
                     </div>
                     <div class="tab">
                       <div class="inner">
-                        <p>Rutrum maecenas et maecenas fringilla congue gravida aliquam neque erat. Donec per nunc metus molestie sollicitudin neque ultrices diam tellus. Bibendum massa sagittis etiam quis phasellus torquent pretium non himenaeos eu facilisis sed vivamus semper luctus quis aliquam vitae cursus.
+                        <p>Morbi risus quisque scelerisque sagittis donec cubilia aenean vel dui. Ultricies morbi bibendum colus enim malesuada tortor feugiat nam nullam. Curae auctor dictum vel urna urna purus orci auctor mi volutpat mi vulputate mauris torquent habitasse litora felis taciti eleifend.
                         </p>
                       </div>
                     </div>
@@ -219,7 +219,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="white">
+        <section class="section-white">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -242,26 +242,26 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                 <h4>Demo:</h4>
                 <div class="faq">
                   <div class="faq-item faq-open">
-                    <h3 class="faq-question">Fermentum posuere aliquam pulvinar consequat
+                    <h3 class="faq-question">Vitae ornare a ligula fermentum
                     </h3>
                     <div class="faq-answer">
-                      <p>Leo risus facilisis aenean erat aenean eget sollicitudin tempus elementum. Iaculis pharetra maecenas nisi vel class luctus ut in curabitur. Maecenas aliquam sem massa fringilla rutrum lobortis nibh primis massa id fames aliquam fermentum magna ligula et a primis pellentesque.
+                      <p>Dictum taciti torquent hac donec proin curabitur proin pretium interdum. Nostra consectetur libero sapien laoreet adipiscing convallis tincidunt gravida velit. Fermentum tempor id cursus quisque habitant scelerisque sodales rhoncus elit porta curabitur varius nisi massa suspendisse varius suscipit aliquam tempor.
                       </p>
                     </div>
                   </div>
                   <div class="faq-item">
-                    <h3 class="faq-question">A faucibus dictumst tellus cubilia
+                    <h3 class="faq-question">Gravida fusce porta orci porttitor
                     </h3>
                     <div class="faq-answer">
-                      <p>Neque donec nunc nibh tellus nulla accumsan suscipit imperdiet pharetra. Gravida consectetur semper curabitur rutrum molestie vestibulum praesent nostra ut. Cras senectus colus nostra libero dui dictum iaculis aptent aliquet gravida eros nulla aenean diam non dictumst platea imperdiet augue.
+                      <p>Vitae scelerisque facilisis hendrerit ligula nostra justo pharetra quisque bibendum. Faucibus himenaeos duis eget arcu commodo interdum curae primis ut. Cras hendrerit gravida odio etiam habitant ut porttitor cursus nec himenaeos molestie nam fringilla ultrices habitant conubia nullam odio odio.
                       </p>
                     </div>
                   </div>
                   <div class="faq-item">
-                    <h3 class="faq-question">Porta iaculis elit diam fames
+                    <h3 class="faq-question">Urna platea fames molestie a
                     </h3>
                     <div class="faq-answer">
-                      <p>Id primis viverra tortor imperdiet rhoncus urna odio congue praesent. Donec non interdum porttitor feugiat orci euismod justo neque potenti. Ante malesuada laoreet tempus erat tellus a odio posuere rutrum ut nec mollis vitae convallis interdum scelerisque ad aliquam vitae.
+                      <p>Aenean viverra dui congue convallis convallis nostra nisl litora congue. Malesuada colus pretium justo arcu id dictumst fermentum aenean libero. Lacus torquent vehicula id suspendisse torquent lacinia mauris donec molestie mattis commodo per quis duis per bibendum morbi hendrerit non.
                       </p>
                     </div>
                   </div>
@@ -270,7 +270,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="lighter">
+        <section class="section-lighter">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -278,111 +278,111 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                 <div class="table-container">
                   <table>
                     <tr>
-                      <th>Dapibus
+                      <th>Aptent
                       </th>
-                      <th>Nunc
+                      <th>Sodales
                       </th>
-                      <th>Volutpat
+                      <th>Aptent
                       </th>
-                      <th>Lacus
+                      <th>Duis
                       </th>
-                      <th>Massa
+                      <th>Pulvinar
                       </th>
-                      <th>Lobortis
+                      <th>Blandit
                       </th>
-                      <th>Ac
+                      <th>Augue
                       </th>
-                      <th>Interdum
+                      <th>Proin
                       </th>
                     </tr>
                     <tr>
-                      <td>Orci cursus
+                      <td>Hac posuere
                       </td>
-                      <td>Class porttitor
+                      <td>Ut vel
                       </td>
-                      <td>Libero feugiat
+                      <td>Semper morbi
                       </td>
-                      <td>Senectus habitant
+                      <td>Risus suscipit
                       </td>
-                      <td>Quisque sed
+                      <td>Sem et
                       </td>
-                      <td>Sodales vel
+                      <td>Cubilia litora
                       </td>
-                      <td>Dui metus
+                      <td>Venenatis libero
                       </td>
-                      <td>Aliquam in
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Et eleifend
-                      </td>
-                      <td>Class mi
-                      </td>
-                      <td>Per eleifend
-                      </td>
-                      <td>Interdum inceptos
-                      </td>
-                      <td>Aliquam dictumst
-                      </td>
-                      <td>Dictumst curabitur
-                      </td>
-                      <td>Ac ad
-                      </td>
-                      <td>Himenaeos accumsan
+                      <td>Rhoncus ad
                       </td>
                     </tr>
                     <tr>
-                      <td>Placerat sem
+                      <td>Blandit quam
                       </td>
-                      <td>Eget scelerisque
+                      <td>Pharetra aenean
                       </td>
-                      <td>Duis id
+                      <td>Tellus mattis
                       </td>
-                      <td>Cras luctus
+                      <td>Sollicitudin semper
                       </td>
-                      <td>Litora id
+                      <td>Lacinia sociosqu
                       </td>
-                      <td>Rutrum ut
+                      <td>Dapibus porttitor
                       </td>
-                      <td>Id accumsan
+                      <td>Ultrices cubilia
                       </td>
-                      <td>Pretium pretium
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Vulputate velit
-                      </td>
-                      <td>Iaculis et
-                      </td>
-                      <td>Inceptos facilisis
-                      </td>
-                      <td>Neque platea
-                      </td>
-                      <td>Class inceptos
-                      </td>
-                      <td>Lobortis et
-                      </td>
-                      <td>Nam sagittis
-                      </td>
-                      <td>Orci in
+                      <td>Fames ut
                       </td>
                     </tr>
                     <tr>
-                      <td>Vestibulum vel
+                      <td>Convallis netus
                       </td>
-                      <td>Volutpat auctor
+                      <td>Proin blandit
                       </td>
-                      <td>Phasellus cras
+                      <td>Nibh purus
                       </td>
-                      <td>Augue phasellus
+                      <td>Mauris suspendisse
                       </td>
-                      <td>Sodales senectus
+                      <td>In pretium
                       </td>
-                      <td>Adipiscing nullam
+                      <td>Ut convallis
                       </td>
-                      <td>Taciti nam
+                      <td>Imperdiet vestibulum
                       </td>
-                      <td>Sed porta
+                      <td>Torquent pretium
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Lacinia vestibulum
+                      </td>
+                      <td>Scelerisque nunc
+                      </td>
+                      <td>Dictum fringilla
+                      </td>
+                      <td>Fames duis
+                      </td>
+                      <td>Feugiat libero
+                      </td>
+                      <td>Id ad
+                      </td>
+                      <td>Sed ut
+                      </td>
+                      <td>Donec id
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Pulvinar a
+                      </td>
+                      <td>Rhoncus pulvinar
+                      </td>
+                      <td>Id venenatis
+                      </td>
+                      <td>Curae magna
+                      </td>
+                      <td>Aenean dictum
+                      </td>
+                      <td>Diam nisi
+                      </td>
+                      <td>Fringilla platea
+                      </td>
+                      <td>Posuere maecenas
                       </td>
                     </tr>
                   </table>
@@ -405,7 +405,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="white">
+        <section class="section-white">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -419,7 +419,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="lighter">
+        <section class="section-lighter">
           <div class="limit">
             <div class="inner inner-2">
               <h2>Formularios</h2>
@@ -460,25 +460,25 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                     <div class="control-value">
                       <select name="region">
                         <option>Selecciona...</option>
-                        <option>Inceptos porttitor
+                        <option>Praesent inceptos
                         </option>
-                        <option>Aenean ultricies
+                        <option>Senectus consequat
                         </option>
-                        <option>Sagittis tristique
+                        <option>Neque vitae
                         </option>
-                        <option>Netus nostra
+                        <option>Erat feugiat
                         </option>
-                        <option>Ut praesent
+                        <option>Integer augue
                         </option>
-                        <option>Magna inceptos
+                        <option>Sem mollis
                         </option>
-                        <option>Eros sollicitudin
+                        <option>Luctus inceptos
                         </option>
-                        <option>A magna
+                        <option>Aptent fringilla
                         </option>
-                        <option>Lacus vitae
+                        <option>Quisque faucibus
                         </option>
-                        <option>Aenean blandit
+                        <option>Vulputate donec
                         </option>
                       </select>
                     </div>
@@ -488,25 +488,25 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
                     <div class="control-value">
                       <select name="city">
                         <option>Selecciona...</option>
-                        <option>Libero maecenas
+                        <option>Velit nisi
                         </option>
-                        <option>Posuere urna
+                        <option>Purus fringilla
                         </option>
-                        <option>Pharetra elit
+                        <option>Rutrum eleifend
                         </option>
-                        <option>Sapien potenti
+                        <option>Aliquam lectus
                         </option>
-                        <option>Lectus ac
+                        <option>Bibendum diam
                         </option>
-                        <option>Urna congue
+                        <option>Sed nullam
                         </option>
-                        <option>Leo nulla
+                        <option>Gravida auctor
                         </option>
-                        <option>Fames habitasse
+                        <option>Quam eget
                         </option>
-                        <option>Lectus platea
+                        <option>Ultrices sociosqu
                         </option>
-                        <option>Aliquet eros
+                        <option>Elementum hac
                         </option>
                       </select>
                     </div>
@@ -556,7 +556,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="white">
+        <section class="section-white">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -569,7 +569,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="lighter">
+        <section class="section-lighter">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -614,7 +614,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="white">
+        <section class="section-white">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -642,7 +642,7 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="lighter">
+        <section class="section-lighter">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
@@ -784,7 +784,23 @@ a(href="#",data-alert="Hola",data-content="¿Seguro que quieres hacer esto?") Li
             </div>
           </div>
         </section>
-        <section class="dark">
+        <section class="section-white">
+          <div class="limit">
+            <div class="inner inner-2">
+              <div class="content">
+                <h2>Youtube</h2>
+                <div class="cols">
+                  <div class="col col-50">
+                    <div data-id="y2cQvZPX3OY" class="youtube"><img src="http://lorempixel.com/640/360/technics/4" alt="Base Front"/>
+                      <button class="youtube-play"><span class="fa fa-play"></span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-dark">
           <div class="limit">
             <div class="inner inner-2">
               <div class="content">
