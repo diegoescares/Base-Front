@@ -1,6 +1,5 @@
 
-app.actions =
-	init: ->
+app.actions = ->
 
 		# Isotope
 		if $(".isotope").length

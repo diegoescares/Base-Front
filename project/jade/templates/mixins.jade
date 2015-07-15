@@ -26,6 +26,9 @@ mixin cols(limit,width)
 
 mixin img(width_or_name,height,imgclass)
 
+	- width = false
+	- name = false
+
 	if width_or_name > 0
 		- width = width_or_name
 	else
