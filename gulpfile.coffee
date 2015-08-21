@@ -18,7 +18,7 @@ pngquant     = require("imagemin-pngquant")
 changed      = require("gulp-changed")
 
 
-path		 = "project"
+path		 = "front"
 
 
 files =
