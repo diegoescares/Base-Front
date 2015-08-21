@@ -1,45 +1,28 @@
 
 header_height        = 80px
 header_height_min    = 60px
-header_bg            = black
-header_color         = white
-header_height_change = break3
-
-header_menu_width    = 400px
-header_menu_bg       = dark
-header_menu_color    = white
-header_menu_show     = break2
-
 
 header
-	position relative
+	position fixed
+	top 0
+	width 100%
 	z-index 10
+	height header_height
+	background dark
+	@media break2
+		position relative
+		height header_height_min
 	
-	.header-inner
-		padding 10px sep
-		@media header_height_change
-			padding 0
-			
-	.header-limit
-		height header_height
-		max-width limit
-		margin 0 auto
+	.inner
 		overflow hidden
-		@media header_height_change
-			height header_height_min
 
-	.header-top 
-		position fixed
-		top 0
-		left 0
-		width 100%
-		background header_bg
-		@media header_menu_show
-			position relative
-	
-	.header-logo
+	.header-left
 		float left
-		margin-right 20px
+
+	.header-right
+		float right
+		
+	.header-logo
 		a
 			display block
 
@@ -48,23 +31,28 @@ header
 			color white
 			font-weight bold
 			font-size 200%
-			padding 30px 20px
-			margin-top -10px
-			@media header_height_change
+			padding 30px
+			margin -20px 0
+			transition none
+			@media break2
+				margin -20px
 				padding 20px
-				margin-top 0
+			@media break1
+				if sep_half_break1
+					margin -10px
 
 	.header-nav
-		@media header_menu_show
+		@media break2
 			display none
 		ul
 			li
 				display inline-block
 				a
-					padding 20px
+					padding 10px 20px
 					display inline-block
-					color header_color
-					&.current
+					color white
+				&.current-menu-item
+					a
 						background rgba(255,255,255,.1)
 				ul
 					display none
@@ -76,7 +64,7 @@ header
 		top 0
 		right 0
 		background dark
-		@media header_menu_show
+		@media break2
 			display block
 	
 	.header-menu
@@ -87,19 +75,19 @@ header
 		height 100%
 		overflow hidden
 		display none
-		@media header_menu_show
+		@media break2
 			display block
 
 		.header-menu-inner
-			background darken(header_menu_bg,20%)
+			background darken(dark,20%)
 			height 100%
-			width header_menu_width
+			width 320px
 			position relative
 			max-width 100%
 			margin 0 0 0 auto
 		
 		.secretmenu-lvl
-			background header_menu_bg
+			background dark
 
 		.header-menu-content
 			ul
@@ -107,12 +95,11 @@ header
 					a
 						padding 20px
 						display block
-						color header_menu_color
+						color white
 						border-bottom 1px solid rgba(255,255,255,.1)
 					ul
 						display none
 						display block
-						background red
 						cover absolute
 						overflow auto
 						opacity .5
@@ -122,8 +109,6 @@ header
 
 #body
 	padding-top header_height
-	@media header_height_change
-		padding-top header_height_min
-	@media header_menu_show
+	@media break2
 		padding-top 0
 

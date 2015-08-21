@@ -19,31 +19,34 @@ changed      = require("gulp-changed")
 
 
 path		 = "front"
-
+pathwp       = "wp/wp-content/themes/theme"
 
 files =
-	coffee:
-		watch: path + "/coffee/**/*.coffee"
-		src: path + "/coffee/app.coffee"
-		plugins: path + "/js/plugins/*.js"
-		dest: path + "/js"
-		endname: "main.js"
-
-	stylus:
-		watch: path + "/stylus/**/*.styl"
-		src: path + "/stylus/main.styl"
-		dest: path + "/css"
 
 	jade:
-		watch: path + "/jade/*.jade"
+		watch:        path + "/jade/*.jade"
 		watchfolders: path + "/jade/*/*.jade"
-		src: path + "/jade/*.jade"
-		dest: path
+		src:          path + "/jade/*.jade"
+		dest:         path
+
+	stylus:
+		watch:        path + "/stylus/**/*.styl"
+		src:          path + "/stylus/main.styl"
+		dest:         path + "/css"
+		destwp:       pathwp + "/css"
+
+	coffee:
+		watch:        path + "/coffee/**/*.coffee"
+		src:          path + "/coffee/app.coffee"
+		plugins:      path + "/js/plugins/*.js"
+		dest:         path + "/js"
+		destwp:       pathwp + "/js"
 
 	images:
-		watch: path + "/img_max/*"
-		src: path + "/img_max/*"
-		dest: path + "/img"
+		watch:        path + "/img_max/*"
+		src:          path + "/img_max/*"
+		dest:         path + "/img"
+		destwp:       pathwp + "/img"
 
 
 gulp.task "default", ->
@@ -94,6 +97,7 @@ gulp.task "build:css", ->
 		.pipe(prefix())
 		.pipe(csso())
 		.pipe(gulp.dest(files.stylus.dest))
+		#.pipe(gulp.dest(files.stylus.destwp))
 	return
 
 gulp.task "build:js", ->
@@ -103,9 +107,10 @@ gulp.task "build:js", ->
 		.pipe(coffee(bare: true))
 		.pipe(notify("Compiled: <%= file.relative %>"))
 		.pipe(addsrc.prepend(files.coffee.plugins))
-		.pipe(concat(files.coffee.endname))
+		.pipe(concat("main.js"))
 		.pipe(uglify())
 		.pipe(gulp.dest(files.coffee.dest))
+		#.pipe(gulp.dest(files.stylus.destwp))
 	return
 
 gulp.task "build:images", ->
@@ -115,6 +120,7 @@ gulp.task "build:images", ->
 		.pipe(plumber(errorHandler: notify.onError("<%= error.message %>")))
 		.pipe(notify("Compiled: <%= file.relative %>"))
 		.pipe(gulp.dest(files.images.dest))
+		#.pipe(gulp.dest(files.images.destwp))
 	return
 
 
