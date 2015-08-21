@@ -16,9 +16,9 @@ form
 		padding 10px
 		vertical-align top
 		background white
-		radius 0
 		box-sizing border-box
 		appearance none
+		radius 0
 		&:focus
 			border-color color
 
@@ -33,7 +33,9 @@ form
 		vertical-align -5px
 		position relative
 		overflow hidden
-		background url(../img/icon-checked.png) center -20px no-repeat white
+		background-image url(../img/icon-checked.png)
+		background-position center -20px
+		background-repeat no-repeat
 		&:checked
 			background-color color
 			border-color color
@@ -43,7 +45,9 @@ form
 		radius 15px
 
 	select
-		background url(../img/icon-select.png) right center no-repeat white
+		background-image url(../img/icon-select.png)
+		background-position right center
+		background-repeat no-repeat
 		padding-right 40px
 		position relative
 
