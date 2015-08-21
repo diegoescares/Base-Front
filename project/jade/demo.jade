@@ -216,7 +216,7 @@ block page
 										tr
 											+loop(8)
 												td: +lorem(2)
-		
+
 						.sep
 						nav.pagination
 							ul
@@ -230,13 +230,15 @@ block page
 								li: a(href="#"): span.fa.fa-angle-right
 								li: a(href="#"): span.fa.fa-angle-double-right
 
+
+
 			section.section-white
 				.limit
 					.inner.inner-2
 						.content
 
 							h2 Tooltips
-							
+
 							h4 Jade:
 							pre.
 								a(href="#",data-tooltip="Lorem ipsum") Lorem
@@ -251,10 +253,6 @@ block page
 							|  perspiciatis veritatis et excepturi dignissimos maxime, mollitia deserunt reprehenderit, quae ipsa itaque corporis laboriosam a facere.
 
 
-
-
-
-
 			section.section-lighter
 				.limit
 					.inner.inner-2
@@ -265,7 +263,7 @@ block page
 							form.controls.controls-center.validate(method='POST', action='')
 								+control("text","name","Nombre")
 								+control("email","email","Email")
-								+control("text","rut","RUT")									
+								+control("text","rut","RUT")
 								+control("text","dob","Fecha de nacimiento")
 								+control("text","phone","Teléfono")
 								+control("select","region","Región")
@@ -292,11 +290,6 @@ block page
 
 							h4 Demo:
 							a.button.loading-test(href="#") Abrir loader
-
-
-
-
-
 
 			section.section-lighter
 				.limit

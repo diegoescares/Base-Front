@@ -1,7 +1,6 @@
-<?php $URL = 'http://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']) ?>
 
-- SITE_URL          = "<?= $URL ?>"
-- TEMPLATE_URL      = "<?= $URL ?>"
+- SITE_URL          = ""
+- TEMPLATE_URL      = ""
 
 - BRAND             = "Base Front"
 
@@ -15,9 +14,9 @@
 - COMPONENT_GMAPS   = false
 
 - PAGES             = {}
-- PAGES.home        = TEMPLATE_URL
-- PAGES.single      = TEMPLATE_URL+"/single.php"
-- PAGES.demo        = TEMPLATE_URL+"/demo.php"
+- PAGES.home        = TEMPLATE_URL+""
+- PAGES.single      = TEMPLATE_URL+"single.html"
+- PAGES.demo        = TEMPLATE_URL+"demo.html"
 
 block vars
 
@@ -57,10 +56,10 @@ head
 	meta(name='twitter:image:src', content=SHARE_IMAGE)
 	
 	// Style
-	link(href=TEMPLATE_URL+'/css/main.css', rel='stylesheet', type='text/css')
+	link(href='css/main.css', rel='stylesheet', type='text/css')
 	link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700', rel='stylesheet', type='text/css')
 	link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet', type='text/css')
-	link(href=TEMPLATE_URL+'/img/favicon.png', rel='shortcut icon')
+	link(href='img/favicon.ico', rel='shortcut icon')
 	
 	// Scripts
 	if COMPONENT_GMAPS
@@ -68,7 +67,7 @@ head
 	if COMPONENT_FBSDK
 		script(src="//connect.facebook.net/en_US/sdk.js")
 	script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-	script(src=TEMPLATE_URL+'/js/main.js')
+	script(src='js/main.js')
 
 
 	//[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]

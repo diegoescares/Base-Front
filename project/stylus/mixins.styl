@@ -57,8 +57,7 @@ centre(width,height=width)
 animation-stagger(iterations,delay,add=0)
 	for iteration in (1..iterations)
 		&:nth-child({iteration})
-			if !child
-				animation-delay delay*iteration+add
+			animation-delay delay*iteration+add
 
 proportion(w,h)
 	padding-bottom ( (h / w) * 100 ) %

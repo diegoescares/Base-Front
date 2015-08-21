@@ -1,5 +1,6 @@
 
-app.actions = ->
+app.actions =
+	init: ->
 
 		# Isotope
 		if $(".isotope").length
@@ -28,14 +29,14 @@ app.actions = ->
 app.loadingContent = ->
 
 	# On load articles
-	$("article:not(article-loaded)").each ->
+	$("article:not(.article-loaded)").each ->
 		article = $(this)
 		article.imagesLoaded ->
 			article.addClass("article-loaded")
 			app.relayout()
 
 	# On load backgrounds
-	$(".bg").each ->
+	$(".bg:not(.bg-loaded)").each ->
 		bg = $(this)
 		imgsrc = bg.find("img").attr("src")
 		if imgsrc
@@ -45,7 +46,7 @@ app.loadingContent = ->
 			bg.addClass("bg-loaded")
 
 	# On load images
-	$("img:not(img-loaded)").each ->
+	$("img:not(.img-loaded)").each ->
 		img = $(this)
 		img.imagesLoaded ->
 			img.addClass("img-loaded")
