@@ -10,12 +10,12 @@ app.scroll =
 
 			scroll_prev = 0
 
-			app.scroll.navscroll.init $(".article-itinerary")
+			#app.scroll.navscroll.init $("section")
 
 			$(window).scroll ->
 				scroll = $(window).scrollTop()
 				app.scroll.dscroll(scroll)
-				app.scroll.navscroll.comprobe $(".article-itinerary"), scroll
+				#app.scroll.navscroll.comprobe $("section"), scroll
 
 
 				# Esconder header
@@ -41,8 +41,6 @@ app.scroll =
 
 	dscroll: (scroll) ->
 
-		height_window = $(window).height()
-
 		# Mostrar en scroll
 
 		if $(".dscroll").length
@@ -51,7 +49,7 @@ app.scroll =
 			$(".dscroll:visible:not(.dscroll-in)").each ->
 				element = $(this)
 				element_top = element.offset().top
-				if scroll + height_window > element_top + 100
+				if scroll + $(window).height() > element_top + 100
 					element.addClass "dscroll-in"
 
 					if element_top == element_top_prev
