@@ -145,3 +145,15 @@ triangle(val1,val2,val3)
 			top 50%
 			margin-top width*-1
 
+
+grad-shadow()
+	&:after
+		content ""
+		position absolute
+		width 100%
+		top 100%
+		left 0
+		height 10px
+		box-shadow 0 0 arguments
+
+
