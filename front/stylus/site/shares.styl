@@ -2,6 +2,8 @@
 
 .share
 	color white
+	display inline-block
+	padding 10px 15px
 	&:before
 		font-family "FontAwesome"
 
@@ -39,3 +41,10 @@
 			content "\f0d5"
 		&:hover
 			background-color lighten(color_googleplus,10%)
+
+	&.share-whatsapp
+		background-color color_whatsapp
+		&:before
+			content "\f232"
+		&:hover
+			background-color lighten(color_whatsapp,10%)
