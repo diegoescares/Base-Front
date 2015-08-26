@@ -19,11 +19,11 @@ app.shares =
 
 			if share.is(".share-twitter")
 				if app.isMobile()
-					share.addClass(".share-nativeapp").attr "href", "twitter://post?message="+share_text+"&url="+share_url
+					share.addClass("share-nativeapp").attr "href", "twitter://post?message="+share_text+"&url="+share_url
 
 			if share.is(".share-whatsapp")
 				if app.isMobile()
-					share.addClass(".share-nativeapp").attr "href", "whatsapp://send?text="+share_text+encodeURIComponent(" ")+share_url
+					share.addClass("share-nativeapp").attr "href", "whatsapp://send?text="+share_text+encodeURIComponent(" ")+share_url
 				else
 					$(".share-whatsapp").remove()
 
