@@ -110,7 +110,7 @@ gulp.task "build:js", ->
 		.pipe(concat("main.js"))
 		.pipe(uglify())
 		.pipe(gulp.dest(files.coffee.dest))
-		#.pipe(gulp.dest(files.stylus.destwp))
+		#.pipe(gulp.dest(files.coffee.destwp))
 	return
 
 gulp.task "build:images", ->
