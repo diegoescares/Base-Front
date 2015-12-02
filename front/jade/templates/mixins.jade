@@ -39,13 +39,13 @@ mixin img(width_or_name,height,imgclass)
 		- url = "http://lorempixel.com/"+width+"/"+height+"/technics/"+num
 
 	if name
-		- url = TEMPLATE_URL+"/img/"+name
+		- url = "img/"+name
 
 	img( src = url, alt=BRAND, class = imgclass )
 
 
 mixin uploads(name, imgclass)
-	- url = TEMPLATE_URL+"/uploads/"+name
+	- url = "uploads/"+name
 	img( src = url, alt=BRAND, class = imgclass )
 
 
