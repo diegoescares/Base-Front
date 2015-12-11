@@ -5,39 +5,7 @@ app.slider =
 		$(".slider").each ->
 
 			slider = $(this)
-			slider_generate = slider.find(".slider-slides-generate")
 			slides_total = slider.find(".slide").length
-
-			# Generate auto slides div
-
-			if slider_generate.length
-
-				slide_items  = parseInt slider_generate.attr("data-items")
-				slide_items_selector  = slider_generate.attr("data-selector")
-
-				slide_html = "<div class='slide'></div>"
-				slide_item_in = ".slide"
-
-				if slide_items_selector = ".col"
-					slide_html = "<div class='slide'><div class='cols'></div></div>" 
-					slide_item_in = ".slide>.cols"
-					slide_items_selector = ">.cols>.col"
-
-				slide_items_total = slider_generate.find(slide_items_selector).length
-				slides_total = Math.ceil slide_items_total / slide_items
-
-
-				n_item = 1
-				for for_n_slide in [1 .. slides_total]
-
-					slider.find(".slider-slides").append slide_html
-
-					for for_n_item in [1 .. slide_items ]
-
-						slider_generate.find(slide_items_selector).eq(n_item-1).clone().appendTo( slider.find(slide_item_in).eq(for_n_slide-1) )
-
-						n_item++
-						break if n_item > slide_items_total
 
 
 			# Generate slider elements

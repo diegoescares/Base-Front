@@ -342,8 +342,8 @@ article.article-loaded.dscroll {
 }
 .dscroll.dscroll-in,
 article.article-loaded.dscroll.dscroll-in {
-  -webkit-animation: fadeIn 1s ease backwards;
-          animation: fadeIn 1s ease backwards;
+  -webkit-animation: slideFadeUp 1s ease backwards;
+          animation: slideFadeUp 1s ease backwards;
   opacity: 1;
 }
 @media all and (max-width: 1199px) {
@@ -1187,15 +1187,15 @@ article.article-loaded.dscroll.dscroll-in {
 }
 @-webkit-keyframes slideFadeUp {
   0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
     opacity: 0;
   }
 }
 @keyframes slideFadeUp {
   0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
     opacity: 0;
   }
 }
@@ -1225,15 +1225,15 @@ article.article-loaded.dscroll.dscroll-in {
 }
 @-webkit-keyframes slideFadeDown {
   0% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
     opacity: 0;
   }
 }
 @keyframes slideFadeDown {
   0% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
     opacity: 0;
   }
 }
@@ -2627,18 +2627,14 @@ article.article-bg .article-title a {
   -webkit-animation: fadeIn 0.5s 0.2s ease backwards;
           animation: fadeIn 0.5s 0.2s ease backwards;
 }
+.box {
+  position: relative;
+}
 .box.box-white {
   background-color: #fff;
 }
-.box.box-light {
-  background-color: #ddd;
-}
 .box.box-lighter {
   background-color: #eee;
-}
-.box.box-gray {
-  background-color: #999;
-  color: #fff;
 }
 .box.box-dark {
   background-color: #333;
@@ -2650,9 +2646,11 @@ article.article-bg .article-title a {
 }
 .box.box-color {
   background-color: #7843c7;
+  color: #fff;
 }
 .box.box-color-2 {
   background-color: #0ca;
+  color: #fff;
 }
 section {
   position: relative;
@@ -2660,15 +2658,8 @@ section {
 section.section-white {
   background-color: #fff;
 }
-section.section-light {
-  background-color: #ddd;
-}
 section.section-lighter {
   background-color: #eee;
-}
-section.section-gray {
-  background-color: #999;
-  color: #fff;
 }
 section.section-dark {
   background-color: #333;
