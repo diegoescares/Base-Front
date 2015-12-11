@@ -1,0 +1,64 @@
+
+// Bootstrap grid modificado
+// - Soporte para gutter bottom.
+// - Clases para gutter x0 y gutter x2.
+// - Funciona para .cols que están dentro de un padre con padding (la mayoría de los casos).
+// - En caso contrario, usar .cols-original (minoría de casos).
+
+
+// Cols container styles
+.cols
+	make-row()
+	&>div
+		margin-bottom $grid-gutter-width
+	&:last-child
+		margin-bottom ($grid-gutter-width*-1)
+	
+	&.cols-gutterx0
+		make-row(0)
+		&>div
+			padding-left 0
+			padding-right 0
+			margin-bottom 0
+		&:last-child
+			margin-bottom 0
+
+	@media (min-width $screen-md-min)
+		&.cols-gutterx2
+			make-row($grid-gutter-width*2)
+			&>div
+				padding-left $grid-gutter-width
+				padding-right $grid-gutter-width
+				margin-bottom ($grid-gutter-width*2)
+			&:last-child
+				margin-bottom ($grid-gutter-width*-2)
+
+// Cols container tradicional de Bootstrap
+.row
+	make-row()
+		
+
+// Columns styles
+make-grid-columns()
+
+// Extra small grid
+make-grid(xs)
+
+// Small grid
+@media (min-width $screen-sm-min)
+	make-grid(sm)
+
+// Medium grid
+@media (min-width $screen-md-min)
+	make-grid(md)
+
+// Large grid
+@media (min-width $screen-lg-min)
+	make-grid(lg)
+
+
+
+
+
+
+

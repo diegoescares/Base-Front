@@ -10,7 +10,6 @@ app.previewfile =
 			to = $(this).attr("data-to")
 
 			while f = files[i]
-				#console.log f
 				continue unless f.type.match("image.*")
 				reader = new FileReader()
 				reader.onload = ((theFile) ->

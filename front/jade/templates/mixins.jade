@@ -35,8 +35,7 @@ mixin img(width_or_name,height,imgclass)
 		- name = width_or_name
 
 	if width
-		- num = Math.floor((Math.random()*6)+1)
-		- url = "http://lorempixel.com/"+width+"/"+height+"/technics/"+num
+		- url = "http://placeimg.com/"+width+"/"+height+"/any?v="+Math.floor(Math.random()*100)
 
 	if name
 		- url = "img/"+name

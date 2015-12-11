@@ -3,33 +3,36 @@
 	animation fadeIn .5s .2s ease backwards
 
 
-.white
-	background-color white
-	
-.light
-	background-color light
-	
-.lighter
-	background-color lighter
-	
-.gray
-	background-color gray
-	color white
-	
-.dark
-	background-color dark
-	color white
-	
-.black
-	background-color black
-	color white
-	
-.color
-	background-color color
+// mixin para colores de fondo
 
-if color_2
-	.color-2
-		background-color color_2
+.box
+	&.box-white
+		background-color white
+		
+	&.box-light
+		background-color light
+		
+	&.box-lighter
+		background-color lighter
+		
+	&.box-gray
+		background-color gray
+		color white
+		
+	&.box-dark
+		background-color dark
+		color white
+		
+	&.box-black
+		background-color black
+		color white
+		
+	&.box-color
+		background-color color
+
+	if color_2
+		&.box-color-2
+			background-color color_2
 
 
 // Sections colors background

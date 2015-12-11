@@ -2,8 +2,9 @@
   "name": "Base-Front",
   "version": "0.0.1",
   "description": "Base front para empezar desarrollos",
-  "main": "gulpfile.js",
+  "main": "gulpfile.coffee",
   "devDependencies": {
+    "bower": "^1.7.0",
     "browser-sync": "^1.3.6",
     "coffee-script": "^1.9.3",
     "gulp": "^3.8.7",

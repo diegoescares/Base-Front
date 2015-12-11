@@ -26,6 +26,7 @@ app.actions =
 
 
 
+
 app.loadingContent = ->
 
 	# On load articles

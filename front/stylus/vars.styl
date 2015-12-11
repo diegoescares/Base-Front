@@ -49,12 +49,12 @@ rad_2               = 2px
 tn                  = .2s ease
 
 // Responsive break points
-break               = 240
-break1              = "all and (max-width:" + ( (break*2) - 1 ) + "px)"
-break2              = "all and (max-width:" + ( (break*3) - 1 ) + "px)"
-break3              = "all and (max-width:" + ( (break*4) - 1 ) + "px)"
-break4              = "all and (max-width:" + ( (break*5) - 1 ) + "px)"
-break5              = "all and (min-width:" + ( (break*6) ) + "px)"
+break               = 240px
+break1              = "all and (max-width:" + ( (break*2) - 1 ) + ")"
+break2              = "all and (max-width:" + ( (break*3) - 1 ) + ")"
+break3              = "all and (max-width:" + ( (break*4) - 1 ) + ")"
+break4              = "all and (max-width:" + ( (break*5) - 1 ) + ")"
+break5              = "all and (min-width:" + ( (break*6) ) + ")"
 break_limit         = "all and (max-width:" + limit + ")"
 
 
@@ -113,4 +113,23 @@ back-in-out         = cubic-bezier(0.68, -0.55, 0.265, 1.55)
 
 // Default cubic bezier
 cb                  = quart-in-out
+
+
+
+// Bootstrap grid vars
+
+$screen-sm          = break * 2
+$screen-md          = break * 3
+$screen-lg          = break * 4
+
+$grid-gutter-width       = 20px
+
+$bootstrap-styl-path = "../../bower_components/bootstrap-stylus/bootstrap/"
+
+
+
+
+
+
+
 

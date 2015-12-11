@@ -4,14 +4,11 @@ article
 	position relative
 	overflow hidden
 	background white
-	margin-bottom sep
+	color dark
+	opacity 0
+	margin-bottom 1px
 	&:last-child
 		margin-bottom 0
-	if sep_half_break1
-		@media break1
-			margin-bottom (sep/2)
-
-	opacity 0
 	&.article-loaded
 		opacity 1
 		animation fadeIn .5s ease backwards
@@ -88,6 +85,7 @@ article
 		height 500px
 		color white
 		background dark
+		//margin 0
 		.article-image
 			grad-shadow 200px 100px black
 		.article-title

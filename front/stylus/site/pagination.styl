@@ -4,15 +4,22 @@
 	ul
 		li
 			display inline-block
-			a
-				padding 10px 15px
-				color gray
-				background-color white
-				display block
-				&:hover
-					color color
-			&.active
-				a
-					background-color color
-					color white
+	a
+		padding 10px 15px
+		color gray
+		background-color white
+		display block
+		&:hover
+			color color
+
+		&.active,
+		&.current
+			background-color color
+			color white
+
+	li.active,
+	li.current 
+		a
+			background-color color
+			color white
 

@@ -3,19 +3,48 @@ extends ./templates/default.jade
 
 block page
 
-	.limit.inner.inner-2
+	section
+		.limit.inner.inner-2
+			.cols
 
-		.cols
-			.row
-				+col(66)
+				.col-sm-8
 					+articleBg()
-				+col(33)
+				.col-sm-4
 					+article()
-			.row
-				+col(33)
+
+			.cols
+				.col-sm-4
 					+article()
-				+col(33)
+				.col-sm-4
 					+article()
-				+col(33)
+				.col-sm-4
 					+loop(3)
 						+articleMin()
+
+	section.section-dark
+		.limit.inner.inner-2
+			.cols.cols-gutterx2
+				.col-sm-8
+					+articleBg()
+				.col-sm-4
+					+article()
+
+			.cols.cols-gutterx2
+				.col-sm-4
+					+article()
+				.col-sm-4
+					+article()
+				.col-sm-4
+					+loop(3)
+						+articleMin()
+
+	section.section-color
+		.limit.inner.inner-2
+
+			.cols.cols-gutterx0
+				.col-sm-4
+					+articleBg()
+				.col-sm-4
+					+articleBg()
+				.col-sm-4
+					+articleBg()
