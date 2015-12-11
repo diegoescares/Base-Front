@@ -5,33 +5,50 @@ block page
 
 	.page
 
-		.page-header.lighter
-			.limit.limit-2.inner.inner-4
-				h1 Lorem ipsum dolor sit amet
+		.page-header
+			.page-header-bg.bg
+				+img(1000,400)
+			.limit.inner.inner-4
+				h1.page-header-title Lorem ipsum dolor sit amet
 
-		.page-body.white
-			.limit.limit-2.inner.inner-2
-				.content
+		.page-body
+			.limit.inner.inner-2
 
-					p: +lorem(40)
-					p: +lorem(40)
-					p: +img(1000,600)
-					p Ratione, <strong>obcaecati quia eligendi</strong> voluptatem perferendis amet suscipit ullam enim voluptatibus voluptas praesentium pariatur qui porro libero ipsum consectetur sapiente culpa aperiam omnis animi iusto magnam laboriosam. Ea consequuntur, alias.
-					p Excepturi inventore maiores, non repellendus quidem <a href="#">necessitatibus soluta</a> doloribus, dolorum velit explicabo a nobis, fugit natus molestiae placeat minus suscipit itaque commodi ex sit, aspernatur laudantium deserunt porro. Voluptate, ea.
+				.cols.cols-gutterx2
+					.col-md-8
 
-					h2: +lorem(6)
-					blockquote
-						p: +lorem(40)
-					p: +lorem(40)
-					p: +lorem(40)
+						.single
 
-					h3: +lorem(6)
-					p: +lorem(40)
-					
-					h4: +lorem(6)
-					p: +lorem(40)
+							.single-content.content
 
-				.sep
-				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-facebook
-				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-twitter
-				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-whatsapp
+								p: +lorem(40)
+								p: +lorem(40)
+								p: +img(800,600)
+								p Ratione, <strong>obcaecati quia eligendi</strong> voluptatem perferendis amet suscipit ullam enim voluptatibus voluptas praesentium pariatur qui porro libero ipsum consectetur sapiente culpa aperiam omnis animi iusto magnam laboriosam. Ea consequuntur, alias.
+								p Excepturi inventore maiores, non repellendus quidem <a href="#">necessitatibus soluta</a> doloribus, dolorum velit explicabo a nobis, fugit natus molestiae placeat minus suscipit itaque commodi ex sit, aspernatur laudantium deserunt porro. Voluptate, ea.
+
+								h2: +lorem(6)
+								blockquote
+									p: +lorem(40)
+								p: +lorem(40)
+								p: +lorem(40)
+
+								h3: +lorem(6)
+								p: +lorem(40)
+								
+								h4: +lorem(6)
+								p: +lorem(40)
+
+							.single-shares.shares
+								a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-facebook
+								a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-twitter
+								a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-linkedin
+								a(href="http://loremipsum.com",data-text="Lorem ipsum",data-img="http://placeimg.com/400/600/any").share.share-pinterest
+								a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-googleplus
+								a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-whatsapp
+
+					.col-md-4
+						aside
+							+article()
+							+article()
+							+article()

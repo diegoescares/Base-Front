@@ -8,10 +8,9 @@ block page
 
 	.page
 
-		.page-header.lighter
-			.limit
-				.inner.inner-4
-					h1 Base Front Demo
+		.page-header
+			.limit.inner.inner-4
+				h1.page-header-title Base Front Demo
 
 		.page-body
 
@@ -21,41 +20,7 @@ block page
 						.content
 				
 							h2 Layout
-							.cols
-								+col(33,"to100","right")
-									.inner.lighter .col.col-33
-								+col(66)
-									.inner.lighter .col.col-66
-								+col(50,"nobreak")
-									.inner.lighter .col.col-50.col-nobreak
-								+col(50,"nobreak")
-									.inner.lighter .col.col-50.col-nobreak
-								+col(25)
-									.inner.lighter .col.col-25
-								+col(25)
-									.inner.lighter .col.col-25
-								+col(25)
-									.inner.lighter .col.col-25
-								+col(25)
-									.inner.lighter .col.col-25
-								+col(20)
-									.inner.lighter .col.col-20
-								+col(20)
-									.inner.lighter .col.col-20
-								+col(20)
-									.inner.lighter .col.col-20
-								+col(20,"nobreak1")
-									.inner.lighter .col.col-20.col-nobreak1
-								+col(20,"nobreak1")
-									.inner.lighter .col.col-20.col-nobreak1
-								
-							.sep
-							h2 Columnas activas bajo break point 3
-							.cols
-								+col("60-break3")
-									.inner.lighter .col.col-60-break3
-								+col("40-break3")
-									.inner.lighter .col.col-40-break3
+							p.message Columnas ahora pasan a bootstrap.
 
 			section.section-white
 				.limit
@@ -103,11 +68,11 @@ block page
 							+demoButtons("button-color-2")
 
 							h4 White:
-							.inner.dark
+							.box.box-dark.inner
 								+demoButtons("button-white")
 
 							h4 Line:
-							.inner.dark
+							.box.box-dark.inner
 								+demoButtons("button-line-white")
 
 
@@ -307,20 +272,20 @@ block page
 							h4 Demos:
 
 							.cols
-								.col.col-25
-									.prop.white
+								.col-md-3
+									.box.box-white.prop
 										.cover: .inner Prop 1:1
 
-								.col.col-25
-									.prop.prop-2-1.white
+								.col-md-3
+									.box.box-white.prop.prop-2-1
 										.cover: .inner Prop 2:1
 
-								.col.col-25
-									.prop.prop-4-3.white
+								.col-md-3
+									.box.box-white.prop.prop-4-3
 										.cover: .inner Prop 4:3
 
-								.col.col-25
-									.prop.prop-16-9.white
+								.col-md-3
+									.box.box-white.prop.prop-16-9
 										.cover: .inner Prop 16:9
 
 
@@ -340,8 +305,10 @@ block page
 
 							h4 Demos:
 							
-							+cols(4,25)
-								article.prop.gray.dscroll
+							.cols
+								+loop(4)
+									.col-md-3
+										article.box.box-light.prop.dscroll
 
 			section.section-lighter
 				.limit
@@ -363,49 +330,25 @@ block page
 										.slide
 											.prop.prop-2-1
 												| Contenido
-							pre.
 
-								.slider.slider-content.slider-directional
-									.slider-slides
-									.slider-slides-generate(data-items="4",data-selector=".col")
-										.cols
-											.col.col-25
-												| Contenido
-											.col.col-25
-												| Contenido
-											.col.col-25
-												| Contenido
-											.col.col-25
-												| Contenido
-											.col.col-25
-												| Contenido
-											.col.col-25
-												| Contenido
 
 							h4 Demos:
 
-
+						.sep
 						.slider
 							.slider-slides
 								.slide
-									.prop.prop-2-1.gray
+									.box.box-gray.prop.prop-2-1
 										.cover: .va.center 1
 								.slide
-									.prop.prop-2-1.color
+									.box.box-color.prop.prop-2-1
 										.cover: .va.center 2
 								.slide
-									.prop.prop-2-1.color-2
+									.box.box-color-2.prop.prop-2-1
 										.cover: .va.center 3
 
 						.sep.sep-2
 
-						.slider.slider-content.slider-directional
-							.slider-slides
-							.slider-slides-generate(data-items="4",data-selector=".col")
-								- count = 1
-								+cols(10,25)
-									.prop.gray: .cover: .va.center=count
-									- count++
 
 			section.section-white
 				.limit

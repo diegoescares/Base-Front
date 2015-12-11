@@ -13,11 +13,12 @@ mixin article()
 			h3.article-title: a(href="single.html"): +lorem(5)
 			p.article-description: +lorem(10)
 			//.article-shares
-				a.share.share-facebook(href="#")
-				a.share.share-twitter(href="#")
-				a.share.share-instagram(href="#")
-				a.share.share-googleplus(href="#")
-				a.share.share-linkedin(href="#")
+				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-facebook
+				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-twitter
+				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-linkedin
+				a(href="http://loremipsum.com",data-text="Lorem ipsum",data-img="http://placeimg.com/400/600/any").share.share-pinterest
+				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-googleplus
+				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-whatsapp
 			a(href="single.html").button.button-cover Leer más
 
 

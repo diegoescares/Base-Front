@@ -73,6 +73,7 @@
 				line-height 28px
 			.fa
 				font-size 30px
+				vertical-align middle
 				@media break2
 					font-size 20px
 				
@@ -91,17 +92,6 @@
 				opacity 1
 
 
-	.slider-prop.prop
-		img
-			@media break2
-				width 150%
-			@media break1
-				width 200%
-
-
-
-
-
 	&.slider-directional
 		&.slider-dir-left
 			.slide
@@ -117,141 +107,5 @@
 					animation slideLeftOut .5s ease both
 
 
-
-
-	&.slider-content
-
-		.slider-slides-generate
-			@media break3
-				display block
-
-		.slider-slides
-			margin 0 70px
-			@media break3
-				display none
-				margin 0
-
-		.slide
-			@media break3
-				padding 0
-				display block
-				opacity 1
-				margin-bottom 20px
-
-		.slider-navigation
-			.slider-nav
-				color dark
-				&.slider-nav-left
-					left 3px
-				&.slider-nav-right
-					right 3px
-
-		.slider-bullets
-			display none
-			
-		
-
-	&.slider-images
-		max-height 700px
-		color white
-		background light
-		
-		.slider-slides
-			cover absolute
-
-		.slide
-			cover absolute
-			&.slide-loaded				
-				.slide-image
-					animation scaleIn 10s ease-out backwards
-				.slide-title
-					animation scaleFadeIn 2s 1s ease backwards
-				.slide-buttons
-					.button
-						animation fadeIn 1s 2.5s ease backwards
-						&:last-child
-							animation-delay 2.8s
-
-		.slide-image
-			img
-				width 100%
-				opacity 1
-				&.img-loaded
-					animation none
-				@media break2
-					width 150%
-					margin-left -25%
-				@media break1
-					width 200%
-					margin-left -50%
-
-		.slide-content
-			cover absolute
-			text-align center
-			
-			.slide-block			
-				position relative
-
-			.slide-title
-				title h1
-				font-weight 400
-				text-shadow shadow
-				padding 0 80px
-				margin 0 auto 20px
-				@media break3
-					padding 0
-				@media break1
-					font-size title_h3
-					line-height title_h3
-				br
-					@media break2
-						display none
-			.slide-buttons
-				@media break3
-					margin-bottom 30px
-				.button
-					margin 0 5px 5px
-
-
-		.slider-navigation
-			.slider-nav
-				border-color white
-				opacity 1
-	
-
-	.slide-video
-		cover absolute
-		z-index 5
-		display none
-	
-		.slide-video-close
-			position absolute
-			top 20px
-			right 20px
-			circle 50px
-			line-height 48px
-			border 1px solid white
-			z-index 3
-			transition tn
-			&:hover
-				cursor pointer
-			@media break2
-				circle 30px
-				line-height 28px
-			.fa
-				font-size 20px
-
-		iframe
-		video
-			display block
-			position absolute
-			left 0%
-			top -10%
-			height 120%
-			width 100%
-			animation fadeIn .5s .5s ease backwards
-
-		&.youtube-playing
-			display block
 
 
