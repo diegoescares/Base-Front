@@ -22,39 +22,20 @@ app.forms =
 					$(this).closest("label").removeClass("label-checked")
 
 
+
 		# Date format
+
+
+		$("input[type='date']").attr("type","text").addClass("input-date")
 		 
-		$("[name='date'],[name='dob']").attr("maxlength",10).attr("placeholder","dd-mm-aaaa").keyup ->
+		$(".input-date").attr("maxlength",10).attr("placeholder","dd-mm-aaaa").keyup (e) ->
+			if e.which != 8 && e.which != 189
+				app.formatDate $(this)
 
-			val =  $(this).val()
+		$(".input-date").change ->
+			app.formatDate $(this), true
 
-			val_clean = val.replace(/\D/g,"")
 
-			val_1 = val_clean.substr(0,2) if val_clean.length > 0
-			val_2 = val_clean.substr(2,2) if val_clean.length > 2
-			val_3 = val_clean.substr(4,4) if val_clean.length > 4
-
-			d = new Date()
-			val_1 = 31 if parseInt(val_1) > 31 && val_1
-			val_2 = 12 if parseInt(val_2) > 12 && val_2
-			val_3 = d.getFullYear() if parseInt(val_3) > d.getFullYear()  && val_3
-
-			val_format = val_clean
-
-			if val_1
-				val_format = val_1
-				if val_format.length == 2
-					val_format += "-"
-
-			if val_2
-				val_format = val_1+"-"+val_2
-				if val_format.length == 5
-					val_format += "-"
-
-			if val_3
-				val_format = val_1+"-"+val_2+"-"+val_3
-
-			$(this).val val_format
 
 
 
