@@ -1,0 +1,19 @@
+{
+  "name": "Base-Front",
+  "version": "0.0.0",
+  "homepage": "https://github.com/diegoescares/Base-Front",
+  "authors": [
+    "Diego Escares <diegoescares@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-stylus": "~5.0.2"
+  }
+}
