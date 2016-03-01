@@ -3,6 +3,59 @@
 	animation fadeIn .5s .2s ease backwards
 
 
+// Dscroll
+.dscroll
+article.article-loaded.dscroll
+	@media $break-lg
+		opacity 0
+		animation none
+		&.dscroll-in
+			animation slideFadeUp 1s ease backwards
+			opacity 1
+
+
+// Background img
+.bg
+	cover absolute
+	background center center no-repeat
+	background-size cover
+	opacity 0
+	&.bg-loaded
+		animation fadeIn .5s ease
+		opacity 1
+	img
+		display none
+
+
+
+
+section
+	position relative
+	
+	&.section-white
+		background-color white
+		
+	&.section-lighter
+		background-color lighter
+				
+	&.section-dark
+		background-color dark
+		color white
+		
+	&.section-black
+		background-color black
+		color white
+		
+	&.section-color
+		background-color color
+
+	if color_2
+		&.section-color-2
+			background-color color_2
+
+
+
+
 .box
 	position relative
 
@@ -29,30 +82,6 @@
 			background-color color_2
 			color white
 
-
-section
-	position relative
-	
-	&.section-white
-		background-color white
-		
-	&.section-lighter
-		background-color lighter
-				
-	&.section-dark
-		background-color dark
-		color white
-		
-	&.section-black
-		background-color black
-		color white
-		
-	&.section-color
-		background-color color
-
-	if color_2
-		&.section-color-2
-			background-color color_2
 
 
 .message

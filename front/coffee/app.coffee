@@ -11,9 +11,6 @@ $(document).ready ->
 app.init = ->
 
 	# Menú
-	app.secretmenu.init()
-
-	# Menú
 	app.activelinks.init()
 
 	# Browsers classes

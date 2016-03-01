@@ -25,12 +25,12 @@ app.scroll =
 				height_body = $("body").height()
 				if scroll > 50 && scroll + height_window < height_body - 50
 					if scroll-scroll_prev > 0
-						$(".header-top-elements").addClass "hide"
+						$("header").addClass "hide"
 					else
-						$(".header-top-elements").removeClass "hide"
+						$("header").removeClass "hide"
 						scroll_init = 0
 				else
-					$(".header-top-elements").removeClass "hide"
+					$("header").removeClass "hide"
 				scroll_prev = scroll
 				###
 				

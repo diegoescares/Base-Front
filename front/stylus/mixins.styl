@@ -76,29 +76,29 @@ proportion(w,h)
 
 title(h)
 	if h == "h1"
-		font-size title_h1
-		line-height title_h1_lh
-		@media break3
-			font-size title_h2
-			line-height title_h2_lh
-		//@media break2
-		//	font-size title_h3
-		//	line-height title_h3_lh
-	if h == "h2"
-		font-size title_h2
-		line-height title_h2_lh
-		@media break3
-			font-size title_h3
-			line-height title_h3_lh
-		//@media break2
-		//	font-size title_h4
-		//	line-height title_h4_lh
-	if h == "h3"
 		font-size title_h3
 		line-height title_h3_lh
-		@media break3
-			font-size title_h4
-			line-height title_h4_lh
+		@media $break-sm
+			font-size title_h2
+			line-height title_h2_lh
+		@media $break-md
+			font-size title_h1
+			line-height title_h1_lh
+	if h == "h2"
+		font-size title_h4
+		line-height title_h4_lh
+		@media $break-sm
+			font-size title_h3
+			line-height title_h3_lh
+		@media $break-md
+			font-size title_h2
+			line-height title_h2_lh
+	if h == "h3"
+		font-size title_h4
+		line-height title_h4_lh
+		@media $break-sm
+			font-size title_h3
+			line-height title_h3_lh
 	if h == "h4"
 		font-size title_h4
 		line-height title_h4_lh
@@ -174,5 +174,13 @@ percentage($n)
 		0
 	else
 		unit($n * 100, "%")
+
+
+text-overflow()
+	text-overflow ellipsis
+	if arguments == "ellipsis"
+		white-space nowrap
+		overflow hidden
+
 
 

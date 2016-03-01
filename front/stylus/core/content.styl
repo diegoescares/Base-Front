@@ -49,17 +49,13 @@
 	img
 		// WP
 		&.alignright
-			float right
-			margin-left 20px
-			@media break2
-				float none
-				margin-left 0
+			@media $break-sm
+				float right
+				margin-left 20px
 		&.alignleft
-			float left
-			margin-right 20px
-			@media break2
-				float none
-				margin-left 0
+			@media $break-sm
+				float left
+				margin-right 20px
 		&.aligncenter
 			margin 0 auto
 			
@@ -72,8 +68,11 @@
 		width 100%
 		max-width 100%
 		display block
-		@media break1
-			height 200px
+		height 200px
+		@media $break-sm
+			height 300px
+		@media $break-md
+			height 400px
 
 	a
 		text-decoration none
