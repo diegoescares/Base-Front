@@ -64,8 +64,7 @@ app.forms =
 					send = false
 					top = diverror.offset().top - $(".header-top").height() - 50
 
-					$("html,body").animate
-						scrollTop: top
+					app.goto.to "html,body"
 
 					setTimeout ->
 						diverror.find("input,textarea,select").eq(0).focus()

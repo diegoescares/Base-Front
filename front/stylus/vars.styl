@@ -31,7 +31,6 @@ global_sep          = 20px
 
 // Layout
 sep                 = 20px
-sep_half_break1     = false
 limit               = 1240px
 limit_2             = 1000px
 limit_3             = 800px
@@ -48,27 +47,18 @@ rad                 = 5px
 rad_2               = 2px
 tn                  = .2s ease
 
-// Responsive break points
-break               = 240px
-break1              = "all and (max-width:" + ( (break*2) - 1 ) + ")"
-break2              = "all and (max-width:" + ( (break*3) - 1 ) + ")"
-break3              = "all and (max-width:" + ( (break*4) - 1 ) + ")"
-break4              = "all and (max-width:" + ( (break*5) - 1 ) + ")"
-break5              = "all and (min-width:" + ( (break*6) ) + ")"
-break_limit         = "all and (max-width:" + limit + ")"
-
 
 // Proportional titles 
 
-title_base          = 18px
+title_base          = 20px
 title_aument        = 10px
 title_lineheight    = 1
 
-title_h1            = title_base + (title_aument*3.5)
+title_h1            = title_base + (title_aument*4)
 title_h2            = title_base + (title_aument*2)
 title_h3            = title_base + (title_aument*1)
 title_h4            = title_base + (title_aument*0)
-title_h5            = title_base - (title_aument*.5)
+title_h5            = title_base - ceil(title_aument*.5)
 
 title_h1_lh         = ceil( title_h1 * title_lineheight )
 title_h2_lh         = ceil( title_h2 * title_lineheight )
@@ -81,18 +71,18 @@ title_h5_lh         = ceil( title_h5 * title_lineheight )
 cb                  = cubic-bezier(0.77, 0, 0.175, 1)
 
 
-
 // Bootstrap grid vars
 
-$break              = break
+$break              = 240px
 
-$screen-sm          = break * 2
-$screen-md          = break * 3
-$screen-lg          = break * 4
+$screen-sm          = $break * 2
+$screen-md          = $break * 3
+$screen-lg          = $break * 4
 
 $break-sm           = "(min-width $screen-sm-min)"
 $break-md           = "(min-width $screen-md-min)"
 $break-lg           = "(min-width $screen-lg-min)"
+$break-limit        = "(min-width " + limit + ")"
 
 $grid-gutter-width  = 20px
 

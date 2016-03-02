@@ -95,71 +95,13 @@ table
 	border-collapse collapse
 	line-height global_lh
 	text-align left
-	background white
 	td
 	th
 		border border
-		padding 15px 20px
-		@media break2
-			padding 10px
-	th
-		background-color dark
-		border-color dark
-		color white
+		padding 5px 10px
+		@media $break-md
+			padding 10px 15px
 
-
-// Particular classes
-
-.clear
-	clear both
-
-.center
-	text-align center
-
-.left
-	text-align left
-
-.right
-	text-align right
-
-.float-left
-	float left
-
-.float-right
-	float right
-
-.none
-	display none
-
-.nowrap
-	white-space nowrap
-
-.sep
-	height sep
-	if sep_half_break1
-		@media break1
-			height (sep/2)
-	&.sep-2
-		height sep*2
-		@media break2
-			height sep
-		if sep_half_break1
-			@media break1
-				height (sep/2)
-	&.sep-3
-		height sep*3
-		@media break2
-			height sep*2
-		@media break1
-			height sep
-	&.sep-4
-		height sep*4
-		@media break3
-			height sep*3
-		@media break2
-			height sep*2
-		@media break1
-			height sep
 
 
 // Base layout
@@ -175,99 +117,21 @@ table
 
 .inner
 	padding sep
-	if sep_half_break1
-		@media break1
-			padding (sep/2)
 	&.inner-half
-		padding (sep/2)
+		padding sep (sep/2)
 	&.inner-2
-		padding sep*2 sep
-		@media break2
-			padding sep
-		if sep_half_break1
-			@media break1
-				padding (sep/2)
 	&.inner-3
-		padding sep*3 sep
-		@media break3
-			padding sep*2 sep
-		@media break2
-			padding sep
-		if sep_half_break1
-			@media break1
-				padding (sep/2)
 	&.inner-4
-		padding sep*4 sep
-		@media break3
-			padding sep*3 sep
-		@media break2
+		@media $break-md
 			padding sep*2 sep
-		if sep_half_break1
-			@media break1
-				padding sep*2 (sep/2)
+	&.inner-3
+		@media $break-lg
+			padding sep*3 sep
+	&.inner-4
+		@media $break-lg
+			padding sep*4 sep
 
 
-// Vertical align
-.va
-	position relative
-
-
-// Proportional element
-.prop
-	display block
-	proportion 1,1
-	position relative
-	&.prop-2-1
-		proportion 2,1
-	&.prop-4-3
-		proportion 4,3
-	&.prop-16-9
-		proportion 16,9
-
-
-// Cover
-.cover
-	cover absolute
-	display block
-
-
-// Dscroll
-.dscroll
-article.article-loaded.dscroll
-	opacity 0
-	animation none
-	&.dscroll-in
-		animation slideFadeUp 1s ease backwards
-		opacity 1
-	@media break4
-		opacity 1
-		animation none
-
-
-// Mobile or no mobile
-.nomobile
-	display block
-.mobile
-	display none
-@media break1
-	.nomobile
-		display none
-	.mobile
-		display block
-
-
-
-// Background img
-.bg
-	cover absolute
-	background center center no-repeat
-	background-size cover
-	opacity 0
-	&.bg-loaded
-		animation fadeIn .5s ease
-		opacity 1
-	img
-		display none
 
 
 

@@ -1,9 +1,4 @@
 
-@keyframes sliderSlideOut
-	100%
-		transform scale(1.1)
-		opacity 0
-		
 
 
 .slider
@@ -59,23 +54,19 @@
 		.slider-nav
 			position absolute
 			bottom 50%
-			circle 50px
 			margin-bottom -25px
 			color white
 			z-index 3
 			transition tn
 			opacity .5
-			@media break3
-				margin-bottom 0
-				bottom 20px
-			@media break2
-				circle 30px
-				line-height 28px
+			circle 30px
+			@media $break-md
+				circle 50px
 			.fa
-				font-size 30px
 				vertical-align middle
-				@media break2
-					font-size 20px
+				font-size 20px
+				@media $break-md
+					font-size 30px
 				
 			&.slider-nav-left 
 				left 20px

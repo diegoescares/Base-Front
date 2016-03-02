@@ -1,13 +1,11 @@
 {
   "name": "Base-Front",
-  "description": "Base front para empezar desarrollos",
-  "main": "gulpfile.coffee",
-  "authors": [
-    "Diego Escares"
-  ],
-  "license": "ISC",
+  "version": "0.0.0",
   "homepage": "https://github.com/diegoescares/Base-Front",
-  "moduleType": [],
+  "authors": [
+    "Diego Escares <diegoescares@gmail.com>"
+  ],
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,7 +13,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
+  "devDependencies": {
     "bootstrap-stylus": "~5.0.2"
   }
 }
