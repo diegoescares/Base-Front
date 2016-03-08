@@ -95,8 +95,8 @@ gulp.task "build:css", ->
 		.pipe(stylus())
 		.pipe(notify("Compiled: <%= file.relative %>"))
 		.pipe(prefix())
-		#.pipe(csso())
 		.pipe(gulp.dest(files.stylus.dest))
+		#.pipe(csso())
 		#.pipe(gulp.dest(files.stylus.destwp))
 	return
 
@@ -108,8 +108,8 @@ gulp.task "build:js", ->
 		.pipe(notify("Compiled: <%= file.relative %>"))
 		.pipe(addsrc.prepend(files.coffee.plugins))
 		.pipe(concat("main.js"))
-		.pipe(uglify())
 		.pipe(gulp.dest(files.coffee.dest))
+		#.pipe(uglify())
 		#.pipe(gulp.dest(files.coffee.destwp))
 	return
 
