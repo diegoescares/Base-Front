@@ -1,0 +1,29 @@
+
+section
+	position relative
+	background-color white
+	&:nth-child(odd)
+		background-color lighter
+	
+	&.section-white
+		background-color white
+		
+	&.section-lighter
+		background-color lighter
+				
+	&.section-dark
+		background-color dark
+		color white
+		
+	&.section-black
+		background-color black
+		color white
+		
+	&.section-color
+		background-color color
+
+	if color_2
+		&.section-color-2
+			background-color color_2
+
+

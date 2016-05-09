@@ -4,7 +4,6 @@ app.alert =
 
 	init: ->
 
-
 		if $("[data-alert]").length
 
 			$("a[data-alert]").click ->
@@ -18,13 +17,12 @@ app.alert =
 						location.href = element.attr("href")
 				false
 
-			$("[data-alert]").each ->
+			$("div[data-alert]").each ->
 				element = $(this)
-				if !element.is("a") && !element.is("button")
-					app.alert.open
-						title: element.attr("data-alert")
-						content: element.attr("data-content")
-						accept: true
+				app.alert.open
+					title: element.attr("data-alert")
+					content: element.attr("data-content")
+					accept: true
 
 
 	open: (options) ->

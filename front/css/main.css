@@ -2423,6 +2423,31 @@ article.article-bg .article-image:after {
 article.article-bg .article-title a {
   color: #fff;
 }
+.box {
+  position: relative;
+}
+.box.box-white {
+  background-color: #fff;
+}
+.box.box-lighter {
+  background-color: #eee;
+}
+.box.box-dark {
+  background-color: #333;
+  color: #fff;
+}
+.box.box-black {
+  background-color: #222;
+  color: #fff;
+}
+.box.box-color {
+  background-color: #7843c7;
+  color: #fff;
+}
+.box.box-color-2 {
+  background-color: #0ca;
+  color: #fff;
+}
 #body {
   -webkit-animation: fadeIn 0.5s 0.2s ease backwards;
           animation: fadeIn 0.5s 0.2s ease backwards;
@@ -2458,54 +2483,6 @@ article.article-bg .article-title a {
 }
 .bg img {
   display: none;
-}
-section {
-  position: relative;
-}
-section.section-white {
-  background-color: #fff;
-}
-section.section-lighter {
-  background-color: #eee;
-}
-section.section-dark {
-  background-color: #333;
-  color: #fff;
-}
-section.section-black {
-  background-color: #222;
-  color: #fff;
-}
-section.section-color {
-  background-color: #7843c7;
-}
-section.section-color-2 {
-  background-color: #0ca;
-}
-.box {
-  position: relative;
-}
-.box.box-white {
-  background-color: #fff;
-}
-.box.box-lighter {
-  background-color: #eee;
-}
-.box.box-dark {
-  background-color: #333;
-  color: #fff;
-}
-.box.box-black {
-  background-color: #222;
-  color: #fff;
-}
-.box.box-color {
-  background-color: #7843c7;
-  color: #fff;
-}
-.box.box-color-2 {
-  background-color: #0ca;
-  color: #fff;
 }
 .message {
   margin-bottom: 20px;
@@ -2803,6 +2780,33 @@ header .header-menu .header-menu-content ul li ul {
 .pagination li.current a {
   background-color: #7843c7;
   color: #fff;
+}
+section {
+  position: relative;
+  background-color: #fff;
+}
+section:nth-child(odd) {
+  background-color: #eee;
+}
+section.section-white {
+  background-color: #fff;
+}
+section.section-lighter {
+  background-color: #eee;
+}
+section.section-dark {
+  background-color: #333;
+  color: #fff;
+}
+section.section-black {
+  background-color: #222;
+  color: #fff;
+}
+section.section-color {
+  background-color: #7843c7;
+}
+section.section-color-2 {
+  background-color: #0ca;
 }
 .share {
   color: #fff;

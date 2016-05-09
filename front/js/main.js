@@ -2739,16 +2739,14 @@ app.alert = {
         });
         return false;
       });
-      return $("[data-alert]").each(function() {
+      return $("div[data-alert]").each(function() {
         var element;
         element = $(this);
-        if (!element.is("a") && !element.is("button")) {
-          return app.alert.open({
-            title: element.attr("data-alert"),
-            content: element.attr("data-content"),
-            accept: true
-          });
-        }
+        return app.alert.open({
+          title: element.attr("data-alert"),
+          content: element.attr("data-content"),
+          accept: true
+        });
       });
     }
   },
