@@ -40,9 +40,6 @@ app.init = ->
 	# Youtube insert iframe
 	app.youtube.init()
 
-	# Goto scroll
-	app.goto.init()
-
 	# Faq
 	app.faq.init()
 

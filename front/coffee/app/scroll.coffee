@@ -20,7 +20,6 @@ app.scroll =
 
 				# Esconder header
 				###
-				scroll = $(window).scrollTop()
 				height_window = $(window).height()
 				height_body = $("body").height()
 				if scroll > 50 && scroll + height_window < height_body - 50
@@ -37,7 +36,14 @@ app.scroll =
 
 		else
 			$(".dscroll").addClass("dscroll-in")
-			$(".navscroll").remove()
+
+
+		# Go to
+		$("[data-goto]").click (e) ->
+			to = $(this).attr "data-goto"
+			app.scroll.goto to
+			e.preventDefault()
+
 
 	dscroll: (scroll) ->
 
@@ -64,38 +70,13 @@ app.scroll =
 
 					element_top_prev = element_top
 
-	navscroll:
-
-		init: (el) ->
-
-			el.each ->
-				$(".navscroll").append("<div class='navscroll-item'><div>"+$(this).find(".article-title").text()+"</div></div>")
-			
-			setTimeout ->
-				app.scroll.navscroll.comprobe el, scroll
-			,500
-
-			$(".navscroll .navscroll-item").click ->
-				index = $(this).index()
-				# app.scroll.navscroll.change index
-				app.goto.to el.eq(index), 20
 
 
-		comprobe: (el,scroll) ->
-			height_window = $(window).height()
-			current = 999
-			el.each ->
-				index  = $(this).index()
-				top    = $(this).offset().top
-				if (height_window/2) + scroll > top && top < scroll + height_window
-					current = $(this).index()
-			app.scroll.navscroll.change current
-
-
-		change: (index) ->
-			#if !$(".navscroll-item").eq(index).hasClass "navscroll-item-active"
-			$(".navscroll-item").removeClass "navscroll-item-active"
-			$(".navscroll-item").eq(index).addClass "navscroll-item-active"
-
+	goto: (to,add=false,seconds=1000) ->
+		add = $("header").height() + 20 if !add
+		top = to.offset().top - add
+		$("body").animate
+			scrollTop: top
+		,seconds
 
 

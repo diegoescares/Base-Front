@@ -1552,9 +1552,8 @@ form textarea,
 .controls .control .control-value label.label-inline {
   display: inline-block;
 }
-.controls .control.control-error .control-name {
-  background: #eee;
-  padding: 10px 10px;
+.controls .control.control-error .control-name span {
+  color: #0ca;
 }
 .button {
   font-family: 'Open Sans', sans-serif;

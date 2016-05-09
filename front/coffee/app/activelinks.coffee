@@ -14,8 +14,9 @@ app.activelinks =
 		name_page_split = name_page_clear.split("#") 
 		name_page_clear = name_page_split[0]
 
-		name_page_split = name_page_clear.split("/")
-		name_page_clear = name_page_split[name_page_split.length-1]
+		if window.location.hostname == "localhost"
+			name_page_split = name_page_clear.split("/")
+			name_page_clear = name_page_split[name_page_split.length-1]
 
 		a = $("header a[href='"+name_page_clear+"']")
 		li = a.parent("li")

@@ -120,9 +120,9 @@ app.slider =
 		play = ->
 			clearTimeout(play_timeout)
 			play_timeout = setTimeout ->
+				#if app.isMobile()
 				$(".slider").each ->
-					if $(window).width() > 700 || $(this).hasClass("slider-bg")
-						app.slider.next $(this)
+					app.slider.next $(this)
 				play()
 			,6000
 
