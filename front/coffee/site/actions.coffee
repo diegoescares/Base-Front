@@ -2,6 +2,8 @@
 app.actions =
 	init: ->
 
+		app.loading.in()
+
 		# Isotope
 		if $(".isotope").length
 			$(".isotope").isotope()

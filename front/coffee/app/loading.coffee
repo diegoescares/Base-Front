@@ -20,10 +20,11 @@ app.loading =
 		element = $("body") if !element
 		element.append ''+
 			'<div class="loading">'+
-				'<div class="loading-icon">'+
-					'<div class="loading-icon-circle"><div></div></div>'+
-				'</div>'+
+				'<svg viewBox="25 25 50 50">'+
+				'	<circle cx="50" cy="50" r="20"></circle>'+
+				'</svg>'+
 			'</div>'
+
 	out: ->
 		$(".loading").addClass "out"
 		setTimeout ->

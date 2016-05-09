@@ -64,7 +64,7 @@ app.forms =
 					send = false
 					top = diverror.offset().top - $(".header-top").height() - 50
 
-					app.goto.to "html,body"
+					app.goto.to diverror
 
 					setTimeout ->
 						diverror.find("input,textarea,select").eq(0).focus()

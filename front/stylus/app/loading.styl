@@ -1,5 +1,22 @@
 
 
+
+@keyframes loaderRotate
+	100%
+		transform rotate(360deg)
+
+@keyframes loaderDash
+	0%
+		stroke-dasharray 0,200
+		stroke-dashoffset 0
+	50%
+		stroke-dasharray 100,200
+		stroke-dashoffset -20px
+	100%
+		stroke-dasharray 100,200
+		stroke-dashoffset -120px
+
+
 loading_w = 50px
 loading_bgcolor = color
 loading_color = white
@@ -10,33 +27,29 @@ loading_color = white
 	left 0
 	width 100%
 	height 100%
-	background rgba(255,255,255,.5)
+	background rgba(0,0,0,.5)
 	animation fadeIn .8s ease
 	z-index 250
 	&.out
 		animation fadeOut .5s ease both
-	.loading-icon
-		circle loading_w
+
+	svg
 		background loading_bgcolor
-		position absolute
-		top 50%
-		left 50%
-		animation scaleIn .4s .5s ease backwards
-		margin-left (loading_w / -2)
-		margin-top (loading_w / -2)
-		.loading-icon-circle
-			circle (loading_w - 26)
-			margin 13px
-			border 2px solid loading_color
-			div
-				background loading_bgcolor
-				width 6px
-				height 50%
-				position absolute
-				top 0
-				left 50%
-				margin-left -3px
-				transform-origin center bottom
-				animation rotate360 1.5s linear infinite
+		centre loading_w
+		radius 50%
+		padding 10px
+		overflow hidden
+		z-index 1
+		animation loaderRotate 2s linear infinite
+		transform-origin center center
+		circle
+			animation loaderDash 2s ease-in-out infinite
+			stroke-linecap round
+			stroke-width 2
+			stroke loading_color
+			fill none
+
+
+
 
 
