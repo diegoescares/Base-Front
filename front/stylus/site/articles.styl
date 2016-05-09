@@ -3,20 +3,25 @@
 article
 	position relative
 	overflow hidden
-	background white
+	background-color white
 	color dark
-	opacity 0
 	margin-bottom 20px
+	animation fadeIn .5s ease backwards
+	animation-stagger 5, .1s
 	&:last-child
 		margin-bottom 0
-	&.article-loaded
-		opacity 1
-		animation fadeIn .5s ease backwards
-		animation-stagger 5, .1s
 	
 	.article-image
+		background-color light
+		position relative
 		img
 			width 100%
+			opacity 0
+	&.article-loaded
+		.article-image
+			img
+				opacity 1
+				animation fadeIn .5s ease
 
 	.article-body
 		padding sep
@@ -70,19 +75,19 @@ article
 
 	&.article-min
 		margin-bottom 1px
+		padding 10px
 		&:last-child
 			margin-bottom 0
 		.article-body
 			overflow hidden
-			padding 10px
+			padding 0
 		.article-title
 			title h4
 			margin-bottom 5px
 		.article-image
 			float left
-			padding 10px
-			margin-right -10px
 			width 100px
+			margin-right 10px
 			@media $break-md
 				width 140px
 
@@ -90,8 +95,8 @@ article
 		height 500px
 		color white
 		background dark
-		//margin 0
 		.article-image
+			cover absolute
 			grad-shadow 200px 100px black
 		.article-title
 			a

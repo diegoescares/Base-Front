@@ -38,7 +38,12 @@ files =
 	coffee:
 		watch:        path + "/coffee/**/*.coffee"
 		src:          path + "/coffee/app.coffee"
-		plugins:      path + "/js/plugins/*.js"
+		plugins:      [
+			"bower_components/imagesloaded/imagesloaded.pkgd.min.js"
+			"bower_components/isotope/dist/isotope.pkgd.min.js"
+			"bower_components/isotope-packery/packery-mode.pkgd.min.js"
+			path + "/js/plugins/*.js"			
+		]
 		dest:         path + "/js"
 		destwp:       pathwp + "/js"
 

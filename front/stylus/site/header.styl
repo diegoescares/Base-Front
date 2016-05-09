@@ -14,6 +14,14 @@ header
 		position fixed
 		height header_height
 	
+	.header-limit
+		max-width limit
+		margin 0 auto
+		position relative
+		padding 0px 20px
+		@media $break-md
+			padding 10px 20px
+	
 	.header-left
 		float left
 
@@ -21,15 +29,13 @@ header
 		float right
 		
 	.header-logo
-		margin-top -10px
-		@media $break-md
-			margin-top 0
 		a
 			display block
-			padding 10px 0
+			padding 20px 0
 			font-weight bold
 			font-size 200%
 			color white
+			margin-right 20px
 
 	.header-nav
 		position fixed
@@ -71,13 +77,18 @@ header
 						>ul
 							display block
 				a
-					padding 15px 20px
+					padding 20px
 					display block
 					color white
-					.fa.fa-angle-right
-						float right
-						margin 4px 0 4px 5px
+					.fa
 						opacity .5
+						padding 2px 0
+						&.fa-angle-left
+							float left
+							margin-right 10px
+						&.fa-angle-right
+							float right
+							margin-left 10px
 				ul
 					background color
 					position absolute
@@ -109,11 +120,15 @@ header
 								left 100%
 
 	.header-hamburger
-		position absolute
-		top 20px
-		right 20px
-		padding 10px
+		position fixed
+		top 10px
+		right 10px
+		width 40px
+		height @width
+		line-height @width
 		z-index 6
+		text-align center
+		background dark
 		@media $break-md
 			display none
 

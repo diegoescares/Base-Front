@@ -1,8 +1,2695 @@
-/*! imagesLoaded PACKAGED v3.1.8 */
-(function(){function e(){}function t(e,t){for(var n=e.length;n--;)if(e[n].listener===t)return n;return-1}function n(e){return function(){return this[e].apply(this,arguments)}}var i=e.prototype,r=this,o=r.EventEmitter;i.getListeners=function(e){var t,n,i=this._getEvents();if("object"==typeof e){t={};for(n in i)i.hasOwnProperty(n)&&e.test(n)&&(t[n]=i[n])}else t=i[e]||(i[e]=[]);return t},i.flattenListeners=function(e){var t,n=[];for(t=0;e.length>t;t+=1)n.push(e[t].listener);return n},i.getListenersAsObject=function(e){var t,n=this.getListeners(e);return n instanceof Array&&(t={},t[e]=n),t||n},i.addListener=function(e,n){var i,r=this.getListenersAsObject(e),o="object"==typeof n;for(i in r)r.hasOwnProperty(i)&&-1===t(r[i],n)&&r[i].push(o?n:{listener:n,once:!1});return this},i.on=n("addListener"),i.addOnceListener=function(e,t){return this.addListener(e,{listener:t,once:!0})},i.once=n("addOnceListener"),i.defineEvent=function(e){return this.getListeners(e),this},i.defineEvents=function(e){for(var t=0;e.length>t;t+=1)this.defineEvent(e[t]);return this},i.removeListener=function(e,n){var i,r,o=this.getListenersAsObject(e);for(r in o)o.hasOwnProperty(r)&&(i=t(o[r],n),-1!==i&&o[r].splice(i,1));return this},i.off=n("removeListener"),i.addListeners=function(e,t){return this.manipulateListeners(!1,e,t)},i.removeListeners=function(e,t){return this.manipulateListeners(!0,e,t)},i.manipulateListeners=function(e,t,n){var i,r,o=e?this.removeListener:this.addListener,s=e?this.removeListeners:this.addListeners;if("object"!=typeof t||t instanceof RegExp)for(i=n.length;i--;)o.call(this,t,n[i]);else for(i in t)t.hasOwnProperty(i)&&(r=t[i])&&("function"==typeof r?o.call(this,i,r):s.call(this,i,r));return this},i.removeEvent=function(e){var t,n=typeof e,i=this._getEvents();if("string"===n)delete i[e];else if("object"===n)for(t in i)i.hasOwnProperty(t)&&e.test(t)&&delete i[t];else delete this._events;return this},i.removeAllListeners=n("removeEvent"),i.emitEvent=function(e,t){var n,i,r,o,s=this.getListenersAsObject(e);for(r in s)if(s.hasOwnProperty(r))for(i=s[r].length;i--;)n=s[r][i],n.once===!0&&this.removeListener(e,n.listener),o=n.listener.apply(this,t||[]),o===this._getOnceReturnValue()&&this.removeListener(e,n.listener);return this},i.trigger=n("emitEvent"),i.emit=function(e){var t=Array.prototype.slice.call(arguments,1);return this.emitEvent(e,t)},i.setOnceReturnValue=function(e){return this._onceReturnValue=e,this},i._getOnceReturnValue=function(){return this.hasOwnProperty("_onceReturnValue")?this._onceReturnValue:!0},i._getEvents=function(){return this._events||(this._events={})},e.noConflict=function(){return r.EventEmitter=o,e},"function"==typeof define&&define.amd?define("eventEmitter/EventEmitter",[],function(){return e}):"object"==typeof module&&module.exports?module.exports=e:this.EventEmitter=e}).call(this),function(e){function t(t){var n=e.event;return n.target=n.target||n.srcElement||t,n}var n=document.documentElement,i=function(){};n.addEventListener?i=function(e,t,n){e.addEventListener(t,n,!1)}:n.attachEvent&&(i=function(e,n,i){e[n+i]=i.handleEvent?function(){var n=t(e);i.handleEvent.call(i,n)}:function(){var n=t(e);i.call(e,n)},e.attachEvent("on"+n,e[n+i])});var r=function(){};n.removeEventListener?r=function(e,t,n){e.removeEventListener(t,n,!1)}:n.detachEvent&&(r=function(e,t,n){e.detachEvent("on"+t,e[t+n]);try{delete e[t+n]}catch(i){e[t+n]=void 0}});var o={bind:i,unbind:r};"function"==typeof define&&define.amd?define("eventie/eventie",o):e.eventie=o}(this),function(e,t){"function"==typeof define&&define.amd?define(["eventEmitter/EventEmitter","eventie/eventie"],function(n,i){return t(e,n,i)}):"object"==typeof exports?module.exports=t(e,require("wolfy87-eventemitter"),require("eventie")):e.imagesLoaded=t(e,e.EventEmitter,e.eventie)}(window,function(e,t,n){function i(e,t){for(var n in t)e[n]=t[n];return e}function r(e){return"[object Array]"===d.call(e)}function o(e){var t=[];if(r(e))t=e;else if("number"==typeof e.length)for(var n=0,i=e.length;i>n;n++)t.push(e[n]);else t.push(e);return t}function s(e,t,n){if(!(this instanceof s))return new s(e,t);"string"==typeof e&&(e=document.querySelectorAll(e)),this.elements=o(e),this.options=i({},this.options),"function"==typeof t?n=t:i(this.options,t),n&&this.on("always",n),this.getImages(),a&&(this.jqDeferred=new a.Deferred);var r=this;setTimeout(function(){r.check()})}function f(e){this.img=e}function c(e){this.src=e,v[e]=this}var a=e.jQuery,u=e.console,h=u!==void 0,d=Object.prototype.toString;s.prototype=new t,s.prototype.options={},s.prototype.getImages=function(){this.images=[];for(var e=0,t=this.elements.length;t>e;e++){var n=this.elements[e];"IMG"===n.nodeName&&this.addImage(n);var i=n.nodeType;if(i&&(1===i||9===i||11===i))for(var r=n.querySelectorAll("img"),o=0,s=r.length;s>o;o++){var f=r[o];this.addImage(f)}}},s.prototype.addImage=function(e){var t=new f(e);this.images.push(t)},s.prototype.check=function(){function e(e,r){return t.options.debug&&h&&u.log("confirm",e,r),t.progress(e),n++,n===i&&t.complete(),!0}var t=this,n=0,i=this.images.length;if(this.hasAnyBroken=!1,!i)return this.complete(),void 0;for(var r=0;i>r;r++){var o=this.images[r];o.on("confirm",e),o.check()}},s.prototype.progress=function(e){this.hasAnyBroken=this.hasAnyBroken||!e.isLoaded;var t=this;setTimeout(function(){t.emit("progress",t,e),t.jqDeferred&&t.jqDeferred.notify&&t.jqDeferred.notify(t,e)})},s.prototype.complete=function(){var e=this.hasAnyBroken?"fail":"done";this.isComplete=!0;var t=this;setTimeout(function(){if(t.emit(e,t),t.emit("always",t),t.jqDeferred){var n=t.hasAnyBroken?"reject":"resolve";t.jqDeferred[n](t)}})},a&&(a.fn.imagesLoaded=function(e,t){var n=new s(this,e,t);return n.jqDeferred.promise(a(this))}),f.prototype=new t,f.prototype.check=function(){var e=v[this.img.src]||new c(this.img.src);if(e.isConfirmed)return this.confirm(e.isLoaded,"cached was confirmed"),void 0;if(this.img.complete&&void 0!==this.img.naturalWidth)return this.confirm(0!==this.img.naturalWidth,"naturalWidth"),void 0;var t=this;e.on("confirm",function(e,n){return t.confirm(e.isLoaded,n),!0}),e.check()},f.prototype.confirm=function(e,t){this.isLoaded=e,this.emit("confirm",this,t)};var v={};return c.prototype=new t,c.prototype.check=function(){if(!this.isChecked){var e=new Image;n.bind(e,"load",this),n.bind(e,"error",this),e.src=this.src,this.isChecked=!0}},c.prototype.handleEvent=function(e){var t="on"+e.type;this[t]&&this[t](e)},c.prototype.onload=function(e){this.confirm(!0,"onload"),this.unbindProxyEvents(e)},c.prototype.onerror=function(e){this.confirm(!1,"onerror"),this.unbindProxyEvents(e)},c.prototype.confirm=function(e,t){this.isConfirmed=!0,this.isLoaded=e,this.emit("confirm",this,t)},c.prototype.unbindProxyEvents=function(e){n.unbind(e.target,"load",this),n.unbind(e.target,"error",this)},s});
-/*! Isotope PACKAGED v2.0.0 */
-(function(t){function e(){}function i(t){function i(e){e.prototype.option||(e.prototype.option=function(e){t.isPlainObject(e)&&(this.options=t.extend(!0,this.options,e))})}function n(e,i){t.fn[e]=function(n){if("string"==typeof n){for(var s=o.call(arguments,1),a=0,u=this.length;u>a;a++){var p=this[a],h=t.data(p,e);if(h)if(t.isFunction(h[n])&&"_"!==n.charAt(0)){var f=h[n].apply(h,s);if(void 0!==f)return f}else r("no such method '"+n+"' for "+e+" instance");else r("cannot call methods on "+e+" prior to initialization; "+"attempted to call '"+n+"'")}return this}return this.each(function(){var o=t.data(this,e);o?(o.option(n),o._init()):(o=new i(this,n),t.data(this,e,o))})}}if(t){var r="undefined"==typeof console?e:function(t){console.error(t)};return t.bridget=function(t,e){i(e),n(t,e)},t.bridget}}var o=Array.prototype.slice;"function"==typeof define&&define.amd?define("jquery-bridget/jquery.bridget",["jquery"],i):i(t.jQuery)})(window),function(t){function e(e){var i=t.event;return i.target=i.target||i.srcElement||e,i}var i=document.documentElement,o=function(){};i.addEventListener?o=function(t,e,i){t.addEventListener(e,i,!1)}:i.attachEvent&&(o=function(t,i,o){t[i+o]=o.handleEvent?function(){var i=e(t);o.handleEvent.call(o,i)}:function(){var i=e(t);o.call(t,i)},t.attachEvent("on"+i,t[i+o])});var n=function(){};i.removeEventListener?n=function(t,e,i){t.removeEventListener(e,i,!1)}:i.detachEvent&&(n=function(t,e,i){t.detachEvent("on"+e,t[e+i]);try{delete t[e+i]}catch(o){t[e+i]=void 0}});var r={bind:o,unbind:n};"function"==typeof define&&define.amd?define("eventie/eventie",r):"object"==typeof exports?module.exports=r:t.eventie=r}(this),function(t){function e(t){"function"==typeof t&&(e.isReady?t():r.push(t))}function i(t){var i="readystatechange"===t.type&&"complete"!==n.readyState;if(!e.isReady&&!i){e.isReady=!0;for(var o=0,s=r.length;s>o;o++){var a=r[o];a()}}}function o(o){return o.bind(n,"DOMContentLoaded",i),o.bind(n,"readystatechange",i),o.bind(t,"load",i),e}var n=t.document,r=[];e.isReady=!1,"function"==typeof define&&define.amd?(e.isReady="function"==typeof requirejs,define("doc-ready/doc-ready",["eventie/eventie"],o)):t.docReady=o(t.eventie)}(this),function(){function t(){}function e(t,e){for(var i=t.length;i--;)if(t[i].listener===e)return i;return-1}function i(t){return function(){return this[t].apply(this,arguments)}}var o=t.prototype,n=this,r=n.EventEmitter;o.getListeners=function(t){var e,i,o=this._getEvents();if(t instanceof RegExp){e={};for(i in o)o.hasOwnProperty(i)&&t.test(i)&&(e[i]=o[i])}else e=o[t]||(o[t]=[]);return e},o.flattenListeners=function(t){var e,i=[];for(e=0;t.length>e;e+=1)i.push(t[e].listener);return i},o.getListenersAsObject=function(t){var e,i=this.getListeners(t);return i instanceof Array&&(e={},e[t]=i),e||i},o.addListener=function(t,i){var o,n=this.getListenersAsObject(t),r="object"==typeof i;for(o in n)n.hasOwnProperty(o)&&-1===e(n[o],i)&&n[o].push(r?i:{listener:i,once:!1});return this},o.on=i("addListener"),o.addOnceListener=function(t,e){return this.addListener(t,{listener:e,once:!0})},o.once=i("addOnceListener"),o.defineEvent=function(t){return this.getListeners(t),this},o.defineEvents=function(t){for(var e=0;t.length>e;e+=1)this.defineEvent(t[e]);return this},o.removeListener=function(t,i){var o,n,r=this.getListenersAsObject(t);for(n in r)r.hasOwnProperty(n)&&(o=e(r[n],i),-1!==o&&r[n].splice(o,1));return this},o.off=i("removeListener"),o.addListeners=function(t,e){return this.manipulateListeners(!1,t,e)},o.removeListeners=function(t,e){return this.manipulateListeners(!0,t,e)},o.manipulateListeners=function(t,e,i){var o,n,r=t?this.removeListener:this.addListener,s=t?this.removeListeners:this.addListeners;if("object"!=typeof e||e instanceof RegExp)for(o=i.length;o--;)r.call(this,e,i[o]);else for(o in e)e.hasOwnProperty(o)&&(n=e[o])&&("function"==typeof n?r.call(this,o,n):s.call(this,o,n));return this},o.removeEvent=function(t){var e,i=typeof t,o=this._getEvents();if("string"===i)delete o[t];else if(t instanceof RegExp)for(e in o)o.hasOwnProperty(e)&&t.test(e)&&delete o[e];else delete this._events;return this},o.removeAllListeners=i("removeEvent"),o.emitEvent=function(t,e){var i,o,n,r,s=this.getListenersAsObject(t);for(n in s)if(s.hasOwnProperty(n))for(o=s[n].length;o--;)i=s[n][o],i.once===!0&&this.removeListener(t,i.listener),r=i.listener.apply(this,e||[]),r===this._getOnceReturnValue()&&this.removeListener(t,i.listener);return this},o.trigger=i("emitEvent"),o.emit=function(t){var e=Array.prototype.slice.call(arguments,1);return this.emitEvent(t,e)},o.setOnceReturnValue=function(t){return this._onceReturnValue=t,this},o._getOnceReturnValue=function(){return this.hasOwnProperty("_onceReturnValue")?this._onceReturnValue:!0},o._getEvents=function(){return this._events||(this._events={})},t.noConflict=function(){return n.EventEmitter=r,t},"function"==typeof define&&define.amd?define("eventEmitter/EventEmitter",[],function(){return t}):"object"==typeof module&&module.exports?module.exports=t:this.EventEmitter=t}.call(this),function(t){function e(t){if(t){if("string"==typeof o[t])return t;t=t.charAt(0).toUpperCase()+t.slice(1);for(var e,n=0,r=i.length;r>n;n++)if(e=i[n]+t,"string"==typeof o[e])return e}}var i="Webkit Moz ms Ms O".split(" "),o=document.documentElement.style;"function"==typeof define&&define.amd?define("get-style-property/get-style-property",[],function(){return e}):"object"==typeof exports?module.exports=e:t.getStyleProperty=e}(window),function(t){function e(t){var e=parseFloat(t),i=-1===t.indexOf("%")&&!isNaN(e);return i&&e}function i(){for(var t={width:0,height:0,innerWidth:0,innerHeight:0,outerWidth:0,outerHeight:0},e=0,i=s.length;i>e;e++){var o=s[e];t[o]=0}return t}function o(t){function o(t){if("string"==typeof t&&(t=document.querySelector(t)),t&&"object"==typeof t&&t.nodeType){var o=r(t);if("none"===o.display)return i();var n={};n.width=t.offsetWidth,n.height=t.offsetHeight;for(var h=n.isBorderBox=!(!p||!o[p]||"border-box"!==o[p]),f=0,c=s.length;c>f;f++){var d=s[f],l=o[d];l=a(t,l);var y=parseFloat(l);n[d]=isNaN(y)?0:y}var m=n.paddingLeft+n.paddingRight,g=n.paddingTop+n.paddingBottom,v=n.marginLeft+n.marginRight,_=n.marginTop+n.marginBottom,I=n.borderLeftWidth+n.borderRightWidth,L=n.borderTopWidth+n.borderBottomWidth,z=h&&u,S=e(o.width);S!==!1&&(n.width=S+(z?0:m+I));var b=e(o.height);return b!==!1&&(n.height=b+(z?0:g+L)),n.innerWidth=n.width-(m+I),n.innerHeight=n.height-(g+L),n.outerWidth=n.width+v,n.outerHeight=n.height+_,n}}function a(t,e){if(n||-1===e.indexOf("%"))return e;var i=t.style,o=i.left,r=t.runtimeStyle,s=r&&r.left;return s&&(r.left=t.currentStyle.left),i.left=e,e=i.pixelLeft,i.left=o,s&&(r.left=s),e}var u,p=t("boxSizing");return function(){if(p){var t=document.createElement("div");t.style.width="200px",t.style.padding="1px 2px 3px 4px",t.style.borderStyle="solid",t.style.borderWidth="1px 2px 3px 4px",t.style[p]="border-box";var i=document.body||document.documentElement;i.appendChild(t);var o=r(t);u=200===e(o.width),i.removeChild(t)}}(),o}var n=t.getComputedStyle,r=n?function(t){return n(t,null)}:function(t){return t.currentStyle},s=["paddingLeft","paddingRight","paddingTop","paddingBottom","marginLeft","marginRight","marginTop","marginBottom","borderLeftWidth","borderRightWidth","borderTopWidth","borderBottomWidth"];"function"==typeof define&&define.amd?define("get-size/get-size",["get-style-property/get-style-property"],o):"object"==typeof exports?module.exports=o(require("get-style-property")):t.getSize=o(t.getStyleProperty)}(window),function(t,e){function i(t,e){return t[a](e)}function o(t){if(!t.parentNode){var e=document.createDocumentFragment();e.appendChild(t)}}function n(t,e){o(t);for(var i=t.parentNode.querySelectorAll(e),n=0,r=i.length;r>n;n++)if(i[n]===t)return!0;return!1}function r(t,e){return o(t),i(t,e)}var s,a=function(){if(e.matchesSelector)return"matchesSelector";for(var t=["webkit","moz","ms","o"],i=0,o=t.length;o>i;i++){var n=t[i],r=n+"MatchesSelector";if(e[r])return r}}();if(a){var u=document.createElement("div"),p=i(u,"div");s=p?i:r}else s=n;"function"==typeof define&&define.amd?define("matches-selector/matches-selector",[],function(){return s}):window.matchesSelector=s}(this,Element.prototype),function(t){function e(t,e){for(var i in e)t[i]=e[i];return t}function i(t){for(var e in t)return!1;return e=null,!0}function o(t){return t.replace(/([A-Z])/g,function(t){return"-"+t.toLowerCase()})}function n(t,n,r){function a(t,e){t&&(this.element=t,this.layout=e,this.position={x:0,y:0},this._create())}var u=r("transition"),p=r("transform"),h=u&&p,f=!!r("perspective"),c={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"otransitionend",transition:"transitionend"}[u],d=["transform","transition","transitionDuration","transitionProperty"],l=function(){for(var t={},e=0,i=d.length;i>e;e++){var o=d[e],n=r(o);n&&n!==o&&(t[o]=n)}return t}();e(a.prototype,t.prototype),a.prototype._create=function(){this._transn={ingProperties:{},clean:{},onEnd:{}},this.css({position:"absolute"})},a.prototype.handleEvent=function(t){var e="on"+t.type;this[e]&&this[e](t)},a.prototype.getSize=function(){this.size=n(this.element)},a.prototype.css=function(t){var e=this.element.style;for(var i in t){var o=l[i]||i;e[o]=t[i]}},a.prototype.getPosition=function(){var t=s(this.element),e=this.layout.options,i=e.isOriginLeft,o=e.isOriginTop,n=parseInt(t[i?"left":"right"],10),r=parseInt(t[o?"top":"bottom"],10);n=isNaN(n)?0:n,r=isNaN(r)?0:r;var a=this.layout.size;n-=i?a.paddingLeft:a.paddingRight,r-=o?a.paddingTop:a.paddingBottom,this.position.x=n,this.position.y=r},a.prototype.layoutPosition=function(){var t=this.layout.size,e=this.layout.options,i={};e.isOriginLeft?(i.left=this.position.x+t.paddingLeft+"px",i.right=""):(i.right=this.position.x+t.paddingRight+"px",i.left=""),e.isOriginTop?(i.top=this.position.y+t.paddingTop+"px",i.bottom=""):(i.bottom=this.position.y+t.paddingBottom+"px",i.top=""),this.css(i),this.emitEvent("layout",[this])};var y=f?function(t,e){return"translate3d("+t+"px, "+e+"px, 0)"}:function(t,e){return"translate("+t+"px, "+e+"px)"};a.prototype._transitionTo=function(t,e){this.getPosition();var i=this.position.x,o=this.position.y,n=parseInt(t,10),r=parseInt(e,10),s=n===this.position.x&&r===this.position.y;if(this.setPosition(t,e),s&&!this.isTransitioning)return this.layoutPosition(),void 0;var a=t-i,u=e-o,p={},h=this.layout.options;a=h.isOriginLeft?a:-a,u=h.isOriginTop?u:-u,p.transform=y(a,u),this.transition({to:p,onTransitionEnd:{transform:this.layoutPosition},isCleaning:!0})},a.prototype.goTo=function(t,e){this.setPosition(t,e),this.layoutPosition()},a.prototype.moveTo=h?a.prototype._transitionTo:a.prototype.goTo,a.prototype.setPosition=function(t,e){this.position.x=parseInt(t,10),this.position.y=parseInt(e,10)},a.prototype._nonTransition=function(t){this.css(t.to),t.isCleaning&&this._removeStyles(t.to);for(var e in t.onTransitionEnd)t.onTransitionEnd[e].call(this)},a.prototype._transition=function(t){if(!parseFloat(this.layout.options.transitionDuration))return this._nonTransition(t),void 0;var e=this._transn;for(var i in t.onTransitionEnd)e.onEnd[i]=t.onTransitionEnd[i];for(i in t.to)e.ingProperties[i]=!0,t.isCleaning&&(e.clean[i]=!0);if(t.from){this.css(t.from);var o=this.element.offsetHeight;o=null}this.enableTransition(t.to),this.css(t.to),this.isTransitioning=!0};var m=p&&o(p)+",opacity";a.prototype.enableTransition=function(){this.isTransitioning||(this.css({transitionProperty:m,transitionDuration:this.layout.options.transitionDuration}),this.element.addEventListener(c,this,!1))},a.prototype.transition=a.prototype[u?"_transition":"_nonTransition"],a.prototype.onwebkitTransitionEnd=function(t){this.ontransitionend(t)},a.prototype.onotransitionend=function(t){this.ontransitionend(t)};var g={"-webkit-transform":"transform","-moz-transform":"transform","-o-transform":"transform"};a.prototype.ontransitionend=function(t){if(t.target===this.element){var e=this._transn,o=g[t.propertyName]||t.propertyName;if(delete e.ingProperties[o],i(e.ingProperties)&&this.disableTransition(),o in e.clean&&(this.element.style[t.propertyName]="",delete e.clean[o]),o in e.onEnd){var n=e.onEnd[o];n.call(this),delete e.onEnd[o]}this.emitEvent("transitionEnd",[this])}},a.prototype.disableTransition=function(){this.removeTransitionStyles(),this.element.removeEventListener(c,this,!1),this.isTransitioning=!1},a.prototype._removeStyles=function(t){var e={};for(var i in t)e[i]="";this.css(e)};var v={transitionProperty:"",transitionDuration:""};return a.prototype.removeTransitionStyles=function(){this.css(v)},a.prototype.removeElem=function(){this.element.parentNode.removeChild(this.element),this.emitEvent("remove",[this])},a.prototype.remove=function(){if(!u||!parseFloat(this.layout.options.transitionDuration))return this.removeElem(),void 0;var t=this;this.on("transitionEnd",function(){return t.removeElem(),!0}),this.hide()},a.prototype.reveal=function(){delete this.isHidden,this.css({display:""});var t=this.layout.options;this.transition({from:t.hiddenStyle,to:t.visibleStyle,isCleaning:!0})},a.prototype.hide=function(){this.isHidden=!0,this.css({display:""});var t=this.layout.options;this.transition({from:t.visibleStyle,to:t.hiddenStyle,isCleaning:!0,onTransitionEnd:{opacity:function(){this.isHidden&&this.css({display:"none"})}}})},a.prototype.destroy=function(){this.css({position:"",left:"",right:"",top:"",bottom:"",transition:"",transform:""})},a}var r=t.getComputedStyle,s=r?function(t){return r(t,null)}:function(t){return t.currentStyle};"function"==typeof define&&define.amd?define("outlayer/item",["eventEmitter/EventEmitter","get-size/get-size","get-style-property/get-style-property"],n):(t.Outlayer={},t.Outlayer.Item=n(t.EventEmitter,t.getSize,t.getStyleProperty))}(window),function(t){function e(t,e){for(var i in e)t[i]=e[i];return t}function i(t){return"[object Array]"===f.call(t)}function o(t){var e=[];if(i(t))e=t;else if(t&&"number"==typeof t.length)for(var o=0,n=t.length;n>o;o++)e.push(t[o]);else e.push(t);return e}function n(t,e){var i=d(e,t);-1!==i&&e.splice(i,1)}function r(t){return t.replace(/(.)([A-Z])/g,function(t,e,i){return e+"-"+i}).toLowerCase()}function s(i,s,f,d,l,y){function m(t,i){if("string"==typeof t&&(t=a.querySelector(t)),!t||!c(t))return u&&u.error("Bad "+this.constructor.namespace+" element: "+t),void 0;this.element=t,this.options=e({},this.constructor.defaults),this.option(i);var o=++g;this.element.outlayerGUID=o,v[o]=this,this._create(),this.options.isInitLayout&&this.layout()}var g=0,v={};return m.namespace="outlayer",m.Item=y,m.defaults={containerStyle:{position:"relative"},isInitLayout:!0,isOriginLeft:!0,isOriginTop:!0,isResizeBound:!0,isResizingContainer:!0,transitionDuration:"0.4s",hiddenStyle:{opacity:0,transform:"scale(0.001)"},visibleStyle:{opacity:1,transform:"scale(1)"}},e(m.prototype,f.prototype),m.prototype.option=function(t){e(this.options,t)},m.prototype._create=function(){this.reloadItems(),this.stamps=[],this.stamp(this.options.stamp),e(this.element.style,this.options.containerStyle),this.options.isResizeBound&&this.bindResize()},m.prototype.reloadItems=function(){this.items=this._itemize(this.element.children)},m.prototype._itemize=function(t){for(var e=this._filterFindItemElements(t),i=this.constructor.Item,o=[],n=0,r=e.length;r>n;n++){var s=e[n],a=new i(s,this);o.push(a)}return o},m.prototype._filterFindItemElements=function(t){t=o(t);for(var e=this.options.itemSelector,i=[],n=0,r=t.length;r>n;n++){var s=t[n];if(c(s))if(e){l(s,e)&&i.push(s);for(var a=s.querySelectorAll(e),u=0,p=a.length;p>u;u++)i.push(a[u])}else i.push(s)}return i},m.prototype.getItemElements=function(){for(var t=[],e=0,i=this.items.length;i>e;e++)t.push(this.items[e].element);return t},m.prototype.layout=function(){this._resetLayout(),this._manageStamps();var t=void 0!==this.options.isLayoutInstant?this.options.isLayoutInstant:!this._isLayoutInited;this.layoutItems(this.items,t),this._isLayoutInited=!0},m.prototype._init=m.prototype.layout,m.prototype._resetLayout=function(){this.getSize()},m.prototype.getSize=function(){this.size=d(this.element)},m.prototype._getMeasurement=function(t,e){var i,o=this.options[t];o?("string"==typeof o?i=this.element.querySelector(o):c(o)&&(i=o),this[t]=i?d(i)[e]:o):this[t]=0},m.prototype.layoutItems=function(t,e){t=this._getItemsForLayout(t),this._layoutItems(t,e),this._postLayout()},m.prototype._getItemsForLayout=function(t){for(var e=[],i=0,o=t.length;o>i;i++){var n=t[i];n.isIgnored||e.push(n)}return e},m.prototype._layoutItems=function(t,e){function i(){o.emitEvent("layoutComplete",[o,t])}var o=this;if(!t||!t.length)return i(),void 0;this._itemsOn(t,"layout",i);for(var n=[],r=0,s=t.length;s>r;r++){var a=t[r],u=this._getItemLayoutPosition(a);u.item=a,u.isInstant=e||a.isLayoutInstant,n.push(u)}this._processLayoutQueue(n)},m.prototype._getItemLayoutPosition=function(){return{x:0,y:0}},m.prototype._processLayoutQueue=function(t){for(var e=0,i=t.length;i>e;e++){var o=t[e];this._positionItem(o.item,o.x,o.y,o.isInstant)}},m.prototype._positionItem=function(t,e,i,o){o?t.goTo(e,i):t.moveTo(e,i)},m.prototype._postLayout=function(){this.resizeContainer()},m.prototype.resizeContainer=function(){if(this.options.isResizingContainer){var t=this._getContainerSize();t&&(this._setContainerMeasure(t.width,!0),this._setContainerMeasure(t.height,!1))}},m.prototype._getContainerSize=h,m.prototype._setContainerMeasure=function(t,e){if(void 0!==t){var i=this.size;i.isBorderBox&&(t+=e?i.paddingLeft+i.paddingRight+i.borderLeftWidth+i.borderRightWidth:i.paddingBottom+i.paddingTop+i.borderTopWidth+i.borderBottomWidth),t=Math.max(t,0),this.element.style[e?"width":"height"]=t+"px"}},m.prototype._itemsOn=function(t,e,i){function o(){return n++,n===r&&i.call(s),!0}for(var n=0,r=t.length,s=this,a=0,u=t.length;u>a;a++){var p=t[a];p.on(e,o)}},m.prototype.ignore=function(t){var e=this.getItem(t);e&&(e.isIgnored=!0)},m.prototype.unignore=function(t){var e=this.getItem(t);e&&delete e.isIgnored},m.prototype.stamp=function(t){if(t=this._find(t)){this.stamps=this.stamps.concat(t);for(var e=0,i=t.length;i>e;e++){var o=t[e];this.ignore(o)}}},m.prototype.unstamp=function(t){if(t=this._find(t))for(var e=0,i=t.length;i>e;e++){var o=t[e];n(o,this.stamps),this.unignore(o)}},m.prototype._find=function(t){return t?("string"==typeof t&&(t=this.element.querySelectorAll(t)),t=o(t)):void 0},m.prototype._manageStamps=function(){if(this.stamps&&this.stamps.length){this._getBoundingRect();for(var t=0,e=this.stamps.length;e>t;t++){var i=this.stamps[t];this._manageStamp(i)}}},m.prototype._getBoundingRect=function(){var t=this.element.getBoundingClientRect(),e=this.size;this._boundingRect={left:t.left+e.paddingLeft+e.borderLeftWidth,top:t.top+e.paddingTop+e.borderTopWidth,right:t.right-(e.paddingRight+e.borderRightWidth),bottom:t.bottom-(e.paddingBottom+e.borderBottomWidth)}},m.prototype._manageStamp=h,m.prototype._getElementOffset=function(t){var e=t.getBoundingClientRect(),i=this._boundingRect,o=d(t),n={left:e.left-i.left-o.marginLeft,top:e.top-i.top-o.marginTop,right:i.right-e.right-o.marginRight,bottom:i.bottom-e.bottom-o.marginBottom};return n},m.prototype.handleEvent=function(t){var e="on"+t.type;this[e]&&this[e](t)},m.prototype.bindResize=function(){this.isResizeBound||(i.bind(t,"resize",this),this.isResizeBound=!0)},m.prototype.unbindResize=function(){this.isResizeBound&&i.unbind(t,"resize",this),this.isResizeBound=!1},m.prototype.onresize=function(){function t(){e.resize(),delete e.resizeTimeout}this.resizeTimeout&&clearTimeout(this.resizeTimeout);var e=this;this.resizeTimeout=setTimeout(t,100)},m.prototype.resize=function(){this.isResizeBound&&this.needsResizeLayout()&&this.layout()},m.prototype.needsResizeLayout=function(){var t=d(this.element),e=this.size&&t;return e&&t.innerWidth!==this.size.innerWidth},m.prototype.addItems=function(t){var e=this._itemize(t);return e.length&&(this.items=this.items.concat(e)),e},m.prototype.appended=function(t){var e=this.addItems(t);e.length&&(this.layoutItems(e,!0),this.reveal(e))},m.prototype.prepended=function(t){var e=this._itemize(t);if(e.length){var i=this.items.slice(0);this.items=e.concat(i),this._resetLayout(),this._manageStamps(),this.layoutItems(e,!0),this.reveal(e),this.layoutItems(i)}},m.prototype.reveal=function(t){var e=t&&t.length;if(e)for(var i=0;e>i;i++){var o=t[i];o.reveal()}},m.prototype.hide=function(t){var e=t&&t.length;if(e)for(var i=0;e>i;i++){var o=t[i];o.hide()}},m.prototype.getItem=function(t){for(var e=0,i=this.items.length;i>e;e++){var o=this.items[e];if(o.element===t)return o}},m.prototype.getItems=function(t){if(t&&t.length){for(var e=[],i=0,o=t.length;o>i;i++){var n=t[i],r=this.getItem(n);r&&e.push(r)}return e}},m.prototype.remove=function(t){t=o(t);var e=this.getItems(t);if(e&&e.length){this._itemsOn(e,"remove",function(){this.emitEvent("removeComplete",[this,e])});for(var i=0,r=e.length;r>i;i++){var s=e[i];s.remove(),n(s,this.items)}}},m.prototype.destroy=function(){var t=this.element.style;t.height="",t.position="",t.width="";for(var e=0,i=this.items.length;i>e;e++){var o=this.items[e];o.destroy()}this.unbindResize(),delete this.element.outlayerGUID,p&&p.removeData(this.element,this.constructor.namespace)},m.data=function(t){var e=t&&t.outlayerGUID;return e&&v[e]},m.create=function(t,i){function o(){m.apply(this,arguments)}return Object.create?o.prototype=Object.create(m.prototype):e(o.prototype,m.prototype),o.prototype.constructor=o,o.defaults=e({},m.defaults),e(o.defaults,i),o.prototype.settings={},o.namespace=t,o.data=m.data,o.Item=function(){y.apply(this,arguments)},o.Item.prototype=new y,s(function(){for(var e=r(t),i=a.querySelectorAll(".js-"+e),n="data-"+e+"-options",s=0,h=i.length;h>s;s++){var f,c=i[s],d=c.getAttribute(n);try{f=d&&JSON.parse(d)}catch(l){u&&u.error("Error parsing "+n+" on "+c.nodeName.toLowerCase()+(c.id?"#"+c.id:"")+": "+l);continue}var y=new o(c,f);p&&p.data(c,t,y)}}),p&&p.bridget&&p.bridget(t,o),o},m.Item=y,m}var a=t.document,u=t.console,p=t.jQuery,h=function(){},f=Object.prototype.toString,c="object"==typeof HTMLElement?function(t){return t instanceof HTMLElement}:function(t){return t&&"object"==typeof t&&1===t.nodeType&&"string"==typeof t.nodeName},d=Array.prototype.indexOf?function(t,e){return t.indexOf(e)}:function(t,e){for(var i=0,o=t.length;o>i;i++)if(t[i]===e)return i;return-1};"function"==typeof define&&define.amd?define("outlayer/outlayer",["eventie/eventie","doc-ready/doc-ready","eventEmitter/EventEmitter","get-size/get-size","matches-selector/matches-selector","./item"],s):t.Outlayer=s(t.eventie,t.docReady,t.EventEmitter,t.getSize,t.matchesSelector,t.Outlayer.Item)}(window),function(t){function e(t){function e(){t.Item.apply(this,arguments)}return e.prototype=new t.Item,e.prototype._create=function(){this.id=this.layout.itemGUID++,t.Item.prototype._create.call(this),this.sortData={}},e.prototype.updateSortData=function(){if(!this.isIgnored){this.sortData.id=this.id,this.sortData["original-order"]=this.id,this.sortData.random=Math.random();var t=this.layout.options.getSortData,e=this.layout._sorters;for(var i in t){var o=e[i];this.sortData[i]=o(this.element,this)}}},e}"function"==typeof define&&define.amd?define("isotope/js/item",["outlayer/outlayer"],e):(t.Isotope=t.Isotope||{},t.Isotope.Item=e(t.Outlayer))}(window),function(t){function e(t,e){function i(t){this.isotope=t,t&&(this.options=t.options[this.namespace],this.element=t.element,this.items=t.filteredItems,this.size=t.size)}return function(){function t(t){return function(){return e.prototype[t].apply(this.isotope,arguments)}}for(var o=["_resetLayout","_getItemLayoutPosition","_manageStamp","_getContainerSize","_getElementOffset","needsResizeLayout"],n=0,r=o.length;r>n;n++){var s=o[n];i.prototype[s]=t(s)}}(),i.prototype.needsVerticalResizeLayout=function(){var e=t(this.isotope.element),i=this.isotope.size&&e;return i&&e.innerHeight!==this.isotope.size.innerHeight},i.prototype._getMeasurement=function(){this.isotope._getMeasurement.apply(this,arguments)},i.prototype.getColumnWidth=function(){this.getSegmentSize("column","Width")},i.prototype.getRowHeight=function(){this.getSegmentSize("row","Height")},i.prototype.getSegmentSize=function(t,e){var i=t+e,o="outer"+e;if(this._getMeasurement(i,o),!this[i]){var n=this.getFirstItemSize();this[i]=n&&n[o]||this.isotope.size["inner"+e]}},i.prototype.getFirstItemSize=function(){var e=this.isotope.filteredItems[0];return e&&e.element&&t(e.element)},i.prototype.layout=function(){this.isotope.layout.apply(this.isotope,arguments)},i.prototype.getSize=function(){this.isotope.getSize(),this.size=this.isotope.size},i.modes={},i.create=function(t,e){function o(){i.apply(this,arguments)}return o.prototype=new i,e&&(o.options=e),o.prototype.namespace=t,i.modes[t]=o,o},i}"function"==typeof define&&define.amd?define("isotope/js/layout-mode",["get-size/get-size","outlayer/outlayer"],e):(t.Isotope=t.Isotope||{},t.Isotope.LayoutMode=e(t.getSize,t.Outlayer))}(window),function(t){function e(t,e){var o=t.create("masonry");return o.prototype._resetLayout=function(){this.getSize(),this._getMeasurement("columnWidth","outerWidth"),this._getMeasurement("gutter","outerWidth"),this.measureColumns();var t=this.cols;for(this.colYs=[];t--;)this.colYs.push(0);this.maxY=0},o.prototype.measureColumns=function(){if(this.getContainerWidth(),!this.columnWidth){var t=this.items[0],i=t&&t.element;this.columnWidth=i&&e(i).outerWidth||this.containerWidth}this.columnWidth+=this.gutter,this.cols=Math.floor((this.containerWidth+this.gutter)/this.columnWidth),this.cols=Math.max(this.cols,1)},o.prototype.getContainerWidth=function(){var t=this.options.isFitWidth?this.element.parentNode:this.element,i=e(t);this.containerWidth=i&&i.innerWidth},o.prototype._getItemLayoutPosition=function(t){t.getSize();var e=t.size.outerWidth%this.columnWidth,o=e&&1>e?"round":"ceil",n=Math[o](t.size.outerWidth/this.columnWidth);n=Math.min(n,this.cols);for(var r=this._getColGroup(n),s=Math.min.apply(Math,r),a=i(r,s),u={x:this.columnWidth*a,y:s},p=s+t.size.outerHeight,h=this.cols+1-r.length,f=0;h>f;f++)this.colYs[a+f]=p;return u},o.prototype._getColGroup=function(t){if(2>t)return this.colYs;for(var e=[],i=this.cols+1-t,o=0;i>o;o++){var n=this.colYs.slice(o,o+t);e[o]=Math.max.apply(Math,n)}return e},o.prototype._manageStamp=function(t){var i=e(t),o=this._getElementOffset(t),n=this.options.isOriginLeft?o.left:o.right,r=n+i.outerWidth,s=Math.floor(n/this.columnWidth);s=Math.max(0,s);var a=Math.floor(r/this.columnWidth);a-=r%this.columnWidth?0:1,a=Math.min(this.cols-1,a);for(var u=(this.options.isOriginTop?o.top:o.bottom)+i.outerHeight,p=s;a>=p;p++)this.colYs[p]=Math.max(u,this.colYs[p])},o.prototype._getContainerSize=function(){this.maxY=Math.max.apply(Math,this.colYs);var t={height:this.maxY};return this.options.isFitWidth&&(t.width=this._getContainerFitWidth()),t},o.prototype._getContainerFitWidth=function(){for(var t=0,e=this.cols;--e&&0===this.colYs[e];)t++;return(this.cols-t)*this.columnWidth-this.gutter},o.prototype.needsResizeLayout=function(){var t=this.containerWidth;return this.getContainerWidth(),t!==this.containerWidth},o}var i=Array.prototype.indexOf?function(t,e){return t.indexOf(e)}:function(t,e){for(var i=0,o=t.length;o>i;i++){var n=t[i];if(n===e)return i}return-1};"function"==typeof define&&define.amd?define("masonry/masonry",["outlayer/outlayer","get-size/get-size"],e):t.Masonry=e(t.Outlayer,t.getSize)}(window),function(t){function e(t,e){for(var i in e)t[i]=e[i];return t}function i(t,i){var o=t.create("masonry"),n=o.prototype._getElementOffset,r=o.prototype.layout,s=o.prototype._getMeasurement;e(o.prototype,i.prototype),o.prototype._getElementOffset=n,o.prototype.layout=r,o.prototype._getMeasurement=s;var a=o.prototype.measureColumns;o.prototype.measureColumns=function(){this.items=this.isotope.filteredItems,a.call(this)};var u=o.prototype._manageStamp;return o.prototype._manageStamp=function(){this.options.isOriginLeft=this.isotope.options.isOriginLeft,this.options.isOriginTop=this.isotope.options.isOriginTop,u.apply(this,arguments)},o}"function"==typeof define&&define.amd?define("isotope/js/layout-modes/masonry",["../layout-mode","masonry/masonry"],i):i(t.Isotope.LayoutMode,t.Masonry)}(window),function(t){function e(t){var e=t.create("fitRows");return e.prototype._resetLayout=function(){this.x=0,this.y=0,this.maxY=0},e.prototype._getItemLayoutPosition=function(t){t.getSize(),0!==this.x&&t.size.outerWidth+this.x>this.isotope.size.innerWidth&&(this.x=0,this.y=this.maxY);var e={x:this.x,y:this.y};return this.maxY=Math.max(this.maxY,this.y+t.size.outerHeight),this.x+=t.size.outerWidth,e},e.prototype._getContainerSize=function(){return{height:this.maxY}},e}"function"==typeof define&&define.amd?define("isotope/js/layout-modes/fit-rows",["../layout-mode"],e):e(t.Isotope.LayoutMode)}(window),function(t){function e(t){var e=t.create("vertical",{horizontalAlignment:0});return e.prototype._resetLayout=function(){this.y=0},e.prototype._getItemLayoutPosition=function(t){t.getSize();var e=(this.isotope.size.innerWidth-t.size.outerWidth)*this.options.horizontalAlignment,i=this.y;return this.y+=t.size.outerHeight,{x:e,y:i}},e.prototype._getContainerSize=function(){return{height:this.y}},e}"function"==typeof define&&define.amd?define("isotope/js/layout-modes/vertical",["../layout-mode"],e):e(t.Isotope.LayoutMode)}(window),function(t){function e(t,e){for(var i in e)t[i]=e[i];return t}function i(t){return"[object Array]"===h.call(t)}function o(t){var e=[];if(i(t))e=t;else if(t&&"number"==typeof t.length)for(var o=0,n=t.length;n>o;o++)e.push(t[o]);else e.push(t);return e}function n(t,e){var i=f(e,t);-1!==i&&e.splice(i,1)}function r(t,i,r,u,h){function f(t,e){return function(i,o){for(var n=0,r=t.length;r>n;n++){var s=t[n],a=i.sortData[s],u=o.sortData[s];if(a>u||u>a){var p=void 0!==e[s]?e[s]:e,h=p?1:-1;return(a>u?1:-1)*h}}return 0}}var c=t.create("isotope",{layoutMode:"masonry",isJQueryFiltering:!0,sortAscending:!0});c.Item=u,c.LayoutMode=h,c.prototype._create=function(){this.itemGUID=0,this._sorters={},this._getSorters(),t.prototype._create.call(this),this.modes={},this.filteredItems=this.items,this.sortHistory=["original-order"];for(var e in h.modes)this._initLayoutMode(e)},c.prototype.reloadItems=function(){this.itemGUID=0,t.prototype.reloadItems.call(this)},c.prototype._itemize=function(){for(var e=t.prototype._itemize.apply(this,arguments),i=0,o=e.length;o>i;i++){var n=e[i];n.id=this.itemGUID++}return this._updateItemsSortData(e),e},c.prototype._initLayoutMode=function(t){var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):o,this.modes[t]=new i(this)},c.prototype.layout=function(){return!this._isLayoutInited&&this.options.isInitLayout?(this.arrange(),void 0):(this._layout(),void 0)},c.prototype._layout=function(){var t=this._getIsInstant();this._resetLayout(),this._manageStamps(),this.layoutItems(this.filteredItems,t),this._isLayoutInited=!0},c.prototype.arrange=function(t){this.option(t),this._getIsInstant(),this.filteredItems=this._filter(this.items),this._sort(),this._layout()},c.prototype._init=c.prototype.arrange,c.prototype._getIsInstant=function(){var t=void 0!==this.options.isLayoutInstant?this.options.isLayoutInstant:!this._isLayoutInited;return this._isInstant=t,t},c.prototype._filter=function(t){function e(){f.reveal(n),f.hide(r)}var i=this.options.filter;i=i||"*";for(var o=[],n=[],r=[],s=this._getFilterTest(i),a=0,u=t.length;u>a;a++){var p=t[a];if(!p.isIgnored){var h=s(p);h&&o.push(p),h&&p.isHidden?n.push(p):h||p.isHidden||r.push(p)}}var f=this;return this._isInstant?this._noTransition(e):e(),o},c.prototype._getFilterTest=function(t){return s&&this.options.isJQueryFiltering?function(e){return s(e.element).is(t)}:"function"==typeof t?function(e){return t(e.element)}:function(e){return r(e.element,t)}},c.prototype.updateSortData=function(t){this._getSorters(),t=o(t);var e=this.getItems(t);e=e.length?e:this.items,this._updateItemsSortData(e)
-},c.prototype._getSorters=function(){var t=this.options.getSortData;for(var e in t){var i=t[e];this._sorters[e]=d(i)}},c.prototype._updateItemsSortData=function(t){for(var e=0,i=t.length;i>e;e++){var o=t[e];o.updateSortData()}};var d=function(){function t(t){if("string"!=typeof t)return t;var i=a(t).split(" "),o=i[0],n=o.match(/^\[(.+)\]$/),r=n&&n[1],s=e(r,o),u=c.sortDataParsers[i[1]];return t=u?function(t){return t&&u(s(t))}:function(t){return t&&s(t)}}function e(t,e){var i;return i=t?function(e){return e.getAttribute(t)}:function(t){var i=t.querySelector(e);return i&&p(i)}}return t}();c.sortDataParsers={parseInt:function(t){return parseInt(t,10)},parseFloat:function(t){return parseFloat(t)}},c.prototype._sort=function(){var t=this.options.sortBy;if(t){var e=[].concat.apply(t,this.sortHistory),i=f(e,this.options.sortAscending);this.filteredItems.sort(i),t!==this.sortHistory[0]&&this.sortHistory.unshift(t)}},c.prototype._mode=function(){var t=this.options.layoutMode,e=this.modes[t];if(!e)throw Error("No layout mode: "+t);return e.options=this.options[t],e},c.prototype._resetLayout=function(){t.prototype._resetLayout.call(this),this._mode()._resetLayout()},c.prototype._getItemLayoutPosition=function(t){return this._mode()._getItemLayoutPosition(t)},c.prototype._manageStamp=function(t){this._mode()._manageStamp(t)},c.prototype._getContainerSize=function(){return this._mode()._getContainerSize()},c.prototype.needsResizeLayout=function(){return this._mode().needsResizeLayout()},c.prototype.appended=function(t){var e=this.addItems(t);if(e.length){var i=this._filterRevealAdded(e);this.filteredItems=this.filteredItems.concat(i)}},c.prototype.prepended=function(t){var e=this._itemize(t);if(e.length){var i=this.items.slice(0);this.items=e.concat(i),this._resetLayout(),this._manageStamps();var o=this._filterRevealAdded(e);this.layoutItems(i),this.filteredItems=o.concat(this.filteredItems)}},c.prototype._filterRevealAdded=function(t){var e=this._noTransition(function(){return this._filter(t)});return this.layoutItems(e,!0),this.reveal(e),t},c.prototype.insert=function(t){var e=this.addItems(t);if(e.length){var i,o,n=e.length;for(i=0;n>i;i++)o=e[i],this.element.appendChild(o.element);var r=this._filter(e);for(this._noTransition(function(){this.hide(r)}),i=0;n>i;i++)e[i].isLayoutInstant=!0;for(this.arrange(),i=0;n>i;i++)delete e[i].isLayoutInstant;this.reveal(r)}};var l=c.prototype.remove;return c.prototype.remove=function(t){t=o(t);var e=this.getItems(t);if(l.call(this,t),e&&e.length)for(var i=0,r=e.length;r>i;i++){var s=e[i];n(s,this.filteredItems)}},c.prototype._noTransition=function(t){var e=this.options.transitionDuration;this.options.transitionDuration=0;var i=t.call(this);return this.options.transitionDuration=e,i},c}var s=t.jQuery,a=String.prototype.trim?function(t){return t.trim()}:function(t){return t.replace(/^\s+|\s+$/g,"")},u=document.documentElement,p=u.textContent?function(t){return t.textContent}:function(t){return t.innerText},h=Object.prototype.toString,f=Array.prototype.indexOf?function(t,e){return t.indexOf(e)}:function(t,e){for(var i=0,o=t.length;o>i;i++)if(t[i]===e)return i;return-1};"function"==typeof define&&define.amd?define(["outlayer/outlayer","get-size/get-size","matches-selector/matches-selector","isotope/js/item","isotope/js/layout-mode","isotope/js/layout-modes/masonry","isotope/js/layout-modes/fit-rows","isotope/js/layout-modes/vertical"],r):t.Isotope=r(t.Outlayer,t.getSize,t.matchesSelector,t.Isotope.Item,t.Isotope.LayoutMode)}(window);
+/*!
+ * imagesLoaded PACKAGED v4.1.0
+ * JavaScript is all like "You images are done yet or what?"
+ * MIT License
+ */
+
+!function(t,e){"function"==typeof define&&define.amd?define("ev-emitter/ev-emitter",e):"object"==typeof module&&module.exports?module.exports=e():t.EvEmitter=e()}(this,function(){function t(){}var e=t.prototype;return e.on=function(t,e){if(t&&e){var i=this._events=this._events||{},n=i[t]=i[t]||[];return-1==n.indexOf(e)&&n.push(e),this}},e.once=function(t,e){if(t&&e){this.on(t,e);var i=this._onceEvents=this._onceEvents||{},n=i[t]=i[t]||[];return n[e]=!0,this}},e.off=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=i.indexOf(e);return-1!=n&&i.splice(n,1),this}},e.emitEvent=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=0,o=i[n];e=e||[];for(var r=this._onceEvents&&this._onceEvents[t];o;){var s=r&&r[o];s&&(this.off(t,o),delete r[o]),o.apply(this,e),n+=s?0:1,o=i[n]}return this}},t}),function(t,e){"use strict";"function"==typeof define&&define.amd?define(["ev-emitter/ev-emitter"],function(i){return e(t,i)}):"object"==typeof module&&module.exports?module.exports=e(t,require("ev-emitter")):t.imagesLoaded=e(t,t.EvEmitter)}(window,function(t,e){function i(t,e){for(var i in e)t[i]=e[i];return t}function n(t){var e=[];if(Array.isArray(t))e=t;else if("number"==typeof t.length)for(var i=0;i<t.length;i++)e.push(t[i]);else e.push(t);return e}function o(t,e,r){return this instanceof o?("string"==typeof t&&(t=document.querySelectorAll(t)),this.elements=n(t),this.options=i({},this.options),"function"==typeof e?r=e:i(this.options,e),r&&this.on("always",r),this.getImages(),h&&(this.jqDeferred=new h.Deferred),void setTimeout(function(){this.check()}.bind(this))):new o(t,e,r)}function r(t){this.img=t}function s(t,e){this.url=t,this.element=e,this.img=new Image}var h=t.jQuery,a=t.console;o.prototype=Object.create(e.prototype),o.prototype.options={},o.prototype.getImages=function(){this.images=[],this.elements.forEach(this.addElementImages,this)},o.prototype.addElementImages=function(t){"IMG"==t.nodeName&&this.addImage(t),this.options.background===!0&&this.addElementBackgroundImages(t);var e=t.nodeType;if(e&&d[e]){for(var i=t.querySelectorAll("img"),n=0;n<i.length;n++){var o=i[n];this.addImage(o)}if("string"==typeof this.options.background){var r=t.querySelectorAll(this.options.background);for(n=0;n<r.length;n++){var s=r[n];this.addElementBackgroundImages(s)}}}};var d={1:!0,9:!0,11:!0};return o.prototype.addElementBackgroundImages=function(t){var e=getComputedStyle(t);if(e)for(var i=/url\((['"])?(.*?)\1\)/gi,n=i.exec(e.backgroundImage);null!==n;){var o=n&&n[2];o&&this.addBackground(o,t),n=i.exec(e.backgroundImage)}},o.prototype.addImage=function(t){var e=new r(t);this.images.push(e)},o.prototype.addBackground=function(t,e){var i=new s(t,e);this.images.push(i)},o.prototype.check=function(){function t(t,i,n){setTimeout(function(){e.progress(t,i,n)})}var e=this;return this.progressedCount=0,this.hasAnyBroken=!1,this.images.length?void this.images.forEach(function(e){e.once("progress",t),e.check()}):void this.complete()},o.prototype.progress=function(t,e,i){this.progressedCount++,this.hasAnyBroken=this.hasAnyBroken||!t.isLoaded,this.emitEvent("progress",[this,t,e]),this.jqDeferred&&this.jqDeferred.notify&&this.jqDeferred.notify(this,t),this.progressedCount==this.images.length&&this.complete(),this.options.debug&&a&&a.log("progress: "+i,t,e)},o.prototype.complete=function(){var t=this.hasAnyBroken?"fail":"done";if(this.isComplete=!0,this.emitEvent(t,[this]),this.emitEvent("always",[this]),this.jqDeferred){var e=this.hasAnyBroken?"reject":"resolve";this.jqDeferred[e](this)}},r.prototype=Object.create(e.prototype),r.prototype.check=function(){var t=this.getIsImageComplete();return t?void this.confirm(0!==this.img.naturalWidth,"naturalWidth"):(this.proxyImage=new Image,this.proxyImage.addEventListener("load",this),this.proxyImage.addEventListener("error",this),this.img.addEventListener("load",this),this.img.addEventListener("error",this),void(this.proxyImage.src=this.img.src))},r.prototype.getIsImageComplete=function(){return this.img.complete&&void 0!==this.img.naturalWidth},r.prototype.confirm=function(t,e){this.isLoaded=t,this.emitEvent("progress",[this,this.img,e])},r.prototype.handleEvent=function(t){var e="on"+t.type;this[e]&&this[e](t)},r.prototype.onload=function(){this.confirm(!0,"onload"),this.unbindEvents()},r.prototype.onerror=function(){this.confirm(!1,"onerror"),this.unbindEvents()},r.prototype.unbindEvents=function(){this.proxyImage.removeEventListener("load",this),this.proxyImage.removeEventListener("error",this),this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype=Object.create(r.prototype),s.prototype.check=function(){this.img.addEventListener("load",this),this.img.addEventListener("error",this),this.img.src=this.url;var t=this.getIsImageComplete();t&&(this.confirm(0!==this.img.naturalWidth,"naturalWidth"),this.unbindEvents())},s.prototype.unbindEvents=function(){this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype.confirm=function(t,e){this.isLoaded=t,this.emitEvent("progress",[this,this.element,e])},o.makeJQueryPlugin=function(e){e=e||t.jQuery,e&&(h=e,h.fn.imagesLoaded=function(t,e){var i=new o(this,t,e);return i.jqDeferred.promise(h(this))})},o.makeJQueryPlugin(),o});
+/*!
+ * Isotope PACKAGED v3.0.0
+ *
+ * Licensed GPLv3 for open source use
+ * or Isotope Commercial License for commercial use
+ *
+ * http://isotope.metafizzy.co
+ * Copyright 2016 Metafizzy
+ */
+
+!function(t,e){"use strict";"function"==typeof define&&define.amd?define("jquery-bridget/jquery-bridget",["jquery"],function(i){e(t,i)}):"object"==typeof module&&module.exports?module.exports=e(t,require("jquery")):t.jQueryBridget=e(t,t.jQuery)}(window,function(t,e){"use strict";function i(i,r,a){function u(t,e,n){var o,r="$()."+i+'("'+e+'")';return t.each(function(t,u){var h=a.data(u,i);if(!h)return void s(i+" not initialized. Cannot call methods, i.e. "+r);var d=h[e];if(!d||"_"==e.charAt(0))return void s(r+" is not a valid method");var l=d.apply(h,n);o=void 0===o?l:o}),void 0!==o?o:t}function h(t,e){t.each(function(t,n){var o=a.data(n,i);o?(o.option(e),o._init()):(o=new r(n,e),a.data(n,i,o))})}a=a||e||t.jQuery,a&&(r.prototype.option||(r.prototype.option=function(t){a.isPlainObject(t)&&(this.options=a.extend(!0,this.options,t))}),a.fn[i]=function(t){if("string"==typeof t){var e=o.call(arguments,1);return u(this,t,e)}return h(this,t),this},n(a))}function n(t){!t||t&&t.bridget||(t.bridget=i)}var o=Array.prototype.slice,r=t.console,s="undefined"==typeof r?function(){}:function(t){r.error(t)};return n(e||t.jQuery),i}),function(t,e){"function"==typeof define&&define.amd?define("ev-emitter/ev-emitter",e):"object"==typeof module&&module.exports?module.exports=e():t.EvEmitter=e()}(this,function(){function t(){}var e=t.prototype;return e.on=function(t,e){if(t&&e){var i=this._events=this._events||{},n=i[t]=i[t]||[];return-1==n.indexOf(e)&&n.push(e),this}},e.once=function(t,e){if(t&&e){this.on(t,e);var i=this._onceEvents=this._onceEvents||{},n=i[t]=i[t]||{};return n[e]=!0,this}},e.off=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=i.indexOf(e);return-1!=n&&i.splice(n,1),this}},e.emitEvent=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=0,o=i[n];e=e||[];for(var r=this._onceEvents&&this._onceEvents[t];o;){var s=r&&r[o];s&&(this.off(t,o),delete r[o]),o.apply(this,e),n+=s?0:1,o=i[n]}return this}},t}),function(t,e){"use strict";"function"==typeof define&&define.amd?define("get-size/get-size",[],function(){return e()}):"object"==typeof module&&module.exports?module.exports=e():t.getSize=e()}(window,function(){"use strict";function t(t){var e=parseFloat(t),i=-1==t.indexOf("%")&&!isNaN(e);return i&&e}function e(){}function i(){for(var t={width:0,height:0,innerWidth:0,innerHeight:0,outerWidth:0,outerHeight:0},e=0;h>e;e++){var i=u[e];t[i]=0}return t}function n(t){var e=getComputedStyle(t);return e||a("Style returned "+e+". Are you running this code in a hidden iframe on Firefox? See http://bit.ly/getsizebug1"),e}function o(){if(!d){d=!0;var e=document.createElement("div");e.style.width="200px",e.style.padding="1px 2px 3px 4px",e.style.borderStyle="solid",e.style.borderWidth="1px 2px 3px 4px",e.style.boxSizing="border-box";var i=document.body||document.documentElement;i.appendChild(e);var o=n(e);r.isBoxSizeOuter=s=200==t(o.width),i.removeChild(e)}}function r(e){if(o(),"string"==typeof e&&(e=document.querySelector(e)),e&&"object"==typeof e&&e.nodeType){var r=n(e);if("none"==r.display)return i();var a={};a.width=e.offsetWidth,a.height=e.offsetHeight;for(var d=a.isBorderBox="border-box"==r.boxSizing,l=0;h>l;l++){var f=u[l],c=r[f],m=parseFloat(c);a[f]=isNaN(m)?0:m}var p=a.paddingLeft+a.paddingRight,y=a.paddingTop+a.paddingBottom,g=a.marginLeft+a.marginRight,v=a.marginTop+a.marginBottom,_=a.borderLeftWidth+a.borderRightWidth,I=a.borderTopWidth+a.borderBottomWidth,z=d&&s,x=t(r.width);x!==!1&&(a.width=x+(z?0:p+_));var S=t(r.height);return S!==!1&&(a.height=S+(z?0:y+I)),a.innerWidth=a.width-(p+_),a.innerHeight=a.height-(y+I),a.outerWidth=a.width+g,a.outerHeight=a.height+v,a}}var s,a="undefined"==typeof console?e:function(t){console.error(t)},u=["paddingLeft","paddingRight","paddingTop","paddingBottom","marginLeft","marginRight","marginTop","marginBottom","borderLeftWidth","borderRightWidth","borderTopWidth","borderBottomWidth"],h=u.length,d=!1;return r}),function(t,e){"use strict";"function"==typeof define&&define.amd?define("desandro-matches-selector/matches-selector",e):"object"==typeof module&&module.exports?module.exports=e():t.matchesSelector=e()}(window,function(){"use strict";var t=function(){var t=Element.prototype;if(t.matches)return"matches";if(t.matchesSelector)return"matchesSelector";for(var e=["webkit","moz","ms","o"],i=0;i<e.length;i++){var n=e[i],o=n+"MatchesSelector";if(t[o])return o}}();return function(e,i){return e[t](i)}}),function(t,e){"function"==typeof define&&define.amd?define("fizzy-ui-utils/utils",["desandro-matches-selector/matches-selector"],function(i){return e(t,i)}):"object"==typeof module&&module.exports?module.exports=e(t,require("desandro-matches-selector")):t.fizzyUIUtils=e(t,t.matchesSelector)}(window,function(t,e){var i={};i.extend=function(t,e){for(var i in e)t[i]=e[i];return t},i.modulo=function(t,e){return(t%e+e)%e},i.makeArray=function(t){var e=[];if(Array.isArray(t))e=t;else if(t&&"number"==typeof t.length)for(var i=0;i<t.length;i++)e.push(t[i]);else e.push(t);return e},i.removeFrom=function(t,e){var i=t.indexOf(e);-1!=i&&t.splice(i,1)},i.getParent=function(t,i){for(;t!=document.body;)if(t=t.parentNode,e(t,i))return t},i.getQueryElement=function(t){return"string"==typeof t?document.querySelector(t):t},i.handleEvent=function(t){var e="on"+t.type;this[e]&&this[e](t)},i.filterFindElements=function(t,n){t=i.makeArray(t);var o=[];return t.forEach(function(t){if(t instanceof HTMLElement){if(!n)return void o.push(t);e(t,n)&&o.push(t);for(var i=t.querySelectorAll(n),r=0;r<i.length;r++)o.push(i[r])}}),o},i.debounceMethod=function(t,e,i){var n=t.prototype[e],o=e+"Timeout";t.prototype[e]=function(){var t=this[o];t&&clearTimeout(t);var e=arguments,r=this;this[o]=setTimeout(function(){n.apply(r,e),delete r[o]},i||100)}},i.docReady=function(t){"complete"==document.readyState?t():document.addEventListener("DOMContentLoaded",t)},i.toDashed=function(t){return t.replace(/(.)([A-Z])/g,function(t,e,i){return e+"-"+i}).toLowerCase()};var n=t.console;return i.htmlInit=function(e,o){i.docReady(function(){var r=i.toDashed(o),s="data-"+r,a=document.querySelectorAll("["+s+"]"),u=document.querySelectorAll(".js-"+r),h=i.makeArray(a).concat(i.makeArray(u)),d=s+"-options",l=t.jQuery;h.forEach(function(t){var i,r=t.getAttribute(s)||t.getAttribute(d);try{i=r&&JSON.parse(r)}catch(a){return void(n&&n.error("Error parsing "+s+" on "+t.className+": "+a))}var u=new e(t,i);l&&l.data(t,o,u)})})},i}),function(t,e){"function"==typeof define&&define.amd?define("outlayer/item",["ev-emitter/ev-emitter","get-size/get-size"],e):"object"==typeof module&&module.exports?module.exports=e(require("ev-emitter"),require("get-size")):(t.Outlayer={},t.Outlayer.Item=e(t.EvEmitter,t.getSize))}(window,function(t,e){"use strict";function i(t){for(var e in t)return!1;return e=null,!0}function n(t,e){t&&(this.element=t,this.layout=e,this.position={x:0,y:0},this._create())}function o(t){return t.replace(/([A-Z])/g,function(t){return"-"+t.toLowerCase()})}var r=document.documentElement.style,s="string"==typeof r.transition?"transition":"WebkitTransition",a="string"==typeof r.transform?"transform":"WebkitTransform",u={WebkitTransition:"webkitTransitionEnd",transition:"transitionend"}[s],h={transform:a,transition:s,transitionDuration:s+"Duration",transitionProperty:s+"Property",transitionDelay:s+"Delay"},d=n.prototype=Object.create(t.prototype);d.constructor=n,d._create=function(){this._transn={ingProperties:{},clean:{},onEnd:{}},this.css({position:"absolute"})},d.handleEvent=function(t){var e="on"+t.type;this[e]&&this[e](t)},d.getSize=function(){this.size=e(this.element)},d.css=function(t){var e=this.element.style;for(var i in t){var n=h[i]||i;e[n]=t[i]}},d.getPosition=function(){var t=getComputedStyle(this.element),e=this.layout._getOption("originLeft"),i=this.layout._getOption("originTop"),n=t[e?"left":"right"],o=t[i?"top":"bottom"],r=this.layout.size,s=-1!=n.indexOf("%")?parseFloat(n)/100*r.width:parseInt(n,10),a=-1!=o.indexOf("%")?parseFloat(o)/100*r.height:parseInt(o,10);s=isNaN(s)?0:s,a=isNaN(a)?0:a,s-=e?r.paddingLeft:r.paddingRight,a-=i?r.paddingTop:r.paddingBottom,this.position.x=s,this.position.y=a},d.layoutPosition=function(){var t=this.layout.size,e={},i=this.layout._getOption("originLeft"),n=this.layout._getOption("originTop"),o=i?"paddingLeft":"paddingRight",r=i?"left":"right",s=i?"right":"left",a=this.position.x+t[o];e[r]=this.getXValue(a),e[s]="";var u=n?"paddingTop":"paddingBottom",h=n?"top":"bottom",d=n?"bottom":"top",l=this.position.y+t[u];e[h]=this.getYValue(l),e[d]="",this.css(e),this.emitEvent("layout",[this])},d.getXValue=function(t){var e=this.layout._getOption("horizontal");return this.layout.options.percentPosition&&!e?t/this.layout.size.width*100+"%":t+"px"},d.getYValue=function(t){var e=this.layout._getOption("horizontal");return this.layout.options.percentPosition&&e?t/this.layout.size.height*100+"%":t+"px"},d._transitionTo=function(t,e){this.getPosition();var i=this.position.x,n=this.position.y,o=parseInt(t,10),r=parseInt(e,10),s=o===this.position.x&&r===this.position.y;if(this.setPosition(t,e),s&&!this.isTransitioning)return void this.layoutPosition();var a=t-i,u=e-n,h={};h.transform=this.getTranslate(a,u),this.transition({to:h,onTransitionEnd:{transform:this.layoutPosition},isCleaning:!0})},d.getTranslate=function(t,e){var i=this.layout._getOption("originLeft"),n=this.layout._getOption("originTop");return t=i?t:-t,e=n?e:-e,"translate3d("+t+"px, "+e+"px, 0)"},d.goTo=function(t,e){this.setPosition(t,e),this.layoutPosition()},d.moveTo=d._transitionTo,d.setPosition=function(t,e){this.position.x=parseInt(t,10),this.position.y=parseInt(e,10)},d._nonTransition=function(t){this.css(t.to),t.isCleaning&&this._removeStyles(t.to);for(var e in t.onTransitionEnd)t.onTransitionEnd[e].call(this)},d.transition=function(t){if(!parseFloat(this.layout.options.transitionDuration))return void this._nonTransition(t);var e=this._transn;for(var i in t.onTransitionEnd)e.onEnd[i]=t.onTransitionEnd[i];for(i in t.to)e.ingProperties[i]=!0,t.isCleaning&&(e.clean[i]=!0);if(t.from){this.css(t.from);var n=this.element.offsetHeight;n=null}this.enableTransition(t.to),this.css(t.to),this.isTransitioning=!0};var l="opacity,"+o(a);d.enableTransition=function(){if(!this.isTransitioning){var t=this.layout.options.transitionDuration;t="number"==typeof t?t+"ms":t,this.css({transitionProperty:l,transitionDuration:t,transitionDelay:this.staggerDelay||0}),this.element.addEventListener(u,this,!1)}},d.onwebkitTransitionEnd=function(t){this.ontransitionend(t)},d.onotransitionend=function(t){this.ontransitionend(t)};var f={"-webkit-transform":"transform"};d.ontransitionend=function(t){if(t.target===this.element){var e=this._transn,n=f[t.propertyName]||t.propertyName;if(delete e.ingProperties[n],i(e.ingProperties)&&this.disableTransition(),n in e.clean&&(this.element.style[t.propertyName]="",delete e.clean[n]),n in e.onEnd){var o=e.onEnd[n];o.call(this),delete e.onEnd[n]}this.emitEvent("transitionEnd",[this])}},d.disableTransition=function(){this.removeTransitionStyles(),this.element.removeEventListener(u,this,!1),this.isTransitioning=!1},d._removeStyles=function(t){var e={};for(var i in t)e[i]="";this.css(e)};var c={transitionProperty:"",transitionDuration:"",transitionDelay:""};return d.removeTransitionStyles=function(){this.css(c)},d.stagger=function(t){t=isNaN(t)?0:t,this.staggerDelay=t+"ms"},d.removeElem=function(){this.element.parentNode.removeChild(this.element),this.css({display:""}),this.emitEvent("remove",[this])},d.remove=function(){return s&&parseFloat(this.layout.options.transitionDuration)?(this.once("transitionEnd",function(){this.removeElem()}),void this.hide()):void this.removeElem()},d.reveal=function(){delete this.isHidden,this.css({display:""});var t=this.layout.options,e={},i=this.getHideRevealTransitionEndProperty("visibleStyle");e[i]=this.onRevealTransitionEnd,this.transition({from:t.hiddenStyle,to:t.visibleStyle,isCleaning:!0,onTransitionEnd:e})},d.onRevealTransitionEnd=function(){this.isHidden||this.emitEvent("reveal")},d.getHideRevealTransitionEndProperty=function(t){var e=this.layout.options[t];if(e.opacity)return"opacity";for(var i in e)return i},d.hide=function(){this.isHidden=!0,this.css({display:""});var t=this.layout.options,e={},i=this.getHideRevealTransitionEndProperty("hiddenStyle");e[i]=this.onHideTransitionEnd,this.transition({from:t.visibleStyle,to:t.hiddenStyle,isCleaning:!0,onTransitionEnd:e})},d.onHideTransitionEnd=function(){this.isHidden&&(this.css({display:"none"}),this.emitEvent("hide"))},d.destroy=function(){this.css({position:"",left:"",right:"",top:"",bottom:"",transition:"",transform:""})},n}),function(t,e){"use strict";"function"==typeof define&&define.amd?define("outlayer/outlayer",["ev-emitter/ev-emitter","get-size/get-size","fizzy-ui-utils/utils","./item"],function(i,n,o,r){return e(t,i,n,o,r)}):"object"==typeof module&&module.exports?module.exports=e(t,require("ev-emitter"),require("get-size"),require("fizzy-ui-utils"),require("./item")):t.Outlayer=e(t,t.EvEmitter,t.getSize,t.fizzyUIUtils,t.Outlayer.Item)}(window,function(t,e,i,n,o){"use strict";function r(t,e){var i=n.getQueryElement(t);if(!i)return void(u&&u.error("Bad element for "+this.constructor.namespace+": "+(i||t)));this.element=i,h&&(this.$element=h(this.element)),this.options=n.extend({},this.constructor.defaults),this.option(e);var o=++l;this.element.outlayerGUID=o,f[o]=this,this._create();var r=this._getOption("initLayout");r&&this.layout()}function s(t){function e(){t.apply(this,arguments)}return e.prototype=Object.create(t.prototype),e.prototype.constructor=e,e}function a(t){if("number"==typeof t)return t;var e=t.match(/(^\d*\.?\d*)(\w*)/),i=e&&e[1],n=e&&e[2];if(!i.length)return 0;i=parseFloat(i);var o=m[n]||1;return i*o}var u=t.console,h=t.jQuery,d=function(){},l=0,f={};r.namespace="outlayer",r.Item=o,r.defaults={containerStyle:{position:"relative"},initLayout:!0,originLeft:!0,originTop:!0,resize:!0,resizeContainer:!0,transitionDuration:"0.4s",hiddenStyle:{opacity:0,transform:"scale(0.001)"},visibleStyle:{opacity:1,transform:"scale(1)"}};var c=r.prototype;n.extend(c,e.prototype),c.option=function(t){n.extend(this.options,t)},c._getOption=function(t){var e=this.constructor.compatOptions[t];return e&&void 0!==this.options[e]?this.options[e]:this.options[t]},r.compatOptions={initLayout:"isInitLayout",horizontal:"isHorizontal",layoutInstant:"isLayoutInstant",originLeft:"isOriginLeft",originTop:"isOriginTop",resize:"isResizeBound",resizeContainer:"isResizingContainer"},c._create=function(){this.reloadItems(),this.stamps=[],this.stamp(this.options.stamp),n.extend(this.element.style,this.options.containerStyle);var t=this._getOption("resize");t&&this.bindResize()},c.reloadItems=function(){this.items=this._itemize(this.element.children)},c._itemize=function(t){for(var e=this._filterFindItemElements(t),i=this.constructor.Item,n=[],o=0;o<e.length;o++){var r=e[o],s=new i(r,this);n.push(s)}return n},c._filterFindItemElements=function(t){return n.filterFindElements(t,this.options.itemSelector)},c.getItemElements=function(){return this.items.map(function(t){return t.element})},c.layout=function(){this._resetLayout(),this._manageStamps();var t=this._getOption("layoutInstant"),e=void 0!==t?t:!this._isLayoutInited;this.layoutItems(this.items,e),this._isLayoutInited=!0},c._init=c.layout,c._resetLayout=function(){this.getSize()},c.getSize=function(){this.size=i(this.element)},c._getMeasurement=function(t,e){var n,o=this.options[t];o?("string"==typeof o?n=this.element.querySelector(o):o instanceof HTMLElement&&(n=o),this[t]=n?i(n)[e]:o):this[t]=0},c.layoutItems=function(t,e){t=this._getItemsForLayout(t),this._layoutItems(t,e),this._postLayout()},c._getItemsForLayout=function(t){return t.filter(function(t){return!t.isIgnored})},c._layoutItems=function(t,e){if(this._emitCompleteOnItems("layout",t),t&&t.length){var i=[];t.forEach(function(t){var n=this._getItemLayoutPosition(t);n.item=t,n.isInstant=e||t.isLayoutInstant,i.push(n)},this),this._processLayoutQueue(i)}},c._getItemLayoutPosition=function(){return{x:0,y:0}},c._processLayoutQueue=function(t){this.updateStagger(),t.forEach(function(t,e){this._positionItem(t.item,t.x,t.y,t.isInstant,e)},this)},c.updateStagger=function(){var t=this.options.stagger;return null===t||void 0===t?void(this.stagger=0):(this.stagger=a(t),this.stagger)},c._positionItem=function(t,e,i,n,o){n?t.goTo(e,i):(t.stagger(o*this.stagger),t.moveTo(e,i))},c._postLayout=function(){this.resizeContainer()},c.resizeContainer=function(){var t=this._getOption("resizeContainer");if(t){var e=this._getContainerSize();e&&(this._setContainerMeasure(e.width,!0),this._setContainerMeasure(e.height,!1))}},c._getContainerSize=d,c._setContainerMeasure=function(t,e){if(void 0!==t){var i=this.size;i.isBorderBox&&(t+=e?i.paddingLeft+i.paddingRight+i.borderLeftWidth+i.borderRightWidth:i.paddingBottom+i.paddingTop+i.borderTopWidth+i.borderBottomWidth),t=Math.max(t,0),this.element.style[e?"width":"height"]=t+"px"}},c._emitCompleteOnItems=function(t,e){function i(){o.dispatchEvent(t+"Complete",null,[e])}function n(){s++,s==r&&i()}var o=this,r=e.length;if(!e||!r)return void i();var s=0;e.forEach(function(e){e.once(t,n)})},c.dispatchEvent=function(t,e,i){var n=e?[e].concat(i):i;if(this.emitEvent(t,n),h)if(this.$element=this.$element||h(this.element),e){var o=h.Event(e);o.type=t,this.$element.trigger(o,i)}else this.$element.trigger(t,i)},c.ignore=function(t){var e=this.getItem(t);e&&(e.isIgnored=!0)},c.unignore=function(t){var e=this.getItem(t);e&&delete e.isIgnored},c.stamp=function(t){t=this._find(t),t&&(this.stamps=this.stamps.concat(t),t.forEach(this.ignore,this))},c.unstamp=function(t){t=this._find(t),t&&t.forEach(function(t){n.removeFrom(this.stamps,t),this.unignore(t)},this)},c._find=function(t){return t?("string"==typeof t&&(t=this.element.querySelectorAll(t)),t=n.makeArray(t)):void 0},c._manageStamps=function(){this.stamps&&this.stamps.length&&(this._getBoundingRect(),this.stamps.forEach(this._manageStamp,this))},c._getBoundingRect=function(){var t=this.element.getBoundingClientRect(),e=this.size;this._boundingRect={left:t.left+e.paddingLeft+e.borderLeftWidth,top:t.top+e.paddingTop+e.borderTopWidth,right:t.right-(e.paddingRight+e.borderRightWidth),bottom:t.bottom-(e.paddingBottom+e.borderBottomWidth)}},c._manageStamp=d,c._getElementOffset=function(t){var e=t.getBoundingClientRect(),n=this._boundingRect,o=i(t),r={left:e.left-n.left-o.marginLeft,top:e.top-n.top-o.marginTop,right:n.right-e.right-o.marginRight,bottom:n.bottom-e.bottom-o.marginBottom};return r},c.handleEvent=n.handleEvent,c.bindResize=function(){t.addEventListener("resize",this),this.isResizeBound=!0},c.unbindResize=function(){t.removeEventListener("resize",this),this.isResizeBound=!1},c.onresize=function(){this.resize()},n.debounceMethod(r,"onresize",100),c.resize=function(){this.isResizeBound&&this.needsResizeLayout()&&this.layout()},c.needsResizeLayout=function(){var t=i(this.element),e=this.size&&t;return e&&t.innerWidth!==this.size.innerWidth},c.addItems=function(t){var e=this._itemize(t);return e.length&&(this.items=this.items.concat(e)),e},c.appended=function(t){var e=this.addItems(t);e.length&&(this.layoutItems(e,!0),this.reveal(e))},c.prepended=function(t){var e=this._itemize(t);if(e.length){var i=this.items.slice(0);this.items=e.concat(i),this._resetLayout(),this._manageStamps(),this.layoutItems(e,!0),this.reveal(e),this.layoutItems(i)}},c.reveal=function(t){if(this._emitCompleteOnItems("reveal",t),t&&t.length){var e=this.updateStagger();t.forEach(function(t,i){t.stagger(i*e),t.reveal()})}},c.hide=function(t){if(this._emitCompleteOnItems("hide",t),t&&t.length){var e=this.updateStagger();t.forEach(function(t,i){t.stagger(i*e),t.hide()})}},c.revealItemElements=function(t){var e=this.getItems(t);this.reveal(e)},c.hideItemElements=function(t){var e=this.getItems(t);this.hide(e)},c.getItem=function(t){for(var e=0;e<this.items.length;e++){var i=this.items[e];if(i.element==t)return i}},c.getItems=function(t){t=n.makeArray(t);var e=[];return t.forEach(function(t){var i=this.getItem(t);i&&e.push(i)},this),e},c.remove=function(t){var e=this.getItems(t);this._emitCompleteOnItems("remove",e),e&&e.length&&e.forEach(function(t){t.remove(),n.removeFrom(this.items,t)},this)},c.destroy=function(){var t=this.element.style;t.height="",t.position="",t.width="",this.items.forEach(function(t){t.destroy()}),this.unbindResize();var e=this.element.outlayerGUID;delete f[e],delete this.element.outlayerGUID,h&&h.removeData(this.element,this.constructor.namespace)},r.data=function(t){t=n.getQueryElement(t);var e=t&&t.outlayerGUID;return e&&f[e]},r.create=function(t,e){var i=s(r);return i.defaults=n.extend({},r.defaults),n.extend(i.defaults,e),i.compatOptions=n.extend({},r.compatOptions),i.namespace=t,i.data=r.data,i.Item=s(o),n.htmlInit(i,t),h&&h.bridget&&h.bridget(t,i),i};var m={ms:1,s:1e3};return r.Item=o,r}),function(t,e){"function"==typeof define&&define.amd?define("isotope/item",["outlayer/outlayer"],e):"object"==typeof module&&module.exports?module.exports=e(require("outlayer")):(t.Isotope=t.Isotope||{},t.Isotope.Item=e(t.Outlayer))}(window,function(t){"use strict";function e(){t.Item.apply(this,arguments)}var i=e.prototype=Object.create(t.Item.prototype),n=i._create;i._create=function(){this.id=this.layout.itemGUID++,n.call(this),this.sortData={}},i.updateSortData=function(){if(!this.isIgnored){this.sortData.id=this.id,this.sortData["original-order"]=this.id,this.sortData.random=Math.random();var t=this.layout.options.getSortData,e=this.layout._sorters;for(var i in t){var n=e[i];this.sortData[i]=n(this.element,this)}}};var o=i.destroy;return i.destroy=function(){o.apply(this,arguments),this.css({display:""})},e}),function(t,e){"function"==typeof define&&define.amd?define("isotope/layout-mode",["get-size/get-size","outlayer/outlayer"],e):"object"==typeof module&&module.exports?module.exports=e(require("get-size"),require("outlayer")):(t.Isotope=t.Isotope||{},t.Isotope.LayoutMode=e(t.getSize,t.Outlayer))}(window,function(t,e){"use strict";function i(t){this.isotope=t,t&&(this.options=t.options[this.namespace],this.element=t.element,this.items=t.filteredItems,this.size=t.size)}var n=i.prototype,o=["_resetLayout","_getItemLayoutPosition","_manageStamp","_getContainerSize","_getElementOffset","needsResizeLayout","_getOption"];return o.forEach(function(t){n[t]=function(){return e.prototype[t].apply(this.isotope,arguments)}}),n.needsVerticalResizeLayout=function(){var e=t(this.isotope.element),i=this.isotope.size&&e;return i&&e.innerHeight!=this.isotope.size.innerHeight},n._getMeasurement=function(){this.isotope._getMeasurement.apply(this,arguments)},n.getColumnWidth=function(){this.getSegmentSize("column","Width")},n.getRowHeight=function(){this.getSegmentSize("row","Height")},n.getSegmentSize=function(t,e){var i=t+e,n="outer"+e;if(this._getMeasurement(i,n),!this[i]){var o=this.getFirstItemSize();this[i]=o&&o[n]||this.isotope.size["inner"+e]}},n.getFirstItemSize=function(){var e=this.isotope.filteredItems[0];return e&&e.element&&t(e.element)},n.layout=function(){this.isotope.layout.apply(this.isotope,arguments)},n.getSize=function(){this.isotope.getSize(),this.size=this.isotope.size},i.modes={},i.create=function(t,e){function o(){i.apply(this,arguments)}return o.prototype=Object.create(n),o.prototype.constructor=o,e&&(o.options=e),o.prototype.namespace=t,i.modes[t]=o,o},i}),function(t,e){"function"==typeof define&&define.amd?define("masonry/masonry",["outlayer/outlayer","get-size/get-size"],e):"object"==typeof module&&module.exports?module.exports=e(require("outlayer"),require("get-size")):t.Masonry=e(t.Outlayer,t.getSize)}(window,function(t,e){var i=t.create("masonry");return i.compatOptions.fitWidth="isFitWidth",i.prototype._resetLayout=function(){this.getSize(),this._getMeasurement("columnWidth","outerWidth"),this._getMeasurement("gutter","outerWidth"),this.measureColumns(),this.colYs=[];for(var t=0;t<this.cols;t++)this.colYs.push(0);this.maxY=0},i.prototype.measureColumns=function(){if(this.getContainerWidth(),!this.columnWidth){var t=this.items[0],i=t&&t.element;this.columnWidth=i&&e(i).outerWidth||this.containerWidth}var n=this.columnWidth+=this.gutter,o=this.containerWidth+this.gutter,r=o/n,s=n-o%n,a=s&&1>s?"round":"floor";r=Math[a](r),this.cols=Math.max(r,1)},i.prototype.getContainerWidth=function(){var t=this._getOption("fitWidth"),i=t?this.element.parentNode:this.element,n=e(i);this.containerWidth=n&&n.innerWidth},i.prototype._getItemLayoutPosition=function(t){t.getSize();var e=t.size.outerWidth%this.columnWidth,i=e&&1>e?"round":"ceil",n=Math[i](t.size.outerWidth/this.columnWidth);n=Math.min(n,this.cols);for(var o=this._getColGroup(n),r=Math.min.apply(Math,o),s=o.indexOf(r),a={x:this.columnWidth*s,y:r},u=r+t.size.outerHeight,h=this.cols+1-o.length,d=0;h>d;d++)this.colYs[s+d]=u;return a},i.prototype._getColGroup=function(t){if(2>t)return this.colYs;for(var e=[],i=this.cols+1-t,n=0;i>n;n++){var o=this.colYs.slice(n,n+t);e[n]=Math.max.apply(Math,o)}return e},i.prototype._manageStamp=function(t){var i=e(t),n=this._getElementOffset(t),o=this._getOption("originLeft"),r=o?n.left:n.right,s=r+i.outerWidth,a=Math.floor(r/this.columnWidth);a=Math.max(0,a);var u=Math.floor(s/this.columnWidth);u-=s%this.columnWidth?0:1,u=Math.min(this.cols-1,u);for(var h=this._getOption("originTop"),d=(h?n.top:n.bottom)+i.outerHeight,l=a;u>=l;l++)this.colYs[l]=Math.max(d,this.colYs[l])},i.prototype._getContainerSize=function(){this.maxY=Math.max.apply(Math,this.colYs);var t={height:this.maxY};return this._getOption("fitWidth")&&(t.width=this._getContainerFitWidth()),t},i.prototype._getContainerFitWidth=function(){for(var t=0,e=this.cols;--e&&0===this.colYs[e];)t++;return(this.cols-t)*this.columnWidth-this.gutter},i.prototype.needsResizeLayout=function(){var t=this.containerWidth;return this.getContainerWidth(),t!=this.containerWidth},i}),function(t,e){"function"==typeof define&&define.amd?define("isotope/layout-modes/masonry",["../layout-mode","masonry/masonry"],e):"object"==typeof module&&module.exports?module.exports=e(require("../layout-mode"),require("masonry-layout")):e(t.Isotope.LayoutMode,t.Masonry)}(window,function(t,e){"use strict";var i=t.create("masonry"),n=i.prototype,o={_getElementOffset:!0,layout:!0,_getMeasurement:!0};for(var r in e.prototype)o[r]||(n[r]=e.prototype[r]);var s=n.measureColumns;n.measureColumns=function(){this.items=this.isotope.filteredItems,s.call(this)};var a=n._getOption;return n._getOption=function(t){return"fitWidth"==t?void 0!==this.options.isFitWidth?this.options.isFitWidth:this.options.fitWidth:a.apply(this.isotope,arguments)},i}),function(t,e){"function"==typeof define&&define.amd?define("isotope/layout-modes/fit-rows",["../layout-mode"],e):"object"==typeof exports?module.exports=e(require("../layout-mode")):e(t.Isotope.LayoutMode)}(window,function(t){"use strict";var e=t.create("fitRows"),i=e.prototype;return i._resetLayout=function(){this.x=0,this.y=0,this.maxY=0,this._getMeasurement("gutter","outerWidth")},i._getItemLayoutPosition=function(t){t.getSize();var e=t.size.outerWidth+this.gutter,i=this.isotope.size.innerWidth+this.gutter;0!==this.x&&e+this.x>i&&(this.x=0,this.y=this.maxY);var n={x:this.x,y:this.y};return this.maxY=Math.max(this.maxY,this.y+t.size.outerHeight),this.x+=e,n},i._getContainerSize=function(){return{height:this.maxY}},e}),function(t,e){"function"==typeof define&&define.amd?define("isotope/layout-modes/vertical",["../layout-mode"],e):"object"==typeof module&&module.exports?module.exports=e(require("../layout-mode")):e(t.Isotope.LayoutMode)}(window,function(t){"use strict";var e=t.create("vertical",{horizontalAlignment:0}),i=e.prototype;return i._resetLayout=function(){this.y=0},i._getItemLayoutPosition=function(t){t.getSize();var e=(this.isotope.size.innerWidth-t.size.outerWidth)*this.options.horizontalAlignment,i=this.y;return this.y+=t.size.outerHeight,{x:e,y:i}},i._getContainerSize=function(){return{height:this.y}},e}),function(t,e){"function"==typeof define&&define.amd?define(["outlayer/outlayer","get-size/get-size","desandro-matches-selector/matches-selector","fizzy-ui-utils/utils","./item","./layout-mode","./layout-modes/masonry","./layout-modes/fit-rows","./layout-modes/vertical"],function(i,n,o,r,s,a){return e(t,i,n,o,r,s,a)}):"object"==typeof module&&module.exports?module.exports=e(t,require("outlayer"),require("get-size"),require("desandro-matches-selector"),require("fizzy-ui-utils"),require("./item"),require("./layout-mode"),require("./layout-modes/masonry"),require("./layout-modes/fit-rows"),require("./layout-modes/vertical")):t.Isotope=e(t,t.Outlayer,t.getSize,t.matchesSelector,t.fizzyUIUtils,t.Isotope.Item,t.Isotope.LayoutMode)}(window,function(t,e,i,n,o,r,s){function a(t,e){return function(i,n){for(var o=0;o<t.length;o++){var r=t[o],s=i.sortData[r],a=n.sortData[r];if(s>a||a>s){var u=void 0!==e[r]?e[r]:e,h=u?1:-1;return(s>a?1:-1)*h}}return 0}}var u=t.jQuery,h=String.prototype.trim?function(t){return t.trim()}:function(t){return t.replace(/^\s+|\s+$/g,"")},d=e.create("isotope",{layoutMode:"masonry",isJQueryFiltering:!0,sortAscending:!0});d.Item=r,d.LayoutMode=s;var l=d.prototype;l._create=function(){this.itemGUID=0,this._sorters={},this._getSorters(),e.prototype._create.call(this),this.modes={},this.filteredItems=this.items,this.sortHistory=["original-order"];for(var t in s.modes)this._initLayoutMode(t)},l.reloadItems=function(){this.itemGUID=0,e.prototype.reloadItems.call(this)},l._itemize=function(){for(var t=e.prototype._itemize.apply(this,arguments),i=0;i<t.length;i++){var n=t[i];n.id=this.itemGUID++}return this._updateItemsSortData(t),t},l._initLayoutMode=function(t){var e=s.modes[t],i=this.options[t]||{};this.options[t]=e.options?o.extend(e.options,i):i,this.modes[t]=new e(this)},l.layout=function(){return!this._isLayoutInited&&this._getOption("initLayout")?void this.arrange():void this._layout()},l._layout=function(){var t=this._getIsInstant();this._resetLayout(),this._manageStamps(),this.layoutItems(this.filteredItems,t),this._isLayoutInited=!0},l.arrange=function(t){this.option(t),this._getIsInstant();var e=this._filter(this.items);this.filteredItems=e.matches,this._bindArrangeComplete(),this._isInstant?this._noTransition(this._hideReveal,[e]):this._hideReveal(e),this._sort(),this._layout()},l._init=l.arrange,l._hideReveal=function(t){this.reveal(t.needReveal),this.hide(t.needHide)},l._getIsInstant=function(){var t=this._getOption("layoutInstant"),e=void 0!==t?t:!this._isLayoutInited;return this._isInstant=e,e},l._bindArrangeComplete=function(){function t(){e&&i&&n&&o.dispatchEvent("arrangeComplete",null,[o.filteredItems])}var e,i,n,o=this;this.once("layoutComplete",function(){e=!0,t()}),this.once("hideComplete",function(){i=!0,t()}),this.once("revealComplete",function(){n=!0,t()})},l._filter=function(t){var e=this.options.filter;e=e||"*";for(var i=[],n=[],o=[],r=this._getFilterTest(e),s=0;s<t.length;s++){var a=t[s];if(!a.isIgnored){var u=r(a);u&&i.push(a),u&&a.isHidden?n.push(a):u||a.isHidden||o.push(a)}}return{matches:i,needReveal:n,needHide:o}},l._getFilterTest=function(t){return u&&this.options.isJQueryFiltering?function(e){return u(e.element).is(t)}:"function"==typeof t?function(e){return t(e.element)}:function(e){return n(e.element,t)}},l.updateSortData=function(t){var e;t?(t=o.makeArray(t),e=this.getItems(t)):e=this.items,this._getSorters(),this._updateItemsSortData(e)},l._getSorters=function(){var t=this.options.getSortData;for(var e in t){var i=t[e];this._sorters[e]=f(i)}},l._updateItemsSortData=function(t){for(var e=t&&t.length,i=0;e&&e>i;i++){var n=t[i];n.updateSortData()}};var f=function(){function t(t){if("string"!=typeof t)return t;var i=h(t).split(" "),n=i[0],o=n.match(/^\[(.+)\]$/),r=o&&o[1],s=e(r,n),a=d.sortDataParsers[i[1]];return t=a?function(t){return t&&a(s(t))}:function(t){return t&&s(t)}}function e(t,e){return t?function(e){return e.getAttribute(t)}:function(t){var i=t.querySelector(e);
+return i&&i.textContent}}return t}();d.sortDataParsers={parseInt:function(t){return parseInt(t,10)},parseFloat:function(t){return parseFloat(t)}},l._sort=function(){var t=this.options.sortBy;if(t){var e=[].concat.apply(t,this.sortHistory),i=a(e,this.options.sortAscending);this.filteredItems.sort(i),t!=this.sortHistory[0]&&this.sortHistory.unshift(t)}},l._mode=function(){var t=this.options.layoutMode,e=this.modes[t];if(!e)throw new Error("No layout mode: "+t);return e.options=this.options[t],e},l._resetLayout=function(){e.prototype._resetLayout.call(this),this._mode()._resetLayout()},l._getItemLayoutPosition=function(t){return this._mode()._getItemLayoutPosition(t)},l._manageStamp=function(t){this._mode()._manageStamp(t)},l._getContainerSize=function(){return this._mode()._getContainerSize()},l.needsResizeLayout=function(){return this._mode().needsResizeLayout()},l.appended=function(t){var e=this.addItems(t);if(e.length){var i=this._filterRevealAdded(e);this.filteredItems=this.filteredItems.concat(i)}},l.prepended=function(t){var e=this._itemize(t);if(e.length){this._resetLayout(),this._manageStamps();var i=this._filterRevealAdded(e);this.layoutItems(this.filteredItems),this.filteredItems=i.concat(this.filteredItems),this.items=e.concat(this.items)}},l._filterRevealAdded=function(t){var e=this._filter(t);return this.hide(e.needHide),this.reveal(e.matches),this.layoutItems(e.matches,!0),e.matches},l.insert=function(t){var e=this.addItems(t);if(e.length){var i,n,o=e.length;for(i=0;o>i;i++)n=e[i],this.element.appendChild(n.element);var r=this._filter(e).matches;for(i=0;o>i;i++)e[i].isLayoutInstant=!0;for(this.arrange(),i=0;o>i;i++)delete e[i].isLayoutInstant;this.reveal(r)}};var c=l.remove;return l.remove=function(t){t=o.makeArray(t);var e=this.getItems(t);c.call(this,t);for(var i=e&&e.length,n=0;i&&i>n;n++){var r=e[n];o.removeFrom(this.filteredItems,r)}},l.shuffle=function(){for(var t=0;t<this.items.length;t++){var e=this.items[t];e.sortData.random=Math.random()}this.options.sortBy="random",this._sort(),this._layout()},l._noTransition=function(t,e){var i=this.options.transitionDuration;this.options.transitionDuration=0;var n=t.apply(this,e);return this.options.transitionDuration=i,n},l.getFilteredItemElements=function(){return this.filteredItems.map(function(t){return t.element})},d});
+/*!
+ * Packery layout mode PACKAGED v2.0.0
+ * sub-classes Packery
+ */
+
+!function(a,b){"function"==typeof define&&define.amd?define("packery/js/rect",b):"object"==typeof module&&module.exports?module.exports=b():(a.Packery=a.Packery||{},a.Packery.Rect=b())}(window,function(){function a(b){for(var c in a.defaults)this[c]=a.defaults[c];for(c in b)this[c]=b[c]}a.defaults={x:0,y:0,width:0,height:0};var b=a.prototype;return b.contains=function(a){var b=a.width||0,c=a.height||0;return this.x<=a.x&&this.y<=a.y&&this.x+this.width>=a.x+b&&this.y+this.height>=a.y+c},b.overlaps=function(a){var b=this.x+this.width,c=this.y+this.height,d=a.x+a.width,e=a.y+a.height;return this.x<d&&b>a.x&&this.y<e&&c>a.y},b.getMaximalFreeRects=function(b){if(!this.overlaps(b))return!1;var c,d=[],e=this.x+this.width,f=this.y+this.height,g=b.x+b.width,h=b.y+b.height;return this.y<b.y&&(c=new a({x:this.x,y:this.y,width:this.width,height:b.y-this.y}),d.push(c)),e>g&&(c=new a({x:g,y:this.y,width:e-g,height:this.height}),d.push(c)),f>h&&(c=new a({x:this.x,y:h,width:this.width,height:f-h}),d.push(c)),this.x<b.x&&(c=new a({x:this.x,y:this.y,width:b.x-this.x,height:this.height}),d.push(c)),d},b.canFit=function(a){return this.width>=a.width&&this.height>=a.height},a}),function(a,b){if("function"==typeof define&&define.amd)define("packery/js/packer",["./rect"],b);else if("object"==typeof module&&module.exports)module.exports=b(require("./rect"));else{var c=a.Packery=a.Packery||{};c.Packer=b(c.Rect)}}(window,function(a){function b(a,b,c){this.width=a||0,this.height=b||0,this.sortDirection=c||"downwardLeftToRight",this.reset()}var c=b.prototype;c.reset=function(){this.spaces=[];var b=new a({x:0,y:0,width:this.width,height:this.height});this.spaces.push(b),this.sorter=d[this.sortDirection]||d.downwardLeftToRight},c.pack=function(a){for(var b=0;b<this.spaces.length;b++){var c=this.spaces[b];if(c.canFit(a)){this.placeInSpace(a,c);break}}},c.columnPack=function(a){for(var b=0;b<this.spaces.length;b++){var c=this.spaces[b],d=c.x<=a.x&&c.x+c.width>=a.x+a.width&&c.height>=a.height-.01;if(d){a.y=c.y,this.placed(a);break}}},c.rowPack=function(a){for(var b=0;b<this.spaces.length;b++){var c=this.spaces[b],d=c.y<=a.y&&c.y+c.height>=a.y+a.height&&c.width>=a.width-.01;if(d){a.x=c.x,this.placed(a);break}}},c.placeInSpace=function(a,b){a.x=b.x,a.y=b.y,this.placed(a)},c.placed=function(a){for(var b=[],c=0;c<this.spaces.length;c++){var d=this.spaces[c],e=d.getMaximalFreeRects(a);e?b.push.apply(b,e):b.push(d)}this.spaces=b,this.mergeSortSpaces()},c.mergeSortSpaces=function(){b.mergeRects(this.spaces),this.spaces.sort(this.sorter)},c.addSpace=function(a){this.spaces.push(a),this.mergeSortSpaces()},b.mergeRects=function(a){var b=0,c=a[b];a:for(;c;){for(var d=0,e=a[b+d];e;){if(e==c)d++;else{if(e.contains(c)){a.splice(b,1),c=a[b];continue a}c.contains(e)?a.splice(b+d,1):d++}e=a[b+d]}b++,c=a[b]}return a};var d={downwardLeftToRight:function(a,b){return a.y-b.y||a.x-b.x},rightwardTopToBottom:function(a,b){return a.x-b.x||a.y-b.y}};return b}),function(a,b){"function"==typeof define&&define.amd?define("packery/js/item",["outlayer/outlayer","./rect"],b):"object"==typeof module&&module.exports?module.exports=b(require("outlayer"),require("./rect")):a.Packery.Item=b(a.Outlayer,a.Packery.Rect)}(window,function(a,b){var c=document.documentElement.style,d="string"==typeof c.transform?"transform":"WebkitTransform",e=function(){a.Item.apply(this,arguments)},f=e.prototype=Object.create(a.Item.prototype),g=f._create;f._create=function(){g.call(this),this.rect=new b};var h=f.moveTo;return f.moveTo=function(a,b){var c=Math.abs(this.position.x-a),d=Math.abs(this.position.y-b),e=this.layout.dragItemCount&&!this.isPlacing&&!this.isTransitioning&&1>c&&1>d;return e?void this.goTo(a,b):void h.apply(this,arguments)},f.enablePlacing=function(){this.removeTransitionStyles(),this.isTransitioning&&d&&(this.element.style[d]="none"),this.isTransitioning=!1,this.getSize(),this.layout._setRectSize(this.element,this.rect),this.isPlacing=!0},f.disablePlacing=function(){this.isPlacing=!1},f.removeElem=function(){this.element.parentNode.removeChild(this.element),this.layout.packer.addSpace(this.rect),this.emitEvent("remove",[this])},f.showDropPlaceholder=function(){var a=this.dropPlaceholder;a||(a=this.dropPlaceholder=document.createElement("div"),a.className="packery-drop-placeholder",a.style.position="absolute"),a.style.width=this.size.width+"px",a.style.height=this.size.height+"px",this.positionDropPlaceholder(),this.layout.element.appendChild(a)},f.positionDropPlaceholder=function(){this.dropPlaceholder.style[d]="translate("+this.rect.x+"px, "+this.rect.y+"px)"},f.hideDropPlaceholder=function(){this.layout.element.removeChild(this.dropPlaceholder)},e}),function(a,b){"function"==typeof define&&define.amd?define("packery/js/packery",["get-size/get-size","outlayer/outlayer","./rect","./packer","./item"],b):"object"==typeof module&&module.exports?module.exports=b(require("get-size"),require("outlayer"),require("./rect"),require("./packer"),require("./item")):a.Packery=b(a.getSize,a.Outlayer,a.Packery.Rect,a.Packery.Packer,a.Packery.Item)}(window,function(a,b,c,d,e){function f(a,b){return a.position.y-b.position.y||a.position.x-b.position.x}function g(a,b){return a.position.x-b.position.x||a.position.y-b.position.y}function h(a,b){var c=b.x-a.x,d=b.y-a.y;return Math.sqrt(c*c+d*d)}c.prototype.canFit=function(a){return this.width>=a.width-1&&this.height>=a.height-1};var i=b.create("packery");i.Item=e;var j=i.prototype;j._create=function(){b.prototype._create.call(this),this.packer=new d,this.shiftPacker=new d,this.isEnabled=!0,this.dragItemCount=0;var a=this;this.handleDraggabilly={dragStart:function(){a.itemDragStart(this.element)},dragMove:function(){a.itemDragMove(this.element,this.position.x,this.position.y)},dragEnd:function(){a.itemDragEnd(this.element)}},this.handleUIDraggable={start:function(b,c){c&&a.itemDragStart(b.currentTarget)},drag:function(b,c){c&&a.itemDragMove(b.currentTarget,c.position.left,c.position.top)},stop:function(b,c){c&&a.itemDragEnd(b.currentTarget)}}},j._resetLayout=function(){this.getSize(),this._getMeasurements();var a,b,c;this._getOption("horizontal")?(a=1/0,b=this.size.innerHeight+this.gutter,c="rightwardTopToBottom"):(a=this.size.innerWidth+this.gutter,b=1/0,c="downwardLeftToRight"),this.packer.width=this.shiftPacker.width=a,this.packer.height=this.shiftPacker.height=b,this.packer.sortDirection=this.shiftPacker.sortDirection=c,this.packer.reset(),this.maxY=0,this.maxX=0},j._getMeasurements=function(){this._getMeasurement("columnWidth","width"),this._getMeasurement("rowHeight","height"),this._getMeasurement("gutter","width")},j._getItemLayoutPosition=function(a){if(this._setRectSize(a.element,a.rect),this.isShifting||this.dragItemCount>0){var b=this._getPackMethod();this.packer[b](a.rect)}else this.packer.pack(a.rect);return this._setMaxXY(a.rect),a.rect},j.shiftLayout=function(){this.isShifting=!0,this.layout(),delete this.isShifting},j._getPackMethod=function(){return this._getOption("horizontal")?"rowPack":"columnPack"},j._setMaxXY=function(a){this.maxX=Math.max(a.x+a.width,this.maxX),this.maxY=Math.max(a.y+a.height,this.maxY)},j._setRectSize=function(b,c){var d=a(b),e=d.outerWidth,f=d.outerHeight;(e||f)&&(e=this._applyGridGutter(e,this.columnWidth),f=this._applyGridGutter(f,this.rowHeight)),c.width=Math.min(e,this.packer.width),c.height=Math.min(f,this.packer.height)},j._applyGridGutter=function(a,b){if(!b)return a+this.gutter;b+=this.gutter;var c=a%b,d=c&&1>c?"round":"ceil";return a=Math[d](a/b)*b},j._getContainerSize=function(){return this._getOption("horizontal")?{width:this.maxX-this.gutter}:{height:this.maxY-this.gutter}},j._manageStamp=function(a){var b,d=this.getItem(a);if(d&&d.isPlacing)b=d.rect;else{var e=this._getElementOffset(a);b=new c({x:this._getOption("originLeft")?e.left:e.right,y:this._getOption("originTop")?e.top:e.bottom})}this._setRectSize(a,b),this.packer.placed(b),this._setMaxXY(b)},j.sortItemsByPosition=function(){var a=this._getOption("horizontal")?g:f;this.items.sort(a)},j.fit=function(a,b,c){var d=this.getItem(a);d&&(this.stamp(d.element),d.enablePlacing(),this.updateShiftTargets(d),b=void 0===b?d.rect.x:b,c=void 0===c?d.rect.y:c,this.shift(d,b,c),this._bindFitEvents(d),d.moveTo(d.rect.x,d.rect.y),this.shiftLayout(),this.unstamp(d.element),this.sortItemsByPosition(),d.disablePlacing())},j._bindFitEvents=function(a){function b(){d++,2==d&&c.dispatchEvent("fitComplete",null,[a])}var c=this,d=0;a.once("layout",b),this.once("layoutComplete",b)},j.resize=function(){this.isResizeBound&&this.needsResizeLayout()&&(this.options.shiftPercentResize?this.resizeShiftPercentLayout():this.layout())},j.needsResizeLayout=function(){var b=a(this.element),c=this._getOption("horizontal")?"innerHeight":"innerWidth";return b[c]!=this.size[c]},j.resizeShiftPercentLayout=function(){var b=this._getItemsForLayout(this.items),c=this._getOption("horizontal"),d=c?"y":"x",e=c?"height":"width",f=c?"rowHeight":"columnWidth",g=c?"innerHeight":"innerWidth",h=this[f];if(h=h&&h+this.gutter){this._getMeasurements();var i=this[f]+this.gutter;b.forEach(function(a){var b=Math.round(a.rect[d]/h);a.rect[d]=b*i})}else{var j=a(this.element)[g]+this.gutter,k=this.packer[e];b.forEach(function(a){a.rect[d]=a.rect[d]/k*j})}this.shiftLayout()},j.itemDragStart=function(a){if(this.isEnabled){this.stamp(a);var b=this.getItem(a);b&&(b.enablePlacing(),b.showDropPlaceholder(),this.dragItemCount++,this.updateShiftTargets(b))}},j.updateShiftTargets=function(a){this.shiftPacker.reset(),this._getBoundingRect();var b=this._getOption("originLeft"),d=this._getOption("originTop");this.stamps.forEach(function(a){var e=this.getItem(a);if(!e||!e.isPlacing){var f=this._getElementOffset(a),g=new c({x:b?f.left:f.right,y:d?f.top:f.bottom});this._setRectSize(a,g),this.shiftPacker.placed(g)}},this);var e=this._getOption("horizontal"),f=e?"rowHeight":"columnWidth",g=e?"height":"width";this.shiftTargetKeys=[],this.shiftTargets=[];var h,i=this[f];if(i=i&&i+this.gutter){var j=Math.ceil(a.rect[g]/i),k=Math.floor((this.shiftPacker[g]+this.gutter)/i);h=(k-j)*i;for(var l=0;k>l;l++)this._addShiftTarget(l*i,0,h)}else h=this.shiftPacker[g]+this.gutter-a.rect[g],this._addShiftTarget(0,0,h);var m=this._getItemsForLayout(this.items),n=this._getPackMethod();m.forEach(function(a){var b=a.rect;this._setRectSize(a.element,b),this.shiftPacker[n](b),this._addShiftTarget(b.x,b.y,h);var c=e?b.x+b.width:b.x,d=e?b.y:b.y+b.height;if(this._addShiftTarget(c,d,h),i)for(var f=Math.round(b[g]/i),j=1;f>j;j++){var k=e?c:b.x+i*j,l=e?b.y+i*j:d;this._addShiftTarget(k,l,h)}},this)},j._addShiftTarget=function(a,b,c){var d=this._getOption("horizontal")?b:a;if(!(0!==d&&d>c)){var e=a+","+b,f=-1!=this.shiftTargetKeys.indexOf(e);f||(this.shiftTargetKeys.push(e),this.shiftTargets.push({x:a,y:b}))}},j.shift=function(a,b,c){var d,e=1/0,f={x:b,y:c};this.shiftTargets.forEach(function(a){var b=h(a,f);e>b&&(d=a,e=b)}),a.rect.x=d.x,a.rect.y=d.y};var k=120;j.itemDragMove=function(a,b,c){function d(){f.shift(e,b,c),e.positionDropPlaceholder(),f.layout()}var e=this.isEnabled&&this.getItem(a);if(e){b-=this.size.paddingLeft,c-=this.size.paddingTop;var f=this,g=new Date;this._itemDragTime&&g-this._itemDragTime<k?(clearTimeout(this.dragTimeout),this.dragTimeout=setTimeout(d,k)):(d(),this._itemDragTime=g)}},j.itemDragEnd=function(a){function b(){d++,2==d&&(c.element.classList.remove("is-positioning-post-drag"),c.hideDropPlaceholder(),e.dispatchEvent("dragItemPositioned",null,[c]))}var c=this.isEnabled&&this.getItem(a);if(c){clearTimeout(this.dragTimeout),c.element.classList.add("is-positioning-post-drag");var d=0,e=this;c.once("layout",b),this.once("layoutComplete",b),c.moveTo(c.rect.x,c.rect.y),this.layout(),this.dragItemCount=Math.max(0,this.dragItemCount-1),this.sortItemsByPosition(),c.disablePlacing(),this.unstamp(c.element)}},j.bindDraggabillyEvents=function(a){this._bindDraggabillyEvents(a,"on")},j.unbindDraggabillyEvents=function(a){this._bindDraggabillyEvents(a,"off")},j._bindDraggabillyEvents=function(a,b){var c=this.handleDraggabilly;a[b]("dragStart",c.dragStart),a[b]("dragMove",c.dragMove),a[b]("dragEnd",c.dragEnd)},j.bindUIDraggableEvents=function(a){this._bindUIDraggableEvents(a,"on")},j.unbindUIDraggableEvents=function(a){this._bindUIDraggableEvents(a,"off")},j._bindUIDraggableEvents=function(a,b){var c=this.handleUIDraggable;a[b]("dragstart",c.start)[b]("drag",c.drag)[b]("dragstop",c.stop)};var l=j.destroy;return j.destroy=function(){l.apply(this,arguments),this.isEnabled=!1},i.Rect=c,i.Packer=d,i}),function(a,b){"function"==typeof define&&define.amd?define(["isotope/js/layout-mode","packery/js/packery"],b):"object"==typeof module&&module.exports?module.exports=b(require("isotope-layout/js/layout-mode"),require("packery")):b(a.Isotope.LayoutMode,a.Packery)}(window,function(a,b){var c=a.create("packery"),d=c.prototype,e={_getElementOffset:!0,_getMeasurement:!0};for(var f in b.prototype)e[f]||(d[f]=b.prototype[f]);var g=d._resetLayout;d._resetLayout=function(){this.packer=this.packer||new b.Packer,this.shiftPacker=this.shiftPacker||new b.Packer,g.apply(this,arguments)};var h=d._getItemLayoutPosition;d._getItemLayoutPosition=function(a){return a.rect=a.rect||new b.Rect,h.call(this,a)};var i=d.needsResizeLayout;d.needsResizeLayout=function(){return this._getOption("horizontal")?this.needsVerticalResizeLayout():i.call(this)};var j=d._getOption;return d._getOption=function(a){return"horizontal"==a?void 0!==this.options.isHorizontal?this.options.isHorizontal:this.options.horizontal:j.apply(this.isotope,arguments)},c});
+/*
+* jQuery Mobile v1.4.5
+* http://jquerymobile.com
+*
+* Copyright 2010, 2014 jQuery Foundation, Inc. and other contributors
+* Released under the MIT license.
+* http://jquery.org/license
+*
+*/
+
+(function ( root, doc, factory ) {
+	if ( typeof define === "function" && define.amd ) {
+		// AMD. Register as an anonymous module.
+		define( [ "jquery" ], function ( $ ) {
+			factory( $, root, doc );
+			return $.mobile;
+		});
+	} else {
+		// Browser globals
+		factory( root.jQuery, root, doc );
+	}
+}( this, document, function ( jQuery, window, document, undefined ) {/*!
+ * jQuery hashchange event - v1.3 - 7/21/2010
+ * http://benalman.com/projects/jquery-hashchange-plugin/
+ * 
+ * Copyright (c) 2010 "Cowboy" Ben Alman
+ * Dual licensed under the MIT and GPL licenses.
+ * http://benalman.com/about/license/
+ */
+
+// Script: jQuery hashchange event
+//
+// *Version: 1.3, Last updated: 7/21/2010*
+// 
+// Project Home - http://benalman.com/projects/jquery-hashchange-plugin/
+// GitHub       - http://github.com/cowboy/jquery-hashchange/
+// Source       - http://github.com/cowboy/jquery-hashchange/raw/master/jquery.ba-hashchange.js
+// (Minified)   - http://github.com/cowboy/jquery-hashchange/raw/master/jquery.ba-hashchange.min.js (0.8kb gzipped)
+// 
+// About: License
+// 
+// Copyright (c) 2010 "Cowboy" Ben Alman,
+// Dual licensed under the MIT and GPL licenses.
+// http://benalman.com/about/license/
+// 
+// About: Examples
+// 
+// These working examples, complete with fully commented code, illustrate a few
+// ways in which this plugin can be used.
+// 
+// hashchange event - http://benalman.com/code/projects/jquery-hashchange/examples/hashchange/
+// document.domain - http://benalman.com/code/projects/jquery-hashchange/examples/document_domain/
+// 
+// About: Support and Testing
+// 
+// Information about what version or versions of jQuery this plugin has been
+// tested with, what browsers it has been tested in, and where the unit tests
+// reside (so you can test it yourself).
+// 
+// jQuery Versions - 1.2.6, 1.3.2, 1.4.1, 1.4.2
+// Browsers Tested - Internet Explorer 6-8, Firefox 2-4, Chrome 5-6, Safari 3.2-5,
+//                   Opera 9.6-10.60, iPhone 3.1, Android 1.6-2.2, BlackBerry 4.6-5.
+// Unit Tests      - http://benalman.com/code/projects/jquery-hashchange/unit/
+// 
+// About: Known issues
+// 
+// While this jQuery hashchange event implementation is quite stable and
+// robust, there are a few unfortunate browser bugs surrounding expected
+// hashchange event-based behaviors, independent of any JavaScript
+// window.onhashchange abstraction. See the following examples for more
+// information:
+// 
+// Chrome: Back Button - http://benalman.com/code/projects/jquery-hashchange/examples/bug-chrome-back-button/
+// Firefox: Remote XMLHttpRequest - http://benalman.com/code/projects/jquery-hashchange/examples/bug-firefox-remote-xhr/
+// WebKit: Back Button in an Iframe - http://benalman.com/code/projects/jquery-hashchange/examples/bug-webkit-hash-iframe/
+// Safari: Back Button from a different domain - http://benalman.com/code/projects/jquery-hashchange/examples/bug-safari-back-from-diff-domain/
+// 
+// Also note that should a browser natively support the window.onhashchange 
+// event, but not report that it does, the fallback polling loop will be used.
+// 
+// About: Release History
+// 
+// 1.3   - (7/21/2010) Reorganized IE6/7 Iframe code to make it more
+//         "removable" for mobile-only development. Added IE6/7 document.title
+//         support. Attempted to make Iframe as hidden as possible by using
+//         techniques from http://www.paciellogroup.com/blog/?p=604. Added 
+//         support for the "shortcut" format $(window).hashchange( fn ) and
+//         $(window).hashchange() like jQuery provides for built-in events.
+//         Renamed jQuery.hashchangeDelay to <jQuery.fn.hashchange.delay> and
+//         lowered its default value to 50. Added <jQuery.fn.hashchange.domain>
+//         and <jQuery.fn.hashchange.src> properties plus document-domain.html
+//         file to address access denied issues when setting document.domain in
+//         IE6/7.
+// 1.2   - (2/11/2010) Fixed a bug where coming back to a page using this plugin
+//         from a page on another domain would cause an error in Safari 4. Also,
+//         IE6/7 Iframe is now inserted after the body (this actually works),
+//         which prevents the page from scrolling when the event is first bound.
+//         Event can also now be bound before DOM ready, but it won't be usable
+//         before then in IE6/7.
+// 1.1   - (1/21/2010) Incorporated document.documentMode test to fix IE8 bug
+//         where browser version is incorrectly reported as 8.0, despite
+//         inclusion of the X-UA-Compatible IE=EmulateIE7 meta tag.
+// 1.0   - (1/9/2010) Initial Release. Broke out the jQuery BBQ event.special
+//         window.onhashchange functionality into a separate plugin for users
+//         who want just the basic event & back button support, without all the
+//         extra awesomeness that BBQ provides. This plugin will be included as
+//         part of jQuery BBQ, but also be available separately.
+
+(function($,window,undefined){
+  '$:nomunge'; // Used by YUI compressor.
+  
+  // Reused string.
+  var str_hashchange = 'hashchange',
+    
+    // Method / object references.
+    doc = document,
+    fake_onhashchange,
+    special = $.event.special,
+    
+    // Does the browser support window.onhashchange? Note that IE8 running in
+    // IE7 compatibility mode reports true for 'onhashchange' in window, even
+    // though the event isn't supported, so also test document.documentMode.
+    doc_mode = doc.documentMode,
+    supports_onhashchange = 'on' + str_hashchange in window && ( doc_mode === undefined || doc_mode > 7 );
+  
+  // Get location.hash (or what you'd expect location.hash to be) sans any
+  // leading #. Thanks for making this necessary, Firefox!
+  function get_fragment( url ) {
+    url = url || location.href;
+    return '#' + url.replace( /^[^#]*#?(.*)$/, '$1' );
+  };
+  
+  // Method: jQuery.fn.hashchange
+  // 
+  // Bind a handler to the window.onhashchange event or trigger all bound
+  // window.onhashchange event handlers. This behavior is consistent with
+  // jQuery's built-in event handlers.
+  // 
+  // Usage:
+  // 
+  // > jQuery(window).hashchange( [ handler ] );
+  // 
+  // Arguments:
+  // 
+  //  handler - (Function) Optional handler to be bound to the hashchange
+  //    event. This is a "shortcut" for the more verbose form:
+  //    jQuery(window).bind( 'hashchange', handler ). If handler is omitted,
+  //    all bound window.onhashchange event handlers will be triggered. This
+  //    is a shortcut for the more verbose
+  //    jQuery(window).trigger( 'hashchange' ). These forms are described in
+  //    the <hashchange event> section.
+  // 
+  // Returns:
+  // 
+  //  (jQuery) The initial jQuery collection of elements.
+  
+  // Allow the "shortcut" format $(elem).hashchange( fn ) for binding and
+  // $(elem).hashchange() for triggering, like jQuery does for built-in events.
+  $.fn[ str_hashchange ] = function( fn ) {
+    return fn ? this.bind( str_hashchange, fn ) : this.trigger( str_hashchange );
+  };
+  
+  // Property: jQuery.fn.hashchange.delay
+  // 
+  // The numeric interval (in milliseconds) at which the <hashchange event>
+  // polling loop executes. Defaults to 50.
+  
+  // Property: jQuery.fn.hashchange.domain
+  // 
+  // If you're setting document.domain in your JavaScript, and you want hash
+  // history to work in IE6/7, not only must this property be set, but you must
+  // also set document.domain BEFORE jQuery is loaded into the page. This
+  // property is only applicable if you are supporting IE6/7 (or IE8 operating
+  // in "IE7 compatibility" mode).
+  // 
+  // In addition, the <jQuery.fn.hashchange.src> property must be set to the
+  // path of the included "document-domain.html" file, which can be renamed or
+  // modified if necessary (note that the document.domain specified must be the
+  // same in both your main JavaScript as well as in this file).
+  // 
+  // Usage:
+  // 
+  // jQuery.fn.hashchange.domain = document.domain;
+  
+  // Property: jQuery.fn.hashchange.src
+  // 
+  // If, for some reason, you need to specify an Iframe src file (for example,
+  // when setting document.domain as in <jQuery.fn.hashchange.domain>), you can
+  // do so using this property. Note that when using this property, history
+  // won't be recorded in IE6/7 until the Iframe src file loads. This property
+  // is only applicable if you are supporting IE6/7 (or IE8 operating in "IE7
+  // compatibility" mode).
+  // 
+  // Usage:
+  // 
+  // jQuery.fn.hashchange.src = 'path/to/file.html';
+  
+  $.fn[ str_hashchange ].delay = 50;
+  /*
+  $.fn[ str_hashchange ].domain = null;
+  $.fn[ str_hashchange ].src = null;
+  */
+  
+  // Event: hashchange event
+  // 
+  // Fired when location.hash changes. In browsers that support it, the native
+  // HTML5 window.onhashchange event is used, otherwise a polling loop is
+  // initialized, running every <jQuery.fn.hashchange.delay> milliseconds to
+  // see if the hash has changed. In IE6/7 (and IE8 operating in "IE7
+  // compatibility" mode), a hidden Iframe is created to allow the back button
+  // and hash-based history to work.
+  // 
+  // Usage as described in <jQuery.fn.hashchange>:
+  // 
+  // > // Bind an event handler.
+  // > jQuery(window).hashchange( function(e) {
+  // >   var hash = location.hash;
+  // >   ...
+  // > });
+  // > 
+  // > // Manually trigger the event handler.
+  // > jQuery(window).hashchange();
+  // 
+  // A more verbose usage that allows for event namespacing:
+  // 
+  // > // Bind an event handler.
+  // > jQuery(window).bind( 'hashchange', function(e) {
+  // >   var hash = location.hash;
+  // >   ...
+  // > });
+  // > 
+  // > // Manually trigger the event handler.
+  // > jQuery(window).trigger( 'hashchange' );
+  // 
+  // Additional Notes:
+  // 
+  // * The polling loop and Iframe are not created until at least one handler
+  //   is actually bound to the 'hashchange' event.
+  // * If you need the bound handler(s) to execute immediately, in cases where
+  //   a location.hash exists on page load, via bookmark or page refresh for
+  //   example, use jQuery(window).hashchange() or the more verbose 
+  //   jQuery(window).trigger( 'hashchange' ).
+  // * The event can be bound before DOM ready, but since it won't be usable
+  //   before then in IE6/7 (due to the necessary Iframe), recommended usage is
+  //   to bind it inside a DOM ready handler.
+  
+  // Override existing $.event.special.hashchange methods (allowing this plugin
+  // to be defined after jQuery BBQ in BBQ's source code).
+  special[ str_hashchange ] = $.extend( special[ str_hashchange ], {
+    
+    // Called only when the first 'hashchange' event is bound to window.
+    setup: function() {
+      // If window.onhashchange is supported natively, there's nothing to do..
+      if ( supports_onhashchange ) { return false; }
+      
+      // Otherwise, we need to create our own. And we don't want to call this
+      // until the user binds to the event, just in case they never do, since it
+      // will create a polling loop and possibly even a hidden Iframe.
+      $( fake_onhashchange.start );
+    },
+    
+    // Called only when the last 'hashchange' event is unbound from window.
+    teardown: function() {
+      // If window.onhashchange is supported natively, there's nothing to do..
+      if ( supports_onhashchange ) { return false; }
+      
+      // Otherwise, we need to stop ours (if possible).
+      $( fake_onhashchange.stop );
+    }
+    
+  });
+  
+  // fake_onhashchange does all the work of triggering the window.onhashchange
+  // event for browsers that don't natively support it, including creating a
+  // polling loop to watch for hash changes and in IE 6/7 creating a hidden
+  // Iframe to enable back and forward.
+  fake_onhashchange = (function(){
+    var self = {},
+      timeout_id,
+      
+      // Remember the initial hash so it doesn't get triggered immediately.
+      last_hash = get_fragment(),
+      
+      fn_retval = function(val){ return val; },
+      history_set = fn_retval,
+      history_get = fn_retval;
+    
+    // Start the polling loop.
+    self.start = function() {
+      timeout_id || poll();
+    };
+    
+    // Stop the polling loop.
+    self.stop = function() {
+      timeout_id && clearTimeout( timeout_id );
+      timeout_id = undefined;
+    };
+    
+    // This polling loop checks every $.fn.hashchange.delay milliseconds to see
+    // if location.hash has changed, and triggers the 'hashchange' event on
+    // window when necessary.
+    function poll() {
+      var hash = get_fragment(),
+        history_hash = history_get( last_hash );
+      
+      if ( hash !== last_hash ) {
+        history_set( last_hash = hash, history_hash );
+        
+        $(window).trigger( str_hashchange );
+        
+      } else if ( history_hash !== last_hash ) {
+        location.href = location.href.replace( /#.*/, '' ) + history_hash;
+      }
+      
+      timeout_id = setTimeout( poll, $.fn[ str_hashchange ].delay );
+    };
+    
+    // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+    // vvvvvvvvvvvvvvvvvvv REMOVE IF NOT SUPPORTING IE6/7/8 vvvvvvvvvvvvvvvvvvv
+    // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+    window.attachEvent && !window.addEventListener && !supports_onhashchange && (function(){
+      // Not only do IE6/7 need the "magical" Iframe treatment, but so does IE8
+      // when running in "IE7 compatibility" mode.
+      
+      var iframe,
+        iframe_src;
+      
+      // When the event is bound and polling starts in IE 6/7, create a hidden
+      // Iframe for history handling.
+      self.start = function(){
+        if ( !iframe ) {
+          iframe_src = $.fn[ str_hashchange ].src;
+          iframe_src = iframe_src && iframe_src + get_fragment();
+          
+          // Create hidden Iframe. Attempt to make Iframe as hidden as possible
+          // by using techniques from http://www.paciellogroup.com/blog/?p=604.
+          iframe = $('<iframe tabindex="-1" title="empty"/>').hide()
+            
+            // When Iframe has completely loaded, initialize the history and
+            // start polling.
+            .one( 'load', function(){
+              iframe_src || history_set( get_fragment() );
+              poll();
+            })
+            
+            // Load Iframe src if specified, otherwise nothing.
+            .attr( 'src', iframe_src || 'javascript:0' )
+            
+            // Append Iframe after the end of the body to prevent unnecessary
+            // initial page scrolling (yes, this works).
+            .insertAfter( 'body' )[0].contentWindow;
+          
+          // Whenever `document.title` changes, update the Iframe's title to
+          // prettify the back/next history menu entries. Since IE sometimes
+          // errors with "Unspecified error" the very first time this is set
+          // (yes, very useful) wrap this with a try/catch block.
+          doc.onpropertychange = function(){
+            try {
+              if ( event.propertyName === 'title' ) {
+                iframe.document.title = doc.title;
+              }
+            } catch(e) {}
+          };
+          
+        }
+      };
+      
+      // Override the "stop" method since an IE6/7 Iframe was created. Even
+      // if there are no longer any bound event handlers, the polling loop
+      // is still necessary for back/next to work at all!
+      self.stop = fn_retval;
+      
+      // Get history by looking at the hidden Iframe's location.hash.
+      history_get = function() {
+        return get_fragment( iframe.location.href );
+      };
+      
+      // Set a new history item by opening and then closing the Iframe
+      // document, *then* setting its location.hash. If document.domain has
+      // been set, update that as well.
+      history_set = function( hash, history_hash ) {
+        var iframe_doc = iframe.document,
+          domain = $.fn[ str_hashchange ].domain;
+        
+        if ( hash !== history_hash ) {
+          // Update Iframe with any initial `document.title` that might be set.
+          iframe_doc.title = doc.title;
+          
+          // Opening the Iframe's document after it has been closed is what
+          // actually adds a history entry.
+          iframe_doc.open();
+          
+          // Set document.domain for the Iframe document as well, if necessary.
+          domain && iframe_doc.write( '\x3cscript>document.domain="' + domain + '"\x3c/script>' );
+          
+          iframe_doc.close();
+          
+          // Update the Iframe's hash, for great justice.
+          iframe.location.hash = hash;
+        }
+      };
+      
+    })();
+    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    // ^^^^^^^^^^^^^^^^^^^ REMOVE IF NOT SUPPORTING IE6/7/8 ^^^^^^^^^^^^^^^^^^^
+    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    return self;
+  })();
+  
+})(jQuery,this);
+
+(function( $ ) {
+	$.mobile = {};
+}( jQuery ));
+
+(function( $, window, undefined ) {
+	$.extend( $.mobile, {
+
+		// Version of the jQuery Mobile Framework
+		version: "1.4.5",
+
+		// Deprecated and no longer used in 1.4 remove in 1.5
+		// Define the url parameter used for referencing widget-generated sub-pages.
+		// Translates to example.html&ui-page=subpageIdentifier
+		// hash segment before &ui-page= is used to make Ajax request
+		subPageUrlKey: "ui-page",
+
+		hideUrlBar: true,
+
+		// Keepnative Selector
+		keepNative: ":jqmData(role='none'), :jqmData(role='nojs')",
+
+		// Deprecated in 1.4 remove in 1.5
+		// Class assigned to page currently in view, and during transitions
+		activePageClass: "ui-page-active",
+
+		// Deprecated in 1.4 remove in 1.5
+		// Class used for "active" button state, from CSS framework
+		activeBtnClass: "ui-btn-active",
+
+		// Deprecated in 1.4 remove in 1.5
+		// Class used for "focus" form element state, from CSS framework
+		focusClass: "ui-focus",
+
+		// Automatically handle clicks and form submissions through Ajax, when same-domain
+		ajaxEnabled: true,
+
+		// Automatically load and show pages based on location.hash
+		hashListeningEnabled: true,
+
+		// disable to prevent jquery from bothering with links
+		linkBindingEnabled: true,
+
+		// Set default page transition - 'none' for no transitions
+		defaultPageTransition: "fade",
+
+		// Set maximum window width for transitions to apply - 'false' for no limit
+		maxTransitionWidth: false,
+
+		// Minimum scroll distance that will be remembered when returning to a page
+		// Deprecated remove in 1.5
+		minScrollBack: 0,
+
+		// Set default dialog transition - 'none' for no transitions
+		defaultDialogTransition: "pop",
+
+		// Error response message - appears when an Ajax page request fails
+		pageLoadErrorMessage: "Error Loading Page",
+
+		// For error messages, which theme does the box use?
+		pageLoadErrorMessageTheme: "a",
+
+		// replace calls to window.history.back with phonegaps navigation helper
+		// where it is provided on the window object
+		phonegapNavigationEnabled: false,
+
+		//automatically initialize the DOM when it's ready
+		autoInitializePage: true,
+
+		pushStateEnabled: true,
+
+		// allows users to opt in to ignoring content by marking a parent element as
+		// data-ignored
+		ignoreContentEnabled: false,
+
+		buttonMarkup: {
+			hoverDelay: 200
+		},
+
+		// disable the alteration of the dynamic base tag or links in the case
+		// that a dynamic base tag isn't supported
+		dynamicBaseEnabled: true,
+
+		// default the property to remove dependency on assignment in init module
+		pageContainer: $(),
+
+		//enable cross-domain page support
+		allowCrossDomainPages: false,
+
+		dialogHashKey: "&ui-state=dialog"
+	});
+})( jQuery, this );
+
+(function( $, window, undefined ) {
+	var nsNormalizeDict = {},
+		oldFind = $.find,
+		rbrace = /(?:\{[\s\S]*\}|\[[\s\S]*\])$/,
+		jqmDataRE = /:jqmData\(([^)]*)\)/g;
+
+	$.extend( $.mobile, {
+
+		// Namespace used framework-wide for data-attrs. Default is no namespace
+
+		ns: "",
+
+		// Retrieve an attribute from an element and perform some massaging of the value
+
+		getAttribute: function( element, key ) {
+			var data;
+
+			element = element.jquery ? element[0] : element;
+
+			if ( element && element.getAttribute ) {
+				data = element.getAttribute( "data-" + $.mobile.ns + key );
+			}
+
+			// Copied from core's src/data.js:dataAttr()
+			// Convert from a string to a proper data type
+			try {
+				data = data === "true" ? true :
+					data === "false" ? false :
+					data === "null" ? null :
+					// Only convert to a number if it doesn't change the string
+					+data + "" === data ? +data :
+					rbrace.test( data ) ? JSON.parse( data ) :
+					data;
+			} catch( err ) {}
+
+			return data;
+		},
+
+		// Expose our cache for testing purposes.
+		nsNormalizeDict: nsNormalizeDict,
+
+		// Take a data attribute property, prepend the namespace
+		// and then camel case the attribute string. Add the result
+		// to our nsNormalizeDict so we don't have to do this again.
+		nsNormalize: function( prop ) {
+			return nsNormalizeDict[ prop ] ||
+				( nsNormalizeDict[ prop ] = $.camelCase( $.mobile.ns + prop ) );
+		},
+
+		// Find the closest javascript page element to gather settings data jsperf test
+		// http://jsperf.com/single-complex-selector-vs-many-complex-selectors/edit
+		// possibly naive, but it shows that the parsing overhead for *just* the page selector vs
+		// the page and dialog selector is negligable. This could probably be speed up by
+		// doing a similar parent node traversal to the one found in the inherited theme code above
+		closestPageData: function( $target ) {
+			return $target
+				.closest( ":jqmData(role='page'), :jqmData(role='dialog')" )
+				.data( "mobile-page" );
+		}
+
+	});
+
+	// Mobile version of data and removeData and hasData methods
+	// ensures all data is set and retrieved using jQuery Mobile's data namespace
+	$.fn.jqmData = function( prop, value ) {
+		var result;
+		if ( typeof prop !== "undefined" ) {
+			if ( prop ) {
+				prop = $.mobile.nsNormalize( prop );
+			}
+
+			// undefined is permitted as an explicit input for the second param
+			// in this case it returns the value and does not set it to undefined
+			if ( arguments.length < 2 || value === undefined ) {
+				result = this.data( prop );
+			} else {
+				result = this.data( prop, value );
+			}
+		}
+		return result;
+	};
+
+	$.jqmData = function( elem, prop, value ) {
+		var result;
+		if ( typeof prop !== "undefined" ) {
+			result = $.data( elem, prop ? $.mobile.nsNormalize( prop ) : prop, value );
+		}
+		return result;
+	};
+
+	$.fn.jqmRemoveData = function( prop ) {
+		return this.removeData( $.mobile.nsNormalize( prop ) );
+	};
+
+	$.jqmRemoveData = function( elem, prop ) {
+		return $.removeData( elem, $.mobile.nsNormalize( prop ) );
+	};
+
+	$.find = function( selector, context, ret, extra ) {
+		if ( selector.indexOf( ":jqmData" ) > -1 ) {
+			selector = selector.replace( jqmDataRE, "[data-" + ( $.mobile.ns || "" ) + "$1]" );
+		}
+
+		return oldFind.call( this, selector, context, ret, extra );
+	};
+
+	$.extend( $.find, oldFind );
+
+})( jQuery, this );
+
+/*!
+ * jQuery UI Core c0ab71056b936627e8a7821f03c044aec6280a40
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/ui-core/
+ */
+(function( $, undefined ) {
+
+var uuid = 0,
+	runiqueId = /^ui-id-\d+$/;
+
+// $.ui might exist from components with no dependencies, e.g., $.ui.position
+$.ui = $.ui || {};
+
+$.extend( $.ui, {
+	version: "c0ab71056b936627e8a7821f03c044aec6280a40",
+
+	keyCode: {
+		BACKSPACE: 8,
+		COMMA: 188,
+		DELETE: 46,
+		DOWN: 40,
+		END: 35,
+		ENTER: 13,
+		ESCAPE: 27,
+		HOME: 36,
+		LEFT: 37,
+		PAGE_DOWN: 34,
+		PAGE_UP: 33,
+		PERIOD: 190,
+		RIGHT: 39,
+		SPACE: 32,
+		TAB: 9,
+		UP: 38
+	}
+});
+
+// plugins
+$.fn.extend({
+	focus: (function( orig ) {
+		return function( delay, fn ) {
+			return typeof delay === "number" ?
+				this.each(function() {
+					var elem = this;
+					setTimeout(function() {
+						$( elem ).focus();
+						if ( fn ) {
+							fn.call( elem );
+						}
+					}, delay );
+				}) :
+				orig.apply( this, arguments );
+		};
+	})( $.fn.focus ),
+
+	scrollParent: function() {
+		var scrollParent;
+		if (($.ui.ie && (/(static|relative)/).test(this.css("position"))) || (/absolute/).test(this.css("position"))) {
+			scrollParent = this.parents().filter(function() {
+				return (/(relative|absolute|fixed)/).test($.css(this,"position")) && (/(auto|scroll)/).test($.css(this,"overflow")+$.css(this,"overflow-y")+$.css(this,"overflow-x"));
+			}).eq(0);
+		} else {
+			scrollParent = this.parents().filter(function() {
+				return (/(auto|scroll)/).test($.css(this,"overflow")+$.css(this,"overflow-y")+$.css(this,"overflow-x"));
+			}).eq(0);
+		}
+
+		return ( /fixed/ ).test( this.css( "position") ) || !scrollParent.length ? $( this[ 0 ].ownerDocument || document ) : scrollParent;
+	},
+
+	uniqueId: function() {
+		return this.each(function() {
+			if ( !this.id ) {
+				this.id = "ui-id-" + (++uuid);
+			}
+		});
+	},
+
+	removeUniqueId: function() {
+		return this.each(function() {
+			if ( runiqueId.test( this.id ) ) {
+				$( this ).removeAttr( "id" );
+			}
+		});
+	}
+});
+
+// selectors
+function focusable( element, isTabIndexNotNaN ) {
+	var map, mapName, img,
+		nodeName = element.nodeName.toLowerCase();
+	if ( "area" === nodeName ) {
+		map = element.parentNode;
+		mapName = map.name;
+		if ( !element.href || !mapName || map.nodeName.toLowerCase() !== "map" ) {
+			return false;
+		}
+		img = $( "img[usemap=#" + mapName + "]" )[0];
+		return !!img && visible( img );
+	}
+	return ( /input|select|textarea|button|object/.test( nodeName ) ?
+		!element.disabled :
+		"a" === nodeName ?
+			element.href || isTabIndexNotNaN :
+			isTabIndexNotNaN) &&
+		// the element and all of its ancestors must be visible
+		visible( element );
+}
+
+function visible( element ) {
+	return $.expr.filters.visible( element ) &&
+		!$( element ).parents().addBack().filter(function() {
+			return $.css( this, "visibility" ) === "hidden";
+		}).length;
+}
+
+$.extend( $.expr[ ":" ], {
+	data: $.expr.createPseudo ?
+		$.expr.createPseudo(function( dataName ) {
+			return function( elem ) {
+				return !!$.data( elem, dataName );
+			};
+		}) :
+		// support: jQuery <1.8
+		function( elem, i, match ) {
+			return !!$.data( elem, match[ 3 ] );
+		},
+
+	focusable: function( element ) {
+		return focusable( element, !isNaN( $.attr( element, "tabindex" ) ) );
+	},
+
+	tabbable: function( element ) {
+		var tabIndex = $.attr( element, "tabindex" ),
+			isTabIndexNaN = isNaN( tabIndex );
+		return ( isTabIndexNaN || tabIndex >= 0 ) && focusable( element, !isTabIndexNaN );
+	}
+});
+
+// support: jQuery <1.8
+if ( !$( "<a>" ).outerWidth( 1 ).jquery ) {
+	$.each( [ "Width", "Height" ], function( i, name ) {
+		var side = name === "Width" ? [ "Left", "Right" ] : [ "Top", "Bottom" ],
+			type = name.toLowerCase(),
+			orig = {
+				innerWidth: $.fn.innerWidth,
+				innerHeight: $.fn.innerHeight,
+				outerWidth: $.fn.outerWidth,
+				outerHeight: $.fn.outerHeight
+			};
+
+		function reduce( elem, size, border, margin ) {
+			$.each( side, function() {
+				size -= parseFloat( $.css( elem, "padding" + this ) ) || 0;
+				if ( border ) {
+					size -= parseFloat( $.css( elem, "border" + this + "Width" ) ) || 0;
+				}
+				if ( margin ) {
+					size -= parseFloat( $.css( elem, "margin" + this ) ) || 0;
+				}
+			});
+			return size;
+		}
+
+		$.fn[ "inner" + name ] = function( size ) {
+			if ( size === undefined ) {
+				return orig[ "inner" + name ].call( this );
+			}
+
+			return this.each(function() {
+				$( this ).css( type, reduce( this, size ) + "px" );
+			});
+		};
+
+		$.fn[ "outer" + name] = function( size, margin ) {
+			if ( typeof size !== "number" ) {
+				return orig[ "outer" + name ].call( this, size );
+			}
+
+			return this.each(function() {
+				$( this).css( type, reduce( this, size, true, margin ) + "px" );
+			});
+		};
+	});
+}
+
+// support: jQuery <1.8
+if ( !$.fn.addBack ) {
+	$.fn.addBack = function( selector ) {
+		return this.add( selector == null ?
+			this.prevObject : this.prevObject.filter( selector )
+		);
+	};
+}
+
+// support: jQuery 1.6.1, 1.6.2 (http://bugs.jquery.com/ticket/9413)
+if ( $( "<a>" ).data( "a-b", "a" ).removeData( "a-b" ).data( "a-b" ) ) {
+	$.fn.removeData = (function( removeData ) {
+		return function( key ) {
+			if ( arguments.length ) {
+				return removeData.call( this, $.camelCase( key ) );
+			} else {
+				return removeData.call( this );
+			}
+		};
+	})( $.fn.removeData );
+}
+
+
+
+
+
+// deprecated
+$.ui.ie = !!/msie [\w.]+/.exec( navigator.userAgent.toLowerCase() );
+
+$.support.selectstart = "onselectstart" in document.createElement( "div" );
+$.fn.extend({
+	disableSelection: function() {
+		return this.bind( ( $.support.selectstart ? "selectstart" : "mousedown" ) +
+			".ui-disableSelection", function( event ) {
+				event.preventDefault();
+			});
+	},
+
+	enableSelection: function() {
+		return this.unbind( ".ui-disableSelection" );
+	},
+
+	zIndex: function( zIndex ) {
+		if ( zIndex !== undefined ) {
+			return this.css( "zIndex", zIndex );
+		}
+
+		if ( this.length ) {
+			var elem = $( this[ 0 ] ), position, value;
+			while ( elem.length && elem[ 0 ] !== document ) {
+				// Ignore z-index if position is set to a value where z-index is ignored by the browser
+				// This makes behavior of this function consistent across browsers
+				// WebKit always returns auto if the element is positioned
+				position = elem.css( "position" );
+				if ( position === "absolute" || position === "relative" || position === "fixed" ) {
+					// IE returns 0 when zIndex is not specified
+					// other browsers return a string
+					// we ignore the case of nested elements with an explicit value of 0
+					// <div style="z-index: -10;"><div style="z-index: 0;"></div></div>
+					value = parseInt( elem.css( "zIndex" ), 10 );
+					if ( !isNaN( value ) && value !== 0 ) {
+						return value;
+					}
+				}
+				elem = elem.parent();
+			}
+		}
+
+		return 0;
+	}
+});
+
+// $.ui.plugin is deprecated. Use $.widget() extensions instead.
+$.ui.plugin = {
+	add: function( module, option, set ) {
+		var i,
+			proto = $.ui[ module ].prototype;
+		for ( i in set ) {
+			proto.plugins[ i ] = proto.plugins[ i ] || [];
+			proto.plugins[ i ].push( [ option, set[ i ] ] );
+		}
+	},
+	call: function( instance, name, args, allowDisconnected ) {
+		var i,
+			set = instance.plugins[ name ];
+
+		if ( !set ) {
+			return;
+		}
+
+		if ( !allowDisconnected && ( !instance.element[ 0 ].parentNode || instance.element[ 0 ].parentNode.nodeType === 11 ) ) {
+			return;
+		}
+
+		for ( i = 0; i < set.length; i++ ) {
+			if ( instance.options[ set[ i ][ 0 ] ] ) {
+				set[ i ][ 1 ].apply( instance.element, args );
+			}
+		}
+	}
+};
+
+})( jQuery );
+
+(function( $, window, undefined ) {
+
+	// Subtract the height of external toolbars from the page height, if the page does not have
+	// internal toolbars of the same type. We take care to use the widget options if we find a
+	// widget instance and the element's data-attributes otherwise.
+	var compensateToolbars = function( page, desiredHeight ) {
+		var pageParent = page.parent(),
+			toolbarsAffectingHeight = [],
+
+			// We use this function to filter fixed toolbars with option updatePagePadding set to
+			// true (which is the default) from our height subtraction, because fixed toolbars with
+			// option updatePagePadding set to true compensate for their presence by adding padding
+			// to the active page. We want to avoid double-counting by also subtracting their
+			// height from the desired page height.
+			noPadders = function() {
+				var theElement = $( this ),
+					widgetOptions = $.mobile.toolbar && theElement.data( "mobile-toolbar" ) ?
+						theElement.toolbar( "option" ) : {
+							position: theElement.attr( "data-" + $.mobile.ns + "position" ),
+							updatePagePadding: ( theElement.attr( "data-" + $.mobile.ns +
+								"update-page-padding" ) !== false )
+						};
+
+				return !( widgetOptions.position === "fixed" &&
+					widgetOptions.updatePagePadding === true );
+			},
+			externalHeaders = pageParent.children( ":jqmData(role='header')" ).filter( noPadders ),
+			internalHeaders = page.children( ":jqmData(role='header')" ),
+			externalFooters = pageParent.children( ":jqmData(role='footer')" ).filter( noPadders ),
+			internalFooters = page.children( ":jqmData(role='footer')" );
+
+		// If we have no internal headers, but we do have external headers, then their height
+		// reduces the page height
+		if ( internalHeaders.length === 0 && externalHeaders.length > 0 ) {
+			toolbarsAffectingHeight = toolbarsAffectingHeight.concat( externalHeaders.toArray() );
+		}
+
+		// If we have no internal footers, but we do have external footers, then their height
+		// reduces the page height
+		if ( internalFooters.length === 0 && externalFooters.length > 0 ) {
+			toolbarsAffectingHeight = toolbarsAffectingHeight.concat( externalFooters.toArray() );
+		}
+
+		$.each( toolbarsAffectingHeight, function( index, value ) {
+			desiredHeight -= $( value ).outerHeight();
+		});
+
+		// Height must be at least zero
+		return Math.max( 0, desiredHeight );
+	};
+
+	$.extend( $.mobile, {
+		// define the window and the document objects
+		window: $( window ),
+		document: $( document ),
+
+		// TODO: Remove and use $.ui.keyCode directly
+		keyCode: $.ui.keyCode,
+
+		// Place to store various widget extensions
+		behaviors: {},
+
+		// Scroll page vertically: scroll to 0 to hide iOS address bar, or pass a Y value
+		silentScroll: function( ypos ) {
+			if ( $.type( ypos ) !== "number" ) {
+				ypos = $.mobile.defaultHomeScroll;
+			}
+
+			// prevent scrollstart and scrollstop events
+			$.event.special.scrollstart.enabled = false;
+
+			setTimeout(function() {
+				window.scrollTo( 0, ypos );
+				$.mobile.document.trigger( "silentscroll", { x: 0, y: ypos });
+			}, 20 );
+
+			setTimeout(function() {
+				$.event.special.scrollstart.enabled = true;
+			}, 150 );
+		},
+
+		getClosestBaseUrl: function( ele )	{
+			// Find the closest page and extract out its url.
+			var url = $( ele ).closest( ".ui-page" ).jqmData( "url" ),
+				base = $.mobile.path.documentBase.hrefNoHash;
+
+			if ( !$.mobile.dynamicBaseEnabled || !url || !$.mobile.path.isPath( url ) ) {
+				url = base;
+			}
+
+			return $.mobile.path.makeUrlAbsolute( url, base );
+		},
+		removeActiveLinkClass: function( forceRemoval ) {
+			if ( !!$.mobile.activeClickedLink &&
+				( !$.mobile.activeClickedLink.closest( "." + $.mobile.activePageClass ).length ||
+					forceRemoval ) ) {
+
+				$.mobile.activeClickedLink.removeClass( $.mobile.activeBtnClass );
+			}
+			$.mobile.activeClickedLink = null;
+		},
+
+		// DEPRECATED in 1.4
+		// Find the closest parent with a theme class on it. Note that
+		// we are not using $.fn.closest() on purpose here because this
+		// method gets called quite a bit and we need it to be as fast
+		// as possible.
+		getInheritedTheme: function( el, defaultTheme ) {
+			var e = el[ 0 ],
+				ltr = "",
+				re = /ui-(bar|body|overlay)-([a-z])\b/,
+				c, m;
+			while ( e ) {
+				c = e.className || "";
+				if ( c && ( m = re.exec( c ) ) && ( ltr = m[ 2 ] ) ) {
+					// We found a parent with a theme class
+					// on it so bail from this loop.
+					break;
+				}
+
+				e = e.parentNode;
+			}
+			// Return the theme letter we found, if none, return the
+			// specified default.
+			return ltr || defaultTheme || "a";
+		},
+
+		enhanceable: function( elements ) {
+			return this.haveParents( elements, "enhance" );
+		},
+
+		hijackable: function( elements ) {
+			return this.haveParents( elements, "ajax" );
+		},
+
+		haveParents: function( elements, attr ) {
+			if ( !$.mobile.ignoreContentEnabled ) {
+				return elements;
+			}
+
+			var count = elements.length,
+				$newSet = $(),
+				e, $element, excluded,
+				i, c;
+
+			for ( i = 0; i < count; i++ ) {
+				$element = elements.eq( i );
+				excluded = false;
+				e = elements[ i ];
+
+				while ( e ) {
+					c = e.getAttribute ? e.getAttribute( "data-" + $.mobile.ns + attr ) : "";
+
+					if ( c === "false" ) {
+						excluded = true;
+						break;
+					}
+
+					e = e.parentNode;
+				}
+
+				if ( !excluded ) {
+					$newSet = $newSet.add( $element );
+				}
+			}
+
+			return $newSet;
+		},
+
+		getScreenHeight: function() {
+			// Native innerHeight returns more accurate value for this across platforms,
+			// jQuery version is here as a normalized fallback for platforms like Symbian
+			return window.innerHeight || $.mobile.window.height();
+		},
+
+		//simply set the active page's minimum height to screen height, depending on orientation
+		resetActivePageHeight: function( height ) {
+			var page = $( "." + $.mobile.activePageClass ),
+				pageHeight = page.height(),
+				pageOuterHeight = page.outerHeight( true );
+
+			height = compensateToolbars( page,
+				( typeof height === "number" ) ? height : $.mobile.getScreenHeight() );
+
+			// Remove any previous min-height setting
+			page.css( "min-height", "" );
+
+			// Set the minimum height only if the height as determined by CSS is insufficient
+			if ( page.height() < height ) {
+				page.css( "min-height", height - ( pageOuterHeight - pageHeight ) );
+			}
+		},
+
+		loading: function() {
+			// If this is the first call to this function, instantiate a loader widget
+			var loader = this.loading._widget || $( $.mobile.loader.prototype.defaultHtml ).loader(),
+
+				// Call the appropriate method on the loader
+				returnValue = loader.loader.apply( loader, arguments );
+
+			// Make sure the loader is retained for future calls to this function.
+			this.loading._widget = loader;
+
+			return returnValue;
+		}
+	});
+
+	$.addDependents = function( elem, newDependents ) {
+		var $elem = $( elem ),
+			dependents = $elem.jqmData( "dependents" ) || $();
+
+		$elem.jqmData( "dependents", $( dependents ).add( newDependents ) );
+	};
+
+	// plugins
+	$.fn.extend({
+		removeWithDependents: function() {
+			$.removeWithDependents( this );
+		},
+
+		// Enhance child elements
+		enhanceWithin: function() {
+			var index,
+				widgetElements = {},
+				keepNative = $.mobile.page.prototype.keepNativeSelector(),
+				that = this;
+
+			// Add no js class to elements
+			if ( $.mobile.nojs ) {
+				$.mobile.nojs( this );
+			}
+
+			// Bind links for ajax nav
+			if ( $.mobile.links ) {
+				$.mobile.links( this );
+			}
+
+			// Degrade inputs for styleing
+			if ( $.mobile.degradeInputsWithin ) {
+				$.mobile.degradeInputsWithin( this );
+			}
+
+			// Run buttonmarkup
+			if ( $.fn.buttonMarkup ) {
+				this.find( $.fn.buttonMarkup.initSelector ).not( keepNative )
+				.jqmEnhanceable().buttonMarkup();
+			}
+
+			// Add classes for fieldContain
+			if ( $.fn.fieldcontain ) {
+				this.find( ":jqmData(role='fieldcontain')" ).not( keepNative )
+				.jqmEnhanceable().fieldcontain();
+			}
+
+			// Enhance widgets
+			$.each( $.mobile.widgets, function( name, constructor ) {
+
+				// If initSelector not false find elements
+				if ( constructor.initSelector ) {
+
+					// Filter elements that should not be enhanced based on parents
+					var elements = $.mobile.enhanceable( that.find( constructor.initSelector ) );
+
+					// If any matching elements remain filter ones with keepNativeSelector
+					if ( elements.length > 0 ) {
+
+						// $.mobile.page.prototype.keepNativeSelector is deprecated this is just for backcompat
+						// Switch to $.mobile.keepNative in 1.5 which is just a value not a function
+						elements = elements.not( keepNative );
+					}
+
+					// Enhance whatever is left
+					if ( elements.length > 0 ) {
+						widgetElements[ constructor.prototype.widgetName ] = elements;
+					}
+				}
+			});
+
+			for ( index in widgetElements ) {
+				widgetElements[ index ][ index ]();
+			}
+
+			return this;
+		},
+
+		addDependents: function( newDependents ) {
+			$.addDependents( this, newDependents );
+		},
+
+		// note that this helper doesn't attempt to handle the callback
+		// or setting of an html element's text, its only purpose is
+		// to return the html encoded version of the text in all cases. (thus the name)
+		getEncodedText: function() {
+			return $( "<a>" ).text( this.text() ).html();
+		},
+
+		// fluent helper function for the mobile namespaced equivalent
+		jqmEnhanceable: function() {
+			return $.mobile.enhanceable( this );
+		},
+
+		jqmHijackable: function() {
+			return $.mobile.hijackable( this );
+		}
+	});
+
+	$.removeWithDependents = function( nativeElement ) {
+		var element = $( nativeElement );
+
+		( element.jqmData( "dependents" ) || $() ).remove();
+		element.remove();
+	};
+	$.addDependents = function( nativeElement, newDependents ) {
+		var element = $( nativeElement ),
+			dependents = element.jqmData( "dependents" ) || $();
+
+		element.jqmData( "dependents", $( dependents ).add( newDependents ) );
+	};
+
+	$.find.matches = function( expr, set ) {
+		return $.find( expr, null, null, set );
+	};
+
+	$.find.matchesSelector = function( node, expr ) {
+		return $.find( expr, null, null, [ node ] ).length > 0;
+	};
+
+})( jQuery, this );
+
+
+(function( $, undefined ) {
+
+	/*! matchMedia() polyfill - Test a CSS media type/query in JS. Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. Dual MIT/BSD license */
+	window.matchMedia = window.matchMedia || (function( doc, undefined ) {
+
+		var bool,
+			docElem = doc.documentElement,
+			refNode = docElem.firstElementChild || docElem.firstChild,
+			// fakeBody required for <FF4 when executed in <head>
+			fakeBody = doc.createElement( "body" ),
+			div = doc.createElement( "div" );
+
+		div.id = "mq-test-1";
+		div.style.cssText = "position:absolute;top:-100em";
+		fakeBody.style.background = "none";
+		fakeBody.appendChild(div);
+
+		return function(q){
+
+			div.innerHTML = "&shy;<style media=\"" + q + "\"> #mq-test-1 { width: 42px; }</style>";
+
+			docElem.insertBefore( fakeBody, refNode );
+			bool = div.offsetWidth === 42;
+			docElem.removeChild( fakeBody );
+
+			return {
+				matches: bool,
+				media: q
+			};
+
+		};
+
+	}( document ));
+
+	// $.mobile.media uses matchMedia to return a boolean.
+	$.mobile.media = function( q ) {
+		return window.matchMedia( q ).matches;
+	};
+
+})(jQuery);
+
+	(function( $, undefined ) {
+		var support = {
+			touch: "ontouchend" in document
+		};
+
+		$.mobile.support = $.mobile.support || {};
+		$.extend( $.support, support );
+		$.extend( $.mobile.support, support );
+	}( jQuery ));
+
+	(function( $, undefined ) {
+		$.extend( $.support, {
+			orientation: "orientation" in window && "onorientationchange" in window
+		});
+	}( jQuery ));
+
+(function( $, undefined ) {
+
+// thx Modernizr
+function propExists( prop ) {
+	var uc_prop = prop.charAt( 0 ).toUpperCase() + prop.substr( 1 ),
+		props = ( prop + " " + vendors.join( uc_prop + " " ) + uc_prop ).split( " " ),
+		v;
+
+	for ( v in props ) {
+		if ( fbCSS[ props[ v ] ] !== undefined ) {
+			return true;
+		}
+	}
+}
+
+var fakeBody = $( "<body>" ).prependTo( "html" ),
+	fbCSS = fakeBody[ 0 ].style,
+	vendors = [ "Webkit", "Moz", "O" ],
+	webos = "palmGetResource" in window, //only used to rule out scrollTop
+	operamini = window.operamini && ({}).toString.call( window.operamini ) === "[object OperaMini]",
+	bb = window.blackberry && !propExists( "-webkit-transform" ), //only used to rule out box shadow, as it's filled opaque on BB 5 and lower
+	nokiaLTE7_3;
+
+// inline SVG support test
+function inlineSVG() {
+	// Thanks Modernizr & Erik Dahlstrom
+	var w = window,
+		svg = !!w.document.createElementNS && !!w.document.createElementNS( "http://www.w3.org/2000/svg", "svg" ).createSVGRect && !( w.opera && navigator.userAgent.indexOf( "Chrome" ) === -1 ),
+		support = function( data ) {
+			if ( !( data && svg ) ) {
+				$( "html" ).addClass( "ui-nosvg" );
+			}
+		},
+		img = new w.Image();
+
+	img.onerror = function() {
+		support( false );
+	};
+	img.onload = function() {
+		support( img.width === 1 && img.height === 1 );
+	};
+	img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+}
+
+function transform3dTest() {
+	var mqProp = "transform-3d",
+		// Because the `translate3d` test below throws false positives in Android:
+		ret = $.mobile.media( "(-" + vendors.join( "-" + mqProp + "),(-" ) + "-" + mqProp + "),(" + mqProp + ")" ),
+		el, transforms, t;
+
+	if ( ret ) {
+		return !!ret;
+	}
+
+	el = document.createElement( "div" );
+	transforms = {
+		// We’re omitting Opera for the time being; MS uses unprefixed.
+		"MozTransform": "-moz-transform",
+		"transform": "transform"
+	};
+
+	fakeBody.append( el );
+
+	for ( t in transforms ) {
+		if ( el.style[ t ] !== undefined ) {
+			el.style[ t ] = "translate3d( 100px, 1px, 1px )";
+			ret = window.getComputedStyle( el ).getPropertyValue( transforms[ t ] );
+		}
+	}
+	return ( !!ret && ret !== "none" );
+}
+
+// Test for dynamic-updating base tag support ( allows us to avoid href,src attr rewriting )
+function baseTagTest() {
+	var fauxBase = location.protocol + "//" + location.host + location.pathname + "ui-dir/",
+		base = $( "head base" ),
+		fauxEle = null,
+		href = "",
+		link, rebase;
+
+	if ( !base.length ) {
+		base = fauxEle = $( "<base>", { "href": fauxBase }).appendTo( "head" );
+	} else {
+		href = base.attr( "href" );
+	}
+
+	link = $( "<a href='testurl' />" ).prependTo( fakeBody );
+	rebase = link[ 0 ].href;
+	base[ 0 ].href = href || location.pathname;
+
+	if ( fauxEle ) {
+		fauxEle.remove();
+	}
+	return rebase.indexOf( fauxBase ) === 0;
+}
+
+// Thanks Modernizr
+function cssPointerEventsTest() {
+	var element = document.createElement( "x" ),
+		documentElement = document.documentElement,
+		getComputedStyle = window.getComputedStyle,
+		supports;
+
+	if ( !( "pointerEvents" in element.style ) ) {
+		return false;
+	}
+
+	element.style.pointerEvents = "auto";
+	element.style.pointerEvents = "x";
+	documentElement.appendChild( element );
+	supports = getComputedStyle &&
+	getComputedStyle( element, "" ).pointerEvents === "auto";
+	documentElement.removeChild( element );
+	return !!supports;
+}
+
+function boundingRect() {
+	var div = document.createElement( "div" );
+	return typeof div.getBoundingClientRect !== "undefined";
+}
+
+// non-UA-based IE version check by James Padolsey, modified by jdalton - from http://gist.github.com/527683
+// allows for inclusion of IE 6+, including Windows Mobile 7
+$.extend( $.mobile, { browser: {} } );
+$.mobile.browser.oldIE = (function() {
+	var v = 3,
+		div = document.createElement( "div" ),
+		a = div.all || [];
+
+	do {
+		div.innerHTML = "<!--[if gt IE " + ( ++v ) + "]><br><![endif]-->";
+	} while( a[0] );
+
+	return v > 4 ? v : !v;
+})();
+
+function fixedPosition() {
+	var w = window,
+		ua = navigator.userAgent,
+		platform = navigator.platform,
+		// Rendering engine is Webkit, and capture major version
+		wkmatch = ua.match( /AppleWebKit\/([0-9]+)/ ),
+		wkversion = !!wkmatch && wkmatch[ 1 ],
+		ffmatch = ua.match( /Fennec\/([0-9]+)/ ),
+		ffversion = !!ffmatch && ffmatch[ 1 ],
+		operammobilematch = ua.match( /Opera Mobi\/([0-9]+)/ ),
+		omversion = !!operammobilematch && operammobilematch[ 1 ];
+
+	if (
+		// iOS 4.3 and older : Platform is iPhone/Pad/Touch and Webkit version is less than 534 (ios5)
+		( ( platform.indexOf( "iPhone" ) > -1 || platform.indexOf( "iPad" ) > -1  || platform.indexOf( "iPod" ) > -1 ) && wkversion && wkversion < 534 ) ||
+		// Opera Mini
+		( w.operamini && ({}).toString.call( w.operamini ) === "[object OperaMini]" ) ||
+		( operammobilematch && omversion < 7458 )	||
+		//Android lte 2.1: Platform is Android and Webkit version is less than 533 (Android 2.2)
+		( ua.indexOf( "Android" ) > -1 && wkversion && wkversion < 533 ) ||
+		// Firefox Mobile before 6.0 -
+		( ffversion && ffversion < 6 ) ||
+		// WebOS less than 3
+		( "palmGetResource" in window && wkversion && wkversion < 534 )	||
+		// MeeGo
+		( ua.indexOf( "MeeGo" ) > -1 && ua.indexOf( "NokiaBrowser/8.5.0" ) > -1 ) ) {
+		return false;
+	}
+
+	return true;
+}
+
+$.extend( $.support, {
+	// Note, Chrome for iOS has an extremely quirky implementation of popstate.
+	// We've chosen to take the shortest path to a bug fix here for issue #5426
+	// See the following link for information about the regex chosen
+	// https://developers.google.com/chrome/mobile/docs/user-agent#chrome_for_ios_user-agent
+	pushState: "pushState" in history &&
+		"replaceState" in history &&
+		// When running inside a FF iframe, calling replaceState causes an error
+		!( window.navigator.userAgent.indexOf( "Firefox" ) >= 0 && window.top !== window ) &&
+		( window.navigator.userAgent.search(/CriOS/) === -1 ),
+
+	mediaquery: $.mobile.media( "only all" ),
+	cssPseudoElement: !!propExists( "content" ),
+	touchOverflow: !!propExists( "overflowScrolling" ),
+	cssTransform3d: transform3dTest(),
+	boxShadow: !!propExists( "boxShadow" ) && !bb,
+	fixedPosition: fixedPosition(),
+	scrollTop: ("pageXOffset" in window ||
+		"scrollTop" in document.documentElement ||
+		"scrollTop" in fakeBody[ 0 ]) && !webos && !operamini,
+
+	dynamicBaseTag: baseTagTest(),
+	cssPointerEvents: cssPointerEventsTest(),
+	boundingRect: boundingRect(),
+	inlineSVG: inlineSVG
+});
+
+fakeBody.remove();
+
+// $.mobile.ajaxBlacklist is used to override ajaxEnabled on platforms that have known conflicts with hash history updates (BB5, Symbian)
+// or that generally work better browsing in regular http for full page refreshes (Opera Mini)
+// Note: This detection below is used as a last resort.
+// We recommend only using these detection methods when all other more reliable/forward-looking approaches are not possible
+nokiaLTE7_3 = (function() {
+
+	var ua = window.navigator.userAgent;
+
+	//The following is an attempt to match Nokia browsers that are running Symbian/s60, with webkit, version 7.3 or older
+	return ua.indexOf( "Nokia" ) > -1 &&
+			( ua.indexOf( "Symbian/3" ) > -1 || ua.indexOf( "Series60/5" ) > -1 ) &&
+			ua.indexOf( "AppleWebKit" ) > -1 &&
+			ua.match( /(BrowserNG|NokiaBrowser)\/7\.[0-3]/ );
+})();
+
+// Support conditions that must be met in order to proceed
+// default enhanced qualifications are media query support OR IE 7+
+
+$.mobile.gradeA = function() {
+	return ( ( $.support.mediaquery && $.support.cssPseudoElement ) || $.mobile.browser.oldIE && $.mobile.browser.oldIE >= 8 ) && ( $.support.boundingRect || $.fn.jquery.match(/1\.[0-7+]\.[0-9+]?/) !== null );
+};
+
+$.mobile.ajaxBlacklist =
+			// BlackBerry browsers, pre-webkit
+			window.blackberry && !window.WebKitPoint ||
+			// Opera Mini
+			operamini ||
+			// Symbian webkits pre 7.3
+			nokiaLTE7_3;
+
+// Lastly, this workaround is the only way we've found so far to get pre 7.3 Symbian webkit devices
+// to render the stylesheets when they're referenced before this script, as we'd recommend doing.
+// This simply reappends the CSS in place, which for some reason makes it apply
+if ( nokiaLTE7_3 ) {
+	$(function() {
+		$( "head link[rel='stylesheet']" ).attr( "rel", "alternate stylesheet" ).attr( "rel", "stylesheet" );
+	});
+}
+
+// For ruling out shadows via css
+if ( !$.support.boxShadow ) {
+	$( "html" ).addClass( "ui-noboxshadow" );
+}
+
+})( jQuery );
+
+
+(function( $, undefined ) {
+	var $win = $.mobile.window, self,
+		dummyFnToInitNavigate = function() {
+		};
+
+	$.event.special.beforenavigate = {
+		setup: function() {
+			$win.on( "navigate", dummyFnToInitNavigate );
+		},
+
+		teardown: function() {
+			$win.off( "navigate", dummyFnToInitNavigate );
+		}
+	};
+
+	$.event.special.navigate = self = {
+		bound: false,
+
+		pushStateEnabled: true,
+
+		originalEventName: undefined,
+
+		// If pushstate support is present and push state support is defined to
+		// be true on the mobile namespace.
+		isPushStateEnabled: function() {
+			return $.support.pushState &&
+				$.mobile.pushStateEnabled === true &&
+				this.isHashChangeEnabled();
+		},
+
+		// !! assumes mobile namespace is present
+		isHashChangeEnabled: function() {
+			return $.mobile.hashListeningEnabled === true;
+		},
+
+		// TODO a lot of duplication between popstate and hashchange
+		popstate: function( event ) {
+			var newEvent = new $.Event( "navigate" ),
+				beforeNavigate = new $.Event( "beforenavigate" ),
+				state = event.originalEvent.state || {};
+
+			beforeNavigate.originalEvent = event;
+			$win.trigger( beforeNavigate );
+
+			if ( beforeNavigate.isDefaultPrevented() ) {
+				return;
+			}
+
+			if ( event.historyState ) {
+				$.extend(state, event.historyState);
+			}
+
+			// Make sure the original event is tracked for the end
+			// user to inspect incase they want to do something special
+			newEvent.originalEvent = event;
+
+			// NOTE we let the current stack unwind because any assignment to
+			//      location.hash will stop the world and run this event handler. By
+			//      doing this we create a similar behavior to hashchange on hash
+			//      assignment
+			setTimeout(function() {
+				$win.trigger( newEvent, {
+					state: state
+				});
+			}, 0);
+		},
+
+		hashchange: function( event /*, data */ ) {
+			var newEvent = new $.Event( "navigate" ),
+				beforeNavigate = new $.Event( "beforenavigate" );
+
+			beforeNavigate.originalEvent = event;
+			$win.trigger( beforeNavigate );
+
+			if ( beforeNavigate.isDefaultPrevented() ) {
+				return;
+			}
+
+			// Make sure the original event is tracked for the end
+			// user to inspect incase they want to do something special
+			newEvent.originalEvent = event;
+
+			// Trigger the hashchange with state provided by the user
+			// that altered the hash
+			$win.trigger( newEvent, {
+				// Users that want to fully normalize the two events
+				// will need to do history management down the stack and
+				// add the state to the event before this binding is fired
+				// TODO consider allowing for the explicit addition of callbacks
+				//      to be fired before this value is set to avoid event timing issues
+				state: event.hashchangeState || {}
+			});
+		},
+
+		// TODO We really only want to set this up once
+		//      but I'm not clear if there's a beter way to achieve
+		//      this with the jQuery special event structure
+		setup: function( /* data, namespaces */ ) {
+			if ( self.bound ) {
+				return;
+			}
+
+			self.bound = true;
+
+			if ( self.isPushStateEnabled() ) {
+				self.originalEventName = "popstate";
+				$win.bind( "popstate.navigate", self.popstate );
+			} else if ( self.isHashChangeEnabled() ) {
+				self.originalEventName = "hashchange";
+				$win.bind( "hashchange.navigate", self.hashchange );
+			}
+		}
+	};
+})( jQuery );
+
+
+
+	// throttled resize event
+	(function( $ ) {
+		$.event.special.throttledresize = {
+			setup: function() {
+				$( this ).bind( "resize", handler );
+			},
+			teardown: function() {
+				$( this ).unbind( "resize", handler );
+			}
+		};
+
+		var throttle = 250,
+			handler = function() {
+				curr = ( new Date() ).getTime();
+				diff = curr - lastCall;
+
+				if ( diff >= throttle ) {
+
+					lastCall = curr;
+					$( this ).trigger( "throttledresize" );
+
+				} else {
+
+					if ( heldCall ) {
+						clearTimeout( heldCall );
+					}
+
+					// Promise a held call will still execute
+					heldCall = setTimeout( handler, throttle - diff );
+				}
+			},
+			lastCall = 0,
+			heldCall,
+			curr,
+			diff;
+	})( jQuery );
+
+
+(function( $, window ) {
+	var win = $( window ),
+		event_name = "orientationchange",
+		get_orientation,
+		last_orientation,
+		initial_orientation_is_landscape,
+		initial_orientation_is_default,
+		portrait_map = { "0": true, "180": true },
+		ww, wh, landscape_threshold;
+
+	// It seems that some device/browser vendors use window.orientation values 0 and 180 to
+	// denote the "default" orientation. For iOS devices, and most other smart-phones tested,
+	// the default orientation is always "portrait", but in some Android and RIM based tablets,
+	// the default orientation is "landscape". The following code attempts to use the window
+	// dimensions to figure out what the current orientation is, and then makes adjustments
+	// to the to the portrait_map if necessary, so that we can properly decode the
+	// window.orientation value whenever get_orientation() is called.
+	//
+	// Note that we used to use a media query to figure out what the orientation the browser
+	// thinks it is in:
+	//
+	//     initial_orientation_is_landscape = $.mobile.media("all and (orientation: landscape)");
+	//
+	// but there was an iPhone/iPod Touch bug beginning with iOS 4.2, up through iOS 5.1,
+	// where the browser *ALWAYS* applied the landscape media query. This bug does not
+	// happen on iPad.
+
+	if ( $.support.orientation ) {
+
+		// Check the window width and height to figure out what the current orientation
+		// of the device is at this moment. Note that we've initialized the portrait map
+		// values to 0 and 180, *AND* we purposely check for landscape so that if we guess
+		// wrong, , we default to the assumption that portrait is the default orientation.
+		// We use a threshold check below because on some platforms like iOS, the iPhone
+		// form-factor can report a larger width than height if the user turns on the
+		// developer console. The actual threshold value is somewhat arbitrary, we just
+		// need to make sure it is large enough to exclude the developer console case.
+
+		ww = window.innerWidth || win.width();
+		wh = window.innerHeight || win.height();
+		landscape_threshold = 50;
+
+		initial_orientation_is_landscape = ww > wh && ( ww - wh ) > landscape_threshold;
+
+		// Now check to see if the current window.orientation is 0 or 180.
+		initial_orientation_is_default = portrait_map[ window.orientation ];
+
+		// If the initial orientation is landscape, but window.orientation reports 0 or 180, *OR*
+		// if the initial orientation is portrait, but window.orientation reports 90 or -90, we
+		// need to flip our portrait_map values because landscape is the default orientation for
+		// this device/browser.
+		if ( ( initial_orientation_is_landscape && initial_orientation_is_default ) || ( !initial_orientation_is_landscape && !initial_orientation_is_default ) ) {
+			portrait_map = { "-90": true, "90": true };
+		}
+	}
+
+	$.event.special.orientationchange = $.extend( {}, $.event.special.orientationchange, {
+		setup: function() {
+			// If the event is supported natively, return false so that jQuery
+			// will bind to the event using DOM methods.
+			if ( $.support.orientation && !$.event.special.orientationchange.disabled ) {
+				return false;
+			}
+
+			// Get the current orientation to avoid initial double-triggering.
+			last_orientation = get_orientation();
+
+			// Because the orientationchange event doesn't exist, simulate the
+			// event by testing window dimensions on resize.
+			win.bind( "throttledresize", handler );
+		},
+		teardown: function() {
+			// If the event is not supported natively, return false so that
+			// jQuery will unbind the event using DOM methods.
+			if ( $.support.orientation && !$.event.special.orientationchange.disabled ) {
+				return false;
+			}
+
+			// Because the orientationchange event doesn't exist, unbind the
+			// resize event handler.
+			win.unbind( "throttledresize", handler );
+		},
+		add: function( handleObj ) {
+			// Save a reference to the bound event handler.
+			var old_handler = handleObj.handler;
+
+			handleObj.handler = function( event ) {
+				// Modify event object, adding the .orientation property.
+				event.orientation = get_orientation();
+
+				// Call the originally-bound event handler and return its result.
+				return old_handler.apply( this, arguments );
+			};
+		}
+	});
+
+	// If the event is not supported natively, this handler will be bound to
+	// the window resize event to simulate the orientationchange event.
+	function handler() {
+		// Get the current orientation.
+		var orientation = get_orientation();
+
+		if ( orientation !== last_orientation ) {
+			// The orientation has changed, so trigger the orientationchange event.
+			last_orientation = orientation;
+			win.trigger( event_name );
+		}
+	}
+
+	// Get the current page orientation. This method is exposed publicly, should it
+	// be needed, as jQuery.event.special.orientationchange.orientation()
+	$.event.special.orientationchange.orientation = get_orientation = function() {
+		var isPortrait = true, elem = document.documentElement;
+
+		// prefer window orientation to the calculation based on screensize as
+		// the actual screen resize takes place before or after the orientation change event
+		// has been fired depending on implementation (eg android 2.3 is before, iphone after).
+		// More testing is required to determine if a more reliable method of determining the new screensize
+		// is possible when orientationchange is fired. (eg, use media queries + element + opacity)
+		if ( $.support.orientation ) {
+			// if the window orientation registers as 0 or 180 degrees report
+			// portrait, otherwise landscape
+			isPortrait = portrait_map[ window.orientation ];
+		} else {
+			isPortrait = elem && elem.clientWidth / elem.clientHeight < 1.1;
+		}
+
+		return isPortrait ? "portrait" : "landscape";
+	};
+
+	$.fn[ event_name ] = function( fn ) {
+		return fn ? this.bind( event_name, fn ) : this.trigger( event_name );
+	};
+
+	// jQuery < 1.8
+	if ( $.attrFn ) {
+		$.attrFn[ event_name ] = true;
+	}
+
+}( jQuery, this ));
+
+
+// This plugin is an experiment for abstracting away the touch and mouse
+// events so that developers don't have to worry about which method of input
+// the device their document is loaded on supports.
+//
+// The idea here is to allow the developer to register listeners for the
+// basic mouse events, such as mousedown, mousemove, mouseup, and click,
+// and the plugin will take care of registering the correct listeners
+// behind the scenes to invoke the listener at the fastest possible time
+// for that device, while still retaining the order of event firing in
+// the traditional mouse environment, should multiple handlers be registered
+// on the same element for different events.
+//
+// The current version exposes the following virtual events to jQuery bind methods:
+// "vmouseover vmousedown vmousemove vmouseup vclick vmouseout vmousecancel"
+
+(function( $, window, document, undefined ) {
+
+var dataPropertyName = "virtualMouseBindings",
+	touchTargetPropertyName = "virtualTouchID",
+	virtualEventNames = "vmouseover vmousedown vmousemove vmouseup vclick vmouseout vmousecancel".split( " " ),
+	touchEventProps = "clientX clientY pageX pageY screenX screenY".split( " " ),
+	mouseHookProps = $.event.mouseHooks ? $.event.mouseHooks.props : [],
+	mouseEventProps = $.event.props.concat( mouseHookProps ),
+	activeDocHandlers = {},
+	resetTimerID = 0,
+	startX = 0,
+	startY = 0,
+	didScroll = false,
+	clickBlockList = [],
+	blockMouseTriggers = false,
+	blockTouchTriggers = false,
+	eventCaptureSupported = "addEventListener" in document,
+	$document = $( document ),
+	nextTouchID = 1,
+	lastTouchID = 0, threshold,
+	i;
+
+$.vmouse = {
+	moveDistanceThreshold: 10,
+	clickDistanceThreshold: 10,
+	resetTimerDuration: 1500
+};
+
+function getNativeEvent( event ) {
+
+	while ( event && typeof event.originalEvent !== "undefined" ) {
+		event = event.originalEvent;
+	}
+	return event;
+}
+
+function createVirtualEvent( event, eventType ) {
+
+	var t = event.type,
+		oe, props, ne, prop, ct, touch, i, j, len;
+
+	event = $.Event( event );
+	event.type = eventType;
+
+	oe = event.originalEvent;
+	props = $.event.props;
+
+	// addresses separation of $.event.props in to $.event.mouseHook.props and Issue 3280
+	// https://github.com/jquery/jquery-mobile/issues/3280
+	if ( t.search( /^(mouse|click)/ ) > -1 ) {
+		props = mouseEventProps;
+	}
+
+	// copy original event properties over to the new event
+	// this would happen if we could call $.event.fix instead of $.Event
+	// but we don't have a way to force an event to be fixed multiple times
+	if ( oe ) {
+		for ( i = props.length, prop; i; ) {
+			prop = props[ --i ];
+			event[ prop ] = oe[ prop ];
+		}
+	}
+
+	// make sure that if the mouse and click virtual events are generated
+	// without a .which one is defined
+	if ( t.search(/mouse(down|up)|click/) > -1 && !event.which ) {
+		event.which = 1;
+	}
+
+	if ( t.search(/^touch/) !== -1 ) {
+		ne = getNativeEvent( oe );
+		t = ne.touches;
+		ct = ne.changedTouches;
+		touch = ( t && t.length ) ? t[0] : ( ( ct && ct.length ) ? ct[ 0 ] : undefined );
+
+		if ( touch ) {
+			for ( j = 0, len = touchEventProps.length; j < len; j++) {
+				prop = touchEventProps[ j ];
+				event[ prop ] = touch[ prop ];
+			}
+		}
+	}
+
+	return event;
+}
+
+function getVirtualBindingFlags( element ) {
+
+	var flags = {},
+		b, k;
+
+	while ( element ) {
+
+		b = $.data( element, dataPropertyName );
+
+		for (  k in b ) {
+			if ( b[ k ] ) {
+				flags[ k ] = flags.hasVirtualBinding = true;
+			}
+		}
+		element = element.parentNode;
+	}
+	return flags;
+}
+
+function getClosestElementWithVirtualBinding( element, eventType ) {
+	var b;
+	while ( element ) {
+
+		b = $.data( element, dataPropertyName );
+
+		if ( b && ( !eventType || b[ eventType ] ) ) {
+			return element;
+		}
+		element = element.parentNode;
+	}
+	return null;
+}
+
+function enableTouchBindings() {
+	blockTouchTriggers = false;
+}
+
+function disableTouchBindings() {
+	blockTouchTriggers = true;
+}
+
+function enableMouseBindings() {
+	lastTouchID = 0;
+	clickBlockList.length = 0;
+	blockMouseTriggers = false;
+
+	// When mouse bindings are enabled, our
+	// touch bindings are disabled.
+	disableTouchBindings();
+}
+
+function disableMouseBindings() {
+	// When mouse bindings are disabled, our
+	// touch bindings are enabled.
+	enableTouchBindings();
+}
+
+function startResetTimer() {
+	clearResetTimer();
+	resetTimerID = setTimeout( function() {
+		resetTimerID = 0;
+		enableMouseBindings();
+	}, $.vmouse.resetTimerDuration );
+}
+
+function clearResetTimer() {
+	if ( resetTimerID ) {
+		clearTimeout( resetTimerID );
+		resetTimerID = 0;
+	}
+}
+
+function triggerVirtualEvent( eventType, event, flags ) {
+	var ve;
+
+	if ( ( flags && flags[ eventType ] ) ||
+				( !flags && getClosestElementWithVirtualBinding( event.target, eventType ) ) ) {
+
+		ve = createVirtualEvent( event, eventType );
+
+		$( event.target).trigger( ve );
+	}
+
+	return ve;
+}
+
+function mouseEventCallback( event ) {
+	var touchID = $.data( event.target, touchTargetPropertyName ),
+		ve;
+
+	if ( !blockMouseTriggers && ( !lastTouchID || lastTouchID !== touchID ) ) {
+		ve = triggerVirtualEvent( "v" + event.type, event );
+		if ( ve ) {
+			if ( ve.isDefaultPrevented() ) {
+				event.preventDefault();
+			}
+			if ( ve.isPropagationStopped() ) {
+				event.stopPropagation();
+			}
+			if ( ve.isImmediatePropagationStopped() ) {
+				event.stopImmediatePropagation();
+			}
+		}
+	}
+}
+
+function handleTouchStart( event ) {
+
+	var touches = getNativeEvent( event ).touches,
+		target, flags, t;
+
+	if ( touches && touches.length === 1 ) {
+
+		target = event.target;
+		flags = getVirtualBindingFlags( target );
+
+		if ( flags.hasVirtualBinding ) {
+
+			lastTouchID = nextTouchID++;
+			$.data( target, touchTargetPropertyName, lastTouchID );
+
+			clearResetTimer();
+
+			disableMouseBindings();
+			didScroll = false;
+
+			t = getNativeEvent( event ).touches[ 0 ];
+			startX = t.pageX;
+			startY = t.pageY;
+
+			triggerVirtualEvent( "vmouseover", event, flags );
+			triggerVirtualEvent( "vmousedown", event, flags );
+		}
+	}
+}
+
+function handleScroll( event ) {
+	if ( blockTouchTriggers ) {
+		return;
+	}
+
+	if ( !didScroll ) {
+		triggerVirtualEvent( "vmousecancel", event, getVirtualBindingFlags( event.target ) );
+	}
+
+	didScroll = true;
+	startResetTimer();
+}
+
+function handleTouchMove( event ) {
+	if ( blockTouchTriggers ) {
+		return;
+	}
+
+	var t = getNativeEvent( event ).touches[ 0 ],
+		didCancel = didScroll,
+		moveThreshold = $.vmouse.moveDistanceThreshold,
+		flags = getVirtualBindingFlags( event.target );
+
+		didScroll = didScroll ||
+			( Math.abs( t.pageX - startX ) > moveThreshold ||
+				Math.abs( t.pageY - startY ) > moveThreshold );
+
+	if ( didScroll && !didCancel ) {
+		triggerVirtualEvent( "vmousecancel", event, flags );
+	}
+
+	triggerVirtualEvent( "vmousemove", event, flags );
+	startResetTimer();
+}
+
+function handleTouchEnd( event ) {
+	if ( blockTouchTriggers ) {
+		return;
+	}
+
+	disableTouchBindings();
+
+	var flags = getVirtualBindingFlags( event.target ),
+		ve, t;
+	triggerVirtualEvent( "vmouseup", event, flags );
+
+	if ( !didScroll ) {
+		ve = triggerVirtualEvent( "vclick", event, flags );
+		if ( ve && ve.isDefaultPrevented() ) {
+			// The target of the mouse events that follow the touchend
+			// event don't necessarily match the target used during the
+			// touch. This means we need to rely on coordinates for blocking
+			// any click that is generated.
+			t = getNativeEvent( event ).changedTouches[ 0 ];
+			clickBlockList.push({
+				touchID: lastTouchID,
+				x: t.clientX,
+				y: t.clientY
+			});
+
+			// Prevent any mouse events that follow from triggering
+			// virtual event notifications.
+			blockMouseTriggers = true;
+		}
+	}
+	triggerVirtualEvent( "vmouseout", event, flags);
+	didScroll = false;
+
+	startResetTimer();
+}
+
+function hasVirtualBindings( ele ) {
+	var bindings = $.data( ele, dataPropertyName ),
+		k;
+
+	if ( bindings ) {
+		for ( k in bindings ) {
+			if ( bindings[ k ] ) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function dummyMouseHandler() {}
+
+function getSpecialEventObject( eventType ) {
+	var realType = eventType.substr( 1 );
+
+	return {
+		setup: function(/* data, namespace */) {
+			// If this is the first virtual mouse binding for this element,
+			// add a bindings object to its data.
+
+			if ( !hasVirtualBindings( this ) ) {
+				$.data( this, dataPropertyName, {} );
+			}
+
+			// If setup is called, we know it is the first binding for this
+			// eventType, so initialize the count for the eventType to zero.
+			var bindings = $.data( this, dataPropertyName );
+			bindings[ eventType ] = true;
+
+			// If this is the first virtual mouse event for this type,
+			// register a global handler on the document.
+
+			activeDocHandlers[ eventType ] = ( activeDocHandlers[ eventType ] || 0 ) + 1;
+
+			if ( activeDocHandlers[ eventType ] === 1 ) {
+				$document.bind( realType, mouseEventCallback );
+			}
+
+			// Some browsers, like Opera Mini, won't dispatch mouse/click events
+			// for elements unless they actually have handlers registered on them.
+			// To get around this, we register dummy handlers on the elements.
+
+			$( this ).bind( realType, dummyMouseHandler );
+
+			// For now, if event capture is not supported, we rely on mouse handlers.
+			if ( eventCaptureSupported ) {
+				// If this is the first virtual mouse binding for the document,
+				// register our touchstart handler on the document.
+
+				activeDocHandlers[ "touchstart" ] = ( activeDocHandlers[ "touchstart" ] || 0) + 1;
+
+				if ( activeDocHandlers[ "touchstart" ] === 1 ) {
+					$document.bind( "touchstart", handleTouchStart )
+						.bind( "touchend", handleTouchEnd )
+
+						// On touch platforms, touching the screen and then dragging your finger
+						// causes the window content to scroll after some distance threshold is
+						// exceeded. On these platforms, a scroll prevents a click event from being
+						// dispatched, and on some platforms, even the touchend is suppressed. To
+						// mimic the suppression of the click event, we need to watch for a scroll
+						// event. Unfortunately, some platforms like iOS don't dispatch scroll
+						// events until *AFTER* the user lifts their finger (touchend). This means
+						// we need to watch both scroll and touchmove events to figure out whether
+						// or not a scroll happenens before the touchend event is fired.
+
+						.bind( "touchmove", handleTouchMove )
+						.bind( "scroll", handleScroll );
+				}
+			}
+		},
+
+		teardown: function(/* data, namespace */) {
+			// If this is the last virtual binding for this eventType,
+			// remove its global handler from the document.
+
+			--activeDocHandlers[ eventType ];
+
+			if ( !activeDocHandlers[ eventType ] ) {
+				$document.unbind( realType, mouseEventCallback );
+			}
+
+			if ( eventCaptureSupported ) {
+				// If this is the last virtual mouse binding in existence,
+				// remove our document touchstart listener.
+
+				--activeDocHandlers[ "touchstart" ];
+
+				if ( !activeDocHandlers[ "touchstart" ] ) {
+					$document.unbind( "touchstart", handleTouchStart )
+						.unbind( "touchmove", handleTouchMove )
+						.unbind( "touchend", handleTouchEnd )
+						.unbind( "scroll", handleScroll );
+				}
+			}
+
+			var $this = $( this ),
+				bindings = $.data( this, dataPropertyName );
+
+			// teardown may be called when an element was
+			// removed from the DOM. If this is the case,
+			// jQuery core may have already stripped the element
+			// of any data bindings so we need to check it before
+			// using it.
+			if ( bindings ) {
+				bindings[ eventType ] = false;
+			}
+
+			// Unregister the dummy event handler.
+
+			$this.unbind( realType, dummyMouseHandler );
+
+			// If this is the last virtual mouse binding on the
+			// element, remove the binding data from the element.
+
+			if ( !hasVirtualBindings( this ) ) {
+				$this.removeData( dataPropertyName );
+			}
+		}
+	};
+}
+
+// Expose our custom events to the jQuery bind/unbind mechanism.
+
+for ( i = 0; i < virtualEventNames.length; i++ ) {
+	$.event.special[ virtualEventNames[ i ] ] = getSpecialEventObject( virtualEventNames[ i ] );
+}
+
+// Add a capture click handler to block clicks.
+// Note that we require event capture support for this so if the device
+// doesn't support it, we punt for now and rely solely on mouse events.
+if ( eventCaptureSupported ) {
+	document.addEventListener( "click", function( e ) {
+		var cnt = clickBlockList.length,
+			target = e.target,
+			x, y, ele, i, o, touchID;
+
+		if ( cnt ) {
+			x = e.clientX;
+			y = e.clientY;
+			threshold = $.vmouse.clickDistanceThreshold;
+
+			// The idea here is to run through the clickBlockList to see if
+			// the current click event is in the proximity of one of our
+			// vclick events that had preventDefault() called on it. If we find
+			// one, then we block the click.
+			//
+			// Why do we have to rely on proximity?
+			//
+			// Because the target of the touch event that triggered the vclick
+			// can be different from the target of the click event synthesized
+			// by the browser. The target of a mouse/click event that is synthesized
+			// from a touch event seems to be implementation specific. For example,
+			// some browsers will fire mouse/click events for a link that is near
+			// a touch event, even though the target of the touchstart/touchend event
+			// says the user touched outside the link. Also, it seems that with most
+			// browsers, the target of the mouse/click event is not calculated until the
+			// time it is dispatched, so if you replace an element that you touched
+			// with another element, the target of the mouse/click will be the new
+			// element underneath that point.
+			//
+			// Aside from proximity, we also check to see if the target and any
+			// of its ancestors were the ones that blocked a click. This is necessary
+			// because of the strange mouse/click target calculation done in the
+			// Android 2.1 browser, where if you click on an element, and there is a
+			// mouse/click handler on one of its ancestors, the target will be the
+			// innermost child of the touched element, even if that child is no where
+			// near the point of touch.
+
+			ele = target;
+
+			while ( ele ) {
+				for ( i = 0; i < cnt; i++ ) {
+					o = clickBlockList[ i ];
+					touchID = 0;
+
+					if ( ( ele === target && Math.abs( o.x - x ) < threshold && Math.abs( o.y - y ) < threshold ) ||
+								$.data( ele, touchTargetPropertyName ) === o.touchID ) {
+						// XXX: We may want to consider removing matches from the block list
+						//      instead of waiting for the reset timer to fire.
+						e.preventDefault();
+						e.stopPropagation();
+						return;
+					}
+				}
+				ele = ele.parentNode;
+			}
+		}
+	}, true);
+}
+})( jQuery, window, document );
+
+
+(function( $, window, undefined ) {
+	var $document = $( document ),
+		supportTouch = $.mobile.support.touch,
+		scrollEvent = "touchmove scroll",
+		touchStartEvent = supportTouch ? "touchstart" : "mousedown",
+		touchStopEvent = supportTouch ? "touchend" : "mouseup",
+		touchMoveEvent = supportTouch ? "touchmove" : "mousemove";
+
+	// setup new event shortcuts
+	$.each( ( "touchstart touchmove touchend " +
+		"tap taphold " +
+		"swipe swipeleft swiperight " +
+		"scrollstart scrollstop" ).split( " " ), function( i, name ) {
+
+		$.fn[ name ] = function( fn ) {
+			return fn ? this.bind( name, fn ) : this.trigger( name );
+		};
+
+		// jQuery < 1.8
+		if ( $.attrFn ) {
+			$.attrFn[ name ] = true;
+		}
+	});
+
+	function triggerCustomEvent( obj, eventType, event, bubble ) {
+		var originalType = event.type;
+		event.type = eventType;
+		if ( bubble ) {
+			$.event.trigger( event, undefined, obj );
+		} else {
+			$.event.dispatch.call( obj, event );
+		}
+		event.type = originalType;
+	}
+
+	// also handles scrollstop
+	$.event.special.scrollstart = {
+
+		enabled: true,
+		setup: function() {
+
+			var thisObject = this,
+				$this = $( thisObject ),
+				scrolling,
+				timer;
+
+			function trigger( event, state ) {
+				scrolling = state;
+				triggerCustomEvent( thisObject, scrolling ? "scrollstart" : "scrollstop", event );
+			}
+
+			// iPhone triggers scroll after a small delay; use touchmove instead
+			$this.bind( scrollEvent, function( event ) {
+
+				if ( !$.event.special.scrollstart.enabled ) {
+					return;
+				}
+
+				if ( !scrolling ) {
+					trigger( event, true );
+				}
+
+				clearTimeout( timer );
+				timer = setTimeout( function() {
+					trigger( event, false );
+				}, 50 );
+			});
+		},
+		teardown: function() {
+			$( this ).unbind( scrollEvent );
+		}
+	};
+
+	// also handles taphold
+	$.event.special.tap = {
+		tapholdThreshold: 750,
+		emitTapOnTaphold: true,
+		setup: function() {
+			var thisObject = this,
+				$this = $( thisObject ),
+				isTaphold = false;
+
+			$this.bind( "vmousedown", function( event ) {
+				isTaphold = false;
+				if ( event.which && event.which !== 1 ) {
+					return false;
+				}
+
+				var origTarget = event.target,
+					timer;
+
+				function clearTapTimer() {
+					clearTimeout( timer );
+				}
+
+				function clearTapHandlers() {
+					clearTapTimer();
+
+					$this.unbind( "vclick", clickHandler )
+						.unbind( "vmouseup", clearTapTimer );
+					$document.unbind( "vmousecancel", clearTapHandlers );
+				}
+
+				function clickHandler( event ) {
+					clearTapHandlers();
+
+					// ONLY trigger a 'tap' event if the start target is
+					// the same as the stop target.
+					if ( !isTaphold && origTarget === event.target ) {
+						triggerCustomEvent( thisObject, "tap", event );
+					} else if ( isTaphold ) {
+						event.preventDefault();
+					}
+				}
+
+				$this.bind( "vmouseup", clearTapTimer )
+					.bind( "vclick", clickHandler );
+				$document.bind( "vmousecancel", clearTapHandlers );
+
+				timer = setTimeout( function() {
+					if ( !$.event.special.tap.emitTapOnTaphold ) {
+						isTaphold = true;
+					}
+					triggerCustomEvent( thisObject, "taphold", $.Event( "taphold", { target: origTarget } ) );
+				}, $.event.special.tap.tapholdThreshold );
+			});
+		},
+		teardown: function() {
+			$( this ).unbind( "vmousedown" ).unbind( "vclick" ).unbind( "vmouseup" );
+			$document.unbind( "vmousecancel" );
+		}
+	};
+
+	// Also handles swipeleft, swiperight
+	$.event.special.swipe = {
+
+		// More than this horizontal displacement, and we will suppress scrolling.
+		scrollSupressionThreshold: 30,
+
+		// More time than this, and it isn't a swipe.
+		durationThreshold: 1000,
+
+		// Swipe horizontal displacement must be more than this.
+		horizontalDistanceThreshold: 30,
+
+		// Swipe vertical displacement must be less than this.
+		verticalDistanceThreshold: 30,
+
+		getLocation: function ( event ) {
+			var winPageX = window.pageXOffset,
+				winPageY = window.pageYOffset,
+				x = event.clientX,
+				y = event.clientY;
+
+			if ( event.pageY === 0 && Math.floor( y ) > Math.floor( event.pageY ) ||
+				event.pageX === 0 && Math.floor( x ) > Math.floor( event.pageX ) ) {
+
+				// iOS4 clientX/clientY have the value that should have been
+				// in pageX/pageY. While pageX/page/ have the value 0
+				x = x - winPageX;
+				y = y - winPageY;
+			} else if ( y < ( event.pageY - winPageY) || x < ( event.pageX - winPageX ) ) {
+
+				// Some Android browsers have totally bogus values for clientX/Y
+				// when scrolling/zooming a page. Detectable since clientX/clientY
+				// should never be smaller than pageX/pageY minus page scroll
+				x = event.pageX - winPageX;
+				y = event.pageY - winPageY;
+			}
+
+			return {
+				x: x,
+				y: y
+			};
+		},
+
+		start: function( event ) {
+			var data = event.originalEvent.touches ?
+					event.originalEvent.touches[ 0 ] : event,
+				location = $.event.special.swipe.getLocation( data );
+			return {
+						time: ( new Date() ).getTime(),
+						coords: [ location.x, location.y ],
+						origin: $( event.target )
+					};
+		},
+
+		stop: function( event ) {
+			var data = event.originalEvent.touches ?
+					event.originalEvent.touches[ 0 ] : event,
+				location = $.event.special.swipe.getLocation( data );
+			return {
+						time: ( new Date() ).getTime(),
+						coords: [ location.x, location.y ]
+					};
+		},
+
+		handleSwipe: function( start, stop, thisObject, origTarget ) {
+			if ( stop.time - start.time < $.event.special.swipe.durationThreshold &&
+				Math.abs( start.coords[ 0 ] - stop.coords[ 0 ] ) > $.event.special.swipe.horizontalDistanceThreshold &&
+				Math.abs( start.coords[ 1 ] - stop.coords[ 1 ] ) < $.event.special.swipe.verticalDistanceThreshold ) {
+				var direction = start.coords[0] > stop.coords[ 0 ] ? "swipeleft" : "swiperight";
+
+				triggerCustomEvent( thisObject, "swipe", $.Event( "swipe", { target: origTarget, swipestart: start, swipestop: stop }), true );
+				triggerCustomEvent( thisObject, direction,$.Event( direction, { target: origTarget, swipestart: start, swipestop: stop } ), true );
+				return true;
+			}
+			return false;
+
+		},
+
+		// This serves as a flag to ensure that at most one swipe event event is
+		// in work at any given time
+		eventInProgress: false,
+
+		setup: function() {
+			var events,
+				thisObject = this,
+				$this = $( thisObject ),
+				context = {};
+
+			// Retrieve the events data for this element and add the swipe context
+			events = $.data( this, "mobile-events" );
+			if ( !events ) {
+				events = { length: 0 };
+				$.data( this, "mobile-events", events );
+			}
+			events.length++;
+			events.swipe = context;
+
+			context.start = function( event ) {
+
+				// Bail if we're already working on a swipe event
+				if ( $.event.special.swipe.eventInProgress ) {
+					return;
+				}
+				$.event.special.swipe.eventInProgress = true;
+
+				var stop,
+					start = $.event.special.swipe.start( event ),
+					origTarget = event.target,
+					emitted = false;
+
+				context.move = function( event ) {
+					if ( !start || event.isDefaultPrevented() ) {
+						return;
+					}
+
+					stop = $.event.special.swipe.stop( event );
+					if ( !emitted ) {
+						emitted = $.event.special.swipe.handleSwipe( start, stop, thisObject, origTarget );
+						if ( emitted ) {
+
+							// Reset the context to make way for the next swipe event
+							$.event.special.swipe.eventInProgress = false;
+						}
+					}
+					// prevent scrolling
+					if ( Math.abs( start.coords[ 0 ] - stop.coords[ 0 ] ) > $.event.special.swipe.scrollSupressionThreshold ) {
+						event.preventDefault();
+					}
+				};
+
+				context.stop = function() {
+						emitted = true;
+
+						// Reset the context to make way for the next swipe event
+						$.event.special.swipe.eventInProgress = false;
+						$document.off( touchMoveEvent, context.move );
+						context.move = null;
+				};
+
+				$document.on( touchMoveEvent, context.move )
+					.one( touchStopEvent, context.stop );
+			};
+			$this.on( touchStartEvent, context.start );
+		},
+
+		teardown: function() {
+			var events, context;
+
+			events = $.data( this, "mobile-events" );
+			if ( events ) {
+				context = events.swipe;
+				delete events.swipe;
+				events.length--;
+				if ( events.length === 0 ) {
+					$.removeData( this, "mobile-events" );
+				}
+			}
+
+			if ( context ) {
+				if ( context.start ) {
+					$( this ).off( touchStartEvent, context.start );
+				}
+				if ( context.move ) {
+					$document.off( touchMoveEvent, context.move );
+				}
+				if ( context.stop ) {
+					$document.off( touchStopEvent, context.stop );
+				}
+			}
+		}
+	};
+	$.each({
+		scrollstop: "scrollstart",
+		taphold: "tap",
+		swipeleft: "swipe.left",
+		swiperight: "swipe.right"
+	}, function( event, sourceEvent ) {
+
+		$.event.special[ event ] = {
+			setup: function() {
+				$( this ).bind( sourceEvent, $.noop );
+			},
+			teardown: function() {
+				$( this ).unbind( sourceEvent );
+			}
+		};
+	});
+
+})( jQuery, this );
+
+
+
+}));
+
 // jquery.rut
 (function($){jQuery.fn.Rut=function(options){var defaults={digito_verificador:null,on_error:function(){},on_success:function(){},validation:true,format:true,format_on:'change'};var opts=$.extend(defaults,options);return this.each(function(){if(defaults.format){jQuery(this).bind(defaults.format_on,function(){jQuery(this).val(jQuery.Rut.formatear(jQuery(this).val(),defaults.digito_verificador==null));});}if(defaults.validation){if(defaults.digito_verificador==null){jQuery(this).bind('blur',function(){var rut=jQuery(this).val();if(jQuery(this).val()!=""&&!jQuery.Rut.validar(rut)){defaults.on_error();}else if(jQuery(this).val()!=""){defaults.on_success();}});}else
 {var id=jQuery(this).attr("id");jQuery(defaults.digito_verificador).bind('blur',function(){var rut=jQuery("#"+id).val()+"-"+jQuery(this).val();if(jQuery(this).val()!=""&&!jQuery.Rut.validar(rut)){defaults.on_error();}else if(jQuery(this).val()!=""){defaults.on_success();}});}}});}})(jQuery);jQuery.Rut={formatear:function(Rut,digitoVerificador){var sRut=new String(Rut);var sRutFormateado='';sRut=jQuery.Rut.quitarFormato(sRut);if(digitoVerificador){var sDV=sRut.charAt(sRut.length-1);sRut=sRut.substring(0,sRut.length-1);}while(sRut.length>3){sRutFormateado="."+sRut.substr(sRut.length-3)+sRutFormateado;sRut=sRut.substring(0,sRut.length-3);}sRutFormateado=sRut+sRutFormateado;if(sRutFormateado!=""&&digitoVerificador){sRutFormateado+="-"+sDV;}else if(digitoVerificador){sRutFormateado+=sDV;}return sRutFormateado;},quitarFormato:function(rut){var strRut=new String(rut);while(strRut.indexOf(".")!=-1){strRut=strRut.replace(".","");}while(strRut.indexOf("-")!=-1){strRut=strRut.replace("-","");}return strRut;},digitoValido:function(dv){if(dv!='0'&&dv!='1'&&dv!='2'&&dv!='3'&&dv!='4'&&dv!='5'&&dv!='6'&&dv!='7'&&dv!='8'&&dv!='9'&&dv!='k'&&dv!='K'){return false;}return true;},digitoCorrecto:function(crut){largo=crut.length;if(largo<2){return false;}if(largo>2){rut=crut.substring(0,largo-1);}else
