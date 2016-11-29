@@ -1,9 +1,5 @@
 
-button_padding_base   = 6px 20px
-button_padding_aument = 2px 10px
-button_size_base      = global_size
-button_lh_base        = global_lh
-button_font_aument    = 2
+
 
 .button
 	font-family font
@@ -13,33 +9,40 @@ button_font_aument    = 2
 	width auto
 	transition tn
 	text-align center
-	margin-bottom 2px
+	margin 0 5px
 	vertical-align middle
-	radius rad_2
+	radius button_radius
 	background color
 	color white
+	font-size button_size
+	line-height button_lineheight
+	if button_uppercase
+		text-transform uppercase
+	if button_letterspacing
+		letter-spacing button_letterspacing
+
+	&:first-child
+		margin-left 0
+	&:last-child
+		margin-right 0
 
 
-	// Sizes
-		
-	padding button_padding_base
-	font-size button_size_base
-	line-height button_lh_base
+	// Sizes	
+	padding button_padding
 
 	&.button-small
-		padding button_padding_base[0] - button_padding_aument[0] button_padding_base[1]
-		font-size button_size_base - button_font_aument
-		line-height button_lh_base - button_font_aument
+	&.button-xs
+		padding button_padding[0] - button_padding_a[0] button_padding[1]
 	
 	&.button-medium
-		padding button_padding_base[0] + button_padding_aument[0] button_padding_base[1] + button_padding_aument[1]
-		font-size button_size_base + button_font_aument
-		line-height button_lh_base + button_font_aument
+	&.button-md
+		padding button_padding[0] + button_padding_a[0] button_padding[1] + button_padding_a[1]
 	
 	&.button-big
-		padding button_padding_base[0] + button_padding_aument[0]*2 button_padding_base[1] + button_padding_aument[1]*2
-		font-size button_size_base + button_font_aument*2
-		line-height button_lh_base + button_font_aument*2
+	&.button-lg
+		padding button_padding[0] + button_padding_a[0] button_padding[1] + button_padding_a[1]
+		@media $break-md
+			padding button_padding[0] + button_padding_a[0]*2 button_padding[1] + button_padding_a[1]*2
 
 
 	// Styles
@@ -101,18 +104,17 @@ button_font_aument    = 2
 
 
 	// Hover color 2
-	if color_2
 
-		&.button-color-2
-			background color_2
+	&.button-color-2
+		background color_2
+		color white
+
+	&.button-color-2
+	&.button-hover-2
+		&:hover
+			border-color lighten(color_2,10%)
+			background lighten(color_2,10%)
 			color white
-
-		&.button-color-2
-		&.button-hover-2
-			&:hover
-				border-color lighten(color_2,10%)
-				background lighten(color_2,10%)
-				color white
 
 
 	// Others

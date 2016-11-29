@@ -4,12 +4,12 @@
 	font-size global_size+1
 	line-height 26px
 
-	h1, h2, h3, h4,	p, ol, ul, table, blockquote, pre
+	h1, h2, h3, h4,	p, ol, ul, table, blockquote, pre, iframe
 		margin-bottom sep
 		&:last-child
 			margin-bottom 0
 
-	h1, h2, h3, h4
+	h1, h2, h3, h4, h5
 		padding-top 10px
 		&:first-child
 			padding-top 0
@@ -69,6 +69,7 @@
 		max-width 100%
 		display block
 		height 200px
+		background lighter
 		@media $break-sm
 			height 300px
 		@media $break-md

@@ -58,6 +58,7 @@ article
 	.article-date
 		opacity .5
 		margin-bottom 5px
+		font-size 90%
 	
 	.article-shares
 		a
@@ -96,9 +97,43 @@ article
 		background dark
 		.article-image
 			cover absolute
-			grad-shadow 200px 100px black
+			opacity .2
+			transition .4s ease
+			// grad-shadow 200px 100px black
+		&:hover
+			.article-image
+				opacity .4
 		.article-title
 			a
 				color white
+		.button
+			&:after
+				top auto
+				bottom 0
+				height 500px
+	
+
+	&.article-circle
+		max-width 300px
+		margin 20px 10px 0
+		display inline-block
+		vertical-align top
+		background transparent
+		.article-image
+			background transparent
+			max-width 200px
+			margin 0 auto sep
+			border 1px solid light
+			padding 5px
+			radius 50%
+			.article-circle
+				position relative
+				radius 50%
+				proportion 1,1
+				overflow hidden
+				z-index 1
+				background lighter
+		.article-body
+			padding 0
 
 

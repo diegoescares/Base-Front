@@ -36,6 +36,7 @@ mixin img(width_or_name,height,imgclass)
 
 	if width
 		- url = "http://placeimg.com/"+width+"/"+height+"/any?v="+Math.floor(Math.random()*100)
+		- url = "uploads/"+Math.floor(Math.random()*9)+".jpg"
 
 	if name
 		- url = "img/"+name

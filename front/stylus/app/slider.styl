@@ -6,29 +6,21 @@
 	animation fadeIn .5s ease backwards
 	overflow hidden
 
-	.slider-slides-generate
-		display none
-
 	.slider-slides
 		position relative
 		overflow hidden
 
 	.slide
-		opacity 0
 		position relative
 		overflow hidden
 		display none
 		&.slide-active
 			display block
-			opacity 1
 			z-index 1
-			animation fadeIn .5s ease
 		&.slide-out
 			cover absolute
 			display block
-			opacity 1
 			z-index 2
-			animation fadeOut .5s ease both
 
 			
 	.slider-bullets
@@ -82,19 +74,28 @@
 				opacity 1
 
 
-	&.slider-directional
+	&.slider-dir-left
+		.slide
+			&.slide-active
+				animation slideRight .5s ease
+			&.slide-out
+				animation slideRightOut .5s ease both
+
+	&.slider-dir-right
+		.slide
+			&.slide-active
+				animation slideLeft .5s ease
+			&.slide-out
+				animation slideLeftOut .5s ease both
+
+	&.slider-fade
 		&.slider-dir-left
-			.slide
-				&.slide-active
-					animation slideRight .5s ease both
-				&.slide-out
-					animation slideRightOut .5s ease both
 		&.slider-dir-right
 			.slide
 				&.slide-active
-					animation slideLeft .5s ease both
+					animation fadeIn .5s ease
 				&.slide-out
-					animation slideLeftOut .5s ease both
+					animation fadeOut .5s ease both
 
 
 

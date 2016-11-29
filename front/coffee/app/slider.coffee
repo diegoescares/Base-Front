@@ -8,6 +8,8 @@ app.slider =
 
 			# Generate slider elements
 
+			slider.find(".slide").wrapAll("<div class='slider-slides' />")
+
 			if slider.find(".slide").length > 1
 				slider.append "<div class='slider-bullets'></div>"
 				slider.append ""+
@@ -81,7 +83,7 @@ app.slider =
 
 		if !slider.hasClass("slider-animate") && current!=goto
 			
-			if !dir
+			if !dir && current.length
 				if current < goto
 					dir = "right"
 				else

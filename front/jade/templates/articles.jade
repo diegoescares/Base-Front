@@ -19,7 +19,25 @@ mixin article()
 				a(href="http://loremipsum.com",data-text="Lorem ipsum",data-img="http://placeimg.com/400/600/any").share.share-pinterest
 				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-googleplus
 				a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-whatsapp
-			a(href="single.html").button.button-cover Leer más
+			.article-footer
+				a(href="single.html").button.button-cover Leer más
+
+
+mixin articleCircle(link)
+
+	article.article-circle
+		.article-image
+			.article-circle
+				.bg
+					+img(200,200)
+		.article-body
+			if !link
+				h3.h4.article-title: +lorem(3)
+				p.article-description: +lorem(10)
+			else
+				h3.h4.article-title: a(href="single.html"): +lorem(3)
+				p.article-description: +lorem(10)
+				a(href="single.html").button.button-cover Ver más
 
 
 mixin articleMin()
@@ -35,6 +53,7 @@ mixin articleMin()
 			p.article-description: +lorem(10)
 
 
+
 mixin articleBg()
 
 	article.article-bg
@@ -47,4 +66,6 @@ mixin articleBg()
 			h2.article-title: a(href="single.html"): +lorem(5)
 			p.article-description: +lorem(10)
 			a(href="single.html").button.button-line-white.button-cover Leer más
+
+
 

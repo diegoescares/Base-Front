@@ -3,8 +3,46 @@ extends ./templates/default.jade
 
 block page
 
+
+	section.section-dark.section-center
+
+		.slider
+
+			.slide
+				.section-bg.bg: +img(800,400)
+				.section-limit
+					.section-content-va
+						+sectionContent('h1',true,false,'color','line-white')
+
+			.slide
+				.section-bg.bg: +img(800,400)
+				.section-limit
+					.section-content-va
+						+sectionContent('h1',true,false,'white')
+
+			.slide
+				.section-bg.bg: +img(800,400)
+				.section-limit
+					.section-content-va
+						+sectionContent('h1',true,false,'line-white')
+
+
+
+
+
+	section.section-center
+		.section-limit
+
+			+sectionContent(true,true)
+
+			.section-articles
+				+articleCircle()
+				+articleCircle()
+				+articleCircle()
+
+
 	section
-		.limit.inner.inner-2
+		.section-limit
 
 			.cols
 				.col-md-8
@@ -22,8 +60,8 @@ block page
 						+articleMin()
 
 
-	section.section-dark
-		.limit.inner.inner-2
+	section
+		.section-limit
 
 			.cols.cols-gutterx0
 				.col-md-4
@@ -32,3 +70,101 @@ block page
 					+articleBg()
 				.col-md-4
 					+articleBg()
+
+
+
+	section.section-map
+
+		.section-map.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.649371')
+			.map-marker(data-lat='-33.4585000', data-lng='-70.629371')
+
+		.section-limit
+			.section-map-box
+
+				.box.box-white
+					h3: +lorem(3) 
+					ul
+						li
+							span.fa.fa-home
+							| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
+						li
+							a(href='tel:+56223935367')
+								span.fa.fa-phone
+								| +(56) 2 2393 5367
+						li
+							a(href='mailto:contacto@adsgdfg.com')
+								span.fa.fa-envelope
+								| contacto@adsgdfg.com
+
+
+	section
+		.cols.cols-gutterx0
+			.col-md-4
+				+articleBg()
+			.col-md-4
+				+articleBg()
+			.col-md-4
+				+articleBg()
+
+
+	section.section-map2
+
+
+		.cols.cols-gutterx0
+
+			.col-md-6.section-map.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.629371')
+					.map-marker(data-lat='-33.4585000', data-lng='-70.629371')
+						ul
+							li
+								span.fa.fa-home
+								| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
+							li
+								a(href='tel:+56223935367')
+									span.fa.fa-phone
+									| +(56) 2 2393 5367
+							li
+								a(href='mailto:contacto@adsgdfg.com')
+									span.fa.fa-envelope
+									| contacto@adsgdfg.com
+
+			.col-md-6
+				.section-limit
+
+					h3: +lorem(3) 
+					ul
+						li
+							span.fa.fa-home
+							| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
+						li
+							a(href='tel:+56223935367')
+								span.fa.fa-phone
+								| +(56) 2 2393 5367
+						li
+							a(href='mailto:contacto@adsgdfg.com')
+								span.fa.fa-envelope
+								| contacto@adsgdfg.com
+
+
+	section
+		.section-limit
+			.cols.cols-gutterx2
+				.col-md-6
+					+img(800,400)
+				.col-md-6
+					+sectionContent(true,true,true,'dark')
+
+	section
+		.section-limit
+			.cols.cols-gutterx2
+				.col-md-6.col-md-push-6
+					+img(800,400)
+				.col-md-6.col-md-pull-6
+					+sectionContent(true,true,true,'dark')
+			
+
+	section.section-dark.section-center
+		.section-bg.bg: +img(800,400)
+		.section-limit
+			+sectionContent(true,true,true,'color')
+
+

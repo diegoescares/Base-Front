@@ -22,14 +22,6 @@ app.gmap =
 			map_lat = m.attr("data-lat")
 			map_lng = m.attr("data-lng")
 
-			# Styles
-			blackandwhite = [
-				featureType: "all"
-				elementType: "all"
-				stylers: [
-					saturation: -100
-				]
-			]
 
 			# Options
 			mapOptions =
@@ -40,7 +32,6 @@ app.gmap =
 				scrollwheel: false
 				streetViewControl: false
 				backgroundColor: "#FFFFFF"
-				styles: blackandwhite
 
 
 			# Create map

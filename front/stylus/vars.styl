@@ -1,13 +1,14 @@
 
 // Colors
-color               = #7843C7
-color_2             = #0CA
-black               = #222
-dark                = #333
-gray                = #999
-light               = #DDD
-lighter             = #EEE
-white               = #FFF
+color               = #00c494
+color_2             = #02b7b7
+//color               = #fe7800
+//color_2             = #f66800
+black               = #181a20
+dark                = #2d3345
+gray                = #767b8f
+light               = #e0e1e8
+lighter             = #f0f1f6
 red                 = #D00
 yellow              = #FFC
 
@@ -41,11 +42,12 @@ limit_3             = 800px
 
 // Fonts
 font                = 'Open Sans', sans-serif
-font_2              = 'Open Sans', sans-serif
+font_2              = 'Montserrat', sans-serif
+font_2              = 'Fredoka One', sans-serif
 
 // CSS vars
 shadow              = 1px 1px 0px rgba(0,0,0,.4)
-shadow_2            = 2px 2px 4px rgba(0,0,0,.1)
+shadow_2            = 0 0 10px rgba(0,0,0,.1)
 border              = 1px solid light
 rad                 = 5px
 rad_2               = 2px
@@ -54,11 +56,13 @@ tn                  = .2s ease
 
 // Proportional titles 
 
-title_base          = 20px
+title_base          = 18px
 title_aument        = 10px
-title_lineheight    = 1
+title_lineheight    = 1.1
+title_uppercase     = true
+title_bold          = false
 
-title_h1            = title_base + (title_aument*4)
+title_h1            = title_base + (title_aument*3)
 title_h2            = title_base + (title_aument*2)
 title_h3            = title_base + (title_aument*1)
 title_h4            = title_base + (title_aument*0)
@@ -69,6 +73,19 @@ title_h2_lh         = ceil( title_h2 * title_lineheight )
 title_h3_lh         = ceil( title_h3 * title_lineheight )
 title_h4_lh         = ceil( title_h4 * title_lineheight )
 title_h5_lh         = ceil( title_h5 * title_lineheight )
+
+
+// Buttons
+
+button_padding      = 6px 20px
+button_padding_a    = 2px 10px
+button_size         = global_size - 1
+button_lineheight   = global_lh
+button_radius       = rad_2
+button_radius       = 40px
+button_uppercase    = true
+button_letterspacing= 2px
+
 
 
 // Default cubic bezier
@@ -88,7 +105,7 @@ $break-md           = "(min-width $screen-md-min)"
 $break-lg           = "(min-width $screen-lg-min)"
 $break-limit        = "(min-width " + limit + ")"
 
-$grid-gutter-width  = 20px
+$grid-gutter-width  = sep
 
 $bootstrap-path     = "../../bower_components/bootstrap-stylus/bootstrap/"
 

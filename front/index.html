@@ -20,10 +20,11 @@
   <meta name="twitter:image:src" content="">
   <!-- Style-->
   <link href="css/main.css" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Montserrat" rel="stylesheet" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="img/favicon.ico" rel="shortcut icon">
   <!-- Scripts-->
+  <script src="http://maps.google.com/maps/api/js?libraries=places&amp;key=AIzaSyCXnqJm-8BJediM44VPujWSYIwqIpa3V-o"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/main.js"></script>
   <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
@@ -33,7 +34,10 @@
   <header>
     <div class="header-limit">
       <div class="header-left">
-        <div class="header-logo"><a href="index.html">Base Front</a></div>
+        <div class="header-logo"><a href="index.html"><img src="img/logo-4.png"></a></div>
+      </div>
+      <div class="header-right">
+        <div class="header-button"><a href="#" class="button">Contacto</a></div>
       </div>
       <div class="header-right">
         <div class="header-nav">
@@ -53,6 +57,8 @@
                   </li>
                 </ul>
               </li>
+              <li><a href="faq.html">Faq</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
               <li><a href="single.html">Single</a></li>
               <li><a href="demo.html">Demo</a></li>
             </ul>
@@ -63,30 +69,136 @@
     </div>
   </header>
   <div id="body">
+    <section class="section-dark section-center">
+      <div class="slider">
+        <div class="slide">
+          <div class="section-bg bg"><img src="uploads/3.jpg" alt="Base Front"/>
+          </div>
+          <div class="section-limit">
+            <div class="section-content-va">
+              <div class="section-content">
+                <h2 class="h1 section-title">Ornare diam habitant ultrices habitant
+                </h2>
+                <p class="section-subtitle">Aliquam nam semper integer nunc malesuada quisque habitasse aptent placerat non laoreet pulvinar lacus quisque libero hendrerit volutpat curabitur pellentesque.
+                </p>
+                <div class="section-buttons"><a href="#" class="button button-lg button-color">Primary button</a><a href="#" class="button button-lg button-line-white">Secondary button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="section-bg bg"><img src="uploads/2.jpg" alt="Base Front"/>
+          </div>
+          <div class="section-limit">
+            <div class="section-content-va">
+              <div class="section-content">
+                <h2 class="h1 section-title">Velit rhoncus curae platea per
+                </h2>
+                <p class="section-subtitle">Luctus mollis felis faucibus ante phasellus interdum accumsan ac duis erat vivamus aliquet praesent cras nunc magna taciti mattis gravida.
+                </p>
+                <div class="section-buttons"><a href="#" class="button button-lg button-white">Primary button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="section-bg bg"><img src="uploads/7.jpg" alt="Base Front"/>
+          </div>
+          <div class="section-limit">
+            <div class="section-content-va">
+              <div class="section-content">
+                <h2 class="h1 section-title">Risus potenti ac quisque id
+                </h2>
+                <p class="section-subtitle">At duis morbi hac viverra donec nisi maecenas elementum est et elementum malesuada eget dictum eleifend molestie auctor phasellus aliquam.
+                </p>
+                <div class="section-buttons"><a href="#" class="button button-lg button-line-white">Primary button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-center">
+      <div class="section-limit">
+        <div class="section-content">
+          <h2 class="section-title">Ad fermentum orci sodales gravida
+          </h2>
+          <p class="section-subtitle">Cursus quisque vel mi convallis bibendum praesent donec morbi volutpat at eleifend convallis etiam per volutpat mi elit feugiat pretium.
+          </p>
+        </div>
+        <div class="section-articles">
+          <article class="article-circle">
+            <div class="article-image">
+              <div class="article-circle">
+                <div class="bg"><img src="uploads/4.jpg" alt="Base Front"/>
+                </div>
+              </div>
+            </div>
+            <div class="article-body">
+              <h3 class="h4 article-title">Odio fermentum senectus
+              </h3>
+              <p class="article-description">Urna suscipit ut egestas varius sem congue arcu viverra netus
+              </p>
+            </div>
+          </article>
+          <article class="article-circle">
+            <div class="article-image">
+              <div class="article-circle">
+                <div class="bg"><img src="uploads/6.jpg" alt="Base Front"/>
+                </div>
+              </div>
+            </div>
+            <div class="article-body">
+              <h3 class="h4 article-title">Vitae sollicitudin platea
+              </h3>
+              <p class="article-description">Senectus quisque fames diam condimentum nisi molestie ut euismod massa
+              </p>
+            </div>
+          </article>
+          <article class="article-circle">
+            <div class="article-image">
+              <div class="article-circle">
+                <div class="bg"><img src="uploads/6.jpg" alt="Base Front"/>
+                </div>
+              </div>
+            </div>
+            <div class="article-body">
+              <h3 class="h4 article-title">Sollicitudin cras laoreet
+              </h3>
+              <p class="article-description">Quisque consectetur nec aliquam ullamcorper faucibus curabitur fringilla auctor curabitur
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
     <section>
-      <div class="limit inner inner-2">
+      <div class="section-limit">
         <div class="cols">
           <div class="col-md-8">
             <article class="article-bg">
-              <div class="article-image bg"><img src="http://placeimg.com/400/300/any?v=41" alt="Base Front"/>
+              <div class="article-image bg"><img src="uploads/4.jpg" alt="Base Front"/>
               </div>
               <div class="article-cover">
                 <div class="article-date">24/23/223</div>
-                <h2 class="article-title"><a href="single.html">Velit tellus mauris eleifend ut</a></h2>
-                <p class="article-description">Elit varius magna at nec curabitur eros sem quisque tellus
+                <h2 class="article-title"><a href="single.html">Eget netus inceptos ad magna</a></h2>
+                <p class="article-description">Euismod auctor vel dictum duis suscipit mollis aliquam fringilla turpis
                 </p><a href="single.html" class="button button-line-white button-cover">Leer más</a>
               </div>
             </article>
           </div>
           <div class="col-md-4">
             <article class="article-default">
-              <div class="article-image"><img src="http://placeimg.com/400/300/any?v=12" alt="Base Front"/>
+              <div class="article-image"><img src="uploads/0.jpg" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="single.html">Nam dictum id orci conubia</a></h3>
-                <p class="article-description">Morbi aenean sollicitudin commodo ut justo proin eu semper mattis
+                <h3 class="article-title"><a href="single.html">Tristique magna vel placerat rutrum</a></h3>
+                <p class="article-description">In bibendum lobortis sagittis feugiat fringilla felis ornare nostra consectetur
                 </p>
                 <!--.article-shares
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-facebook
@@ -95,7 +207,8 @@
                 a(href="http://loremipsum.com",data-text="Lorem ipsum",data-img="http://placeimg.com/400/600/any").share.share-pinterest
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-googleplus
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-whatsapp
-                --><a href="single.html" class="button button-cover">Leer más</a>
+                -->
+                <div class="article-footer"><a href="single.html" class="button button-cover">Leer más</a></div>
               </div>
             </article>
           </div>
@@ -103,13 +216,13 @@
         <div class="cols">
           <div class="col-sm-6 col-lg-4">
             <article class="article-default">
-              <div class="article-image"><img src="http://placeimg.com/400/300/any?v=20" alt="Base Front"/>
+              <div class="article-image"><img src="uploads/3.jpg" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="single.html">Velit potenti donec nostra mi</a></h3>
-                <p class="article-description">Cras potenti augue donec commodo pellentesque egestas massa cubilia eu
+                <h3 class="article-title"><a href="single.html">Fames lobortis velit lacus nulla</a></h3>
+                <p class="article-description">Augue nec sociosqu nunc ad mauris quis cursus sem sagittis
                 </p>
                 <!--.article-shares
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-facebook
@@ -118,19 +231,20 @@
                 a(href="http://loremipsum.com",data-text="Lorem ipsum",data-img="http://placeimg.com/400/600/any").share.share-pinterest
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-googleplus
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-whatsapp
-                --><a href="single.html" class="button button-cover">Leer más</a>
+                -->
+                <div class="article-footer"><a href="single.html" class="button button-cover">Leer más</a></div>
               </div>
             </article>
           </div>
           <div class="col-sm-6 col-lg-4">
             <article class="article-default">
-              <div class="article-image"><img src="http://placeimg.com/400/300/any?v=35" alt="Base Front"/>
+              <div class="article-image"><img src="uploads/2.jpg" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <!--.article-category: a(href="#") Hola-->
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="single.html">Vulputate primis metus integer id</a></h3>
-                <p class="article-description">Posuere sociosqu habitasse laoreet felis mi ultricies vestibulum commodo at
+                <h3 class="article-title"><a href="single.html">Pulvinar mollis per cursus tellus</a></h3>
+                <p class="article-description">Curae tincidunt malesuada gravida facilisis malesuada nisl odio consectetur tincidunt
                 </p>
                 <!--.article-shares
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-facebook
@@ -139,38 +253,39 @@
                 a(href="http://loremipsum.com",data-text="Lorem ipsum",data-img="http://placeimg.com/400/600/any").share.share-pinterest
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-googleplus
                 a(href="http://loremipsum.com",data-text="Lorem ipsum").share.share-whatsapp
-                --><a href="single.html" class="button button-cover">Leer más</a>
+                -->
+                <div class="article-footer"><a href="single.html" class="button button-cover">Leer más</a></div>
               </div>
             </article>
           </div>
           <div class="col-sm-12 col-lg-4">
             <article class="article-min">
-              <div class="article-image"><img src="http://placeimg.com/200/200/any?v=31" alt="Base Front"/>
+              <div class="article-image"><img src="uploads/2.jpg" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="single.html">Maecenas sociosqu lacinia platea potenti</a></h3>
-                <p class="article-description">Pellentesque consectetur cubilia conubia suspendisse at elementum non facilisis quisque
+                <h3 class="article-title"><a href="single.html">Eget integer pulvinar nisi donec</a></h3>
+                <p class="article-description">Purus ultricies integer orci neque cubilia nam etiam eleifend pellentesque
                 </p>
               </div>
             </article>
             <article class="article-min">
-              <div class="article-image"><img src="http://placeimg.com/200/200/any?v=18" alt="Base Front"/>
+              <div class="article-image"><img src="uploads/2.jpg" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="single.html">Mauris tristique mattis nulla curabitur</a></h3>
-                <p class="article-description">Sollicitudin tempor sodales luctus elementum taciti blandit eget aenean maecenas
+                <h3 class="article-title"><a href="single.html">Inceptos vulputate per at placerat</a></h3>
+                <p class="article-description">Sociosqu ullamcorper cubilia tortor integer purus leo non sociosqu pellentesque
                 </p>
               </div>
             </article>
             <article class="article-min">
-              <div class="article-image"><img src="http://placeimg.com/200/200/any?v=39" alt="Base Front"/>
+              <div class="article-image"><img src="uploads/1.jpg" alt="Base Front"/>
               </div>
               <div class="article-body">
                 <div class="article-date">24/23/223</div>
-                <h3 class="article-title"><a href="single.html">Aliquet senectus cras tempor pharetra</a></h3>
-                <p class="article-description">Consectetur sed aenean nulla placerat litora ullamcorper aenean mattis mauris
+                <h3 class="article-title"><a href="single.html">Aptent tincidunt cras in posuere</a></h3>
+                <p class="article-description">Class ad non cras adipiscing accumsan erat laoreet ullamcorper proin
                 </p>
               </div>
             </article>
@@ -178,44 +293,194 @@
         </div>
       </div>
     </section>
-    <section class="section-dark">
-      <div class="limit inner inner-2">
+    <section>
+      <div class="section-limit">
         <div class="cols cols-gutterx0">
           <div class="col-md-4">
             <article class="article-bg">
-              <div class="article-image bg"><img src="http://placeimg.com/400/300/any?v=89" alt="Base Front"/>
+              <div class="article-image bg"><img src="uploads/8.jpg" alt="Base Front"/>
               </div>
               <div class="article-cover">
                 <div class="article-date">24/23/223</div>
-                <h2 class="article-title"><a href="single.html">Ac vulputate aenean aliquam congue</a></h2>
-                <p class="article-description">Ante odio quis accumsan curabitur elit iaculis nulla eleifend placerat
+                <h2 class="article-title"><a href="single.html">Nam fringilla faucibus consectetur aptent</a></h2>
+                <p class="article-description">Cras quisque vestibulum velit nibh lacinia eu etiam eu cubilia
                 </p><a href="single.html" class="button button-line-white button-cover">Leer más</a>
               </div>
             </article>
           </div>
           <div class="col-md-4">
             <article class="article-bg">
-              <div class="article-image bg"><img src="http://placeimg.com/400/300/any?v=80" alt="Base Front"/>
+              <div class="article-image bg"><img src="uploads/7.jpg" alt="Base Front"/>
               </div>
               <div class="article-cover">
                 <div class="article-date">24/23/223</div>
-                <h2 class="article-title"><a href="single.html">Nullam sagittis suscipit vel felis</a></h2>
-                <p class="article-description">Vel ac eget porta elit gravida varius viverra pretium est
+                <h2 class="article-title"><a href="single.html">Fusce vestibulum eget aenean vel</a></h2>
+                <p class="article-description">Nullam tortor per scelerisque massa euismod dictumst non potenti himenaeos
                 </p><a href="single.html" class="button button-line-white button-cover">Leer más</a>
               </div>
             </article>
           </div>
           <div class="col-md-4">
             <article class="article-bg">
-              <div class="article-image bg"><img src="http://placeimg.com/400/300/any?v=32" alt="Base Front"/>
+              <div class="article-image bg"><img src="uploads/4.jpg" alt="Base Front"/>
               </div>
               <div class="article-cover">
                 <div class="article-date">24/23/223</div>
-                <h2 class="article-title"><a href="single.html">Sagittis justo elementum nisl nisl</a></h2>
-                <p class="article-description">Praesent donec proin vulputate habitasse aptent vitae elit himenaeos nisi
+                <h2 class="article-title"><a href="single.html">Nulla nulla velit aliquam senectus</a></h2>
+                <p class="article-description">Per aliquet eros rutrum consequat quis primis libero sociosqu potenti
                 </p><a href="single.html" class="button button-line-white button-cover">Leer más</a>
               </div>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-map">
+      <div data-zoom="14" data-lat="-33.4585000" data-lng="-70.649371" class="section-map map">
+        <div data-lat="-33.4585000" data-lng="-70.629371" class="map-marker"></div>
+      </div>
+      <div class="section-limit">
+        <div class="section-map-box">
+          <div class="box box-white">
+            <h3>Aliquam eu duis
+            </h3>
+            <ul>
+              <li><span class="fa fa-home"></span>Avenida del Parque 4161, oficina 103, Ciudad Empresarial</li>
+              <li><a href="tel:+56223935367"><span class="fa fa-phone"></span>+(56) 2 2393 5367</a></li>
+              <li><a href="mailto:contacto@adsgdfg.com"><span class="fa fa-envelope"></span>contacto@adsgdfg.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="cols cols-gutterx0">
+        <div class="col-md-4">
+          <article class="article-bg">
+            <div class="article-image bg"><img src="uploads/8.jpg" alt="Base Front"/>
+            </div>
+            <div class="article-cover">
+              <div class="article-date">24/23/223</div>
+              <h2 class="article-title"><a href="single.html">Morbi gravida orci lacinia rutrum</a></h2>
+              <p class="article-description">Consectetur morbi suspendisse justo proin volutpat nostra integer auctor tempor
+              </p><a href="single.html" class="button button-line-white button-cover">Leer más</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="article-bg">
+            <div class="article-image bg"><img src="uploads/3.jpg" alt="Base Front"/>
+            </div>
+            <div class="article-cover">
+              <div class="article-date">24/23/223</div>
+              <h2 class="article-title"><a href="single.html">Tristique porta faucibus etiam massa</a></h2>
+              <p class="article-description">Leo primis mollis sed habitant colus luctus aptent habitasse euismod
+              </p><a href="single.html" class="button button-line-white button-cover">Leer más</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4">
+          <article class="article-bg">
+            <div class="article-image bg"><img src="uploads/4.jpg" alt="Base Front"/>
+            </div>
+            <div class="article-cover">
+              <div class="article-date">24/23/223</div>
+              <h2 class="article-title"><a href="single.html">Class quam aliquam aenean feugiat</a></h2>
+              <p class="article-description">Sociosqu etiam adipiscing tortor interdum gravida nostra placerat fames inceptos
+              </p><a href="single.html" class="button button-line-white button-cover">Leer más</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section-map2">
+      <div class="cols cols-gutterx0">
+        <div data-zoom="14" data-lat="-33.4585000" data-lng="-70.629371" class="col-md-6 section-map map">
+          <div data-lat="-33.4585000" data-lng="-70.629371" class="map-marker">
+            <ul>
+              <li><span class="fa fa-home"></span>Avenida del Parque 4161, oficina 103, Ciudad Empresarial</li>
+              <li><a href="tel:+56223935367"><span class="fa fa-phone"></span>+(56) 2 2393 5367</a></li>
+              <li><a href="mailto:contacto@adsgdfg.com"><span class="fa fa-envelope"></span>contacto@adsgdfg.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="section-limit">
+            <h3>Sollicitudin in semper
+            </h3>
+            <ul>
+              <li><span class="fa fa-home"></span>Avenida del Parque 4161, oficina 103, Ciudad Empresarial</li>
+              <li><a href="tel:+56223935367"><span class="fa fa-phone"></span>+(56) 2 2393 5367</a></li>
+              <li><a href="mailto:contacto@adsgdfg.com"><span class="fa fa-envelope"></span>contacto@adsgdfg.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-limit">
+        <div class="cols cols-gutterx2">
+          <div class="col-md-6"><img src="uploads/3.jpg" alt="Base Front"/>
+          </div>
+          <div class="col-md-6">
+            <div class="section-content">
+              <h2 class="section-title">Sagittis lacus quisque augue senectus
+              </h2>
+              <p class="section-subtitle">Nibh tincidunt posuere in tincidunt aliquam purus ante tempus nisi at vivamus vel mollis laoreet scelerisque etiam vehicula dictum sociosqu.
+              </p>
+              <div class="section-description content">
+                <p>Senectus duis vestibulum habitant feugiat venenatis ante est rhoncus conubia. Velit sociosqu posuere malesuada libero aliquam justo erat fusce egestas. Porta praesent nec convallis porttitor euismod ultricies phasellus tristique laoreet turpis quis interdum non est consectetur colus hendrerit habitant nisi.
+                </p>
+                <!--p: +lorem(25)-->
+                <!--p: +lorem(30)-->
+              </div>
+              <div class="section-buttons"><a href="#" class="button button-lg button-dark">Primary button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="section-limit">
+        <div class="cols cols-gutterx2">
+          <div class="col-md-6 col-md-push-6"><img src="uploads/1.jpg" alt="Base Front"/>
+          </div>
+          <div class="col-md-6 col-md-pull-6">
+            <div class="section-content">
+              <h2 class="section-title">Eget lacus ut senectus id
+              </h2>
+              <p class="section-subtitle">Primis eget in porta per posuere pharetra ultrices nec lacus class adipiscing taciti eleifend cras aliquam justo metus tristique libero.
+              </p>
+              <div class="section-description content">
+                <p>Convallis cursus ut augue commodo interdum nostra orci habitasse condimentum. Lobortis fames magna sapien sollicitudin hendrerit praesent vestibulum gravida rhoncus. Neque non dictumst massa mi mollis faucibus lectus eget curabitur turpis nunc at non aliquam curabitur dictumst varius urna mauris.
+                </p>
+                <!--p: +lorem(25)-->
+                <!--p: +lorem(30)-->
+              </div>
+              <div class="section-buttons"><a href="#" class="button button-lg button-dark">Primary button</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-dark section-center">
+      <div class="section-bg bg"><img src="uploads/0.jpg" alt="Base Front"/>
+      </div>
+      <div class="section-limit">
+        <div class="section-content">
+          <h2 class="section-title">Gravida aliquet sem ultrices euismod
+          </h2>
+          <p class="section-subtitle">Torquent nisi elit rutrum mauris facilisis donec mollis placerat erat velit vehicula et a augue volutpat tristique quam feugiat porttitor.
+          </p>
+          <div class="section-description content">
+            <p>Proin ultricies tempor habitasse orci pulvinar tellus himenaeos ultrices a. Laoreet venenatis fringilla eros purus dictumst elementum rhoncus tempor nam. Nec curabitur odio metus facilisis congue vitae dapibus purus lacinia et ullamcorper et aliquet dictum feugiat tincidunt ut turpis proin.
+            </p>
+            <!--p: +lorem(25)-->
+            <!--p: +lorem(30)-->
+          </div>
+          <div class="section-buttons"><a href="#" class="button button-lg button-color">Primary button</a>
           </div>
         </div>
       </div>

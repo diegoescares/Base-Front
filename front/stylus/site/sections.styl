@@ -2,6 +2,7 @@
 section
 	position relative
 	background-color white
+
 	&:nth-child(odd)
 		background-color lighter
 	
@@ -21,9 +22,75 @@ section
 		
 	&.section-color
 		background-color color
+		color white
 
-	if color_2
-		&.section-color-2
-			background-color color_2
+	&.section-color-2
+		background-color color_2
+		color white
+
+	&.section-center
+		text-align center
+
+	.section-bg.bg.bg-loaded
+		opacity .2
+
+	.section-limit
+		position relative
+		max-width limit
+		margin 0 auto
+		padding sep*2 sep
+		@media $break-md
+			padding sep*2
+		@media $break-md
+			padding sep*4 sep*2
+
+	.section-content
+		max-width limit_3
+		margin 0 auto 20px
+		&:last-child
+			margin-bottom 0
+		&>*
+			margin-bottom sep
+			&:last-child
+				margin-bottom 0
+
+	.section-content-va
+		min-height 400px
+		line-height 400px
+		position relative
+		.section-content
+			display inline-block
+			vertical-align middle
+			line-height global_lh
+
+	.section-subtitle
+		@media $break-md
+			font-weight 300
+			font-size 120%
+			line-height 140%
+		@media $break-lg
+			font-size 140%
+			line-height 160%
+
+
+	&.section-map
+		.section-map
+			cover absolute
+			z-index 1
+		.section-limit
+			overflow hidden
+		.section-map-box
+			float left
+			max-width 400px
+			z-index 2
+			position relative
+
+	&.section-map2
+		.section-map
+			position absolute
+			right 0
+			top 0
+			height 100%
+
 
 

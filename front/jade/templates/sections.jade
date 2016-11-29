@@ -1,0 +1,26 @@
+
+mixin sectionContent(title,subtitle,description,button1,button2,button3)
+
+	.section-content
+
+		if title
+			if title == "h1"
+				h2.h1.section-title: +lorem(5)
+			else
+				h2.section-title: +lorem(5)
+		if subtitle
+			p.section-subtitle: +lorem(20)
+		if description
+			.section-description.content
+				p: +lorem(40)
+				//p: +lorem(25)
+				//p: +lorem(30)
+		if button1 || button2 || button3
+			.section-buttons
+				if button1
+					a.button.button-lg(href="#",class="button-#{ button1 }") Primary button
+				if button2
+					a.button.button-lg(href="#",class="button-#{ button2 }") Secondary button
+				if button3
+					a.button.button-lg(href="#",class="button-#{ button3 }") Secondary button
+
