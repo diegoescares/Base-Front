@@ -110,7 +110,13 @@ article
 			&:after
 				top auto
 				bottom 0
-				height 500px
+				height 600px
+
+		&.article-bg-big
+			@media $break-lg
+				height 600px
+				.article-cover
+					padding sep*2
 	
 
 	&.article-circle
@@ -122,7 +128,7 @@ article
 		.article-image
 			background transparent
 			max-width 200px
-			margin 0 auto sep
+			margin 0 auto 10px
 			border 1px solid light
 			padding 5px
 			radius 50%
@@ -135,5 +141,34 @@ article
 				background lighter
 		.article-body
 			padding 0
+		.article-social
+			a
+				display inline-block
+				circle 30px, 1
+				background color
+				color white
+				margin 2px
+				.fa
+					vertical-align middle
 
+	&.article-photo
+		height 280px
+		background lighter
+		radius rad
+		z-index 1
+
+		.article-open
+			cover absolute
+			transition .4s ease
+			opacity 0
+			background rgba(dark,80%)
+
+		.article-icon
+			centrecircle 50px
+			background white
+			font-size 140%
+
+		&:hover
+			.article-open
+				opacity 1
 

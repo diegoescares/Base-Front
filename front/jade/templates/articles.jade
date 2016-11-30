@@ -39,6 +39,11 @@ mixin articleCircle(link)
 				p.article-description: +lorem(10)
 				a(href="single.html").button.button-cover Ver más
 
+			.article-social
+				a(href="#"): span.fa.fa-facebook
+				a(href="#"): span.fa.fa-twitter
+				a(href="#"): span.fa.fa-linkedin
+
 
 mixin articleMin()
 
@@ -54,9 +59,9 @@ mixin articleMin()
 
 
 
-mixin articleBg()
+mixin articleBg(big)
 
-	article.article-bg
+	article.article-bg(class="article-bg-#{big}")
 
 		.article-image.bg
 			+img(400,300)
@@ -66,6 +71,19 @@ mixin articleBg()
 			h2.article-title: a(href="single.html"): +lorem(5)
 			p.article-description: +lorem(10)
 			a(href="single.html").button.button-line-white.button-cover Leer más
+
+
+
+mixin articlePhoto()
+
+	article.article-photo
+		.article-bg.bg
+			+img(400,300)
+		a.article-open(href="#",data-id="dsadasd").youtube
+			.article-icon
+				span.fa.fa-search-plus
+
+
 
 
 

@@ -28,6 +28,25 @@ block page
 
 
 
+	section.section-center
+		.section-limit
+
+			.cols
+				.col-md-8.col-lg-6
+					+articlePhoto()
+				.col-md-4.col-lg-3
+					+articlePhoto()
+				.col-md-4.col-lg-3
+					+articlePhoto()
+				.col-md-4.col-lg-3
+					+articlePhoto()
+				.col-md-4.col-lg-3
+					+articlePhoto()
+				.col-md-4.col-lg-3
+					+articlePhoto()
+				.col-md-4.col-lg-3
+					+articlePhoto()
+
 
 
 	section.section-center
@@ -73,6 +92,64 @@ block page
 
 
 
+	section
+		.cols.cols-gutterx0
+			.col-md-4
+				+articleBg("big")
+			.col-md-4
+				+articleBg("big")
+			.col-md-4
+				+articleBg("big")
+
+
+
+
+	section
+		.section-limit
+			.cols.cols-gutterx2
+				.col-md-6
+					+img(800,400)
+				.col-md-6
+					+sectionContent(true,true,true,'dark')
+
+	section
+		.section-limit
+			.cols.cols-gutterx2
+				.col-md-6.col-md-push-6
+					+img(800,400)
+				.col-md-6.col-md-pull-6
+					+sectionContent(true,true,true,'dark')
+			
+
+
+
+	section.section-logos
+		.section-limit
+			h3 Nos apoyan
+			a(href="#"): +img("logo-3.png")
+			a(href="#"): +img("logo-4.png")
+			a(href="#"): +img("logo-3.png")
+			a(href="#"): +img("logo-4.png")
+
+	//
+		section.section-logos2
+		.section-limit
+			h3 Nos apoyan
+			a(href="#"): +img("logo-3.png")
+			a(href="#"): +img("logo-4.png")
+			a(href="#"): +img("logo-3.png")
+			a(href="#"): +img("logo-4.png")
+			a(href="#"): +img("logo-4.png")
+			a(href="#"): +img("logo-3.png")
+			a(href="#"): +img("logo-4.png")
+			a(href="#"): +img("logo-3.png")
+			a(href="#"): +img("logo-4.png")
+			a(href="#"): +img("logo-4.png")
+			a(href="#"): +img("logo-3.png")
+
+
+
+
 	section.section-map
 
 		.section-map.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.649371')
@@ -97,17 +174,9 @@ block page
 								| contacto@adsgdfg.com
 
 
-	section
-		.cols.cols-gutterx0
-			.col-md-4
-				+articleBg()
-			.col-md-4
-				+articleBg()
-			.col-md-4
-				+articleBg()
 
-
-	section.section-map2
+	//
+		section.section-map2
 
 
 		.cols.cols-gutterx0
@@ -145,26 +214,9 @@ block page
 								| contacto@adsgdfg.com
 
 
-	section
-		.section-limit
-			.cols.cols-gutterx2
-				.col-md-6
-					+img(800,400)
-				.col-md-6
-					+sectionContent(true,true,true,'dark')
-
-	section
-		.section-limit
-			.cols.cols-gutterx2
-				.col-md-6.col-md-push-6
-					+img(800,400)
-				.col-md-6.col-md-pull-6
-					+sectionContent(true,true,true,'dark')
-			
-
 	section.section-dark.section-center
 		.section-bg.bg: +img(800,400)
 		.section-limit
-			+sectionContent(true,true,true,'color')
+			+sectionContent(true,true,false,'color')
 
 
