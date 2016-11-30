@@ -2722,129 +2722,6 @@ app.activelinks = {
   }
 };
 
-app.alert = {
-  init: function() {
-    if ($("[data-alert]").length) {
-      $("a[data-alert]").click(function() {
-        var element;
-        element = $(this);
-        app.alert.open({
-          title: element.attr("data-alert"),
-          content: element.attr("data-content"),
-          accept: true,
-          cancel: true,
-          callback_true: function() {
-            return location.href = element.attr("href");
-          }
-        });
-        return false;
-      });
-      return $("div[data-alert]").each(function() {
-        var element;
-        element = $(this);
-        return app.alert.open({
-          title: element.attr("data-alert"),
-          content: element.attr("data-content"),
-          accept: true
-        });
-      });
-    }
-  },
-  open: function(options) {
-    var alertclass, alertlightclass, buttons, close, content, html, title;
-    title = "";
-    content = "";
-    buttons = "";
-    close = "";
-    if (options["static"] === true) {
-      alertlightclass = '';
-      options.close = false;
-    } else {
-      alertlightclass = ' false';
-    }
-    if (options.alertclass) {
-      alertclass = "alert-" + options.alertclass;
-    } else {
-      alertclass = "alert-default";
-    }
-    if (options.title) {
-      title = "<h3 class='alert-title'>" + options.title + "</h3>";
-    }
-    if (options.content) {
-      content = "<div class='alert-content'>" + options.content + "</div>";
-    }
-    if (options.close === void 0) {
-      options.close = true;
-    }
-    if (options.close === true) {
-      close = '<button class="alert-close false"><i class="fa fa-times"></i></button>';
-    }
-    if (options.buttons) {
-      buttons += options.buttons + " ";
-    }
-    if (options.cancel === true) {
-      buttons += '<button class="button button-lighter false">Cancelar</button> ';
-    }
-    if (options.accept === true) {
-      buttons += '<button class="button true">Aceptar</button> ';
-    }
-    if (buttons) {
-      buttons = '<div class="alert-buttons">' + buttons + '</div>';
-    }
-    html = '<div class="alert ' + alertclass + ' in">' + '<div class="alert-light ' + alertlightclass + '"></div>' + '<div class="alert-box va">' + '<div class="alert-inner">' + close + title + content + buttons + '</div>' + '</div>' + '</div>';
-    $("body").append(html);
-    $("body").addClass("alert-in");
-    app.relayout();
-    return $(".alert .true, .alert .false").unbind("click").bind("click", function() {
-      var alertorigin;
-      alertorigin = $(this).closest(".alert");
-      alertorigin.addClass("out");
-      setTimeout(function() {
-        alertorigin.remove();
-        return $("body").removeClass("alert-in");
-      }, 200);
-      if ($(this).hasClass("true") && options.callback_true) {
-        options.callback_true();
-      }
-      if ($(this).hasClass("false") && options.callback_false) {
-        options.callback_false();
-      }
-      return true;
-    });
-  },
-  closeall: function() {
-    $(".alert").addClass("out");
-    return $("body").removeClass("alert-in");
-  },
-  removeall: function() {
-    $(".alert").addClass("out");
-    return setTimeout(function() {
-      $(".alert").remove();
-      return $("body").removeClass("alert-in");
-    }, 200);
-  },
-  load: function(href, cssclass, callback) {
-    if (cssclass == null) {
-      cssclass = "default";
-    }
-    if (callback == null) {
-      callback = false;
-    }
-    return $.ajax({
-      url: href,
-      type: 'GET'
-    }).done(function(result) {
-      app.alert.open({
-        content: result,
-        alertclass: cssclass
-      });
-      if (callback) {
-        return callback();
-      }
-    });
-  }
-};
-
 app.isMobile = function() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     return true;
@@ -2859,7 +2736,7 @@ app.browsers = {
       $("html").addClass("is-mobile");
     }
     if ($("html").hasClass("lt-ie9")) {
-      return app.alert.open({
+      return app.modal.open({
         title: "Estás usando un navegador muy antiguo",
         content: "Actualiza tu navegador ahora y disfruta de una experiencia mucho mejor.",
         buttons: "<a href='http://browsehappy.com/?locale=es' target='_blank' class='button button-primary button-big'>Actualizar ahora</a>"
@@ -3272,6 +3149,129 @@ app.log = function(log) {
 
 log = function(log) {
   return app.log(log);
+};
+
+app.modal = {
+  init: function() {
+    if ($("[data-modal]").length) {
+      $("a[data-modal]").click(function() {
+        var element;
+        element = $(this);
+        app.modal.open({
+          title: element.attr("data-modal"),
+          content: element.attr("data-content"),
+          accept: true,
+          cancel: true,
+          callback_true: function() {
+            return location.href = element.attr("href");
+          }
+        });
+        return false;
+      });
+      return $("div[data-modal]").each(function() {
+        var element;
+        element = $(this);
+        return app.modal.open({
+          title: element.attr("data-modal"),
+          content: element.attr("data-content"),
+          accept: true
+        });
+      });
+    }
+  },
+  open: function(options) {
+    var buttons, close, content, html, modalclass, modallightclass, title;
+    title = "";
+    content = "";
+    buttons = "";
+    close = "";
+    if (options["static"] === true) {
+      modallightclass = '';
+      options.close = false;
+    } else {
+      modallightclass = ' false';
+    }
+    if (options.modalclass) {
+      modalclass = "modal-" + options.modalclass;
+    } else {
+      modalclass = "modal-default";
+    }
+    if (options.title) {
+      title = "<h3 class='modal-title'>" + options.title + "</h3>";
+    }
+    if (options.content) {
+      content = "<div class='modal-content'>" + options.content + "</div>";
+    }
+    if (options.close === void 0) {
+      options.close = true;
+    }
+    if (options.close === true) {
+      close = '<button class="modal-close false"><i class="fa fa-times"></i></button>';
+    }
+    if (options.buttons) {
+      buttons += options.buttons + " ";
+    }
+    if (options.cancel === true) {
+      buttons += '<button class="button button-lighter false">Cancelar</button> ';
+    }
+    if (options.accept === true) {
+      buttons += '<button class="button true">Aceptar</button> ';
+    }
+    if (buttons) {
+      buttons = '<div class="modal-buttons">' + buttons + '</div>';
+    }
+    html = '<div class="modal ' + modalclass + ' in">' + '<div class="modal-light ' + modallightclass + '"></div>' + '<div class="modal-box va">' + '<div class="modal-inner">' + close + title + content + buttons + '</div>' + '</div>' + '</div>';
+    $("body").append(html);
+    $("body").addClass("modal-in");
+    app.relayout();
+    return $(".modal .true, .modal .false").unbind("click").bind("click", function() {
+      var modalorigin;
+      modalorigin = $(this).closest(".modal");
+      modalorigin.addClass("out");
+      setTimeout(function() {
+        modalorigin.remove();
+        return $("body").removeClass("modal-in");
+      }, 200);
+      if ($(this).hasClass("true") && options.callback_true) {
+        options.callback_true();
+      }
+      if ($(this).hasClass("false") && options.callback_false) {
+        options.callback_false();
+      }
+      return true;
+    });
+  },
+  closeall: function() {
+    $(".modal").addClass("out");
+    return $("body").removeClass("modal-in");
+  },
+  removeall: function() {
+    $(".modal").addClass("out");
+    return setTimeout(function() {
+      $(".modal").remove();
+      return $("body").removeClass("modal-in");
+    }, 200);
+  },
+  load: function(href, cssclass, callback) {
+    if (cssclass == null) {
+      cssclass = "default";
+    }
+    if (callback == null) {
+      callback = false;
+    }
+    return $.ajax({
+      url: href,
+      type: 'GET'
+    }).done(function(result) {
+      app.modal.open({
+        content: result,
+        modalclass: cssclass
+      });
+      if (callback) {
+        return callback();
+      }
+    });
+  }
 };
 
 app.previewfile = {
@@ -3756,7 +3756,7 @@ app.init = function() {
   app.browsers.init();
   app.shares.init();
   app.tooltips.init();
-  app.alert.init();
+  app.modal.init();
   app.loading.init();
   app.gmap.init();
   app.scroll.init();

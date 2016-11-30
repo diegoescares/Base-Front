@@ -1804,83 +1804,6 @@ form textarea,
 .content a:hover:not(.button) {
   text-decoration: underline;
 }
-.alert {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  -webkit-animation: fadeIn 0.5s ease;
-          animation: fadeIn 0.5s ease;
-  z-index: 100;
-  display: none;
-}
-.alert.in {
-  display: block;
-}
-.alert.out {
-  -webkit-animation: fadeOut 0.2s ease both;
-          animation: fadeOut 0.2s ease both;
-}
-.alert .alert-light {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #2d3345;
-  background: rgba(40,40,40,0.5);
-}
-.alert .alert-box {
-  max-width: 600px;
-  margin: 0 auto;
-  -webkit-animation: slideFadeUp 0.5s ease;
-          animation: slideFadeUp 0.5s ease;
-  overflow: hidden;
-}
-.alert .alert-box .alert-inner {
-  padding: 20px;
-  margin: 20px;
-  border-radius: 5px;
-  background: #fff;
-}
-.alert .alert-box .alert-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
-  overflow: hidden;
-  background: #3d455d;
-  color: #fff;
-}
-.alert .alert-box .alert-close .fa {
-  vertical-align: 0;
-}
-.alert .alert-box .alert-close:hover {
-  background: #00c494;
-}
-.alert .alert-box .alert-title {
-  margin-bottom: 10px;
-}
-.alert .alert-box .alert-content {
-  margin-bottom: 15px;
-}
-.alert .alert-box .alert-buttons {
-  text-align: center;
-}
-.alert .alert-box iframe {
-  display: block;
-  width: 100%;
-}
-.alert.alert-default {
-  text-align: center;
-}
 .faq .faq-question:hover {
   cursor: pointer;
 }
@@ -2004,6 +1927,83 @@ form textarea,
     stroke-dasharray: 100, 200;
     stroke-dashoffset: -120px;
   }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-animation: fadeIn 0.5s ease;
+          animation: fadeIn 0.5s ease;
+  z-index: 100;
+  display: none;
+}
+.modal.in {
+  display: block;
+}
+.modal.out {
+  -webkit-animation: fadeOut 0.2s ease both;
+          animation: fadeOut 0.2s ease both;
+}
+.modal .modal-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2d3345;
+  background: rgba(40,40,40,0.5);
+}
+.modal .modal-box {
+  max-width: 600px;
+  margin: 0 auto;
+  -webkit-animation: slideFadeUp 0.5s ease;
+          animation: slideFadeUp 0.5s ease;
+  overflow: hidden;
+}
+.modal .modal-box .modal-inner {
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  background: #fff;
+}
+.modal .modal-box .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #3d455d;
+  color: #fff;
+}
+.modal .modal-box .modal-close .fa {
+  vertical-align: 0;
+}
+.modal .modal-box .modal-close:hover {
+  background: #00c494;
+}
+.modal .modal-box .modal-title {
+  margin-bottom: 10px;
+}
+.modal .modal-box .modal-content {
+  margin-bottom: 15px;
+}
+.modal .modal-box .modal-buttons {
+  text-align: center;
+}
+.modal .modal-box iframe {
+  display: block;
+  width: 100%;
+}
+.modal.modal-default {
+  text-align: center;
 }
 .slider {
   position: relative;

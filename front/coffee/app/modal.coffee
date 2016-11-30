@@ -1,15 +1,15 @@
 
 
-app.alert =
+app.modal =
 
 	init: ->
 
-		if $("[data-alert]").length
+		if $("[data-modal]").length
 
-			$("a[data-alert]").click ->
+			$("a[data-modal]").click ->
 				element = $(this)
-				app.alert.open
-					title: element.attr("data-alert")
+				app.modal.open
+					title: element.attr("data-modal")
 					content: element.attr("data-content")
 					accept: true
 					cancel: true
@@ -17,10 +17,10 @@ app.alert =
 						location.href = element.attr("href")
 				false
 
-			$("div[data-alert]").each ->
+			$("div[data-modal]").each ->
 				element = $(this)
-				app.alert.open
-					title: element.attr("data-alert")
+				app.modal.open
+					title: element.attr("data-modal")
 					content: element.attr("data-content")
 					accept: true
 
@@ -33,27 +33,27 @@ app.alert =
 		close = ""
 
 		if options.static == true
-			alertlightclass    = ''
+			modallightclass    = ''
 			options.close = false
 		else
-			alertlightclass = ' false'
+			modallightclass = ' false'
 
-		if options.alertclass
-			alertclass = "alert-" + options.alertclass
+		if options.modalclass
+			modalclass = "modal-" + options.modalclass
 		else
-			alertclass = "alert-default"
+			modalclass = "modal-default"
 
 		if options.title
-			title = "<h3 class='alert-title'>" + options.title + "</h3>"
+			title = "<h3 class='modal-title'>" + options.title + "</h3>"
 
 		if options.content
-			content = "<div class='alert-content'>" + options.content + "</div>"
+			content = "<div class='modal-content'>" + options.content + "</div>"
 
 		if options.close == undefined
 			options.close = true
 
 		if options.close == true
-			close = '<button class="alert-close false"><i class="fa fa-times"></i></button>'
+			close = '<button class="modal-close false"><i class="fa fa-times"></i></button>'
 
 		if options.buttons
 			buttons += options.buttons + " "
@@ -65,14 +65,14 @@ app.alert =
 			buttons += '<button class="button true">Aceptar</button> '
 
 		if buttons
-			buttons = '<div class="alert-buttons">'+buttons+'</div>'
+			buttons = '<div class="modal-buttons">'+buttons+'</div>'
 
 
 		html =
-			'<div class="alert '+alertclass+' in">'+
-				'<div class="alert-light '+alertlightclass+'"></div>'+
-				'<div class="alert-box va">'+
-					'<div class="alert-inner">'+
+			'<div class="modal '+modalclass+' in">'+
+				'<div class="modal-light '+modallightclass+'"></div>'+
+				'<div class="modal-box va">'+
+					'<div class="modal-inner">'+
 						close +
 						title +
 						content +
@@ -83,18 +83,18 @@ app.alert =
 
 
 		$("body").append(html)
-		$("body").addClass("alert-in")
+		$("body").addClass("modal-in")
 
 		app.relayout()
 
-		$(".alert .true, .alert .false").unbind("click").bind "click", -> 
+		$(".modal .true, .modal .false").unbind("click").bind "click", -> 
 
-			alertorigin = $(this).closest(".alert")
+			modalorigin = $(this).closest(".modal")
 
-			alertorigin.addClass("out")
+			modalorigin.addClass("out")
 			setTimeout ->
-				alertorigin.remove()
-				$("body").removeClass("alert-in")
+				modalorigin.remove()
+				$("body").removeClass("modal-in")
 			,200
 
 			if $(this).hasClass("true") && options.callback_true
@@ -106,14 +106,14 @@ app.alert =
 			return true
 
 	closeall: ->
-		$(".alert").addClass("out")
-		$("body").removeClass("alert-in")
+		$(".modal").addClass("out")
+		$("body").removeClass("modal-in")
 
 	removeall: ->
-		$(".alert").addClass("out")
+		$(".modal").addClass("out")
 		setTimeout ->
-			$(".alert").remove()
-			$("body").removeClass("alert-in")
+			$(".modal").remove()
+			$("body").removeClass("modal-in")
 		,200
 
 	load: (href,cssclass="default",callback=false) ->
@@ -121,9 +121,9 @@ app.alert =
 			url: href
 			type: 'GET'
 		).done (result) ->
-			app.alert.open
+			app.modal.open
 				content: result
-				alertclass: cssclass
+				modalclass: cssclass
 			if callback
 				callback()
 

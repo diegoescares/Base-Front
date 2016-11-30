@@ -22,8 +22,8 @@ app.init = ->
 	# Tooltips
 	app.tooltips.init()
 
-	# Alertas
-	app.alert.init()
+	# Modal
+	app.modal.init()
 
 	# Loading
 	app.loading.init()

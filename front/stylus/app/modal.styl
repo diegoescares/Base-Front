@@ -1,12 +1,12 @@
 
-// lightbox = alert
+// lightbox = modal
 // Con botones de cerrar y aceptar, es responsive, adaptable a la altura con scroll automatico y centrado vertical/horizontal automatico con js
 
 
-//body.alert-in
+//body.modal-in
 //	overflow hidden
 
-.alert
+.modal
 	position fixed
 	top 0
 	left 0
@@ -20,7 +20,7 @@
 		display block
 	&.out
 		animation fadeOut .2s ease both
-	.alert-light
+	.modal-light
 		position fixed
 		top 0
 		left 0
@@ -28,19 +28,19 @@
 		height 100%
 		background dark
 		background rgba(40,40,40,.5)
-	.alert-box
+	.modal-box
 		max-width 600px
 		margin 0 auto
 		animation slideFadeUp .5s ease
 		overflow hidden
 
-		.alert-inner
+		.modal-inner
 			padding 20px
 			margin 20px
 			radius rad
 			background white
 		
-		.alert-close
+		.modal-close
 			position absolute
 			top 10px
 			right 10px
@@ -53,20 +53,20 @@
 				background color
 		
 			
-		.alert-title
+		.modal-title
 			margin-bottom 10px
 
-		.alert-content
+		.modal-content
 			margin-bottom 15px
 
-		.alert-buttons
+		.modal-buttons
 			text-align center
 
 		iframe
 			display block
 			width 100%
 
-	&.alert-default
+	&.modal-default
 		text-align center
 
 
