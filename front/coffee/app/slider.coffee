@@ -4,74 +4,75 @@ app.slider =
 
 		$(".slider").each ->
 
-			slider = $(this)
+			# Create elements: nav, bullets
+			app.slider.createElements $(this)
 
-			# Generate slider elements
-
-			slider.find(".slide").wrapAll("<div class='slider-slides' />")
-
-			if slider.find(".slide").length > 1
-				slider.append "<div class='slider-bullets'></div>"
-				slider.append ""+
-					"<div class='slider-navigation'>"+
-						"<div class='slider-nav slider-nav-left'><span class='fa fa-angle-left'></span></div>"+
-						"<div class='slider-nav slider-nav-right'><span class='fa fa-angle-right'></span></div>"+
-					"</div>"
-
-			slider.find(".slide").each ->
-
-				slide   = $(this)
-
-				slide.imagesLoaded ->
-					slide.addClass("slide-loaded")
-
-				if slider.find(".slider-bullets").length
-					slider.find(".slider-bullets").append("<div class='slider-bullet'></div>")
+			# Set first slide
+			app.slider.go $(this), 0
+	
+			# Autoplay
+			#app.slider.autoplay $(this)
 
 
-			# Active first slide
-			app.slider.go slider, 0
+		# Actions slider: nav click, swipe, bullets
 
+		$(document).on "click", ".slider .slider-nav-left", ->
+			app.slider.prev $(this).closest(".slider")
 
-		# Actions slider: nav click
+		$(document).on "click", ".slider .slider-nav-right", ->
+			app.slider.next $(this).closest(".slider")
 
-		$(".slider .slider-nav").click ->
-			slider = $(this).closest(".slider")
-			app.slider.next(slider) if $(this).hasClass "slider-nav-right"
-			app.slider.prev(slider) if $(this).hasClass "slider-nav-left"
-
-
-		# Actions slider: swipe
-
-		$(".slider").on "swipeleft", ->
+		$(document).on "swipeleft", ".slider", ->
 			app.slider.next $(this)
 
-		$(".slider").on "swiperight", ->
+		$(document).on "swiperight", ".slider", ->
 			app.slider.prev $(this)
 
-
-		# Actions slider: bullets
-
-		$(".slider .slider-bullet").click ->
-			slider = $(this).closest(".slider")
-			app.slider.go slider, $(this).index()
+		$(document).on "click", ".slider .slider-bullet", ->
+			app.slider.go $(this).closest(".slider"), $(this).index()
 
 
-		# Autoplay
+	create: (data) ->
 
-		app.slider.autoplay()
+		# Create new slider from some data
+		slides = ""
+		for d in data
+			slides += "<div class='slide'>"+d+"</div>"
+
+		slider = "<div class='slider slider-cover'>"+slides+"</div>"
+
+		return slider
+
+
+	createElements: (slider) ->
+
+		# Generate slider elements
+
+		if !slider.find("slider-slides").length
+			slider.find(".slide").wrapAll("<div class='slider-slides' />")
+
+		if slider.find(".slide").length > 1
+			html = ""
+			html += "<div class='slider-navigation'>"
+			html += "<div class='slider-nav slider-nav-left'><span class='fa fa-angle-left'></span></div>"
+			html += "<div class='slider-nav slider-nav-right'><span class='fa fa-angle-right'></span></div>"
+			html += "</div>"
+			html += "<div class='slider-bullets'></div>"
+			slider.append html
+			slider.find(".slide").each ->
+				slider.find(".slider-bullets").append("<div class='slider-bullet'></div>")
 
 
 
 	next: (slider) ->
-		current = slider.find(".slide.slide-active").index()
+		current = slider.find(".slide.slide-current").index()
 		goto    = current + 1
 		goto    = 0 if goto >= slider.find(".slide").length
 		app.slider.go slider, goto, "right"
 
 
 	prev: (slider) ->
-		current = slider.find(".slide.slide-active").index()
+		current = slider.find(".slide.slide-current").index()
 		goto    = current - 1
 		goto    = slider.find(".slide").length - 1 if goto < 0
 		app.slider.go slider, goto, "left"
@@ -79,28 +80,33 @@ app.slider =
 
 	go: (slider,goto,dir=false) ->
 
-		current = slider.find(".slide.slide-active").index()
+		current = slider.find(".slide.slide-current").index()
 
 		if !slider.hasClass("slider-animate") && current!=goto
 			
-			if !dir && current.length
-				if current < goto
-					dir = "right"
-				else
-					dir = "left"
+			if !dir && current>=0
+				dir = if current < goto then "right" else "left"
 
-			slider.removeClass("slider-dir-left")
-			slider.removeClass("slider-dir-right")
+			slider.removeClass("slider-dir-left slider-dir-right")
 			slider.addClass "slider-animate"
 			slider.addClass "slider-dir-"+dir if dir
 
-			slider.find(".slide.slide-active").addClass("slide-out").removeClass("slide-active")
-			slider.find(".slide").eq(goto).addClass("slide-active")
+			slider.find(".slide.slide-current").addClass("slide-out").removeClass("slide-current")
+			slider.find(".slide").eq(goto).addClass("slide-current")
 			
-			slider.find(".slider-bullet").removeClass("slider-bullet-active")
-			slider.find(".slider-bullet").eq(goto).addClass("slider-bullet-active")
+			slider.find(".slider-bullet")
+				.removeClass("slider-bullet-current")
+				.eq(goto).addClass("slider-bullet-current")
+
+
+
+			ytbg = slider.find(".slide-current").find("[data-youtube-bg]")
+			if ytbg.length
+				app.youtube.insert ytbg, ytbg.attr("data-youtube-bg")
+			
 
 			setTimeout ->
+				slider.find(".slide-out").find("[data-youtube-bg]").html("")
 				slider.find(".slide-out").removeClass("slide-out")
 				slider.removeClass("slider-animate")
 			,500
@@ -108,22 +114,21 @@ app.slider =
 			app.relayout()
 
 
-
-	autoplay: ->
+	autoplay: (slider) ->
 
 		play_timeout = false
 
-		$(".slider").mouseenter ->
+		slider.on "mouseenter", ->
 			clearTimeout(play_timeout)
 
-		$(".slider").mouseleave ->
+		slider.on "mouseleave", ->
 			play()
 
 		play = ->
 			clearTimeout(play_timeout)
 			play_timeout = setTimeout ->
 				#if app.isMobile()
-				$(".slider").each ->
+				slider.each ->
 					app.slider.next $(this)
 				play()
 			,6000

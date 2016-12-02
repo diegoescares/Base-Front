@@ -14,7 +14,7 @@
 		position relative
 		overflow hidden
 		display none
-		&.slide-active
+		&.slide-current
 			display block
 			z-index 1
 		&.slide-out
@@ -36,7 +36,7 @@
 			margin 0 2px
 			transition tn
 			opacity .5
-			&.slider-bullet-active
+			&.slider-bullet-current
 				opacity 1
 			&:hover
 				cursor pointer
@@ -76,27 +76,31 @@
 
 	&.slider-dir-left
 		.slide
-			&.slide-active
-				animation slideRight .5s ease
+			&.slide-current
+				animation slideRight .5s cb
 			&.slide-out
-				animation slideRightOut .5s ease both
+				animation slideRightOut .5s cb both
 
 	&.slider-dir-right
 		.slide
-			&.slide-active
-				animation slideLeft .5s ease
+			&.slide-current
+				animation slideLeft .5s cb
 			&.slide-out
-				animation slideLeftOut .5s ease both
+				animation slideLeftOut .5s cb both
 
 	&.slider-fade
 		&.slider-dir-left
 		&.slider-dir-right
 			.slide
-				&.slide-active
-					animation fadeIn .5s ease
+				&.slide-current
+					animation fadeIn .5s cb
 				&.slide-out
-					animation fadeOut .5s ease both
+					animation fadeOut .5s cb both
 
 
-
+	&.slider-cover
+		cover absolute
+		.slider-slides
+		.slide
+			cover absolute
 

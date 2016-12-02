@@ -79,7 +79,12 @@ mixin articlePhoto()
 	article.article-photo
 		.article-bg.bg
 			+img(400,300)
-		a.article-open(href="#",data-id="dsadasd").youtube
+		//a.article-open(href="#",data-youtube="G3XoFYqi1j0")
+			.article-icon
+				span.fa.fa-search-plus
+
+		- url = "uploads/"+Math.floor(Math.random()*9)+".jpg"
+		a.article-open(href=url,data-gallery,data-gallery-youtube="G3XoFYqi1j0")
 			.article-icon
 				span.fa.fa-search-plus
 

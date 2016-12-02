@@ -3038,6 +3038,56 @@ app.forms = {
   }
 };
 
+app.gallery = {
+  init: function() {
+    $("[data-gallery]").each(function() {
+      if (!$(this).attr("data-gallery")) {
+        return $(this).attr("data-gallery", "default");
+      }
+    });
+    $(document).on("click", "[data-gallery]", function(e) {
+      var group, index;
+      e.preventDefault();
+      group = $(this).attr("data-gallery");
+      index = $(this).index("[data-gallery]");
+      return app.gallery.open(group, index);
+    });
+    return $(document).on("click", ".gallery-close", function(e) {
+      return app.gallery.close();
+    });
+  },
+  open: function(group, index) {
+    var data, html;
+    if (index == null) {
+      index = 0;
+    }
+    data = [];
+    $("[data-gallery='" + group + "']").each(function() {
+      if (!$(this).attr("data-gallery-youtube")) {
+        return data.push("<div class='bg'><img src='" + $(this).attr("href") + "' /></div>");
+      } else {
+        return data.push("<div class='bg-video cover' data-youtube-bg='" + $(this).attr("data-gallery-youtube") + "'>");
+      }
+    });
+    html = "";
+    html += "<div class='gallery'>";
+    html += app.slider.create(data);
+    html += "<button class='gallery-close close'><span class='fa fa-times'></span></button>";
+    html += "</div>";
+    $("body").append(html);
+    app.slider.createElements($(".gallery .slider"));
+    app.slider.go($(".gallery .slider"), index);
+    return app.loadingContent();
+  },
+  close: function() {
+    console.log("close!!");
+    $(".gallery").addClass("out");
+    return setTimeout(function() {
+      return $(".gallery").remove();
+    }, 200);
+  }
+};
+
 app.gmap = {
   init: function() {
     return $(".map:visible").each(function() {
@@ -3457,51 +3507,56 @@ app.shares = {
 app.slider = {
   init: function() {
     $(".slider").each(function() {
-      var slider;
-      slider = $(this);
-      slider.find(".slide").wrapAll("<div class='slider-slides' />");
-      if (slider.find(".slide").length > 1) {
-        slider.append("<div class='slider-bullets'></div>");
-        slider.append("" + "<div class='slider-navigation'>" + "<div class='slider-nav slider-nav-left'><span class='fa fa-angle-left'></span></div>" + "<div class='slider-nav slider-nav-right'><span class='fa fa-angle-right'></span></div>" + "</div>");
-      }
-      slider.find(".slide").each(function() {
-        var slide;
-        slide = $(this);
-        slide.imagesLoaded(function() {
-          return slide.addClass("slide-loaded");
-        });
-        if (slider.find(".slider-bullets").length) {
-          return slider.find(".slider-bullets").append("<div class='slider-bullet'></div>");
-        }
-      });
-      return app.slider.go(slider, 0);
+      app.slider.createElements($(this));
+      return app.slider.go($(this), 0);
     });
-    $(".slider .slider-nav").click(function() {
-      var slider;
-      slider = $(this).closest(".slider");
-      if ($(this).hasClass("slider-nav-right")) {
-        app.slider.next(slider);
-      }
-      if ($(this).hasClass("slider-nav-left")) {
-        return app.slider.prev(slider);
-      }
+    $(document).on("click", ".slider .slider-nav-left", function() {
+      return app.slider.prev($(this).closest(".slider"));
     });
-    $(".slider").on("swipeleft", function() {
+    $(document).on("click", ".slider .slider-nav-right", function() {
+      return app.slider.next($(this).closest(".slider"));
+    });
+    $(document).on("swipeleft", ".slider", function() {
       return app.slider.next($(this));
     });
-    $(".slider").on("swiperight", function() {
+    $(document).on("swiperight", ".slider", function() {
       return app.slider.prev($(this));
     });
-    $(".slider .slider-bullet").click(function() {
-      var slider;
-      slider = $(this).closest(".slider");
-      return app.slider.go(slider, $(this).index());
+    return $(document).on("click", ".slider .slider-bullet", function() {
+      return app.slider.go($(this).closest(".slider"), $(this).index());
     });
-    return app.slider.autoplay();
+  },
+  create: function(data) {
+    var d, j, len, slider, slides;
+    slides = "";
+    for (j = 0, len = data.length; j < len; j++) {
+      d = data[j];
+      slides += "<div class='slide'>" + d + "</div>";
+    }
+    slider = "<div class='slider slider-cover'>" + slides + "</div>";
+    return slider;
+  },
+  createElements: function(slider) {
+    var html;
+    if (!slider.find("slider-slides").length) {
+      slider.find(".slide").wrapAll("<div class='slider-slides' />");
+    }
+    if (slider.find(".slide").length > 1) {
+      html = "";
+      html += "<div class='slider-navigation'>";
+      html += "<div class='slider-nav slider-nav-left'><span class='fa fa-angle-left'></span></div>";
+      html += "<div class='slider-nav slider-nav-right'><span class='fa fa-angle-right'></span></div>";
+      html += "</div>";
+      html += "<div class='slider-bullets'></div>";
+      slider.append(html);
+      return slider.find(".slide").each(function() {
+        return slider.find(".slider-bullets").append("<div class='slider-bullet'></div>");
+      });
+    }
   },
   next: function(slider) {
     var current, goto;
-    current = slider.find(".slide.slide-active").index();
+    current = slider.find(".slide.slide-current").index();
     goto = current + 1;
     if (goto >= slider.find(".slide").length) {
       goto = 0;
@@ -3510,7 +3565,7 @@ app.slider = {
   },
   prev: function(slider) {
     var current, goto;
-    current = slider.find(".slide.slide-active").index();
+    current = slider.find(".slide.slide-current").index();
     goto = current - 1;
     if (goto < 0) {
       goto = slider.find(".slide").length - 1;
@@ -3518,49 +3573,48 @@ app.slider = {
     return app.slider.go(slider, goto, "left");
   },
   go: function(slider, goto, dir) {
-    var current;
+    var current, ytbg;
     if (dir == null) {
       dir = false;
     }
-    current = slider.find(".slide.slide-active").index();
+    current = slider.find(".slide.slide-current").index();
     if (!slider.hasClass("slider-animate") && current !== goto) {
-      if (!dir && current.length) {
-        if (current < goto) {
-          dir = "right";
-        } else {
-          dir = "left";
-        }
+      if (!dir && current >= 0) {
+        dir = current < goto ? "right" : "left";
       }
-      slider.removeClass("slider-dir-left");
-      slider.removeClass("slider-dir-right");
+      slider.removeClass("slider-dir-left slider-dir-right");
       slider.addClass("slider-animate");
       if (dir) {
         slider.addClass("slider-dir-" + dir);
       }
-      slider.find(".slide.slide-active").addClass("slide-out").removeClass("slide-active");
-      slider.find(".slide").eq(goto).addClass("slide-active");
-      slider.find(".slider-bullet").removeClass("slider-bullet-active");
-      slider.find(".slider-bullet").eq(goto).addClass("slider-bullet-active");
+      slider.find(".slide.slide-current").addClass("slide-out").removeClass("slide-current");
+      slider.find(".slide").eq(goto).addClass("slide-current");
+      slider.find(".slider-bullet").removeClass("slider-bullet-current").eq(goto).addClass("slider-bullet-current");
+      ytbg = slider.find(".slide-current").find("[data-youtube-bg]");
+      if (ytbg.length) {
+        app.youtube.insert(ytbg, ytbg.attr("data-youtube-bg"));
+      }
       setTimeout(function() {
+        slider.find(".slide-out").find("[data-youtube-bg]").html("");
         slider.find(".slide-out").removeClass("slide-out");
         return slider.removeClass("slider-animate");
       }, 500);
       return app.relayout();
     }
   },
-  autoplay: function() {
+  autoplay: function(slider) {
     var play, play_timeout;
     play_timeout = false;
-    $(".slider").mouseenter(function() {
+    slider.on("mouseenter", function() {
       return clearTimeout(play_timeout);
     });
-    $(".slider").mouseleave(function() {
+    slider.on("mouseleave", function() {
       return play();
     });
     play = function() {
       clearTimeout(play_timeout);
       return play_timeout = setTimeout(function() {
-        $(".slider").each(function() {
+        slider.each(function() {
           return app.slider.next($(this));
         });
         return play();
@@ -3625,17 +3679,14 @@ app.verticalalign = function() {
 
 app.youtube = {
   init: function() {
-    return $(".youtube[data-id]").click(function() {
-      return app.youtube.insert($(this), $(this).attr("data-id"));
+    return $("[data-youtube]").click(function(e) {
+      e.preventDefault();
+      return app.youtube.insert($("body"), $(this).attr("data-youtube"));
     });
   },
   insert: function(element, id) {
     var html;
-    html = "";
-    html += "<div class='youtube-iframe'>";
-    html += '<iframe width="420" height="315" src="https://www.youtube.com/embed/' + id + '?rel=0&controls=0&showinfo=0&autoplay=1&autohide=1" frameborder="0" allowfullscreen></iframe>';
-    html += "<button class='youtube-iframe-close close'><span class='fa fa-times'></span></button>";
-    html += "</div>";
+    html = app.youtube.html(id);
     element.addClass("youtube-playing");
     element.append(html);
     return $(".youtube-iframe-close").click(function(e) {
@@ -3646,6 +3697,16 @@ app.youtube = {
         return element.removeClass("youtube-playing youtube-out");
       }, 500);
     });
+  },
+  html: function(id) {
+    var html, options, url;
+    options = ['rel=0', 'controls=0', 'showinfo=0', 'autoplay=1', 'loop=1', 'playlist=' + id, 'autohide=1', 'iv_load_policy=3', 'enablejsapi=1'];
+    url = 'https://www.youtube.com/embed/' + id + '?' + options.join('&');
+    html = "";
+    html += "<div class='youtube-iframe'>";
+    html += '<iframe width="420" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>';
+    html += "</div>";
+    return html;
   }
 };
 
@@ -3764,6 +3825,7 @@ app.init = function() {
   app.youtube.init();
   app.faq.init();
   app.tabs.init();
+  app.gallery.init();
   app.forms.init();
   return app.actions.init();
 };

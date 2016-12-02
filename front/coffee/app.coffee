@@ -46,6 +46,9 @@ app.init = ->
 	# Tabs
 	app.tabs.init()
 
+	# Gallery
+	app.gallery.init()
+
 	# Validation forms
 	app.forms.init()
 

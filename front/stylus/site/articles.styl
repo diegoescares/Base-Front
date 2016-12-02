@@ -152,10 +152,12 @@ article
 					vertical-align middle
 
 	&.article-photo
-		height 280px
 		background lighter
 		radius rad
 		z-index 1
+		height 200px
+		@media $break-sm
+			height 280px
 
 		.article-open
 			cover absolute

@@ -14,25 +14,6 @@
 		.fa
 			margin-left 2px
 	
-	.youtube-iframe
-		cover absolute
-		//cover fixed
-		//z-index 10
-		animation fadeIn .5s ease backwards
-		background black
-		iframe
-			cover absolute
-			animation fadeIn 1s 1s ease backwards
-		.youtube-iframe-close
-			position absolute
-			top 5px
-			right 5px
-			circle 30px
-			background dark
-			color white
-			&:hover
-				background color
-
 	&:hover
 		cursor pointer
 		.youtube-play
@@ -47,3 +28,22 @@
 	&.youtube-out
 		.youtube-iframe
 			animation fadeOut .5s ease both
+
+.youtube-iframe
+	//cover fixed
+	cover absolute
+	z-index 12
+	animation fadeIn .5s ease backwards
+	background black
+	iframe
+		cover absolute
+		animation fadeIn 1s 1s ease backwards
+	.youtube-iframe-close
+		position absolute
+		top 5px
+		right 5px
+		circle 30px
+		background dark
+		color white
+		&:hover
+			background color
