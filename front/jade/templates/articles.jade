@@ -23,9 +23,9 @@ mixin article()
 				a(href="single.html").button.button-cover Leer más
 
 
-mixin articleCircle(link)
+mixin articlePeople(link)
 
-	article.article-circle
+	article.article-people
 		.article-image
 			.article-circle
 				.bg
@@ -54,8 +54,8 @@ mixin articleMin()
 
 		.article-body
 			.article-date 24/23/223
-			h3.article-title: a(href="single.html"): +lorem(5)
-			p.article-description: +lorem(10)
+			h3.article-title: a(href="single.html"): +lorem(3)
+			p.article-description: +lorem(8)
 
 
 
@@ -68,25 +68,45 @@ mixin articleBg(big)
 
 		.article-cover
 			.article-date 24/23/223
-			h2.article-title: a(href="single.html"): +lorem(5)
+			h3.h2.article-title: a(href="single.html"): +lorem(4)
 			p.article-description: +lorem(10)
 			a(href="single.html").button.button-line-white.button-cover Leer más
 
 
 
-mixin articlePhoto()
+mixin articleGallery(option)
 
-	article.article-photo
+	article.article-gallery
+
 		.article-bg.bg
 			+img(400,300)
-		//a.article-open(href="#",data-youtube="G3XoFYqi1j0")
-			.article-icon
-				span.fa.fa-search-plus
 
-		- url = "uploads/"+Math.floor(Math.random()*9)+".jpg"
-		a.article-open(href=url,data-gallery,data-gallery-youtube="G3XoFYqi1j0")
-			.article-icon
-				span.fa.fa-search-plus
+		if option=="video"
+			a.article-open(href="https://www.youtube.com/watch?v=Y6wGlaPXYFk",data-gallery="groupA")
+				.article-icon.article-icon-play
+					span.fa.fa-play
+		else
+			a.article-open(href="uploads/"+Math.floor(Math.random()*9)+".jpg",data-gallery="groupA")
+				.article-icon.article-icon-zoom
+					span.fa.fa-search-plus
+
+
+
+mixin articleProp(type)
+
+	article.article-prop(class="article-prop-#{type}")
+
+		.article-bg.bg
+			+img(400,300)
+
+		.article-deco
+			.article-deco-border
+
+		.article-body-va
+			.article-body
+				h3.article-title: a(href="single.html"): +lorem(4)
+
+
 
 
 

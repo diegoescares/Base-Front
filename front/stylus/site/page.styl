@@ -5,14 +5,32 @@
 		position relative
 		background dark
 		color white
+		text-align center
 		
 		.page-header-bg
 			&.bg.bg-loaded
 				opacity .2
 		
-		.page-header-title
-			&:last-child
-				margin-bottom 0
+		.page-header-limit
+			position relative
+			max-width limit_3
+			margin 0 auto
+			padding 40px 20px
+			@media $break-md
+				padding 60px 20px
+			&>*
+				margin-bottom 20px
+				&:last-child
+					margin-bottom 0
+
+		&.page-header-offset
+			@media $break-sm
+				padding-bottom 60px
+				margin-bottom -100px
+			@media $break-md
+				margin-bottom -120px
+		
 	
 	.page-body
 		position relative
+

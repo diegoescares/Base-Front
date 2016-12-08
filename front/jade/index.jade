@@ -4,12 +4,12 @@ extends ./templates/default.jade
 block page
 
 
-	section.section-dark.section-center
+	section.section-main.section-dark.section-center
 
 		.slider
 
 			.slide
-				.section-bg-video(data-youtube-bg="gbrkMDkHRqc")
+				.section-bg-video(data-youtube="gbrkMDkHRqc",data-youtube-auto="bg")
 				.section-limit
 					.section-content-va
 						+sectionContent('h1',true,false,'color','line-white')
@@ -27,37 +27,170 @@ block page
 						+sectionContent('h1',true,false,'line-white')
 
 
+	section.section-content
+		.section-limit
+			.cols.cols-gutterx2
+				.col-md-6
+					.youtube(data-youtube="uwmeH6Rnj2E")
+						+img(200,200)
+						.youtube-play
+							span.fa.fa-play
 
-	section.section-center
+				.col-md-6
+					+sectionContent(true,true,true,'dark')
+
+
+
+	section
+		.cols.cols-gutterx0
+			.col-lg-4
+				+articleBg("big")
+			.col-lg-4
+				+articleBg("big")
+			.col-lg-4
+				+articleBg("big")
+
+
+
+	section
+		.section-limit
+
+			.center
+				+sectionContent(true,true)
+				div
+
+			.cols
+				.col-sm-6.col-lg-4
+					+article()
+				.col-sm-6.col-lg-4
+					+article()
+				.col-sm-6.col-lg-4
+					+article()
+				.col-sm-6.col-lg-4
+					+article()
+				.col-sm-6.col-lg-4
+					+article()
+				.col-sm-6.col-lg-4
+					+article()
+
+
+	section
+		.cols.cols-gutterx0
+			.col-sm-6.col-lg-4
+				+articleProp("4-3 article-prop-double")
+			.col-sm-6.col-lg-4
+				+articleProp("4-3")
+			.col-sm-6.col-lg-4
+				+articleProp("4-3")
+			.col-sm-6.col-lg-4
+				+articleProp("4-3")
+			.col-sm-6.col-lg-4
+				+articleProp("4-3")
+
+	section
 		.section-limit
 
 			.cols
+				.col-sm-6.col-lg-4
+					+articleProp("4-3 article-prop-double-gutter")
+				.col-sm-6.col-lg-4
+					+articleProp("4-3")
+				.col-sm-6.col-lg-4
+					+articleProp("4-3")
+				.col-sm-6.col-lg-4
+					+articleProp("4-3")
+				.col-sm-6.col-lg-4
+					+articleProp("4-3")
+
+	section
+		.section-limit
+
+			.cols
+				.col-sm-6.col-lg-3
+					+articleProp()
+				.col-sm-6.col-lg-3
+					+articleProp()
+				.col-sm-6.col-lg-3
+					+articleProp()
+				.col-sm-6.col-lg-3
+					+articleProp()
+
+	section
+		.section-limit
+
+			.cols
+				.col-sm-6.col-lg-3
+					+articleProp("circle")
+				.col-sm-6.col-lg-3
+					+articleProp("circle")
+				.col-sm-6.col-lg-3
+					+articleProp("circle")
+				.col-sm-6.col-lg-3
+					+articleProp("circle")
+
+
+
+	section.section-gallery.section-center
+		.section-limit
+
+			+sectionContent(true,true)
+
+			.cols
 				.col-xs-12.col-md-8.col-lg-6
-					+articlePhoto()
+					+articleGallery()
 				.col-xs-6.col-md-4.col-lg-3
-					+articlePhoto()
+					+articleGallery('video')
 				.col-xs-6.col-md-4.col-lg-3
-					+articlePhoto()
+					+articleGallery()
 				.col-xs-6.col-md-4.col-lg-3
-					+articlePhoto()
+					+articleGallery()
 				.col-xs-6.col-md-4.col-lg-3
-					+articlePhoto()
+					+articleGallery()
 				.col-xs-6.col-md-4.col-lg-3
-					+articlePhoto()
+					+articleGallery()
 				.col-xs-6.col-md-4.col-lg-3
-					+articlePhoto()
+					+articleGallery()
+				.col-xs-6.col-md-4.col-lg-3
+					+articleGallery()
+				.col-xs-6.col-md-4.col-lg-3
+					+articleGallery()
+				.col-xs-6.col-md-4.col-lg-3
+					+articleGallery()
+				.col-xs-6.col-md-4.col-lg-3
+					+articleGallery()
 
 
 
-	section.section-center
+	section.section-circles.section-center
 		.section-limit
 
 			+sectionContent(true,true)
 
 			.section-articles
-				+articleCircle()
-				+articleCircle()
-				+articleCircle()
+				+articlePeople()
+				+articlePeople()
+				+articlePeople()
+
+
+
+	section
+		.section-limit
+
+			.cols
+				.col-md-4
+					+articleBg()
+				.col-md-4
+					+articleBg()
+				.col-md-4
+					+articleBg()
+				.col-md-4
+					+articleBg()
+				.col-md-4
+					+articleBg()
+				.col-md-4
+					+articleBg()
+
+
 
 
 	section
@@ -92,19 +225,56 @@ block page
 
 
 
-	section
+
+
+
+	section.section-quote.section-dark.section-center
 		.cols.cols-gutterx0
-			.col-md-4
-				+articleBg("big")
-			.col-md-4
-				+articleBg("big")
-			.col-md-4
-				+articleBg("big")
+			.col-md-6
+				.section-group
+					.bg: +img(800,400)
+					.section-limit
+						.section-content-va
+			.col-md-6
+				.section-limit
+					.section-content-va
+						+sectionContent(true,true,false,'line-white button-cover')
+
+
+	section.section-quote.section-center
+		.cols.cols-gutterx0
+			.col-md-6
+				.section-limit
+					.section-content-va
+						+sectionContent(true,true,false,'color button-cover')
+			.col-md-6
+				.section-group
+					.bg: +img(800,400)
+					.section-limit
+						.section-content-va
 
 
 
+	section.section-quote.section-color.section-center
+		.cols.cols-gutterx0
+			.col-md-6
+				.section-group
+					.bg: +img(800,400)
+					.section-limit
+						.section-content-va
+			.col-md-6
+				.section-limit
+					.section-content-va
+						+sectionContent(true,true,false,'white button-cover')
 
-	section
+
+
+	section.section-content
+		.section-limit
+			+sectionContent(true,true,true,'dark')
+
+
+	section.section-content
 		.section-limit
 			.cols.cols-gutterx2
 				.col-md-6
@@ -112,7 +282,7 @@ block page
 				.col-md-6
 					+sectionContent(true,true,true,'dark')
 
-	section
+	section.section-content
 		.section-limit
 			.cols.cols-gutterx2
 				.col-md-6.col-md-push-6
@@ -123,6 +293,26 @@ block page
 
 
 
+
+
+	section.section-quote.section-dark.section-center
+		.cols.cols-gutterx0
+			.col-md-6
+				.section-group
+					.section-bg.bg: +img(800,400)
+					.section-limit
+						.section-content-va
+							+sectionContent(true,false,false,'line-white button-cover')
+			.col-md-6
+				.section-group
+					.section-bg.bg: +img(800,400)
+					.section-limit
+						.section-content-va
+							+sectionContent(true,false,false,'line-white button-cover')
+
+
+
+
 	section.section-logos
 		.section-limit
 			h3 Nos apoyan
@@ -130,23 +320,6 @@ block page
 			a(href="#"): +img("logo-4.png")
 			a(href="#"): +img("logo-3.png")
 			a(href="#"): +img("logo-4.png")
-
-	//
-		section.section-logos2
-		.section-limit
-			h3 Nos apoyan
-			a(href="#"): +img("logo-3.png")
-			a(href="#"): +img("logo-4.png")
-			a(href="#"): +img("logo-3.png")
-			a(href="#"): +img("logo-4.png")
-			a(href="#"): +img("logo-4.png")
-			a(href="#"): +img("logo-3.png")
-			a(href="#"): +img("logo-4.png")
-			a(href="#"): +img("logo-3.png")
-			a(href="#"): +img("logo-4.png")
-			a(href="#"): +img("logo-4.png")
-			a(href="#"): +img("logo-3.png")
-
 
 
 
@@ -214,9 +387,13 @@ block page
 								| contacto@adsgdfg.com
 
 
-	section.section-dark.section-center
+	section.section-quote.section-dark.section-center
 		.section-bg.bg: +img(800,400)
 		.section-limit
 			+sectionContent(true,true,false,'color')
+
+
+
+
 
 

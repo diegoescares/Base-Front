@@ -1,0 +1,47 @@
+
+extends ./templates/default.jade
+
+block page
+
+	.page
+
+		.page-header.page-header-offset
+			.page-header-bg.bg
+				+img(1000,400)
+			.page-header-limit
+				h1.page-header-title Preguntas frecuentes
+
+		.page-body
+
+			section.section-faq
+				.section-limit-sm
+					.section-content
+						
+						.faq
+							.faq-item
+								h3.faq-question
+									span.fa.fa-angle-down
+									+lorem(5)
+								.faq-answer.content
+									p: +lorem(40)
+									p: +lorem(30)
+									p: +lorem(20)
+							.faq-item
+								h3.faq-question
+									span.fa.fa-angle-down
+									+lorem(5)
+								.faq-answer.content
+									p: +lorem(40)
+									p: +lorem(30)
+									p: +lorem(20)
+							.faq-item
+								h3.faq-question
+									span.fa.fa-angle-down
+									+lorem(5)
+								.faq-answer.content
+									p: +lorem(40)
+									p: +lorem(30)
+									p: +lorem(20)
+
+
+

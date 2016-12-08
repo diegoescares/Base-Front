@@ -25,9 +25,6 @@ app.init = ->
 	# Modal
 	app.modal.init()
 
-	# Loading
-	app.loading.init()
-
 	# Mapa
 	app.gmap.init()
 

@@ -1,0 +1,40 @@
+
+extends ./templates/default.jade
+
+block page
+
+
+	.page
+
+		.page-header.page-header-offset
+			.page-header-bg.bg
+				+img(1000,400)
+			.page-header-limit
+				h1 Contacto
+				p.subtitle: +lorem(20)
+
+		.page-body
+
+			section.section-contact
+				.section-limit-sm
+					.section-content
+
+						.box.box-white
+
+							form.controls.validate(method='POST', action='')
+								.cols
+									.col-md-6
+										+control("text","name","Nombre")
+									.col-md-6
+										+control("email","email","Email")
+									.col-md-6
+										+control("select","subject","Asunto")
+									.col-md-6
+										+control("text","phone","Teléfono")
+									.col-md-12
+										+control("textarea","message","Mensaje")
+									.col-md-12
+										+control("checkbox","terms","",{"true":"Recibir newsletter"})
+									.col-md-12
+										button.button.button-medium Enviar
+											span.fa.fa-angle-right

@@ -70,7 +70,18 @@ article
 			padding 0
 
 
-	//&.article-default
+	&.article-default
+		radius rad
+		.article-body
+			border 1px solid lighter
+			radius 0 0 rad rad
+			@media $break-md
+				min-height 240px
+		.article-title a
+			color black
+		&:hover
+			.article-title a
+				color color
 
 
 	&.article-min
@@ -84,17 +95,27 @@ article
 		.article-title
 			title h4
 			margin-bottom 5px
+		.article-title a
+			color dark
 		.article-image
 			float left
 			width 100px
 			margin-right 10px
 			@media $break-md
 				width 140px
+		&:hover
+			.article-title a
+				color color
+
 
 	&.article-bg
-		height 500px
 		color white
 		background dark
+		height 300px
+		@media $break-sm
+			height 400px
+		@media $break-lg
+			height 500px
 		.article-image
 			cover absolute
 			opacity .2
@@ -119,12 +140,14 @@ article
 					padding sep*2
 	
 
-	&.article-circle
+	&.article-people
 		max-width 300px
-		margin 20px 10px 0
+		margin 0 10px 20px
 		display inline-block
 		vertical-align top
 		background transparent
+		&:last-child
+			margin-bottom 0
 		.article-image
 			background transparent
 			max-width 200px
@@ -151,26 +174,103 @@ article
 				.fa
 					vertical-align middle
 
-	&.article-photo
+
+
+
+	&.article-gallery
 		background lighter
 		radius rad
 		z-index 1
-		height 200px
+		height 180px
 		@media $break-sm
-			height 280px
+			height 250px
 
 		.article-open
+			display block
 			cover absolute
 			transition .4s ease
-			opacity 0
-			background rgba(dark,80%)
 
 		.article-icon
 			centrecircle 50px
 			background white
-			font-size 140%
+			font-size 120%
+			transition .4s ease
+			opacity 0
+			.fa.fa-play
+				margin-left 5px
+			&.article-icon-play
+				opacity 1
 
 		&:hover
 			.article-open
-				opacity 1
+				background rgba(dark,80%)
+				.article-icon
+					opacity 1
+
+
+
+
+
+	&.article-prop
+		color white
+		background dark
+		position relative
+		transition .4s ease
+		proportion 1,1
+		overflow hidden
+
+		.article-bg
+			cover absolute
+			transition .4s ease
+			opacity .6
+
+		.article-deco
+			cover absolute
+			border 15px solid transparent
+			opacity 0
+			transition .4s ease
+			.article-deco-border
+				cover absolute
+				border 1px solid white
+
+		.article-body-va
+			cover absolute
+			text-align center
+			top 50%
+			height 300px
+			line-height 300px
+			margin-top (@height/-2)
+			.article-body
+				display inline-block
+				vertical-align middle
+				line-height global_lh
+				@media $break-sm
+					padding 20px 30px
+
+		.article-title a
+			color white
+
+		&:hover
+			.article-bg
+				opacity .2
+			.article-deco
+				opacity .6
+		
+		&.article-prop-4-3
+			proportion 4,3
+			@media $break-sm
+				&.article-prop-double
+					proportion 4,6
+				&.article-prop-double-gutter
+					proportion 4,6
+					padding-top 20px
+
+
+		&.article-prop-circle
+			radius 50%
+			.article-bg
+				radius 50%
+			.article-deco
+				.article-deco-border
+					radius 50%
 

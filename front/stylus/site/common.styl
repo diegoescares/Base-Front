@@ -27,6 +27,9 @@ article.article-loaded.dscroll
 	img
 		display none
 
+.bg-video
+	cover absolute
+	animation fadeIn .5s .5s ease backwards
 
 
 .message
@@ -52,8 +55,12 @@ article.article-loaded.dscroll
 	top 10px
 	right 10px
 	circle 30px
-	background dark
+	background rgba(0,0,0,.5)
 	color white
+	@media $break-md
+		top 20px
+		right 20px
+		circle 50px
 	&:hover
 		background color
 

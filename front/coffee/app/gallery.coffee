@@ -3,6 +3,7 @@ app.gallery =
 
 	init: ->
 
+		# Set default group
 		$("[data-gallery]").each ->
 			if !$(this).attr("data-gallery")
 				$(this).attr "data-gallery", "default"
@@ -14,32 +15,45 @@ app.gallery =
 			app.gallery.open group, index
 
 		$(document).on "click", ".gallery-close", (e) ->
-			app.gallery.close()
+			app.gallery.remove()
 
 
 	open: (group, index=0) ->
 
-		data = []
+		items = []
 		$("[data-gallery='"+group+"']").each ->
-			if !$(this).attr("data-gallery-youtube")
-				data.push "<div class='bg'><img src='"+$(this).attr("href")+"' /></div>"
-			else
-				data.push "<div class='bg-video cover' data-youtube-bg='"+$(this).attr("data-gallery-youtube")+"'>"
 
-		html = ""
-		html += "<div class='gallery'>"
-		html += app.slider.create(data)
+			href = $(this).attr("href")
+			ytid = app.youtube.getid($(this).attr("href"))			
+			
+			if href && !ytid # Image
+				items.push "<div class='bg'><img src='"+href+"' /></div>"
+			
+			if href && ytid # Video
+				items.push "<div class='bg-video' data-youtube='"+ytid+"' data-youtube-auto></div>"
+
+		if items.length > 0
+
+			gallery = app.gallery.create()
+
+			gallery.append app.loader.html()
+			gallery.append app.slider.create(items)
+
+			app.slider.createElements gallery.find(".slider")
+			app.slider.go gallery.find(".slider"), index
+
+			app.loadingContent()
+
+
+	create: () ->
+		html  = "<div class='gallery'>"
 		html += "<button class='gallery-close close'><span class='fa fa-times'></span></button>"
 		html += "</div>"
-
 		$("body").append html
+		return $(".gallery")
 
-		app.slider.createElements $(".gallery .slider")
-		app.slider.go $(".gallery .slider"), index
-		app.loadingContent()
 
-	close: ->
-		console.log "close!!"
+	remove: ->
 		$(".gallery").addClass("out")
 		setTimeout ->
 			$(".gallery").remove()

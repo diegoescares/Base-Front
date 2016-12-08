@@ -2,6 +2,9 @@
 
 .youtube
 	position relative
+	radius rad
+	overflow hidden
+	z-index 1
 	img
 		width 100%
 
@@ -29,21 +32,32 @@
 		.youtube-iframe
 			animation fadeOut .5s ease both
 
+
+
 .youtube-iframe
-	//cover fixed
 	cover absolute
-	z-index 12
 	animation fadeIn .5s ease backwards
 	background black
 	iframe
 		cover absolute
 		animation fadeIn 1s 1s ease backwards
+
+	&.youtube-iframe-api
+		display none
+		&.youtube-iframe-ready
+			display block
+
 	.youtube-iframe-close
 		position absolute
-		top 5px
-		right 5px
+		top 10px
+		right 10px
 		circle 30px
-		background dark
+		background rgba(0,0,0,.5)
 		color white
+		z-index 2
 		&:hover
 			background color
+
+
+
+

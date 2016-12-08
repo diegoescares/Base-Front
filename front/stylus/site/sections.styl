@@ -1,10 +1,11 @@
 
 section
 	position relative
-	background-color white
+	//background-color white
 
-	&:nth-child(odd)
-		background-color lighter
+	&:nth-child(even)
+		background-color white
+		//background-color lighter
 	
 	&.section-white
 		background-color white
@@ -52,6 +53,10 @@ section
 			height 200%
 			left 0
 			top -50%
+		&:after
+			content ""
+			cover absolute
+
 
 	.section-limit
 		position relative
@@ -59,13 +64,24 @@ section
 		margin 0 auto
 		padding sep*2 sep
 		@media $break-md
-			padding sep*2
+			padding sep*3 sep
+
+	.section-limit-sm
+		@media $break-sm
+			position relative
+			max-width limit
+			margin 0 auto
+			padding sep*2 sep
 		@media $break-md
-			padding sep*4 sep*2
+			padding sep*3 sep
+
+
+	.section-group
+		position relative
 
 	.section-content
 		max-width limit_3
-		margin 0 auto 20px
+		margin 0 auto 40px
 		&:last-child
 			margin-bottom 0
 		&>*
@@ -121,47 +137,26 @@ section
 		text-align center
 		a
 			display inline-block
-			max-width 180px
-			height 60px
-			line-height 60px - 2
 			vertical-align middle
 			margin 10px 20px
 			text-align center
 			filter grayscale(1)
 			transition .4s ease
-			img
-				max-height 60px
-				max-width 100%
-				display inline-block
-				vertical-align middle
-			&:hover
-				filter grayscale(0)
-
-
-	&.section-logos2
-		a
-			display inline-block
-			width 33.33%
+			max-width 120px
+			height 30px
+			line-height 30px - 2
 			@media $break-md
-				width 25%
-			height 100px
-			line-height 60px - 2
-			vertical-align middle
-			text-align center
-			filter grayscale(1)
-			transition .4s ease
-			border border
-			margin-right -1px
-			margin-top -1px
-			padding 20px
+				max-width 180px
+				height 60px
+				line-height 60px - 2
 			img
-				width 180px
 				max-height 60px
 				max-width 100%
 				display inline-block
 				vertical-align middle
 			&:hover
 				filter grayscale(0)
+
 
 
 

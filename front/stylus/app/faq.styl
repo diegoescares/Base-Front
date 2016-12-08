@@ -1,9 +1,36 @@
 
 
 .faq
+	radius rad
+	overflow hidden
+	.faq-item
+		background white
+		border-bottom 1px solid lighter
+		&:last-child
+			border-bottom 0
+		&.faq-open
+			.faq-question
+				.fa
+					transform rotate(180deg)
+
 	.faq-question
+		margin-bottom 0
+		padding 15px 20px
+		transition tn
+		@media $break-md
+			padding 25px 30px
+		.fa
+			float right
+			transition tn
+			color gray
+			margin-left 10px
 		&:hover
 			cursor pointer
+			color color
+
 	.faq-answer
-		padding-bottom 15px
+		padding 0 20px 20px
+		@media $break-md
+			padding 0 30px 25px
+
 

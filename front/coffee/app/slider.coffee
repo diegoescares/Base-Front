@@ -99,14 +99,13 @@ app.slider =
 				.eq(goto).addClass("slider-bullet-current")
 
 
+			ytauto = slider.find(".slide-current").find("[data-youtube-auto]")
+			if ytauto.length
+				app.youtube.api.insert ytauto, ytauto.attr("data-youtube"), ytauto.attr("data-youtube-auto")
 
-			ytbg = slider.find(".slide-current").find("[data-youtube-bg]")
-			if ytbg.length
-				app.youtube.insert ytbg, ytbg.attr("data-youtube-bg")
 			
-
 			setTimeout ->
-				slider.find(".slide-out").find("[data-youtube-bg]").html("")
+				slider.find(".slide-out").find("[data-youtube-auto]").html("")
 				slider.find(".slide-out").removeClass("slide-out")
 				slider.removeClass("slider-animate")
 			,500

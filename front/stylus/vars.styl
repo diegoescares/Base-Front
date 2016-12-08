@@ -2,8 +2,6 @@
 // Colors
 color               = #00c494
 color_2             = #02b7b7
-//color               = #fe7800
-//color_2             = #f66800
 black               = #181a20
 dark                = #2d3345
 gray                = #767b8f
@@ -42,8 +40,8 @@ limit_3             = 800px
 
 // Fonts
 font                = 'Open Sans', sans-serif
-font_2              = 'Montserrat', sans-serif
 font_2              = 'Fredoka One', sans-serif
+font_2              = 'Montserrat', sans-serif
 
 // CSS vars
 shadow              = 1px 1px 0px rgba(0,0,0,.4)
@@ -54,25 +52,14 @@ rad_2               = 2px
 tn                  = .2s ease
 
 
-// Proportional titles 
+// Titles 
 
 title_base          = 18px
-title_aument        = 10px
+title_aument        = 6px
 title_lineheight    = 1.1
 title_uppercase     = true
 title_bold          = false
-
-title_h1            = title_base + (title_aument*3)
-title_h2            = title_base + (title_aument*2)
-title_h3            = title_base + (title_aument*1)
-title_h4            = title_base + (title_aument*0)
-title_h5            = title_base - ceil(title_aument*.5)
-
-title_h1_lh         = ceil( title_h1 * title_lineheight )
-title_h2_lh         = ceil( title_h2 * title_lineheight )
-title_h3_lh         = ceil( title_h3 * title_lineheight )
-title_h4_lh         = ceil( title_h4 * title_lineheight )
-title_h5_lh         = ceil( title_h5 * title_lineheight )
+title_bold          = true
 
 
 // Buttons
@@ -108,4 +95,51 @@ $break-limit        = "(min-width " + limit + ")"
 $grid-gutter-width  = sep
 
 $bootstrap-path     = "../../bower_components/bootstrap-stylus/bootstrap/"
+
+
+
+// PLANTILLA 2
+/*
+dark                = #111f41
+color               = #fe7800
+color_2             = #f66800
+button_letterspacing= 3px
+font                = 'Roboto', sans-serif
+font_2              = 'Montserrat', sans-serif
+title_bold          = true
+title_base          = 16px
+title_aument        = 6px
+*/
+
+/*
+// PLANTILLA 3
+dark                = #660000
+color               = #CC0000
+color_2             = #f66800
+button_letterspacing= 3px
+font                = 'Roboto', sans-serif
+font_2              = 'Montserrat', sans-serif
+title_bold          = true
+title_base          = 16px
+title_aument        = 6px
+button_radius       = rad_2
+*/
+
+// Proportional titles 
+
+title_h1            = title_base + (title_aument*5)
+title_h2            = title_base + (title_aument*3)
+title_h3            = title_base + (title_aument*1)
+title_h4            = title_base + (title_aument*0)
+title_h5            = title_base - ceil(title_aument*.5)
+
+title_h1_lh         = ceil( title_h1 * title_lineheight )
+title_h2_lh         = ceil( title_h2 * title_lineheight )
+title_h3_lh         = ceil( title_h3 * title_lineheight )
+title_h4_lh         = ceil( title_h4 * title_lineheight )
+title_h5_lh         = ceil( title_h5 * title_lineheight )
+
+
+
+
 
